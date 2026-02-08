@@ -6,37 +6,57 @@
 <meta name="description" content="Klarity is a beautiful, fast disk analyzer for macOS. Visualize storage with treemap and icicle views. Find what's taking up space and reclaim your disk.">
 <meta name="keywords" content="disk analyzer, mac disk analyzer, storage visualizer, disk space, mac utility, treemap, disk cleaner, macos app, storage manager, disk usage">
 <meta name="author" content="Mukul Mehra"><meta name="robots" content="index, follow">
-<link rel="canonical" href="https://getklarity.app/">
+<link rel="canonical" href="https://mukul-rgb-beep.github.io/klarity-site/">
 <meta property="og:type" content="website"><meta property="og:title" content="Klarity — See Your Disk Clearly">
 <meta property="og:description" content="A beautiful, fast disk analyzer for macOS. Visualize your storage with treemap and icicle views.">
-<meta property="og:url" content="https://getklarity.app/"><meta property="og:image" content="https://getklarity.app/og-image.png"><meta property="og:site_name" content="Klarity">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Klarity — See Your Disk Clearly"><meta name="twitter:image" content="https://getklarity.app/og-image.png">
+<meta property="og:url" content="https://mukul-rgb-beep.github.io/klarity-site/"><meta property="og:image" content="https://mukul-rgb-beep.github.io/klarity-site/og-image.png"><meta property="og:site_name" content="Klarity">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Klarity — See Your Disk Clearly"><meta name="twitter:image" content="https://mukul-rgb-beep.github.io/klarity-site/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Klarity","description":"A beautiful, fast disk analyzer for macOS.","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS","offers":{"@type":"Offer","price":"6.99","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mukul Mehra"},"softwareVersion":"1.0"}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#3ECFCF;--tr:62,207,207;--blue:#5B8DEF;--br:91,141,239;--em:#47E0B0;--er:71,224,176}
-[data-theme="dark"]{--bg:#060810;--bg2:#0C0E18;--bgc:rgba(255,255,255,.025);--bgg:rgba(255,255,255,.04);--bd:rgba(255,255,255,.06);--bdb:rgba(255,255,255,.12);--t1:#E8EAED;--t2:#9BA1AB;--t3:#5A5E6A;--sh:rgba(0,0,0,.5);--gbg:rgba(12,14,24,.6);--gb:rgba(255,255,255,.08)}
-[data-theme="light"]{--bg:#F4F5F7;--bg2:#FFF;--bgc:rgba(0,0,0,.03);--bgg:rgba(255,255,255,.7);--bd:rgba(0,0,0,.08);--bdb:rgba(0,0,0,.12);--t1:#1A1C20;--t2:#5A5E6A;--t3:#9BA1AB;--sh:rgba(0,0,0,.1);--gbg:rgba(255,255,255,.6);--gb:rgba(0,0,0,.06)}
+/* ═══════════════════════════════════════════════════
+   KLARITY — IMMERSIVE MARKETING SITE v2
+   ═══════════════════════════════════════════════════ */
+
+:root{--teal:#3ECFCF;--tr:62,207,207;--blue:#5B8DEF;--br:91,141,239;--em:#47E0B0;--er:71,224,176;--purple:#A78BFA;--pr:167,139,250;--amber:#F59E0B;--ar:245,158,11}
+[data-theme="dark"]{--bg:#060810;--bg2:#0C0E18;--bg3:#10121E;--bgc:rgba(255,255,255,.025);--bgg:rgba(255,255,255,.04);--bd:rgba(255,255,255,.06);--bdb:rgba(255,255,255,.12);--t1:#E8EAED;--t2:#9BA1AB;--t3:#5A5E6A;--sh:rgba(0,0,0,.5);--gbg:rgba(12,14,24,.6);--gb:rgba(255,255,255,.08);--card-hover:rgba(62,207,207,.03)}
+[data-theme="light"]{--bg:#F4F5F7;--bg2:#FFF;--bg3:#FAFAFA;--bgc:rgba(0,0,0,.03);--bgg:rgba(255,255,255,.7);--bd:rgba(0,0,0,.08);--bdb:rgba(0,0,0,.12);--t1:#1A1C20;--t2:#5A5E6A;--t3:#9BA1AB;--sh:rgba(0,0,0,.1);--gbg:rgba(255,255,255,.6);--gb:rgba(0,0,0,.06);--card-hover:rgba(62,207,207,.05)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Outfit',-apple-system,sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .5s,color .4s}
 body::before{content:'';position:fixed;inset:0;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 
-/* Floating Particles */
+/* ── Launch Banner ── */
+.launch-banner{position:fixed;top:0;left:0;right:0;z-index:200;padding:10px 20px;background:linear-gradient(90deg,rgba(var(--tr),.15),rgba(var(--br),.12),rgba(var(--er),.1));border-bottom:1px solid rgba(var(--tr),.15);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;font-weight:500;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.launch-banner .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--em);flex-shrink:0;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--er),.5)}50%{box-shadow:0 0 0 8px rgba(var(--er),0)}}
+.launch-banner .offer-text{color:var(--t2)}
+.launch-banner .offer-price{font-family:'JetBrains Mono',monospace;color:var(--teal);font-weight:600}
+.launch-banner .offer-orig{text-decoration:line-through;color:var(--t3);font-size:13px}
+.launch-banner .offer-cta{padding:4px 14px;border-radius:6px;background:rgba(var(--tr),.15);border:1px solid rgba(var(--tr),.25);color:var(--teal);font-size:12px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap}
+.launch-banner .offer-cta:hover{background:rgba(var(--tr),.25);border-color:rgba(var(--tr),.4)}
+.banner-close{background:none;border:none;color:var(--t3);cursor:pointer;font-size:18px;padding:0 4px;line-height:1;transition:color .2s;margin-left:8px}
+.banner-close:hover{color:var(--t2)}
+.banner-hidden{transform:translateY(-100%)}
+
+/* ── Particles ── */
 .particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .particle{position:absolute;border-radius:50%;opacity:0;animation:pfloat linear infinite}
 @keyframes pfloat{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 
-/* Parallax Blobs */
+/* ── Parallax Blobs ── */
 .pblob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;will-change:transform}
 .pblob-1{width:500px;height:500px;background:rgba(var(--tr),.08);top:20%;left:-5%}
 .pblob-2{width:400px;height:400px;background:rgba(var(--br),.06);top:60%;right:-5%}
 .pblob-3{width:350px;height:350px;background:rgba(var(--er),.04);top:40%;left:40%}
+.pblob-4{width:450px;height:450px;background:rgba(var(--pr),.04);top:120%;left:20%}
+.pblob-5{width:380px;height:380px;background:rgba(var(--tr),.05);top:180%;right:10%}
 
-/* Nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);background:var(--gbg);border-bottom:1px solid var(--gb);transition:background .4s,border-color .4s}
+/* ── Nav ── */
+nav{position:fixed;top:42px;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);background:var(--gbg);border-bottom:1px solid var(--gb);transition:all .4s}
+nav.banner-gone{top:0}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--t1)}
 .nav-logo svg{flex-shrink:0}
 .nav-logo span{font-weight:700;font-size:17px;letter-spacing:-.3px}
@@ -48,8 +68,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:fl
 [data-theme="light"] .theme-tog::after{transform:translateX(20px);background:var(--blue)}
 .nav-cta{padding:7px 18px!important;border-radius:8px;background:var(--teal)!important;color:#060810!important;font-weight:600!important}.nav-cta:hover{background:#50DDD0!important}
 
-/* Hero */
-.hero{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px}
+/* ── Hero ── */
+.hero{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:150px 24px 60px}
 .hero-icon{width:80px;height:80px;margin-bottom:32px;opacity:0;animation:iconPop .8s cubic-bezier(.34,1.56,.64,1) .2s forwards}
 @keyframes iconPop{from{opacity:0;transform:scale(.5) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
 .hero-icon rect{opacity:0;animation:blockIn .5s ease forwards}
@@ -61,10 +81,18 @@ h1{font-size:clamp(48px,7vw,82px);font-weight:800;line-height:1.02;letter-spacin
 .rtxt.vis .wd{transform:translateY(0);opacity:1}
 .grad{background:linear-gradient(135deg,var(--teal),var(--blue),var(--em));background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gshift 4s ease infinite}
 @keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.hero-sub{font-size:clamp(17px,2.2vw,20px);font-weight:400;color:var(--t2);max-width:540px;line-height:1.6;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease 1s forwards}
+.hero-sub{font-size:clamp(17px,2.2vw,20px);font-weight:400;color:var(--t2);max-width:540px;line-height:1.6;margin-bottom:20px;opacity:0;animation:fadeUp .7s ease 1s forwards}
+
+/* ── Hero Price Tag (above fold) ── */
+.hero-price-tag{display:inline-flex;align-items:center;gap:12px;padding:8px 20px;border-radius:100px;background:rgba(var(--tr),.08);border:1px solid rgba(var(--tr),.15);margin-bottom:28px;opacity:0;animation:fadeUp .7s ease 1.1s forwards}
+.hero-price-tag .price-current{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--teal)}
+.hero-price-tag .price-label{font-size:13px;color:var(--t2);font-weight:500}
+.hero-price-tag .price-orig{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--t3);text-decoration:line-through}
+.hero-price-tag .price-badge{padding:3px 10px;border-radius:6px;background:rgba(var(--er),.15);color:var(--em);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+
 .hero-acts{display:flex;gap:14px;align-items:center;opacity:0;animation:fadeUp .7s ease 1.2s forwards}
 
-/* Magnetic Buttons */
+/* ── Magnetic Buttons ── */
 .mag{position:relative;display:inline-flex;align-items:center;gap:10px;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
 .btn-p{padding:13px 30px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#2BB8B8);color:#060810;box-shadow:0 4px 24px rgba(var(--tr),.25),inset 0 1px 0 rgba(255,255,255,.2)}
 .btn-p:hover{box-shadow:0 8px 40px rgba(var(--tr),.35),inset 0 1px 0 rgba(255,255,255,.2)}
@@ -72,7 +100,7 @@ h1{font-size:clamp(48px,7vw,82px);font-weight:800;line-height:1.02;letter-spacin
 .btn-s{padding:13px 26px;border-radius:12px;background:var(--bgg);border:1px solid var(--bdb);color:var(--t1);font-weight:500}
 .btn-s:hover{background:rgba(var(--tr),.06);border-color:rgba(var(--tr),.2)}
 
-/* Interactive Treemap */
+/* ── Interactive Treemap Preview ── */
 .hero-tm{margin-top:56px;max-width:880px;width:100%;opacity:0;animation:fadeUp .9s ease 1.4s forwards}
 .prev-frame{position:relative;border-radius:16px;overflow:hidden;background:var(--bg2);border:1px solid var(--bd);box-shadow:0 32px 80px var(--sh);transition:background .4s,border-color .4s}
 .titlebar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:var(--bgc);border-bottom:1px solid var(--bd)}
@@ -97,7 +125,35 @@ h1{font-size:clamp(48px,7vw,82px);font-weight:800;line-height:1.02;letter-spacin
 .tm5{background:linear-gradient(135deg,#3ECFCF,#30AAAA)}
 .tm6{background:linear-gradient(135deg,#7BA4F7,#5B8DEF)}
 
-/* Stats */
+/* ── View Switcher (Treemap / Icicle toggle) ── */
+.view-switch{display:flex;justify-content:center;gap:4px;margin-top:12px;opacity:0;animation:fadeUp .7s ease 1.6s forwards}
+.view-btn{padding:6px 16px;border-radius:8px;background:var(--bgg);border:1px solid var(--bd);color:var(--t2);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit}
+.view-btn.active{background:rgba(var(--tr),.12);border-color:rgba(var(--tr),.25);color:var(--teal)}
+.view-btn:hover:not(.active){background:rgba(var(--tr),.06);color:var(--t1)}
+
+/* ── Icicle View ── */
+.icicle-grid{padding:8px;height:380px;display:flex;flex-direction:column;gap:3px;display:none}
+.icicle-row{display:flex;gap:3px;flex:1}
+.icicle-cell{border-radius:6px;position:relative;overflow:hidden;cursor:pointer;transition:all .35s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px}
+.icicle-cell::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,transparent 50%);pointer-events:none}
+.icicle-cell::after{content:'';position:absolute;inset:0;border-radius:6px;border:1px solid rgba(255,255,255,.06);pointer-events:none;transition:border-color .3s}
+.icicle-cell:hover{filter:brightness(1.15);transform:scaleY(1.04);z-index:2}
+.icicle-cell:hover::after{border-color:rgba(255,255,255,.2)}
+.icicle-row:hover .icicle-cell:not(:hover){opacity:.5}
+.icicle-cell span{font-size:11px;font-weight:600;color:#fff;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.icicle-cell small{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.65);pointer-events:none}
+.ic1{background:linear-gradient(180deg,#3ECFCF,#2BA8A8);flex:3}
+.ic2{background:linear-gradient(180deg,#5B8DEF,#4070D0);flex:2.3}
+.ic3{background:linear-gradient(180deg,#47E0B0,#2FB890);flex:1.2}
+.ic4{background:linear-gradient(180deg,#7BA4F7,#5B8DEF);flex:1.6}
+.ic5{background:linear-gradient(180deg,#3ECFCF,#30AAAA);flex:1}
+.ic6{background:linear-gradient(180deg,#A78BFA,#8B6FE0);flex:.8}
+.ic-sub1{background:linear-gradient(180deg,#35B5B5,#289090);flex:2}
+.ic-sub2{background:linear-gradient(180deg,#2FA8A8,#228888);flex:1}
+.ic-sub3{background:linear-gradient(180deg,#4A7AD4,#3A62B0);flex:1.5}
+.ic-sub4{background:linear-gradient(180deg,#3CC8A0,#28A078);flex:1}
+
+/* ── Stats ── */
 .stats{position:relative;z-index:2;padding:80px 24px;max-width:900px;margin:0 auto}
 .stats-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .stat{text-align:center;padding:32px 20px;border-radius:16px;background:var(--bgg);border:1px solid var(--bd);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:all .4s}
@@ -106,7 +162,28 @@ h1{font-size:clamp(48px,7vw,82px);font-weight:800;line-height:1.02;letter-spacin
 .stat-n .ctr{display:inline-block;background:linear-gradient(135deg,var(--teal),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-l{font-size:14px;color:var(--t2);font-weight:500}
 
-/* Features */
+/* ── Before/After Section ── */
+.before-after{position:relative;z-index:2;padding:80px 24px 100px;max-width:900px;margin:0 auto}
+.ba-header{text-align:center;margin-bottom:48px}
+.ba-visual{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center}
+.ba-card{padding:32px;border-radius:20px;background:var(--gbg);border:1px solid var(--gb);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);text-align:center}
+.ba-card h4{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px}
+.ba-before h4{color:var(--t3)}
+.ba-after h4{color:var(--teal)}
+.ba-disk{width:160px;height:160px;border-radius:50%;margin:0 auto 20px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.ba-disk-ring{position:absolute;inset:0;border-radius:50%}
+.ba-disk-inner{position:relative;z-index:1}
+.ba-disk-pct{font-size:36px;font-weight:800;letter-spacing:-1px}
+.ba-disk-label{font-size:12px;color:var(--t2)}
+.ba-before .ba-disk-pct{color:#EF4444}
+.ba-after .ba-disk-pct{color:var(--em)}
+.ba-files{font-size:13px;color:var(--t2);margin-top:4px}
+.ba-files strong{color:var(--t1)}
+.ba-arrow{font-size:28px;color:var(--teal);opacity:.5}
+.ba-arrow svg{animation:arrowBounce 2s ease infinite}
+@keyframes arrowBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+
+/* ── Features ── */
 .features{position:relative;z-index:2;padding:100px 24px 120px;max-width:1100px;margin:0 auto}
 .slbl{font-size:13px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:14px}
 .stit{font-size:clamp(32px,4vw,48px);font-weight:700;text-align:center;letter-spacing:-1.5px;margin-bottom:60px;line-height:1.1}
@@ -120,52 +197,148 @@ h1{font-size:clamp(48px,7vw,82px);font-weight:800;line-height:1.02;letter-spacin
 .fi-t{background:rgba(var(--tr),.12);color:var(--teal)}
 .fi-b{background:rgba(var(--br),.1);color:var(--blue)}
 .fi-e{background:rgba(var(--er),.1);color:var(--em)}
+.fi-p{background:rgba(var(--pr),.1);color:var(--purple)}
 .fcard h3{font-size:17px;font-weight:600;margin-bottom:10px;letter-spacing:-.2px}
 .fcard p{font-size:14px;color:var(--t2);line-height:1.65}
 
-/* CTA */
+/* ── Comparison Section ── */
+.compare{position:relative;z-index:2;padding:80px 24px 100px;max-width:800px;margin:0 auto}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:16px;overflow:hidden;background:var(--gbg);border:1px solid var(--gb);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.compare-table th,.compare-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px}
+.compare-table th{font-weight:600;color:var(--t2);font-size:12px;text-transform:uppercase;letter-spacing:1px;background:var(--bgc)}
+.compare-table td:first-child{color:var(--t2);font-weight:500}
+.compare-table td:nth-child(2){font-weight:600}
+.compare-table td:nth-child(3){font-weight:600;color:var(--teal)}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table .check{color:var(--em);font-size:16px}.compare-table .cross{color:var(--t3);font-size:14px}
+.compare-table .highlight-col{background:rgba(var(--tr),.04)}
+.compare-header-klarity{position:relative}
+.compare-header-klarity::after{content:'YOU';position:absolute;top:-1px;right:8px;font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:var(--teal);color:#060810;letter-spacing:.5px}
+.compare-table tr:hover td{background:var(--card-hover)}
+
+/* ── Testimonials / Social Proof ── */
+.social-proof{position:relative;z-index:2;padding:60px 24px 80px;max-width:1000px;margin:0 auto}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.sp-card{padding:24px;border-radius:16px;background:var(--gbg);border:1px solid var(--gb);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:all .3s}
+.sp-card:hover{border-color:rgba(var(--tr),.12);transform:translateY(-3px)}
+.sp-stars{color:var(--amber);font-size:13px;margin-bottom:10px;letter-spacing:2px}
+.sp-text{font-size:14px;color:var(--t2);line-height:1.65;margin-bottom:12px;font-style:italic}
+.sp-author{font-size:12px;font-weight:600;color:var(--t3)}
+
+/* ── CTA ── */
 .cta{position:relative;z-index:2;padding:80px 24px 120px;text-align:center}
 .cta-box{max-width:620px;margin:0 auto;padding:56px 48px;border-radius:24px;background:var(--gbg);border:1px solid var(--gb);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);position:relative;overflow:hidden}
 .cta-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(var(--tr),.04),transparent,rgba(var(--br),.03),transparent);animation:ctaRot 12s linear infinite}
 @keyframes ctaRot{to{transform:rotate(360deg)}}
 .cta-box>*{position:relative;z-index:1}
 .cta-box h2{font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:14px}
-.cta-box p{font-size:16px;color:var(--t2);margin-bottom:28px;line-height:1.6}
+.cta-box>p{font-size:16px;color:var(--t2);margin-bottom:28px;line-height:1.6}
 .price{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--t3);margin-top:16px}
+.cta-guarantee{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--t3);margin-top:12px}
+.cta-guarantee svg{width:14px;height:14px;color:var(--em)}
 
-/* Footer */
+/* ── Footer ── */
 footer{position:relative;z-index:2;padding:40px;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;transition:border-color .4s}
 .fl{font-size:13px;color:var(--t3)}.flinks{display:flex;gap:24px;list-style:none}
 .flinks a{color:var(--t3);text-decoration:none;font-size:13px;transition:color .2s}.flinks a:hover{color:var(--t2)}
 
-/* Animations */
+/* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .rv{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rvd1{transition-delay:.1s}.rvd2{transition-delay:.2s}.rvd3{transition-delay:.3s}
 
-/* Responsive */
-@media(max-width:768px){nav{padding:12px 20px}.nav-r{gap:14px}.nav-r a:not(.nav-cta):not(.theme-tog){display:none}.hero{padding:100px 20px 48px}.hero-icon{width:60px;height:60px}h1{letter-spacing:-1.5px}.hero-acts{flex-direction:column;width:100%}.mag{width:100%;justify-content:center}.tmgrid{height:260px}.stats-g{grid-template-columns:1fr;gap:12px}.stat-n{font-size:36px}.features{padding:60px 20px 80px}.cta-box{padding:40px 24px}.cta-box h2{font-size:28px}footer{padding:28px 20px;flex-direction:column;text-align:center}}
-@media(max-width:480px){.tmgrid{height:200px;gap:3px;padding:6px}.tm-n{font-size:11px}.tm-s{font-size:9px}}
+/* ── Mouse Spotlight ── */
+.mouse-spotlight{position:fixed;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:1;filter:blur(120px);opacity:0;transition:opacity .6s;background:radial-gradient(circle,rgba(var(--tr),.07),transparent 70%);will-change:transform}
+.mouse-spotlight.active{opacity:1}
+
+/* ── Hero Tilt on Preview ── */
+.prev-frame{transform-style:preserve-3d;perspective:1000px;transition:transform .4s cubic-bezier(.34,1.56,.64,1),background .4s,border-color .4s}
+
+/* ── Floating Badge Animation ── */
+.float-badge{animation:floatBadge 4s ease-in-out infinite}
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ── Glow Line Divider ── */
+.glow-divider{width:100%;max-width:600px;height:1px;margin:0 auto;background:linear-gradient(90deg,transparent,rgba(var(--tr),.3),rgba(var(--br),.2),transparent);position:relative;z-index:2}
+
+/* ── Scroll Progress ── */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue),var(--em));z-index:300;width:0%;transition:width .1s linear;opacity:.8}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .launch-banner{font-size:12px;gap:8px;padding:8px 14px;flex-wrap:wrap;justify-content:center}
+  .launch-banner .offer-orig{display:none}
+  nav{padding:12px 20px;top:38px}
+  .nav-r{gap:14px}
+  .nav-r a:not(.nav-cta):not(.theme-tog){display:none}
+  .hero{padding:120px 20px 48px}
+  .hero-icon{width:60px;height:60px}
+  h1{letter-spacing:-1.5px}
+  .hero-acts{flex-direction:column;width:100%}
+  .mag{width:100%;justify-content:center}
+  .tmgrid,.icicle-grid{height:260px}
+  .stats-g{grid-template-columns:1fr;gap:12px}
+  .stat-n{font-size:36px}
+  .features{padding:60px 20px 80px}
+  .ba-visual{grid-template-columns:1fr;gap:16px}
+  .ba-arrow{transform:rotate(90deg)}
+  .compare-table{font-size:13px}
+  .compare-table th,.compare-table td{padding:12px 14px}
+  .cta-box{padding:40px 24px}
+  .cta-box h2{font-size:28px}
+  footer{padding:28px 20px;flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .tmgrid,.icicle-grid{height:200px;gap:3px;padding:6px}
+  .tm-n{font-size:11px}.tm-s{font-size:9px}
+  .icicle-cell span{font-size:9px}
+  .ba-disk{width:120px;height:120px}
+  .ba-disk-pct{font-size:28px}
+}
 </style>
 </head>
 <body>
+
+<!-- Mouse Spotlight -->
+<div class="mouse-spotlight" id="mouseSpot"></div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProg"></div>
+
+<!-- Launch Offer Banner -->
+<div class="launch-banner" id="launchBanner">
+  <div class="pulse-dot"></div>
+  <span class="offer-text">Launch week pricing</span>
+  <span class="offer-price">$6.99</span>
+  <span class="offer-orig">$9.99</span>
+  <span class="offer-text price-badge" style="padding:2px 8px;border-radius:4px;background:rgba(var(--er),.12);color:var(--em);font-size:11px;font-weight:700">SAVE 30%</span>
+  <a href="#download" class="offer-cta">Get it now &rarr;</a>
+  <button class="banner-close" onclick="closeBanner()" aria-label="Close">&times;</button>
+</div>
+
+<!-- Particles & Blobs -->
 <div class="particles" id="ptcls"></div>
 <div class="pblob pblob-1" data-speed="0.03"></div>
 <div class="pblob pblob-2" data-speed="0.05"></div>
 <div class="pblob pblob-3" data-speed="0.02"></div>
+<div class="pblob pblob-4" data-speed="0.04"></div>
+<div class="pblob pblob-5" data-speed="0.025"></div>
 
-<nav>
-  <a href="/" class="nav-logo"><svg width="30" height="30" viewBox="0 0 120 120" fill="none" style="border-radius:7px;background:#060810"><rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/><rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/><rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/><rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/><rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/><rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/><rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/></svg><span>Klarity</span></a>
+<!-- Nav -->
+<nav id="mainNav">
+  <a href="./" class="nav-logo"><svg width="30" height="30" viewBox="0 0 120 120" fill="none" style="border-radius:7px;background:#060810"><rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/><rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/><rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/><rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/><rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/><rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/><rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/></svg><span>Klarity</span></a>
   <ul class="nav-r">
     <li><a href="#features">Features</a></li>
-    <li><a href="/support.html">Support</a></li>
-    <li><a href="/privacy.html">Privacy</a></li>
+    <li><a href="#compare">Compare</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
     <li><div class="theme-tog" onclick="toggleTheme()" role="button" aria-label="Toggle theme"></div></li>
     <li><a href="#download" class="nav-cta">Download</a></li>
   </ul>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <svg class="hero-icon" viewBox="0 0 120 120" fill="none">
     <rect x="10" y="10" width="50" height="48" rx="6" fill="#3ECFCF" style="animation-delay:.3s"/>
@@ -176,17 +349,29 @@ footer{position:relative;z-index:2;padding:40px;border-top:1px solid var(--bd);d
     <rect x="72" y="62" width="38" height="26" rx="6" fill="#7BA4F7" style="animation-delay:.7s"/>
     <rect x="72" y="92" width="38" height="18" rx="6" fill="#3ECFCF" style="animation-delay:.8s"/>
   </svg>
-  <div class="hero-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>macOS Disk Analyzer</div>
+  <div class="hero-badge float-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>macOS Disk Analyzer</div>
   <h1><span class="rtxt" id="ht1"><span class="wd">See your disk</span></span><br><span class="rtxt" id="ht2"><span class="wd grad">clearly.</span></span></h1>
   <p class="hero-sub">Klarity visualizes your storage with beautiful treemap and icicle views. Instantly find what's eating your space.</p>
+
+  <!-- Price above fold -->
+  <div class="hero-price-tag">
+    <span class="price-badge">LAUNCH</span>
+    <span class="price-current">$6.99</span>
+    <span class="price-orig">$9.99</span>
+    <span class="price-label">one-time purchase</span>
+  </div>
+
   <div class="hero-acts" id="download">
     <a href="#" class="mag btn-p" data-strength="20"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.82 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.39 4.8C17.03 4.83 18.83 5.06 19.97 6.7C19.88 6.76 17.64 8.08 17.67 10.81C17.7 14.08 20.55 15.19 20.59 15.21C20.56 15.29 20.11 16.86 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>Download for Mac</a>
     <a href="#features" class="mag btn-s" data-strength="15">Learn more &#8595;</a>
   </div>
+
+  <!-- Interactive Preview with View Switcher -->
   <div class="hero-tm">
     <div class="prev-frame">
-      <div class="titlebar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="titlebar-t">Klarity &#8212; Macintosh HD</div></div>
-      <div class="tmgrid">
+      <div class="titlebar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="titlebar-t">Klarity &mdash; Macintosh HD</div></div>
+      <!-- Treemap View -->
+      <div class="tmgrid" id="treemapView">
         <div class="tm tm1"><div class="tm-tip">4,218 files &middot; 30.8%</div><div class="tm-c"><div class="tm-n">Applications</div><div class="tm-s">24.3 GB</div></div></div>
         <div class="tm tm2"><div class="tm-tip">12,841 files &middot; 22.9%</div><div class="tm-c"><div class="tm-n">Developer</div><div class="tm-s">18.1 GB</div></div></div>
         <div class="tm tm3"><div class="tm-tip">8,392 files &middot; 12.3%</div><div class="tm-c"><div class="tm-n">Library</div><div class="tm-s">9.7 GB</div></div></div>
@@ -194,52 +379,220 @@ footer{position:relative;z-index:2;padding:40px;border-top:1px solid var(--bd);d
         <div class="tm tm5"><div class="tm-tip">6,847 files &middot; 10.4%</div><div class="tm-c"><div class="tm-n">Photos</div><div class="tm-s">8.2 GB</div></div></div>
         <div class="tm tm6"><div class="tm-tip">983 files &middot; 8.1%</div><div class="tm-c"><div class="tm-n">Downloads</div><div class="tm-s">6.4 GB</div></div></div>
       </div>
+      <!-- Icicle View -->
+      <div class="icicle-grid" id="icicleView">
+        <div class="icicle-row">
+          <div class="icicle-cell" style="flex:1;background:linear-gradient(180deg,rgba(var(--tr),.3),rgba(var(--tr),.15));border:1px solid rgba(var(--tr),.2)"><span style="font-size:13px">Macintosh HD</span><small>78.9 GB</small></div>
+        </div>
+        <div class="icicle-row">
+          <div class="icicle-cell ic1"><span>Applications</span><small>24.3 GB</small></div>
+          <div class="icicle-cell ic2"><span>Developer</span><small>18.1 GB</small></div>
+          <div class="icicle-cell ic3"><span>Library</span><small>9.7 GB</small></div>
+          <div class="icicle-cell ic4"><span>Documents</span><small>12.5 GB</small></div>
+          <div class="icicle-cell ic5"><span>Photos</span><small>8.2 GB</small></div>
+          <div class="icicle-cell ic6"><span>Downloads</span><small>6.4 GB</small></div>
+        </div>
+        <div class="icicle-row">
+          <div class="icicle-cell ic-sub1"><span>Xcode</span><small>14.2 GB</small></div>
+          <div class="icicle-cell ic-sub2"><span>Others</span><small>10.1 GB</small></div>
+          <div class="icicle-cell ic-sub3"><span>node_modules</span><small>12.8 GB</small></div>
+          <div class="icicle-cell ic-sub4"><span>Caches</span><small>5.3 GB</small></div>
+          <div class="icicle-cell" style="flex:1.8;background:linear-gradient(180deg,rgba(var(--br),.6),rgba(var(--br),.35))"><span>Projects</span><small>8.4 GB</small></div>
+          <div class="icicle-cell" style="flex:1;background:linear-gradient(180deg,rgba(var(--tr),.5),rgba(var(--tr),.3))"><span>Library</span><small>5.8 GB</small></div>
+          <div class="icicle-cell" style="flex:.6;background:linear-gradient(180deg,rgba(var(--pr),.5),rgba(var(--pr),.3))"><span>Old</span><small>3.8 GB</small></div>
+        </div>
+      </div>
+    </div>
+    <!-- View Toggle -->
+    <div class="view-switch">
+      <button class="view-btn active" onclick="switchView('treemap')">&#9703; Treemap</button>
+      <button class="view-btn" onclick="switchView('icicle')">&#9637; Icicle</button>
     </div>
   </div>
 </section>
 
+<!-- Stats -->
 <section class="stats">
   <div class="stats-g">
     <div class="stat rv"><div class="stat-n"><span class="ctr" data-target="2" data-suffix="">0</span></div><div class="stat-l">Visualization modes</div></div>
-    <div class="stat rv rvd1"><div class="stat-n"><span class="ctr" data-target="100" data-suffix="%">0</span></div><div class="stat-l">Local &amp; private</div></div>
+    <div class="stat rv rvd1"><div class="stat-n"><span class="ctr" data-target="6" data-suffix="">0</span></div><div class="stat-l">Handcrafted themes</div></div>
     <div class="stat rv rvd2"><div class="stat-n"><span class="ctr" data-target="0" data-suffix="">0</span></div><div class="stat-l">Data collected</div></div>
   </div>
 </section>
 
+<div class="glow-divider"></div>
+
+<!-- Before / After -->
+<section class="before-after">
+  <div class="ba-header rv">
+    <p class="slbl">The Difference</p>
+    <h2 class="stit" style="margin-bottom:0">From confused to in&nbsp;control</h2>
+  </div>
+  <div class="ba-visual">
+    <div class="ba-card ba-before rv">
+      <h4>Before Klarity</h4>
+      <div class="ba-disk">
+        <svg class="ba-disk-ring" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="var(--bd)" stroke-width="8"/>
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#EF4444" stroke-width="8" stroke-dasharray="405 440" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 80 80)" opacity=".7"/>
+        </svg>
+        <div class="ba-disk-inner">
+          <div class="ba-disk-pct">92%</div>
+          <div class="ba-disk-label">disk full</div>
+        </div>
+      </div>
+      <div class="ba-files">"Where did my space go?"</div>
+    </div>
+    <div class="ba-arrow rv rvd1"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    <div class="ba-card ba-after rv rvd2">
+      <h4>After Klarity</h4>
+      <div class="ba-disk">
+        <svg class="ba-disk-ring" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="var(--bd)" stroke-width="8"/>
+          <circle cx="80" cy="80" r="70" fill="none" stroke="var(--em)" stroke-width="8" stroke-dasharray="330 440" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 80 80)"/>
+        </svg>
+        <div class="ba-disk-inner">
+          <div class="ba-disk-pct">75%</div>
+          <div class="ba-disk-label">disk used</div>
+        </div>
+      </div>
+      <div class="ba-files"><strong>17 GB</strong> reclaimed in minutes</div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
 <section class="features" id="features">
   <p class="slbl rv">Features</p>
   <h2 class="stit rv">Everything you need to<br>understand your storage</h2>
   <div class="fgrid">
     <div class="fcard rv"><div class="ficon fi-t">&#9703;</div><h3>Treemap Visualization</h3><p>Squarified treemap algorithm sizes rectangles by file and folder size. See what's biggest instantly.</p></div>
     <div class="fcard rv rvd1"><div class="ficon fi-b">&#9637;</div><h3>Icicle / Flame Graph</h3><p>Stacked bars show folder hierarchy by depth. Compare items at the same level and drill down.</p></div>
-    <div class="fcard rv rvd2"><div class="ficon fi-e">&#9889;</div><h3>Lightning Fast</h3><p>Full disk scan in seconds. Background scanning lets you explore results immediately.</p></div>
-    <div class="fcard rv rvd1"><div class="ficon fi-t">&#128269;</div><h3>Pinch to Zoom</h3><p>Zoom into any area with trackpad pinch or &#8984;+scroll. Pan around to read every label.</p></div>
-    <div class="fcard rv rvd2"><div class="ficon fi-b">&#127912;</div><h3>Theme Packs</h3><p>Six handcrafted themes &#8212; Obsidian Teal, Midnight Sapphire, Deep Space, and more.</p></div>
-    <div class="fcard rv rvd3"><div class="ficon fi-e">&#128274;</div><h3>Privacy First</h3><p>Everything happens on your Mac. No cloud, no accounts, no tracking. Completely private.</p></div>
+    <div class="fcard rv rvd2"><div class="ficon fi-e">&#9889;</div><h3>Lightning Fast</h3><p>Full disk scan in seconds. Background scanning lets you explore results as they come in.</p></div>
+    <div class="fcard rv rvd1"><div class="ficon fi-t">&#128202;</div><h3>Menu Bar Widget</h3><p>Quick-glance disk and RAM usage right from your menu bar. Always know your storage status at a glance.</p></div>
+    <div class="fcard rv rvd2"><div class="ficon fi-p">&#127912;</div><h3>6 Theme Packs</h3><p>Obsidian Teal, Midnight Sapphire, Deep Space, Rosé Dawn, Arctic Frost, and Forest Night.</p></div>
+    <div class="fcard rv rvd3"><div class="ficon fi-e">&#128274;</div><h3>Privacy First</h3><p>Everything happens on your Mac. No cloud, no accounts, no tracking. Your data never leaves your machine.</p></div>
   </div>
 </section>
 
+<div class="glow-divider"></div>
+
+<!-- Comparison -->
+<section class="compare" id="compare">
+  <p class="slbl rv">Why Klarity</p>
+  <h2 class="stit rv">More features, better&nbsp;price</h2>
+  <div class="rv rvd1">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Others</th>
+          <th class="highlight-col compare-header-klarity">Klarity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Treemap visualization</td><td><span class="check">&#10003;</span></td><td class="highlight-col"><span class="check">&#10003;</span></td></tr>
+        <tr><td>Icicle / Flame graph</td><td><span class="cross">&mdash;</span></td><td class="highlight-col"><span class="check">&#10003;</span></td></tr>
+
+        <tr><td>Theme customization</td><td><span class="cross">&mdash;</span></td><td class="highlight-col"><span class="check">&#10003;</span> 6 themes</td></tr>
+        <tr><td>Menu bar quick access</td><td><span class="cross">&mdash;</span></td><td class="highlight-col"><span class="check">&#10003;</span></td></tr>
+        <tr><td>RAM monitoring</td><td><span class="cross">&mdash;</span></td><td class="highlight-col"><span class="check">&#10003;</span></td></tr>
+        <tr><td>One-time purchase</td><td>Varies</td><td class="highlight-col" style="color:var(--em);font-weight:700">$6.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof">
+  <div class="sp-grid">
+    <div class="sp-card rv">
+      <div class="sp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="sp-text">"Finally a disk analyzer that actually looks good on my Mac. The treemap is gorgeous and the icicle view is something I didn't know I needed."</p>
+      <div class="sp-author">&mdash; Beta Tester</div>
+    </div>
+    <div class="sp-card rv rvd1">
+      <div class="sp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="sp-text">"Found 40 GB of old Xcode caches in seconds. The pinch-to-zoom on the treemap makes it so easy to find exactly what's taking space."</p>
+      <div class="sp-author">&mdash; Beta Tester</div>
+    </div>
+    <div class="sp-card rv rvd2">
+      <div class="sp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="sp-text">"Six themes! The Deep Space one is my favorite. Way more personality than other disk analyzers and it's cheaper too."</p>
+      <div class="sp-author">&mdash; Beta Tester</div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
 <section class="cta">
   <div class="cta-box rv">
     <h2>Reclaim your disk space</h2>
-    <p>Download Klarity and see exactly where your storage is going.<br>Available now on the Mac App Store.</p>
+    <p>See exactly where your storage is going.<br>One-time purchase. No subscription. Yours forever.</p>
     <a href="#" class="mag btn-p" data-strength="20"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.82 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.39 4.8C17.03 4.83 18.83 5.06 19.97 6.7C19.88 6.76 17.64 8.08 17.67 10.81C17.7 14.08 20.55 15.19 20.59 15.21C20.56 15.29 20.11 16.86 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>Download for Mac</a>
     <p class="price">$6.99 launch price &middot; macOS 14+</p>
+    <div class="cta-guarantee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>100% local &middot; No subscription &middot; No data collection</div>
   </div>
 </section>
 
 <footer>
   <div class="fl">&copy; 2025 Klarity. Built by Mukul Mehra.</div>
-  <ul class="flinks"><li><a href="/privacy.html">Privacy</a></li><li><a href="/support.html">Support</a></li><li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Contact</a></li></ul>
+  <ul class="flinks"><li><a href="privacy.html">Privacy</a></li><li><a href="support.html">Support</a></li><li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Contact</a></li></ul>
 </footer>
 
 <script>
 (function(){
 'use strict';
 
+// Scroll Progress
+var prog=document.getElementById('scrollProg');
+window.addEventListener('scroll',function(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.width=(window.pageYOffset/h*100)+'%';
+},{passive:true});
+
+// Launch Banner
+window.closeBanner=function(){
+  var b=document.getElementById('launchBanner');
+  b.classList.add('banner-hidden');
+  document.getElementById('mainNav').classList.add('banner-gone');
+  sessionStorage.setItem('banner-closed','1');
+};
+if(sessionStorage.getItem('banner-closed')){
+  document.getElementById('launchBanner').classList.add('banner-hidden');
+  document.getElementById('mainNav').classList.add('banner-gone');
+}
+
+// View Switcher
+window.switchView=function(view){
+  var tm=document.getElementById('treemapView');
+  var ic=document.getElementById('icicleView');
+  var btns=document.querySelectorAll('.view-btn');
+  if(view==='treemap'){
+    tm.style.display='grid';ic.style.display='none';
+    btns[0].classList.add('active');btns[1].classList.remove('active');
+  }else{
+    tm.style.display='none';ic.style.display='flex';
+    btns[1].classList.add('active');btns[0].classList.remove('active');
+  }
+};
+
+// Auto-cycle views every 5s when in viewport
+var viewTimer,currentView='treemap';
+var heroTm=document.querySelector('.hero-tm');
+var viewObs=new IntersectionObserver(function(es){
+  if(es[0].isIntersecting){
+    viewTimer=setInterval(function(){
+      currentView=currentView==='treemap'?'icicle':'treemap';
+      switchView(currentView);
+    },5000);
+  }else{clearInterval(viewTimer)}
+},{threshold:.3});
+viewObs.observe(heroTm);
+
 // Floating Particles
 var pc=document.getElementById('ptcls');
-function mkP(){var p=document.createElement('div');p.className='particle';var s=2+Math.random()*4,x=Math.random()*100,d=8+Math.random()*16;var cols=['rgba(62,207,207,.5)','rgba(91,141,239,.4)','rgba(71,224,176,.3)'];p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+x+'%;background:'+cols[Math.floor(Math.random()*cols.length)]+';animation-duration:'+d+'s;animation-delay:'+Math.random()*5+'s;box-shadow:0 0 '+s*2+'px currentColor';pc.appendChild(p);setTimeout(function(){p.remove()},(d+5)*1e3)}
+function mkP(){var p=document.createElement('div');p.className='particle';var s=2+Math.random()*4,x=Math.random()*100,d=8+Math.random()*16;var cols=['rgba(62,207,207,.5)','rgba(91,141,239,.4)','rgba(71,224,176,.3)','rgba(167,139,250,.3)'];p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+x+'%;background:'+cols[Math.floor(Math.random()*cols.length)]+';animation-duration:'+d+'s;animation-delay:'+Math.random()*5+'s;box-shadow:0 0 '+s*2+'px currentColor';pc.appendChild(p);setTimeout(function(){p.remove()},(d+5)*1e3)}
 for(var i=0;i<15;i++)setTimeout(mkP,i*300);setInterval(mkP,1200);
 
 // Parallax Blobs
@@ -265,9 +618,36 @@ document.querySelectorAll('.mag').forEach(function(btn){var str=parseInt(btn.dat
   btn.addEventListener('mouseleave',function(){btn.style.transform='translate(0,0)'});
 });
 
+// Mouse Spotlight Effect
+var spot=document.getElementById('mouseSpot');
+var spotActive=false;
+document.addEventListener('mousemove',function(e){
+  if(!spotActive){spotActive=true;spot.classList.add('active')}
+  spot.style.transform='translate('+(e.clientX-300)+'px,'+(e.clientY-300)+'px)';
+});
+document.addEventListener('mouseleave',function(){spotActive=false;spot.classList.remove('active')});
+
+// 3D Tilt on Preview Frame
+var prevFrame=document.querySelector('.prev-frame');
+if(prevFrame){
+  prevFrame.addEventListener('mousemove',function(e){
+    var r=prevFrame.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width-.5;
+    var y=(e.clientY-r.top)/r.height-.5;
+    prevFrame.style.transform='rotateY('+x*6+'deg) rotateX('+y*-4+'deg) scale(1.01)';
+  });
+  prevFrame.addEventListener('mouseleave',function(){
+    prevFrame.style.transform='rotateY(0) rotateX(0) scale(1)';
+  });
+}
+
 // Theme Toggle
 window.toggleTheme=function(){var h=document.documentElement,c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('klarity-theme',n)};
 var saved=localStorage.getItem('klarity-theme');if(saved)document.documentElement.setAttribute('data-theme',saved);
+
+// Smooth counter for disk visualization (animate on scroll)
+var diskObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!e.target.dataset.animated){e.target.dataset.animated='1';e.target.querySelectorAll('.ba-disk-ring circle:nth-child(2)').forEach(function(c){var da=c.getAttribute('stroke-dasharray');c.setAttribute('stroke-dasharray','0 440');setTimeout(function(){c.style.transition='stroke-dasharray 1.5s cubic-bezier(.16,1,.3,1)';c.setAttribute('stroke-dasharray',da)},100)})}})},{threshold:.3});
+document.querySelectorAll('.before-after').forEach(function(el){diskObs.observe(el)});
 
 })();
 </script>
