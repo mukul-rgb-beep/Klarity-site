@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Klarity</title>
+  <meta name="description" content="Get help with Klarity, the macOS disk analyzer. FAQs, troubleshooting, and contact information.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://getklarity.app/support.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060810;
+      --bg-card: rgba(255,255,255,0.03);
+      --bg-glass: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.07);
+      --border-bright: rgba(255,255,255,0.12);
+      --text-primary: #E8EAED;
+      --text-secondary: #9BA1AB;
+      --text-tertiary: #5A5E6A;
+      --teal: #3ECFCF;
+      --teal-dim: rgba(62,207,207,0.15);
+      --blue: #5B8DEF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 7px; }
+    .nav-back {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text-primary); }
+
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 48px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      padding: 32px;
+      border-radius: 16px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--teal-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .contact-info h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .contact-info p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .contact-info a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* FAQ */
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-q::after {
+      content: '−';
+      color: var(--teal);
+    }
+    .faq-a {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-top: 4px;
+    }
+
+    /* System requirements */
+    .requirements {
+      margin-top: 48px;
+      padding: 28px;
+      border-radius: 16px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+    }
+    .requirements h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .req-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .req-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding: 32px 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    footer a { color: var(--text-tertiary); }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .content { padding: 48px 20px 80px; }
+      h1 { font-size: 32px; }
+      .contact-card { flex-direction: column; text-align: center; }
+      .req-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="icon-32.png" alt="Klarity" width="32" height="32">
+    Klarity
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="content">
+  <h1>Support</h1>
+  <p class="sub">Need help with Klarity? Find answers below or get in touch.</p>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-info">
+      <h3>Email Support</h3>
+      <p>For bug reports, feature requests, or questions — we typically respond within 24 hours.</p>
+      <p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-icon">🌐</div>
+    <div class="contact-info">
+      <h3>Website</h3>
+      <p>Visit our website for the latest updates, features, and download links.</p>
+      <p><a href="https://getklarity.app" target="_blank" rel="noopener">getklarity.app</a></p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item open">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      Why can't Klarity see some folders?
+    </div>
+    <div class="faq-a">
+      Some system folders are protected by macOS. To scan everything, grant Klarity "Full Disk Access" in System Settings → Privacy & Security → Full Disk Access. Without it, Klarity can still scan your home folder and most user-accessible locations.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      Is my data sent anywhere?
+    </div>
+    <div class="faq-a">
+      No. Klarity runs 100% locally on your Mac. No data is collected, transmitted, or stored remotely. There are no analytics, no accounts, and no cloud services. See our <a href="/privacy.html">Privacy Policy</a> for details.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      How do I zoom into the treemap?
+    </div>
+    <div class="faq-a">
+      Use trackpad pinch to zoom, or hold ⌘ (Command) and scroll with your mouse wheel. When zoomed in, drag to pan around. Click the zoom badge in the bottom-right corner to reset to 100%.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      How do I drill down into a folder?
+    </div>
+    <div class="faq-a">
+      Double-click any folder in the treemap or icicle view to drill into it. Use the breadcrumb navigation at the top to go back up. You can also right-click any item for options like "Reveal in Finder" or "Drill Into".
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      Can I switch between visualization modes?
+    </div>
+    <div class="faq-a">
+      Yes. Go to Settings → Appearance → Disk Visualization and choose between Treemap (rectangles sized by file/folder size) or Icicle (stacked bars by hierarchy depth). Your preference is saved automatically.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      Does Klarity delete files?
+    </div>
+    <div class="faq-a">
+      No. Klarity is a read-only analyzer — it only reads file metadata (names and sizes) to create visualizations. It never modifies, moves, or deletes any files. You can use the "Reveal in Finder" option to manage files yourself.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      Can I monitor RAM usage?
+    </div>
+    <div class="faq-a">
+      Yes. Toggle "Show RAM" in Settings → Appearance → RAM Display Mode. Klarity will show real-time memory usage in the app. You can adjust the refresh interval in the same settings panel.
+    </div>
+  </div>
+
+  <!-- System Requirements -->
+  <div class="requirements">
+    <h3>System Requirements</h3>
+    <div class="req-grid">
+      <div class="req-item"><div class="req-dot"></div> macOS 14 Sonoma or later</div>
+      <div class="req-item"><div class="req-dot"></div> Apple Silicon or Intel Mac</div>
+      <div class="req-item"><div class="req-dot"></div> ~15 MB disk space</div>
+      <div class="req-item"><div class="req-dot"></div> No internet required</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Klarity. Built by Mukul Mehra. · <a href="/privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

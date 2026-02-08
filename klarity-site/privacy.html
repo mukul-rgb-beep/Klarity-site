@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Klarity</title>
+  <meta name="description" content="Klarity Privacy Policy. We don't collect, store, or transmit any of your data. All disk analysis happens locally on your Mac.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://getklarity.app/privacy.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060810;
+      --bg-card: rgba(255,255,255,0.03);
+      --border: rgba(255,255,255,0.07);
+      --text-primary: #E8EAED;
+      --text-secondary: #9BA1AB;
+      --text-tertiary: #5A5E6A;
+      --teal: #3ECFCF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 7px; }
+    .nav-back {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text-primary); }
+
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .updated {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      color: var(--teal);
+    }
+    p, li {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    ul {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    li { margin-bottom: 8px; }
+    .highlight-box {
+      padding: 24px;
+      border-radius: 12px;
+      background: rgba(62,207,207,0.06);
+      border: 1px solid rgba(62,207,207,0.15);
+      margin: 32px 0;
+    }
+    .highlight-box p {
+      color: var(--text-primary);
+      font-weight: 500;
+      margin: 0;
+    }
+    a { color: var(--teal); }
+    footer {
+      padding: 32px 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .content { padding: 48px 20px 80px; }
+      h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="icon-32.png" alt="Klarity" width="32" height="32">
+    Klarity
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="content">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: February 8, 2025</p>
+
+  <div class="highlight-box">
+    <p>Klarity does not collect, store, or transmit any of your personal data. All disk analysis happens entirely on your Mac. We have no servers, no analytics, and no tracking.</p>
+  </div>
+
+  <h2>What Data Klarity Accesses</h2>
+  <p>Klarity reads file and folder metadata (names, sizes, and directory structure) from the disk volumes you choose to scan. This information is used solely to generate the visual analysis displayed within the app.</p>
+
+  <h2>What Data We Collect</h2>
+  <p>None. Klarity collects zero personal data. Specifically:</p>
+  <ul>
+    <li>No file contents are read — only names and sizes</li>
+    <li>No data is transmitted over the internet</li>
+    <li>No analytics or telemetry of any kind</li>
+    <li>No user accounts or sign-in required</li>
+    <li>No cookies, tracking pixels, or fingerprinting</li>
+    <li>No third-party SDKs or advertising frameworks</li>
+  </ul>
+
+  <h2>Data Storage</h2>
+  <p>Your scan results and app preferences (such as your chosen theme and visualization mode) are stored locally on your Mac using standard macOS mechanisms (UserDefaults). This data never leaves your device.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>Klarity does not integrate with any third-party services, analytics platforms, or advertising networks. The app functions entirely offline.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Klarity does not collect any data from anyone, including children under 13. Since no data is collected or transmitted, there are no age-related privacy concerns.</p>
+
+  <h2>macOS Permissions</h2>
+  <p>Klarity may request the following macOS permissions:</p>
+  <ul>
+    <li><strong>Full Disk Access</strong> (optional): Required to scan system-protected directories. Without this permission, Klarity can still scan your home folder and most user-accessible locations.</li>
+  </ul>
+  <p>These permissions are handled entirely by macOS and are revocable at any time in System Settings → Privacy & Security.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>If we ever update this privacy policy, changes will be posted on this page with an updated date. Given that Klarity collects no data, significant changes are unlikely.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy, you can reach us at <a href="mailto:support@klarity.app">support@klarity.app</a>.</p>
+</div>
+
+<footer>© 2025 Klarity. Built by Mukul Mehra.</footer>
+
+</body>
+</html>

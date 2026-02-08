@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klarity — See Your Disk Clearly | Mac Disk Analyzer</title>
+<meta name="description" content="Klarity is a beautiful, fast disk analyzer for macOS. Visualize storage with treemap and icicle views. Find what's taking up space and reclaim your disk.">
+<meta name="keywords" content="disk analyzer, mac disk analyzer, storage visualizer, disk space, mac utility, treemap, disk cleaner, macos app, storage manager, disk usage">
+<meta name="author" content="Mukul Mehra"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://getklarity.app/">
+<meta property="og:type" content="website"><meta property="og:title" content="Klarity — See Your Disk Clearly">
+<meta property="og:description" content="A beautiful, fast disk analyzer for macOS. Visualize your storage with treemap and icicle views.">
+<meta property="og:url" content="https://getklarity.app/"><meta property="og:image" content="https://getklarity.app/og-image.png"><meta property="og:site_name" content="Klarity">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Klarity — See Your Disk Clearly"><meta name="twitter:image" content="https://getklarity.app/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Klarity","description":"A beautiful, fast disk analyzer for macOS.","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS","offers":{"@type":"Offer","price":"6.99","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mukul Mehra"},"softwareVersion":"1.0"}</script>
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#3ECFCF;--tr:62,207,207;--blue:#5B8DEF;--br:91,141,239;--em:#47E0B0;--er:71,224,176}
+[data-theme="dark"]{--bg:#060810;--bg2:#0C0E18;--bgc:rgba(255,255,255,.025);--bgg:rgba(255,255,255,.04);--bd:rgba(255,255,255,.06);--bdb:rgba(255,255,255,.12);--t1:#E8EAED;--t2:#9BA1AB;--t3:#5A5E6A;--sh:rgba(0,0,0,.5);--gbg:rgba(12,14,24,.6);--gb:rgba(255,255,255,.08)}
+[data-theme="light"]{--bg:#F4F5F7;--bg2:#FFF;--bgc:rgba(0,0,0,.03);--bgg:rgba(255,255,255,.7);--bd:rgba(0,0,0,.08);--bdb:rgba(0,0,0,.12);--t1:#1A1C20;--t2:#5A5E6A;--t3:#9BA1AB;--sh:rgba(0,0,0,.1);--gbg:rgba(255,255,255,.6);--gb:rgba(0,0,0,.06)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Outfit',-apple-system,sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .5s,color .4s}
+body::before{content:'';position:fixed;inset:0;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+/* Floating Particles */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;border-radius:50%;opacity:0;animation:pfloat linear infinite}
+@keyframes pfloat{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+
+/* Parallax Blobs */
+.pblob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;will-change:transform}
+.pblob-1{width:500px;height:500px;background:rgba(var(--tr),.08);top:20%;left:-5%}
+.pblob-2{width:400px;height:400px;background:rgba(var(--br),.06);top:60%;right:-5%}
+.pblob-3{width:350px;height:350px;background:rgba(var(--er),.04);top:40%;left:40%}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);background:var(--gbg);border-bottom:1px solid var(--gb);transition:background .4s,border-color .4s}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--t1)}
+.nav-logo svg{flex-shrink:0}
+.nav-logo span{font-weight:700;font-size:17px;letter-spacing:-.3px}
+.nav-r{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-r a{color:var(--t2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-r a:hover{color:var(--t1)}
+.theme-tog{width:44px;height:24px;border-radius:12px;background:var(--bgc);border:1px solid var(--bd);cursor:pointer;position:relative;transition:background .3s,border-color .3s;flex-shrink:0}
+.theme-tog::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--teal);transition:transform .3s cubic-bezier(.34,1.56,.64,1);box-shadow:0 1px 4px rgba(0,0,0,.2)}
+[data-theme="light"] .theme-tog::after{transform:translateX(20px);background:var(--blue)}
+.nav-cta{padding:7px 18px!important;border-radius:8px;background:var(--teal)!important;color:#060810!important;font-weight:600!important}.nav-cta:hover{background:#50DDD0!important}
+
+/* Hero */
+.hero{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px}
+.hero-icon{width:80px;height:80px;margin-bottom:32px;opacity:0;animation:iconPop .8s cubic-bezier(.34,1.56,.64,1) .2s forwards}
+@keyframes iconPop{from{opacity:0;transform:scale(.5) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.hero-icon rect{opacity:0;animation:blockIn .5s ease forwards}
+@keyframes blockIn{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:100px;background:rgba(var(--tr),.1);border:1px solid rgba(var(--tr),.2);font-size:13px;font-weight:500;color:var(--teal);margin-bottom:28px;opacity:0;animation:fadeUp .7s ease .4s forwards}
+h1{font-size:clamp(48px,7vw,82px);font-weight:800;line-height:1.02;letter-spacing:-3px;margin-bottom:24px}
+.rtxt{display:inline-block;overflow:hidden}
+.rtxt .wd{display:inline-block;transform:translateY(110%);opacity:0;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s ease}
+.rtxt.vis .wd{transform:translateY(0);opacity:1}
+.grad{background:linear-gradient(135deg,var(--teal),var(--blue),var(--em));background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gshift 4s ease infinite}
+@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{font-size:clamp(17px,2.2vw,20px);font-weight:400;color:var(--t2);max-width:540px;line-height:1.6;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease 1s forwards}
+.hero-acts{display:flex;gap:14px;align-items:center;opacity:0;animation:fadeUp .7s ease 1.2s forwards}
+
+/* Magnetic Buttons */
+.mag{position:relative;display:inline-flex;align-items:center;gap:10px;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.btn-p{padding:13px 30px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#2BB8B8);color:#060810;box-shadow:0 4px 24px rgba(var(--tr),.25),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-p:hover{box-shadow:0 8px 40px rgba(var(--tr),.35),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-p svg{width:17px;height:17px}
+.btn-s{padding:13px 26px;border-radius:12px;background:var(--bgg);border:1px solid var(--bdb);color:var(--t1);font-weight:500}
+.btn-s:hover{background:rgba(var(--tr),.06);border-color:rgba(var(--tr),.2)}
+
+/* Interactive Treemap */
+.hero-tm{margin-top:56px;max-width:880px;width:100%;opacity:0;animation:fadeUp .9s ease 1.4s forwards}
+.prev-frame{position:relative;border-radius:16px;overflow:hidden;background:var(--bg2);border:1px solid var(--bd);box-shadow:0 32px 80px var(--sh);transition:background .4s,border-color .4s}
+.titlebar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:var(--bgc);border-bottom:1px solid var(--bd)}
+.dot{width:12px;height:12px;border-radius:50%}.dot-r{background:#FF5F57}.dot-y{background:#FEBC2E}.dot-g{background:#28C840}
+.titlebar-t{flex:1;text-align:center;font-size:12px;font-weight:500;color:var(--t3);margin-right:56px}
+.tmgrid{display:grid;padding:8px;gap:4px;grid-template-columns:1.3fr 1fr;grid-template-rows:1.1fr .55fr 1fr;height:380px}
+.tm{border-radius:8px;position:relative;overflow:hidden;cursor:pointer;transition:all .35s cubic-bezier(.34,1.56,.64,1)}
+.tm::before{content:'';position:absolute;inset:0;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.14) 0%,transparent 45%);pointer-events:none}
+.tm::after{content:'';position:absolute;inset:0;border-radius:8px;border:1px solid rgba(255,255,255,.08);pointer-events:none;transition:border-color .3s}
+.tm:hover{transform:scale(1.02);z-index:2;filter:brightness(1.12)}
+.tm:hover::after{border-color:rgba(255,255,255,.25)}
+.tmgrid:hover .tm:not(:hover){opacity:.5;filter:brightness(.8)}
+.tm-c{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(transparent,rgba(0,0,0,.5))}
+.tm-n{font-size:13px;font-weight:600;color:#fff}
+.tm-s{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.tm-tip{position:absolute;top:12px;right:12px;padding:6px 12px;border-radius:8px;background:rgba(0,0,0,.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);font-family:'JetBrains Mono',monospace;font-size:11px;color:#fff;opacity:0;transform:translateY(4px);transition:all .25s;pointer-events:none;white-space:nowrap}
+.tm:hover .tm-tip{opacity:1;transform:translateY(0)}
+.tm1{background:linear-gradient(135deg,#3ECFCF,#2BA8A8);grid-row:1/3}
+.tm2{background:linear-gradient(135deg,#5B8DEF,#4070D0)}
+.tm3{background:linear-gradient(135deg,#47E0B0,#2FB890)}
+.tm4{background:linear-gradient(135deg,#5B8DEF,#4A6BC8)}
+.tm5{background:linear-gradient(135deg,#3ECFCF,#30AAAA)}
+.tm6{background:linear-gradient(135deg,#7BA4F7,#5B8DEF)}
+
+/* Stats */
+.stats{position:relative;z-index:2;padding:80px 24px;max-width:900px;margin:0 auto}
+.stats-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.stat{text-align:center;padding:32px 20px;border-radius:16px;background:var(--bgg);border:1px solid var(--bd);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:all .4s}
+.stat:hover{border-color:rgba(var(--tr),.2);transform:translateY(-4px)}
+.stat-n{font-size:48px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:8px}
+.stat-n .ctr{display:inline-block;background:linear-gradient(135deg,var(--teal),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-l{font-size:14px;color:var(--t2);font-weight:500}
+
+/* Features */
+.features{position:relative;z-index:2;padding:100px 24px 120px;max-width:1100px;margin:0 auto}
+.slbl{font-size:13px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:14px}
+.stit{font-size:clamp(32px,4vw,48px);font-weight:700;text-align:center;letter-spacing:-1.5px;margin-bottom:60px;line-height:1.1}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.fcard{padding:32px;border-radius:20px;background:var(--gbg);border:1px solid var(--gb);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);transition:all .4s cubic-bezier(.34,1.56,.64,1);cursor:default;position:relative;overflow:hidden}
+.fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--tr),.3),transparent);opacity:0;transition:opacity .4s}
+.fcard:hover::before{opacity:1}
+.fcard:hover{border-color:rgba(var(--tr),.15);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.25),0 0 40px rgba(var(--tr),.04)}
+.ficon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:20px;transition:transform .3s}
+.fcard:hover .ficon{transform:scale(1.1) rotate(-3deg)}
+.fi-t{background:rgba(var(--tr),.12);color:var(--teal)}
+.fi-b{background:rgba(var(--br),.1);color:var(--blue)}
+.fi-e{background:rgba(var(--er),.1);color:var(--em)}
+.fcard h3{font-size:17px;font-weight:600;margin-bottom:10px;letter-spacing:-.2px}
+.fcard p{font-size:14px;color:var(--t2);line-height:1.65}
+
+/* CTA */
+.cta{position:relative;z-index:2;padding:80px 24px 120px;text-align:center}
+.cta-box{max-width:620px;margin:0 auto;padding:56px 48px;border-radius:24px;background:var(--gbg);border:1px solid var(--gb);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(var(--tr),.04),transparent,rgba(var(--br),.03),transparent);animation:ctaRot 12s linear infinite}
+@keyframes ctaRot{to{transform:rotate(360deg)}}
+.cta-box>*{position:relative;z-index:1}
+.cta-box h2{font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:14px}
+.cta-box p{font-size:16px;color:var(--t2);margin-bottom:28px;line-height:1.6}
+.price{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--t3);margin-top:16px}
+
+/* Footer */
+footer{position:relative;z-index:2;padding:40px;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;transition:border-color .4s}
+.fl{font-size:13px;color:var(--t3)}.flinks{display:flex;gap:24px;list-style:none}
+.flinks a{color:var(--t3);text-decoration:none;font-size:13px;transition:color .2s}.flinks a:hover{color:var(--t2)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rvd1{transition-delay:.1s}.rvd2{transition-delay:.2s}.rvd3{transition-delay:.3s}
+
+/* Responsive */
+@media(max-width:768px){nav{padding:12px 20px}.nav-r{gap:14px}.nav-r a:not(.nav-cta):not(.theme-tog){display:none}.hero{padding:100px 20px 48px}.hero-icon{width:60px;height:60px}h1{letter-spacing:-1.5px}.hero-acts{flex-direction:column;width:100%}.mag{width:100%;justify-content:center}.tmgrid{height:260px}.stats-g{grid-template-columns:1fr;gap:12px}.stat-n{font-size:36px}.features{padding:60px 20px 80px}.cta-box{padding:40px 24px}.cta-box h2{font-size:28px}footer{padding:28px 20px;flex-direction:column;text-align:center}}
+@media(max-width:480px){.tmgrid{height:200px;gap:3px;padding:6px}.tm-n{font-size:11px}.tm-s{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="particles" id="ptcls"></div>
+<div class="pblob pblob-1" data-speed="0.03"></div>
+<div class="pblob pblob-2" data-speed="0.05"></div>
+<div class="pblob pblob-3" data-speed="0.02"></div>
+
+<nav>
+  <a href="/" class="nav-logo"><svg width="30" height="30" viewBox="0 0 120 120" fill="none" style="border-radius:7px;background:#060810"><rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/><rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/><rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/><rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/><rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/><rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/><rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/></svg><span>Klarity</span></a>
+  <ul class="nav-r">
+    <li><a href="#features">Features</a></li>
+    <li><a href="/support.html">Support</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+    <li><div class="theme-tog" onclick="toggleTheme()" role="button" aria-label="Toggle theme"></div></li>
+    <li><a href="#download" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <svg class="hero-icon" viewBox="0 0 120 120" fill="none">
+    <rect x="10" y="10" width="50" height="48" rx="6" fill="#3ECFCF" style="animation-delay:.3s"/>
+    <rect x="64" y="10" width="46" height="26" rx="6" fill="#5B8DEF" style="animation-delay:.45s"/>
+    <rect x="64" y="40" width="46" height="18" rx="6" fill="#47E0B0" style="animation-delay:.6s"/>
+    <rect x="10" y="62" width="30" height="48" rx="6" fill="#5B8DEF" style="animation-delay:.5s"/>
+    <rect x="44" y="62" width="24" height="48" rx="6" fill="#3ECFCF" style="animation-delay:.65s"/>
+    <rect x="72" y="62" width="38" height="26" rx="6" fill="#7BA4F7" style="animation-delay:.7s"/>
+    <rect x="72" y="92" width="38" height="18" rx="6" fill="#3ECFCF" style="animation-delay:.8s"/>
+  </svg>
+  <div class="hero-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>macOS Disk Analyzer</div>
+  <h1><span class="rtxt" id="ht1"><span class="wd">See your disk</span></span><br><span class="rtxt" id="ht2"><span class="wd grad">clearly.</span></span></h1>
+  <p class="hero-sub">Klarity visualizes your storage with beautiful treemap and icicle views. Instantly find what's eating your space.</p>
+  <div class="hero-acts" id="download">
+    <a href="#" class="mag btn-p" data-strength="20"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.82 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.39 4.8C17.03 4.83 18.83 5.06 19.97 6.7C19.88 6.76 17.64 8.08 17.67 10.81C17.7 14.08 20.55 15.19 20.59 15.21C20.56 15.29 20.11 16.86 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>Download for Mac</a>
+    <a href="#features" class="mag btn-s" data-strength="15">Learn more &#8595;</a>
+  </div>
+  <div class="hero-tm">
+    <div class="prev-frame">
+      <div class="titlebar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="titlebar-t">Klarity &#8212; Macintosh HD</div></div>
+      <div class="tmgrid">
+        <div class="tm tm1"><div class="tm-tip">4,218 files &middot; 30.8%</div><div class="tm-c"><div class="tm-n">Applications</div><div class="tm-s">24.3 GB</div></div></div>
+        <div class="tm tm2"><div class="tm-tip">12,841 files &middot; 22.9%</div><div class="tm-c"><div class="tm-n">Developer</div><div class="tm-s">18.1 GB</div></div></div>
+        <div class="tm tm3"><div class="tm-tip">8,392 files &middot; 12.3%</div><div class="tm-c"><div class="tm-n">Library</div><div class="tm-s">9.7 GB</div></div></div>
+        <div class="tm tm4"><div class="tm-tip">2,156 files &middot; 15.8%</div><div class="tm-c"><div class="tm-n">Documents</div><div class="tm-s">12.5 GB</div></div></div>
+        <div class="tm tm5"><div class="tm-tip">6,847 files &middot; 10.4%</div><div class="tm-c"><div class="tm-n">Photos</div><div class="tm-s">8.2 GB</div></div></div>
+        <div class="tm tm6"><div class="tm-tip">983 files &middot; 8.1%</div><div class="tm-c"><div class="tm-n">Downloads</div><div class="tm-s">6.4 GB</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-g">
+    <div class="stat rv"><div class="stat-n"><span class="ctr" data-target="2" data-suffix="">0</span></div><div class="stat-l">Visualization modes</div></div>
+    <div class="stat rv rvd1"><div class="stat-n"><span class="ctr" data-target="100" data-suffix="%">0</span></div><div class="stat-l">Local &amp; private</div></div>
+    <div class="stat rv rvd2"><div class="stat-n"><span class="ctr" data-target="0" data-suffix="">0</span></div><div class="stat-l">Data collected</div></div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <p class="slbl rv">Features</p>
+  <h2 class="stit rv">Everything you need to<br>understand your storage</h2>
+  <div class="fgrid">
+    <div class="fcard rv"><div class="ficon fi-t">&#9703;</div><h3>Treemap Visualization</h3><p>Squarified treemap algorithm sizes rectangles by file and folder size. See what's biggest instantly.</p></div>
+    <div class="fcard rv rvd1"><div class="ficon fi-b">&#9637;</div><h3>Icicle / Flame Graph</h3><p>Stacked bars show folder hierarchy by depth. Compare items at the same level and drill down.</p></div>
+    <div class="fcard rv rvd2"><div class="ficon fi-e">&#9889;</div><h3>Lightning Fast</h3><p>Full disk scan in seconds. Background scanning lets you explore results immediately.</p></div>
+    <div class="fcard rv rvd1"><div class="ficon fi-t">&#128269;</div><h3>Pinch to Zoom</h3><p>Zoom into any area with trackpad pinch or &#8984;+scroll. Pan around to read every label.</p></div>
+    <div class="fcard rv rvd2"><div class="ficon fi-b">&#127912;</div><h3>Theme Packs</h3><p>Six handcrafted themes &#8212; Obsidian Teal, Midnight Sapphire, Deep Space, and more.</p></div>
+    <div class="fcard rv rvd3"><div class="ficon fi-e">&#128274;</div><h3>Privacy First</h3><p>Everything happens on your Mac. No cloud, no accounts, no tracking. Completely private.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-box rv">
+    <h2>Reclaim your disk space</h2>
+    <p>Download Klarity and see exactly where your storage is going.<br>Available now on the Mac App Store.</p>
+    <a href="#" class="mag btn-p" data-strength="20"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.82 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.39 4.8C17.03 4.83 18.83 5.06 19.97 6.7C19.88 6.76 17.64 8.08 17.67 10.81C17.7 14.08 20.55 15.19 20.59 15.21C20.56 15.29 20.11 16.86 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>Download for Mac</a>
+    <p class="price">$6.99 launch price &middot; macOS 14+</p>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">&copy; 2025 Klarity. Built by Mukul Mehra.</div>
+  <ul class="flinks"><li><a href="/privacy.html">Privacy</a></li><li><a href="/support.html">Support</a></li><li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Contact</a></li></ul>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+// Floating Particles
+var pc=document.getElementById('ptcls');
+function mkP(){var p=document.createElement('div');p.className='particle';var s=2+Math.random()*4,x=Math.random()*100,d=8+Math.random()*16;var cols=['rgba(62,207,207,.5)','rgba(91,141,239,.4)','rgba(71,224,176,.3)'];p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+x+'%;background:'+cols[Math.floor(Math.random()*cols.length)]+';animation-duration:'+d+'s;animation-delay:'+Math.random()*5+'s;box-shadow:0 0 '+s*2+'px currentColor';pc.appendChild(p);setTimeout(function(){p.remove()},(d+5)*1e3)}
+for(var i=0;i<15;i++)setTimeout(mkP,i*300);setInterval(mkP,1200);
+
+// Parallax Blobs
+var blobs=document.querySelectorAll('.pblob'),sy=0;
+window.addEventListener('scroll',function(){sy=window.pageYOffset},{passive:true});
+(function aB(){blobs.forEach(function(b){var sp=parseFloat(b.dataset.speed)||.03;b.style.transform='translateY('+sy*sp*-100+'px)'});requestAnimationFrame(aB)})();
+
+// Scroll Reveal
+var rObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){rObs.observe(el)});
+
+// Text Reveal
+setTimeout(function(){var t=document.getElementById('ht1');if(t)t.classList.add('vis')},500);
+setTimeout(function(){var t=document.getElementById('ht2');if(t)t.classList.add('vis')},750);
+
+// Animated Counters
+var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';var tgt=parseInt(e.target.dataset.target),suf=e.target.dataset.suffix||'',dur=1500,st=performance.now();(function step(now){var p=Math.min((now-st)/dur,1),eased=1-Math.pow(1-p,3),cur=Math.round(tgt*eased);e.target.textContent=cur+suf;if(p<1)requestAnimationFrame(step)})(st)}})},{threshold:.5});
+document.querySelectorAll('.ctr').forEach(function(el){cObs.observe(el)});
+
+// Magnetic Buttons
+document.querySelectorAll('.mag').forEach(function(btn){var str=parseInt(btn.dataset.strength)||15;
+  btn.addEventListener('mousemove',function(e){var r=btn.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;btn.style.transform='translate('+(e.clientX-cx)/r.width*str+'px,'+(e.clientY-cy)/r.height*str+'px)'});
+  btn.addEventListener('mouseleave',function(){btn.style.transform='translate(0,0)'});
+});
+
+// Theme Toggle
+window.toggleTheme=function(){var h=document.documentElement,c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('klarity-theme',n)};
+var saved=localStorage.getItem('klarity-theme');if(saved)document.documentElement.setAttribute('data-theme',saved);
+
+})();
+</script>
+</body>
+</html>
