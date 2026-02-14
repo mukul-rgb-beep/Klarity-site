@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://mukul-rgb-beep.github.io/klarity-site/sitemap.xml
+
+Sitemap: https://klaritydisk.com/sitemap.xml

@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support — Klarity</title>
-  <meta name="description" content="Get help with Klarity, the macOS disk analyzer. FAQs, troubleshooting, and contact information.">
+  <title>Support &amp; FAQs — Klarity Mac Disk Analyzer</title>
+  <script>(function(){var t=localStorage.getItem('klarity-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="description" content="Get help with Klarity, the macOS disk analyzer. FAQs on Full Disk Access, treemap navigation, RAM monitoring, external drives, and contact info.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://mukul-rgb-beep.github.io/klarity-site/support.html">
+  <link rel="canonical" href="https://klaritydisk.com/support.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Support & FAQs — Klarity Mac Disk Analyzer">
+  <meta property="og:description" content="Get help with Klarity. FAQs on Full Disk Access, treemap navigation, RAM monitoring, and more.">
+  <meta property="og:url" content="https://klaritydisk.com/support.html">
+  <meta property="og:image" content="https://klaritydisk.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Support & FAQs — Klarity Mac Disk Analyzer">
+  <meta name="twitter:image" content="https://klaritydisk.com/og-image.png">
   <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +33,19 @@
       --teal: #3ECFCF;
       --teal-dim: rgba(62,207,207,0.15);
       --blue: #5B8DEF;
+    }
+    [data-theme="light"] {
+      --bg: #f4f5f7;
+      --bg-card: rgba(0,0,0,0.03);
+      --bg-glass: rgba(255,255,255,0.75);
+      --border: rgba(0,0,0,0.1);
+      --border-bright: rgba(0,0,0,0.16);
+      --text-primary: #1a1c20;
+      --text-secondary: #555960;
+      --text-tertiary: #8a8f9a;
+      --teal: #147272;
+      --teal-dim: rgba(20,114,114,0.1);
+      --blue: #3a6ac9;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -111,6 +133,8 @@
       text-decoration: none;
     }
     .contact-info a:hover { text-decoration: underline; }
+    [data-theme="light"] .contact-card { background: var(--bg-glass); border-color: var(--border); }
+    [data-theme="light"] .requirements { background: var(--bg-glass); border-color: var(--border); }
 
     /* FAQ */
     h2 {
@@ -212,11 +236,22 @@
 <body>
 
 <nav>
-  <a href="./" class="nav-logo">
-    <img src="icon-32.png" alt="Klarity" width="32" height="32">
+  <a href="/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+      <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+      <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+      <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+      <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+      <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+      <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+      <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+    </svg>
     Klarity
   </a>
-  <a href="./" class="nav-back">← Back to home</a>
+  <div style="display:flex;gap:20px;align-items:center;">
+    <a href="/blog/" style="font-size:0.88rem;color:var(--text-secondary,#999);text-decoration:none;">Blog</a>
+    <a href="/" class="nav-back">← Back to home</a>
+  </div>
 </nav>
 
 <div class="content">
@@ -229,7 +264,7 @@
     <div class="contact-info">
       <h3>Email Support</h3>
       <p>For bug reports, feature requests, or questions — we typically respond within 24 hours.</p>
-      <p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#117;&#107;&#117;&#108;&#109;&#101;&#104;&#114;&#97;&#64;&#122;&#111;&#104;&#111;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+      <p><a class="eml" href="#"></a></p>
     </div>
   </div>
 
@@ -312,8 +347,14 @@
 </div>
 
 <footer>
-  © 2025 Klarity. Built by Mukul Mehra. · <a href="privacy.html">Privacy Policy</a>
+  © 2025–2026 Klarity. Built by Mukul Mehra. · <a href="privacy.html">Privacy Policy</a> · <a href="/blog/">Blog</a>
 </footer>
 
+<script>
+(function(){var u='mukulmehra',d='zohomail',t='com',s='mailto';
+document.querySelectorAll('a.eml').forEach(function(a){
+var e=u+String.fromCharCode(64)+d+'.'+t;
+a.href=s+':'+e;a.textContent=e;});})();
+</script>
 </body>
 </html>
