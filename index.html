@@ -1018,6 +1018,182 @@ section {
 /* ═══════════════════════════════════════════════════ */
 /* Comparison Section                                  */
 /* ═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════ */
+/* Screenshot Gallery                                  */
+/* ═══════════════════════════════════════════════════ */
+.screenshots-section {
+  padding: 120px 24px;
+}
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+.screenshot-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.4s, border-color 0.3s;
+}
+.screenshot-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--border-hover);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.3), 0 0 0 1px rgba(62,207,207,0.1);
+}
+[data-theme="light"] .screenshot-card:hover {
+  box-shadow: 0 24px 64px rgba(0,0,0,0.08), 0 0 0 1px rgba(20,114,114,0.1);
+}
+.screenshot-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.screenshot-card:hover img {
+  transform: scale(1.02);
+}
+.screenshot-caption {
+  padding: 20px 24px;
+}
+.screenshot-caption h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.screenshot-caption p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.screenshot-expand-hint {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+[data-theme="light"] .screenshot-expand-hint {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(0,0,0,0.08);
+}
+.screenshot-card:hover .screenshot-expand-hint {
+  opacity: 1;
+  transform: scale(1);
+}
+.screenshot-expand-hint svg {
+  width: 16px; height: 16px;
+  stroke: rgba(255,255,255,0.9);
+  stroke-width: 2;
+  fill: none;
+}
+[data-theme="light"] .screenshot-expand-hint svg {
+  stroke: rgba(0,0,0,0.7);
+}
+/* Featured card spans full width */
+.screenshot-card.featured {
+  grid-column: 1 / -1;
+}
+.screenshot-card.featured img {
+  max-height: 560px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Lightbox overlay */
+.screenshot-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  cursor: zoom-out;
+  padding: 40px;
+}
+.screenshot-lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.screenshot-lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 16px;
+  box-shadow: 0 32px 100px rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: transform 0.4s var(--ease-out-expo);
+  object-fit: contain;
+}
+.screenshot-lightbox.active img {
+  transform: scale(1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.1);
+}
+.lightbox-caption {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+  .screenshot-card.featured img {
+    max-height: none;
+  }
+  .screenshot-lightbox { padding: 16px; }
+  .lightbox-close { top: 12px; right: 12px; }
+}
+
 .compare-table-wrap {
   margin-top: 64px;
   border-radius: 16px;
@@ -1422,7 +1598,6 @@ footer {
     <li><a href="#showcase">How It Works</a></li>
     <li><a href="#compare">Compare</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="/blog/">Blog</a></li>
     <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
     <li><a href="#download" class="nav-cta">Download</a></li>
   </ul>
@@ -1432,7 +1607,7 @@ footer {
 <section class="hero" id="hero">
   <div class="hero-badge">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    v1.0 — Now with powerful new features
+    v1.1 — Now with Move to Trash
   </div>
 
   <h1>
@@ -1586,6 +1761,63 @@ footer {
   </div>
 </section>
 
+<!-- ═══════════ SCREENSHOTS ═══════════ -->
+<section class="screenshots-section" id="screenshots">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">See It in Action</span>
+      <h2 class="section-title">Real screenshots.<br>No mockups.</h2>
+      <p class="section-desc">What you see is what you get. Click any screenshot to enlarge.</p>
+    </div>
+    <div class="screenshots-grid">
+
+      <div class="screenshot-card featured reveal" onclick="openLightbox(this)" data-caption="Treemap View — 1,644 files mapped in 2.4 seconds with Scan Complete banner">
+        <div class="screenshot-expand-hint"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <img src="screenshot-treemap.png" alt="Klarity treemap visualization showing 1,644 files across a 5TB external drive, with scan complete banner and info panel" loading="lazy">
+        <div class="screenshot-caption">
+          <h3>Treemap Visualization</h3>
+          <p>Every file and folder mapped as proportional rectangles. Scan complete banner, disk overview panel, and largest items list — all at a glance.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-card reveal" onclick="openLightbox(this)" data-caption="Overview Dashboard — Memory and Disk at a glance with live timeline">
+        <div class="screenshot-expand-hint"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <img src="screenshot-overview.png" alt="Klarity overview dashboard showing memory usage at 72.5%, disk usage at 87.8%, memory timeline chart, and top processes by RAM" loading="lazy">
+        <div class="screenshot-caption">
+          <h3>Overview Dashboard</h3>
+          <p>Memory and disk health at a glance. Live timeline, top processes, and real-time gauges.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-card reveal" onclick="openLightbox(this)" data-caption="RAM Monitor — Real-time memory analysis with per-process breakdown">
+        <div class="screenshot-expand-hint"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <img src="screenshot-ram.png" alt="Klarity RAM monitor showing 72.7% usage gauge, active/wired/compressed memory breakdown, swap usage, and running processes list" loading="lazy">
+        <div class="screenshot-caption">
+          <h3>RAM Monitor</h3>
+          <p>Real-time memory gauge with active, wired, and compressed breakdown. Per-process usage list built in.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-card reveal" onclick="openLightbox(this)" data-caption="Menu Bar Widget — Klarity lives in your menu bar for instant access">
+        <div class="screenshot-expand-hint"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <img src="screenshot-menubar.png" alt="Klarity menu bar widget showing memory usage at 75.1%, mini timeline chart, disk space, and top processes with one-click access" loading="lazy" style="max-height: 440px; object-fit: contain; background: rgba(0,0,0,0.3); border-radius: 0;">
+        <div class="screenshot-caption">
+          <h3>Menu Bar Widget</h3>
+          <p>Klarity lives in your menu bar. Glance at memory and disk without opening a window.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox overlay for screenshot zoom -->
+<div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <!-- ═══════════ COMPARE ═══════════ -->
 <section id="compare">
   <div class="container">
@@ -1608,7 +1840,7 @@ footer {
           <tr><td>Treemap View</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
           <tr><td>Icicle / Flame Graph</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
           <tr><td>Sunburst View</td><td class="cross">—</td><td class="check">✓</td><td class="cross">✗</td></tr>
-          <tr><td>Move to Trash</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
+          <tr><td>Move to Trash</td><td class="check">✓ (v1.1)</td><td class="cross">✗</td><td class="check">✓</td></tr>
           <tr><td>Delete Safety Guards</td><td class="check">✓ slide-to-confirm</td><td class="cross">✗</td><td class="cross">✗</td></tr>
           <tr><td>RAM Monitor</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
           <tr><td>Menu Bar Widget</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
@@ -1656,7 +1888,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <span class="section-label">What's New</span>
-      <h2 class="section-title">Latest features — now with<br><span class="gradient-text">delete power.</span></h2>
+      <h2 class="section-title">Version 1.1 — now with<br><span class="gradient-text">delete power.</span></h2>
       <p class="section-desc">Klarity is no longer read-only. Move files to Trash, see scan summaries at a glance, and pick up right where you left off.</p>
     </div>
     <div class="whats-new-grid">
@@ -1705,7 +1937,7 @@ footer {
       <div class="price-note">One-time purchase · macOS 14+ · Apple Silicon & Intel</div>
     </div>
     <div class="cta-buttons reveal">
-      <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="btn-magnetic btn-primary" data-magnetic>
+      <a href="#" class="btn-magnetic btn-primary" data-magnetic>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.93 7.36 4.79 9.28 4.77C10.55 4.74 11.76 5.64 12.55 5.64C13.33 5.64 14.8 4.55 16.35 4.72C17.03 4.75 18.83 5 20.01 6.7C19.9 6.76 17.53 8.14 17.56 11.03C17.59 14.46 20.56 15.62 20.59 15.63C20.56 15.7 20.08 17.36 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
         Download on Mac App Store
       </a>
@@ -1722,7 +1954,6 @@ footer {
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="terms.html">Terms of Use</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="/blog/">Blog</a></li>
     </ul>
   </div>
 </footer>
@@ -2085,6 +2316,33 @@ if (!prefersReduced) {
     }
   }, { passive: true });
 }
+
+/* ═══════════════════════════════════════════════════ */
+/* Screenshot Lightbox                                 */
+/* ═══════════════════════════════════════════════════ */
+function openLightbox(card) {
+  const img = card.querySelector('img');
+  const caption = card.dataset.caption || '';
+  const lb = document.getElementById('screenshotLightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbCap = document.getElementById('lightboxCaption');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCap.textContent = caption;
+  requestAnimationFrame(() => {
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
+function closeLightbox() {
+  const lb = document.getElementById('screenshotLightbox');
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+document.querySelector('#lightboxImg')?.addEventListener('click', e => e.stopPropagation());
 </script>
 </body>
 </html>
