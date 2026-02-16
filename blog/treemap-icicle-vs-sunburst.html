@@ -97,9 +97,10 @@
             font-size: 1.2rem;
         }
         
-        .logo svg {
-            width: 28px;
-            height: 28px;
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
         }
         
         nav.top-nav ul {
@@ -471,14 +472,7 @@
     <nav class="top-nav">
         <div class="container">
             <a href="../index.html" class="logo">
-                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="12" height="12" fill="#4A90E2" rx="1"/>
-                    <rect x="16" y="2" width="14" height="8" fill="#50C878" rx="1"/>
-                    <rect x="16" y="12" width="14" height="8" fill="#F5A623" rx="1"/>
-                    <rect x="2" y="16" width="8" height="14" fill="#E74C3C" rx="1"/>
-                    <rect x="12" y="16" width="8" height="14" fill="#9B59B6" rx="1"/>
-                    <rect x="22" y="22" width="8" height="8" fill="#1ABC9C" rx="1"/>
-                </svg>
+                <img src="klarity-logo.png" alt="Klarity Logo" style="width: 32px; height: 32px; border-radius: 8px;">
                 Klarity
             </a>
             <ul>
@@ -555,13 +549,13 @@
 
             <p>Treemaps and icicles use rectangular packing, which naturally tiles without gaps. Every pixel represents data. When you zoom into a folder, the entire viewport fills with useful information. There's no structural overhead eating into your screen space.</p>
 
-            <h3>4. Label Readability: Curved vs. Straight Text</h3>
+            <h3>4. Label Readability: The Text Layout Challenge</h3>
 
-            <p>This one is straightforward: <strong>straight text is faster to read than curved or rotated text.</strong> Period.</p>
+            <p>Reading labels is critical when scanning for large folders. Treemaps and icicles display all labels horizontally along rectangular edges, making folder names instantly scannable left-to-right.</p>
 
-            <p>In sunbursts, labels in outer rings must curve along arcs or rotate perpendicular to radii. This makes scanning folder names a chore. Your brain has to decode the orientation before parsing the text itself.</p>
+            <p>Sunbursts face a geometric constraint with label placement. While implementations vary in how they handle this (some quite well), the wedge-shaped segments and radial structure create inherent challenges for label density and readability compared to rectangular layouts where text can flow naturally along straight edges.</p>
 
-            <p>Treemaps and icicles display all labels horizontally. Folder names read naturally, as if you're looking at a list. When space is tight, labels truncate cleanly with ellipses, and you can hover for the full name. No head-tilting required.</p>
+            <p>When space is tight in rectangular layouts, labels truncate cleanly with ellipses, and you can hover for the full name. The consistent horizontal orientation means your eyes never need to adjust to different text angles.</p>
 
             <h3>5. Real-World Scenario: Finding Your Largest Files in 3 Seconds</h3>
 
@@ -659,7 +653,7 @@
 
             <p>But the real multiplier comes at the team level. A 10-person engineering team, with each member saving 1.5 hours per year, collectively reclaims 15 hours of productive time, worth over $1,100 annually. That's the cost of visualization design decisions at scale.</p>
 
-            <p>And there's a less tangible but equally important benefit: reduced cognitive load. Research on decision fatigue (Baumeister et al., 2008) shows that every unnecessary cognitive task (like mentally calculating arc lengths or rotating your head to read curved text) depletes your mental energy. When disk analysis is frictionless, you preserve that energy for actual creative or problem-solving work. Less frustration, better focus, higher quality output.</p>
+            <p>And there's a less tangible but equally important benefit: reduced cognitive load. Research on decision fatigue (Baumeister et al., 2008) shows that every unnecessary cognitive task (like mentally calculating arc lengths or parsing radial spatial relationships) depletes your mental energy. When disk analysis is frictionless, you preserve that energy for actual creative or problem-solving work. Less frustration, better focus, higher quality output.</p>
 
             <p>This is why visualization design isn't just an academic exercise. For professionals whose time is valuable, choosing a tool with optimal visualization is a small decision with measurable ROI.</p>
 
@@ -675,7 +669,7 @@
 
             <p>Treemaps and icicle charts win because they align with how our brains process spatial information. They leverage our strengths in judging lengths, aligned positions, and rectangular areas. They respect the natural Z-pattern of eye movement. And they maximize information density without sacrificing clarity.</p>
 
-            <p>Sunbursts, while visually striking, introduce unnecessary cognitive load through curved text, angular size judgments, and radial navigation. For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters.</p>
+            <p>Sunbursts, while visually striking, introduce unnecessary cognitive load through angular size judgments, radial navigation patterns, and geometric constraints on label placement. For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters.</p>
 
             <p>That's why Klarity gives you both treemap and icicle options. Some users prefer the compactness of treemaps. Others love the hierarchical clarity of icicles. Either way, you get a rectangular layout optimized for how your brain actually works. And at $6.99 compared to DaisyDisk's $9.99, you get superior visualization methodology at a better price.</p>
 
