@@ -157,4 +157,9 @@
     
     <text x="175" y="345" class="subtitle-warn" text-anchor="middle">✗ Radial confusion</text>
   </g>
+  
+  <!-- Copyright -->
+  <text x="1190" y="440" text-anchor="end" font-size="9" fill="#666" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui">
+    © Copyright Mukul Mehra 2026
+  </text>
 </svg>

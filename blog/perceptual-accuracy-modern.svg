@@ -125,4 +125,9 @@
       This is why treemaps and icicle charts feel more "scannable" than sunbursts
     </text>
   </g>
+  
+  <!-- Copyright -->
+  <text x="990" y="540" text-anchor="end" font-size="9" fill="#666" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui">
+    © Copyright Mukul Mehra 2026
+  </text>
 </svg>
