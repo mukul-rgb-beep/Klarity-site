@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 19px; fill: #ffffff; font-weight: 600; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 12px; fill: #e8e8e8; font-weight: 500; }
+      .sublabel { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui; font-size: 10px; fill: #a0a0a0; }
+      .number { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 28px; fill: #7eb9ff; font-weight: 700; }
+      .highlight-green { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 32px; fill: #50C878; font-weight: 700; }
+      .highlight-orange { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 32px; fill: #F5A623; font-weight: 700; }
+    </style>
+    
+    <linearGradient id="glassCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.06);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="borderShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.15);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.03);stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(80,200,120,0.12);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(80,200,120,0.05);stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(245,166,35,0.12);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(245,166,35,0.05);stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="cardGlow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4"/>
+      <feFlood flood-color="#000000" flood-opacity="0.3"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="1000" height="600" fill="url(#darkBg)"/>
+  <linearGradient id="darkBg" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+  </linearGradient>
+  
+  <!-- Title -->
+  <text x="500" y="40" class="title" text-anchor="middle" font-size="22">Time = Money: The ROI Breakdown</text>
+  <text x="500" y="65" class="sublabel" text-anchor="middle">How visualization choice impacts productivity costs</text>
+  
+  <!-- Step 1: Time Saved -->
+  <g transform="translate(60, 100)">
+    <rect x="0" y="0" width="260" height="140" rx="14" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    <text x="130" y="30" class="label" text-anchor="middle" fill="#7eb9ff">Step 1: Time Saved</text>
+    
+    <text x="130" y="75" class="number" text-anchor="middle">3 minutes</text>
+    <text x="130" y="95" class="sublabel" text-anchor="middle">per session</text>
+    
+    <text x="130" y="118" class="sublabel" text-anchor="middle" font-size="9">8 min → 5 min average</text>
+    <text x="130" y="132" class="sublabel" text-anchor="middle" font-size="9">(Conservative estimate)</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 330,170 L 365,170" stroke="rgba(126,185,255,0.4)" stroke-width="2"/>
+  <polygon points="365,165 375,170 365,175" fill="rgba(126,185,255,0.4)"/>
+  
+  <!-- Step 2: Frequency -->
+  <g transform="translate(385, 100)">
+    <rect x="0" y="0" width="260" height="140" rx="14" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    <text x="130" y="30" class="label" text-anchor="middle" fill="#7eb9ff">Step 2: Annual Usage</text>
+    
+    <text x="130" y="75" class="number" text-anchor="middle">30 times</text>
+    <text x="130" y="95" class="sublabel" text-anchor="middle">per year</text>
+    
+    <text x="130" y="118" class="sublabel" text-anchor="middle" font-size="9">2-3 sessions per month</text>
+    <text x="130" y="132" class="sublabel" text-anchor="middle" font-size="9">Cleanups + scans + browsing</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 655,170 L 690,170" stroke="rgba(126,185,255,0.4)" stroke-width="2"/>
+  <polygon points="690,165 700,170 690,175" fill="rgba(126,185,255,0.4)"/>
+  
+  <!-- Step 3: Annual Time -->
+  <g transform="translate(710, 100)">
+    <rect x="0" y="0" width="230" height="140" rx="14" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    <text x="115" y="30" class="label" text-anchor="middle" fill="#7eb9ff">Step 3: Total Time</text>
+    
+    <text x="115" y="75" class="number" text-anchor="middle" font-size="26">1.5 hours</text>
+    <text x="115" y="95" class="sublabel" text-anchor="middle">reclaimed/year</text>
+    
+    <text x="115" y="118" class="sublabel" text-anchor="middle" font-size="9">3 min × 30 sessions</text>
+    <text x="115" y="132" class="sublabel" text-anchor="middle" font-size="9">= 90 minutes annually</text>
+  </g>
+  
+  <!-- Individual Savings Card -->
+  <g transform="translate(90, 290)">
+    <text x="410" y="0" class="title" text-anchor="middle" font-size="18">Individual Productivity Gain</text>
+    
+    <rect x="0" y="20" width="820" height="90" rx="14" fill="url(#greenGlow)" stroke="rgba(80,200,120,0.3)" stroke-width="1.5" filter="url(#cardGlow)"/>
+    
+    <text x="410" y="50" class="label" text-anchor="middle">1.5 hours/year × $75/hour (avg. professional rate) =</text>
+    <text x="410" y="88" class="highlight-green" text-anchor="middle">$112/year saved</text>
+  </g>
+  
+  <!-- Team Savings Card -->
+  <g transform="translate(90, 440)">
+    <text x="410" y="0" class="title" text-anchor="middle" font-size="18">Team Impact (10 engineers)</text>
+    
+    <rect x="0" y="20" width="820" height="90" rx="14" fill="url(#orangeGlow)" stroke="rgba(245,166,35,0.3)" stroke-width="1.5" filter="url(#cardGlow)"/>
+    
+    <text x="410" y="50" class="label" text-anchor="middle">1.5 hrs/person × 10 members × $75/hr =</text>
+    <text x="410" y="88" class="highlight-orange" text-anchor="middle">$1,125/year saved</text>
+  </g>
+  
+  <!-- Bottom note -->
+  <text x="500" y="580" class="sublabel" text-anchor="middle" font-style="italic">
+    Plus: Reduced cognitive load = less decision fatigue = better focus on actual work
+  </text>
+</svg>

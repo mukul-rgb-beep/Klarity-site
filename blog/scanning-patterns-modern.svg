@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 16px; fill: #ffffff; font-weight: 600; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui; font-size: 11px; fill: #e8e8e8; font-weight: 500; }
+      .sublabel { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui; font-size: 10px; fill: #a0a0a0; }
+      .good-text { fill: #50C878; }
+      .bad-text { fill: #E74C3C; }
+    </style>
+    
+    <linearGradient id="glassCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.06);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="borderShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.15);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.03);stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="cardGlow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4"/>
+      <feFlood flood-color="#000000" flood-opacity="0.3"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#50C878" />
+    </marker>
+    
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#E74C3C" />
+    </marker>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="1000" height="620" fill="url(#darkBg)"/>
+  <linearGradient id="darkBg" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+  </linearGradient>
+  
+  <!-- Treemap Scanning Card -->
+  <g transform="translate(40, 40)">
+    <rect x="0" y="0" width="420" height="250" rx="16" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    
+    <text x="210" y="30" class="title" text-anchor="middle">Treemap: Natural Z-Pattern</text>
+    
+    <g transform="translate(30, 55)">
+      <!-- Blocks -->
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="rgba(74,144,226,0.3)" stroke="#4A90E2" stroke-width="1.5"/>
+      <text x="60" y="40" class="label" text-anchor="middle">Documents</text>
+      
+      <rect x="135" y="0" width="105" height="70" rx="8" fill="rgba(245,166,35,0.3)" stroke="#F5A623" stroke-width="1.5"/>
+      <text x="187" y="40" class="label" text-anchor="middle">Downloads</text>
+      
+      <rect x="0" y="85" width="75" height="70" rx="8" fill="rgba(155,89,182,0.3)" stroke="#9B59B6" stroke-width="1.5"/>
+      <text x="37" y="125" class="label" text-anchor="middle">Photos</text>
+      
+      <rect x="90" y="85" width="75" height="70" rx="8" fill="rgba(80,200,120,0.3)" stroke="#50C878" stroke-width="1.5"/>
+      <text x="127" y="125" class="label" text-anchor="middle">Music</text>
+      
+      <rect x="180" y="85" width="60" height="70" rx="8" fill="rgba(231,76,60,0.3)" stroke="#E74C3C" stroke-width="1.5"/>
+      <text x="210" y="125" class="label" text-anchor="middle">Apps</text>
+      
+      <!-- Scanning arrows -->
+      <path d="M 10,10 L 230,10" stroke="#50C878" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)" opacity="0.8"/>
+      <path d="M 230,65 L 10,90" stroke="#50C878" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)" opacity="0.8"/>
+      <path d="M 10,95 L 230,95" stroke="#50C878" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)" opacity="0.8"/>
+      
+      <!-- Eye icon -->
+      <circle cx="10" cy="10" r="6" fill="#50C878"/>
+      <circle cx="10" cy="10" r="2.5" fill="#0a0a0a"/>
+    </g>
+    
+    <text x="210" y="225" class="sublabel good-text" text-anchor="middle">Natural left → right, top → bottom flow</text>
+  </g>
+  
+  <!-- Sunburst Scanning Card -->
+  <g transform="translate(530, 40)">
+    <rect x="0" y="0" width="420" height="250" rx="16" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    
+    <text x="210" y="30" class="title" text-anchor="middle">Sunburst: Circular Confusion</text>
+    
+    <g transform="translate(210, 140)">
+      <!-- Center -->
+      <circle cx="0" cy="0" r="25" fill="rgba(52,73,94,0.6)"/>
+      
+      <!-- Wedges -->
+      <path d="M 0,-25 A 25,25 0 0,1 17.7,-17.7 L 35.4,-35.4 A 50,50 0 0,0 0,-50 Z" 
+            fill="rgba(74,144,226,0.3)" stroke="#4A90E2" stroke-width="1.5"/>
+      <path d="M 17.7,-17.7 A 25,25 0 0,1 25,0 L 50,0 A 50,50 0 0,0 35.4,-35.4 Z" 
+            fill="rgba(245,166,35,0.3)" stroke="#F5A623" stroke-width="1.5"/>
+      <path d="M 25,0 A 25,25 0 0,1 17.7,17.7 L 35.4,35.4 A 50,50 0 0,0 50,0 Z" 
+            fill="rgba(155,89,182,0.3)" stroke="#9B59B6" stroke-width="1.5"/>
+      <path d="M 17.7,17.7 A 25,25 0 0,1 0,25 L 0,50 A 50,50 0 0,0 35.4,35.4 Z" 
+            fill="rgba(80,200,120,0.3)" stroke="#50C878" stroke-width="1.5"/>
+      <path d="M 0,25 A 25,25 0 0,1 -17.7,17.7 L -35.4,35.4 A 50,50 0 0,0 0,50 Z" 
+            fill="rgba(231,76,60,0.3)" stroke="#E74C3C" stroke-width="1.5"/>
+      <path d="M -17.7,17.7 A 25,25 0 0,1 -25,0 L -50,0 A 50,50 0 0,0 -35.4,35.4 Z" 
+            fill="rgba(26,188,156,0.3)" stroke="#1ABC9C" stroke-width="1.5"/>
+      <path d="M -25,0 A 25,25 0 0,1 -17.7,-17.7 L -35.4,-35.4 A 50,50 0 0,0 -50,0 Z" 
+            fill="rgba(253,203,110,0.3)" stroke="#FDCB6E" stroke-width="1.5"/>
+      <path d="M -17.7,-17.7 A 25,25 0 0,1 0,-25 L 0,-50 A 50,50 0 0,0 -35.4,-35.4 Z" 
+            fill="rgba(236,112,99,0.3)" stroke="#EC7063" stroke-width="1.5"/>
+      
+      <!-- Chaotic scanning path -->
+      <path d="M 0,-50 Q 25,-50 30,-20 T 25,20 Q 20,35 0,40 T -30,20 Q -35,-10 -20,-35" 
+            stroke="#E74C3C" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)" opacity="0.8"/>
+      
+      <!-- Eye icon -->
+      <circle cx="0" cy="-50" r="6" fill="#E74C3C"/>
+      <circle cx="0" cy="-50" r="2.5" fill="#0a0a0a"/>
+    </g>
+    
+    <text x="210" y="225" class="sublabel bad-text" text-anchor="middle">Unnatural circular movement + head rotation</text>
+  </g>
+  
+  <!-- Icicle Scanning Card -->
+  <g transform="translate(40, 340)">
+    <rect x="0" y="0" width="420" height="230" rx="16" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    
+    <text x="210" y="30" class="title" text-anchor="middle">Icicle: Hierarchical Clarity</text>
+    
+    <g transform="translate(30, 55)">
+      <!-- Root -->
+      <rect x="0" y="0" width="300" height="30" rx="6" fill="rgba(52,73,94,0.6)" stroke="rgba(117,117,117,0.5)" stroke-width="1.5"/>
+      <text x="150" y="20" class="label" text-anchor="middle">Root</text>
+      
+      <!-- Level 2 -->
+      <rect x="0" y="40" width="150" height="30" rx="6" fill="rgba(74,144,226,0.3)" stroke="#4A90E2" stroke-width="1.5"/>
+      <text x="75" y="60" class="label" text-anchor="middle" font-size="10">Documents</text>
+      
+      <rect x="160" y="40" width="85" height="30" rx="6" fill="rgba(245,166,35,0.3)" stroke="#F5A623" stroke-width="1.5"/>
+      <text x="202" y="60" class="label" text-anchor="middle" font-size="10">Photos</text>
+      
+      <rect x="255" y="40" width="45" height="30" rx="6" fill="rgba(231,76,60,0.3)" stroke="#E74C3C" stroke-width="1.5"/>
+      <text x="277" y="60" class="label" text-anchor="middle" font-size="9">Apps</text>
+      
+      <!-- Level 3 -->
+      <rect x="0" y="80" width="75" height="30" rx="6" fill="rgba(74,144,226,0.25)" stroke="#4A90E2" stroke-width="1"/>
+      <text x="37" y="100" class="label" text-anchor="middle" font-size="9">Work</text>
+      
+      <rect x="85" y="80" width="65" height="30" rx="6" fill="rgba(74,144,226,0.2)" stroke="#4A90E2" stroke-width="1"/>
+      <text x="117" y="100" class="label" text-anchor="middle" font-size="9">Projects</text>
+      
+      <!-- Scanning arrows -->
+      <path d="M 5,8 L 290,8" stroke="#50C878" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)" opacity="0.8"/>
+      <path d="M 5,48 L 290,48" stroke="#50C878" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)" opacity="0.8"/>
+      <path d="M 5,88 L 145,88" stroke="#50C878" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)" opacity="0.8"/>
+      
+      <!-- Eye icon -->
+      <circle cx="5" cy="8" r="6" fill="#50C878"/>
+      <circle cx="5" cy="8" r="2.5" fill="#0a0a0a"/>
+    </g>
+    
+    <text x="210" y="205" class="sublabel good-text" text-anchor="middle">Top = parent, below = children (obvious)</text>
+  </g>
+  
+  <!-- Icicle Comparison Card -->
+  <g transform="translate(530, 340)">
+    <rect x="0" y="0" width="420" height="230" rx="16" fill="url(#glassCard)" stroke="url(#borderShine)" stroke-width="1" filter="url(#cardGlow)"/>
+    
+    <text x="210" y="30" class="title" text-anchor="middle">Icicle: Direct Size Comparison</text>
+    
+    <g transform="translate(50, 65)">
+      <!-- Aligned bars for comparison -->
+      <rect x="0" y="0" width="140" height="45" rx="8" fill="#4A90E2" opacity="0.85"/>
+      <text x="70" y="27" class="label" text-anchor="middle" fill="#fff">Folder A (24 GB)</text>
+      
+      <rect x="0" y="60" width="95" height="45" rx="8" fill="#50C878" opacity="0.85"/>
+      <text x="47" y="87" class="label" text-anchor="middle" fill="#fff">Folder B (16 GB)</text>
+      
+      <rect x="0" y="120" width="70" height="45" rx="8" fill="#F5A623" opacity="0.85"/>
+      <text x="35" y="147" class="label" text-anchor="middle" fill="#fff">Folder C (12 GB)</text>
+      
+      <!-- Comparison lines -->
+      <line x1="0" y1="55" x2="140" y2="55" stroke="rgba(80,200,120,0.4)" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="0" y1="115" x2="95" y2="115" stroke="rgba(80,200,120,0.4)" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="0" y1="175" x2="70" y2="175" stroke="rgba(80,200,120,0.4)" stroke-width="1" stroke-dasharray="3,2"/>
+      
+      <!-- Direct comparison arrow -->
+      <path d="M 150,22 L 280,22" stroke="#50C878" stroke-width="2" marker-end="url(#arrowGreen)"/>
+      <text x="215" y="18" class="sublabel good-text" text-anchor="middle" font-size="10">Direct</text>
+      <text x="215" y="30" class="sublabel good-text" text-anchor="middle" font-size="10">width</text>
+      <text x="215" y="42" class="sublabel good-text" text-anchor="middle" font-size="10">compare</text>
+    </g>
+    
+    <text x="210" y="205" class="sublabel good-text" text-anchor="middle">✓ Aligned baseline makes size obvious</text>
+  </g>
+  
+  <!-- Bottom conclusion -->
+  <text x="500" y="605" class="sublabel" text-anchor="middle" font-style="italic">
+    Eye-tracking: 40% faster task completion with rectangular layouts vs radial
+  </text>
+</svg>
