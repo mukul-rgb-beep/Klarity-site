@@ -3,55 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treemap vs Sunburst: Why Klarity Beats DaisyDisk for Mac Disk Visualization</title>
-    <meta name="description" content="Comparing disk visualization methods: why treemap and icicle charts outperform DaisyDisk's sunburst for Mac storage analysis. Scientific analysis of visual perception, ROI breakdown, and practical usability testing.">
-    <meta name="keywords" content="klarity vs daisydisk, clarity, treemap vs sunburst, daisydisk alternative, mac disk analyzer, disk visualization comparison, icicle chart, best mac storage visualizer, mac disk space analyzer, visual disk usage mac, klarity disk">
-    <link rel="canonical" href="https://klaritydisk.com/blog/treemap-icicle-vs-sunburst.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Treemap vs Sunburst: Why Klarity Beats DaisyDisk for Disk Visualization">
-    <meta property="og:description" content="Scientific comparison of disk visualization methods. Why rectangular layouts (treemap/icicle) outperform DaisyDisk's sunburst for Mac storage analysis.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://klaritydisk.com/blog/treemap-icicle-vs-sunburst.html">
-    <meta property="og:image" content="https://klaritydisk.com/blog/viz-comparison-modern.svg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Treemap vs Sunburst: Why Klarity Beats DaisyDisk">
-    <meta name="twitter:description" content="Scientific analysis of disk visualization methods for Mac. Why treemap/icicle outperform sunburst.">
-    <meta name="twitter:image" content="https://klaritydisk.com/blog/viz-comparison-modern.svg">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Treemap vs Sunburst: Why Klarity Beats DaisyDisk for Mac Disk Visualization",
-      "description": "Scientific comparison of disk visualization methods. Why rectangular layouts outperform DaisyDisk's sunburst for Mac storage analysis.",
-      "image": "https://klaritydisk.com/blog/viz-comparison-modern.svg",
-      "author": {
-        "@type": "Person",
-        "name": "Mukul Mehra"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Klarity",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://klaritydisk.com/icon-512.png"
-        }
-      },
-      "datePublished": "2026-02-16",
-      "dateModified": "2026-02-16",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://klaritydisk.com/blog/treemap-icicle-vs-sunburst.html"
-      },
-      "keywords": ["klarity vs daisydisk", "treemap vs sunburst", "mac disk analyzer", "disk visualization", "icicle chart"],
-      "articleSection": "Technology",
-      "wordCount": 3200
-    }
-    </script>
+    <title>Blog — Klarity | Mac Disk Analyzer Insights</title>
+    <meta name="description" content="Behind-the-scenes stories, macOS tips, and disk management insights from an indie developer.">
+    <link rel="canonical" href="https://www.klaritydisk.com/blog/">
     
     <style>
         * {
@@ -69,7 +23,7 @@
         }
         
         /* Navigation */
-        nav.top-nav {
+        nav {
             background: rgba(20, 20, 35, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -79,7 +33,7 @@
             z-index: 100;
         }
         
-        nav.top-nav .container {
+        nav .container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -102,42 +56,73 @@
             height: 28px;
         }
         
-        nav.top-nav ul {
+        nav ul {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
         
-        nav.top-nav a {
+        nav a {
             color: #b0b0b0;
             text-decoration: none;
             transition: color 0.2s;
         }
         
-        nav.top-nav a:hover, nav.top-nav a.active {
+        nav a:hover, nav a.active {
             color: #fff;
         }
         
-        /* Article container */
-        article {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 2rem 4rem;
-        }
-        
         /* Header */
-        header.article-header {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        header {
+            max-width: 1200px;
+            margin: 4rem auto 3rem;
+            padding: 0 2rem;
+            text-align: center;
         }
         
-        .article-meta {
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #b0b0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #999;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(74, 144, 226, 0.3);
+        }
+        
+        .blog-meta {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            color: #888;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
         }
         
         .tag {
@@ -148,166 +133,42 @@
             color: #7eb9ff;
         }
         
-        h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
+        .date {
+            color: #666;
+        }
+        
+        .blog-card h2 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #b0b0b0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            line-height: 1.3;
         }
         
-        .subtitle {
-            font-size: 1.3rem;
-            color: #999;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        
-        /* Content */
-        .content h2 {
-            font-size: 2rem;
-            margin: 3rem 0 1.5rem;
-            color: #fff;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(74, 144, 226, 0.3);
-        }
-        
-        .content h2:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-        
-        .content h3 {
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem;
-            color: #e8e8e8;
-        }
-        
-        .content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #c0c0c0;
-        }
-        
-        .content strong {
-            color: #fff;
-            font-weight: 600;
-        }
-        
-        .content em {
-            color: #7eb9ff;
-            font-style: normal;
-        }
-        
-        /* Visual divider between parts */
-        .part-divider {
-            margin: 4rem 0;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.08), rgba(80, 200, 120, 0.08));
-            border-left: 4px solid #4A90E2;
-            border-radius: 8px;
-        }
-        
-        .part-divider h3 {
-            margin: 0 0 0.5rem 0;
-            color: #7eb9ff;
-        }
-        
-        .part-divider p {
-            margin: 0;
-            color: #999;
-        }
-        
-        /* Images and diagrams */
-        .diagram {
-            margin: 2.5rem 0;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        
-        .diagram img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        .diagram-caption {
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            color: #888;
-            text-align: center;
-            font-style: italic;
-        }
-        
-        /* Lists */
-        .content ul, .content ol {
-            margin: 1.5rem 0 1.5rem 2rem;
-            color: #c0c0c0;
-        }
-        
-        .content li {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-        
-        /* Blockquote for research citations */
-        blockquote {
-            margin: 2rem 0;
-            padding: 1.5rem 1.5rem 1.5rem 2rem;
-            background: rgba(74, 144, 226, 0.08);
-            border-left: 4px solid #4A90E2;
-            border-radius: 8px;
-            font-style: italic;
-            color: #a8c5e8;
-        }
-        
-        blockquote cite {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #7eb9ff;
-            font-style: normal;
-        }
-        
-        /* CTA Box */
-        .cta-box {
-            margin: 4rem 0 2rem;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.12), rgba(80, 200, 120, 0.12));
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        
-        .cta-box h3 {
-            margin: 0 0 1rem 0;
-            font-size: 1.6rem;
-            color: #fff;
-        }
-        
-        .cta-box p {
-            margin-bottom: 1.5rem;
-            color: #a0a0a0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            background: linear-gradient(135deg, #4A90E2, #50C878);
+        .blog-card h2 a {
             color: #fff;
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: color 0.2s;
         }
         
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
+        .blog-card h2 a:hover {
+            color: #7eb9ff;
+        }
+        
+        .blog-card p {
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #4A90E2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .read-more:hover {
+            color: #7eb9ff;
         }
         
         /* Footer */
@@ -315,6 +176,7 @@
             background: rgba(20, 20, 35, 0.85);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 2rem;
+            margin-top: 4rem;
             text-align: center;
             color: #666;
         }
@@ -328,77 +190,18 @@
             text-decoration: underline;
         }
         
-        /* Table of Contents */
-        .toc {
-            margin: 2rem 0 3rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 4px solid #4A90E2;
-            border-radius: 12px;
-        }
-        
-        .toc h3 {
-            margin: 0 0 1.5rem 0;
-            font-size: 1.3rem;
-            color: #fff;
-            font-weight: 600;
-        }
-        
-        .toc ul {
+        footer ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
-            display: block;
-        }
-        
-        .toc li {
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-        
-        .toc > ul > li {
-            margin-bottom: 1rem;
-        }
-        
-        .toc ul ul {
-            margin-left: 1.5rem;
-            margin-top: 0.8rem;
-            display: block;
-        }
-        
-        .toc ul ul li {
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-        
-        .toc a {
-            color: #c0c0c0;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-size: 1.05rem;
-            display: block;
-            line-height: 1.6;
-        }
-        
-        .toc a:hover {
-            color: #7eb9ff;
-        }
-        
-        .toc ul ul a {
-            font-size: 0.95rem;
-            color: #a0a0a0;
-            display: block;
-        }
-        
-        .toc ul ul a:hover {
-            color: #7eb9ff;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="top-nav">
+    <nav>
         <div class="container">
             <a href="../index.html" class="logo">
                 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -419,219 +222,59 @@
         </div>
     </nav>
 
-    <!-- Article -->
-    <article>
-        <header class="article-header">
-            <div class="article-meta">
+    <!-- Header -->
+    <header>
+        <h1>The Klarity Blog</h1>
+        <p class="subtitle">Behind-the-scenes stories, macOS tips, and disk management insights from an indie developer.</p>
+    </header>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+        
+        <!-- NEW POST: Treemap vs Sunburst -->
+        <article class="blog-card">
+            <div class="blog-meta">
                 <span class="tag">Data Visualization</span>
-                <span>February 16, 2026</span>
-                <span>8 min read</span>
+                <span class="date">Feb 2026</span>
             </div>
-            <h1>Why Treemap and Icicle Beat Sunburst: Klarity vs DaisyDisk Visualization</h1>
-            <p class="subtitle">A scientific comparison of disk visualization methods. Why rectangular layouts (treemap and icicle) outperform radial sunburst designs for Mac storage analysis, with ROI breakdown and usability testing.</p>
-        </header>
+            <h2><a href="treemap-icicle-vs-sunburst.html">Treemap vs Sunburst: Why Klarity Beats DaisyDisk</a></h2>
+            <p>Scientific comparison of disk visualization methods. Why rectangular layouts (treemap and icicle) outperform DaisyDisk's sunburst for Mac storage analysis, with ROI breakdown and usability testing.</p>
+            <a href="treemap-icicle-vs-sunburst.html" class="read-more">Read more →</a>
+        </article>
 
-        <!-- Table of Contents -->
-        <nav class="toc">
-            <h3>Contents</h3>
-            <ul>
-                <li><a href="#part1">Part 1: The Practical Case</a></li>
-                <li><a href="#part2">Part 2: The Science of Visual Perception</a></li>
-                <li><a href="#part3">Part 3: The Business Case</a></li>
-                <li><a href="#conclusion">Conclusion</a></li>
-            </ul>
-        </nav>
-
-        <div class="content">
-            <p>When you open a disk analyzer on Mac, you're immediately presented with a visualization of your storage. Most tools choose one of three layouts: sunburst (radial/circular), treemap (nested rectangles), or icicle chart (horizontal bars). The choice isn't just aesthetic. It fundamentally affects how quickly and accurately you can find large files.</p>
-
-            <p>Klarity offers both treemap and icicle visualizations, deliberately avoiding the sunburst approach used by DaisyDisk and other popular Mac disk analyzers. This decision is rooted in both practical usability and cognitive science. Let's explore why rectangular layouts are superior for disk space analysis on Mac.</p>
-
-            <div class="diagram">
-                <img src="viz-comparison-modern.svg" alt="Comparison of treemap, icicle, and sunburst visualizations showing the same disk hierarchy">
-                <p class="diagram-caption">The same folder hierarchy displayed in three different visualizations</p>
+        <!-- Existing Post: Glassmorphism -->
+        <article class="blog-card">
+            <div class="blog-meta">
+                <span class="tag">Dev</span>
+                <span class="date">Feb 2026</span>
             </div>
+            <h2><a href="building-liquid-glass-ui-macos.html">How I Built Glassmorphism on macOS 14 While Apple Requires macOS 26</a></h2>
+            <p>Apple's Liquid Glass is beautiful, but .glassEffect() requires macOS Tahoe. Here's what it takes to build a convincing glass design system from scratch using only SwiftUI primitives on macOS 14+.</p>
+            <a href="building-liquid-glass-ui-macos.html" class="read-more">Read more →</a>
+        </article>
 
-            <h2 id="part1">Part 1: The Practical Case</h2>
-
-            <p>Before diving into the research, let's talk about what actually happens when you're hunting for disk space. You scan the visualization, looking for large blocks representing big files or folders. You want to spot them instantly and compare their sizes at a glance. This is where visualization choice makes or breaks the experience.</p>
-
-            <h3>1. Scanability: The Z-Pattern Problem</h3>
-
-            <p>Your eyes naturally scan content in a Z-pattern: left to right, top to bottom. This works perfectly for treemaps and icicle charts because they align with this natural reading flow. Rectangles are arranged in rows, and your brain processes them effortlessly.</p>
-
-            <p>Sunburst charts, on the other hand, require <strong>circular eye movement</strong>. Your eyes must travel in arcs, which feels unnatural and tiring. Worse, labels on the outer rings are often rotated at awkward angles, forcing you to mentally (or physically) rotate your head to read them. This introduces friction at the exact moment you're trying to process information quickly.</p>
-
-            <div class="diagram">
-                <img src="scanning-patterns-modern.svg" alt="Eye movement patterns showing natural Z-pattern for rectangular layouts vs awkward circular scanning for sunburst">
-                <p class="diagram-caption">Eye-tracking studies show significantly faster scanning with rectangular layouts</p>
+        <!-- Existing Post: Why I Built Klarity -->
+        <article class="blog-card">
+            <div class="blog-meta">
+                <span class="tag">Story</span>
+                <span class="date">Feb 2026</span>
             </div>
-
-            <h3>2. Path Clarity: Where Am I in the Hierarchy?</h3>
-
-            <p>When analyzing disk space, you're constantly drilling into folders, navigating a tree structure. Understanding where you are in that hierarchy is critical.</p>
-
-            <p><strong>Icicle charts excel here.</strong> Each horizontal row represents a hierarchy level. The top row is your root folder, the second row shows its children, and so on. The visual metaphor is clear: deeper levels flow downward. You can instantly see parent-child relationships because they're stacked vertically with perfectly aligned edges.</p>
-
-            <p><strong>Treemaps</strong> embed the hierarchy spatially. Folders contain their children as nested rectangles. Hover over any box, and you see its path in the sidebar. The nesting makes containment obvious.</p>
-
-            <p><strong>Sunbursts</strong> use concentric rings to show hierarchy, with the center as the root. But here's the problem: when you have many items at the same level, they're distributed around a ring, making it hard to compare them. Two folders that appear similar in size might have very different angles but different radii, and judging arc length while accounting for radius requires mental math. Treemaps and icicles avoid this by using linear dimensions.</p>
-
-            <h3>3. Space Efficiency: Wasted Pixels Matter</h3>
-
-            <p>Screen real estate is finite, especially when you're working with dense file trees containing thousands of items.</p>
-
-            <p>Sunbursts waste space in two ways. First, the center circle (required to anchor the visualization) contributes no information. It's dead pixels. Second, as rings expand outward, the gaps between segments grow wider, fragmenting the view. Small files become slivers that are nearly impossible to see or click.</p>
-
-            <p>Treemaps and icicles use rectangular packing, which naturally tiles without gaps. Every pixel represents data. When you zoom into a folder, the entire viewport fills with useful information. There's no structural overhead eating into your screen space.</p>
-
-            <h3>4. Label Readability: Curved vs. Straight Text</h3>
-
-            <p>This one is straightforward: <strong>straight text is faster to read than curved or rotated text.</strong> Period.</p>
-
-            <p>In sunbursts, labels in outer rings must curve along arcs or rotate perpendicular to radii. This makes scanning folder names a chore. Your brain has to decode the orientation before parsing the text itself.</p>
-
-            <p>Treemaps and icicles display all labels horizontally. Folder names read naturally, as if you're looking at a list. When space is tight, labels truncate cleanly with ellipses, and you can hover for the full name. No head-tilting required.</p>
-
-            <h3>5. Real-World Scenario: Finding Your Largest Files in 3 Seconds</h3>
-
-            <p>Let's say you need to free up 20 GB fast. You open your disk analyzer and scan the root view. With a treemap, the largest folder dominates the screen as a massive rectangle. It's unmissable. With an icicle chart, it's the widest bar at the top. Again, instant recognition.</p>
-
-            <p>With a sunburst? You're looking at wedges radiating from the center. The largest wedge might be obvious, but comparing the second, third, and fourth largest requires careful inspection of angles and arc lengths. It's not <em>impossible</em>, but it's <em>slower</em>. And when you're trying to clean up disk space, every second of cognitive overhead compounds frustration.</p>
-
-            <p>The practical advantages are clear. Treemaps and icicle charts make disk cleanup faster, more intuitive, and less frustrating. But there's a deeper foundation to explore: the perceptual psychology and data visualization research that explains why our brains prefer rectangular layouts.</p>
-
-            <div class="part-divider">
-                <h3>Want to go deeper?</h3>
-                <p>The practical advantages are clear, but there's fascinating research behind <em>why</em> our brains prefer rectangular layouts. If you're curious about the perceptual psychology and data visualization theory, keep reading for Part 2.</p>
-            </div>
-
-            <h2 id="part2">Part 2: The Science of Visual Perception</h2>
-
-            <p>Now that we've covered the practical benefits, let's explore the cognitive science and information design principles that explain <em>why</em> rectangular visualizations outperform radial ones for hierarchical data.</p>
-
-            <h3 id="perceptual">1. Perceptual Uniformity: How We Judge Size</h3>
-
-            <p>Human visual perception is not equally good at all tasks. Research in psychophysics has established a hierarchy of visual variables based on how accurately we perceive them. This hierarchy, refined by researchers like Cleveland and McGill in their seminal 1984 paper <em>"Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods,"</em> ranks visual encoding methods from most to least accurate:</p>
-
-            <blockquote>
-                <p>Position along a common scale > Position on identical but nonaligned scales > Length > Angle > Area > Volume > Color saturation</p>
-                <cite>Cleveland & McGill (1984), Journal of the American Statistical Association</cite>
-            </blockquote>
-
-            <p>Notice that <strong>angle</strong> ranks lower than <strong>length</strong> and <strong>position</strong>. This is directly relevant to our visualization comparison.</p>
-
-            <p><strong>Treemaps</strong> encode size as <em>area</em> (width × height). While area perception isn't perfect, rectangular areas are easier to judge than irregular shapes because our brains can decompose them into width and height, both of which are perceived as <em>length</em>.</p>
-
-            <p><strong>Icicle charts</strong> encode size as <em>length</em> (bar width). When all bars share a common baseline (aligned left), comparing them becomes a position judgment along a shared axis. This is the <em>most accurate</em> visual encoding according to Cleveland and McGill's hierarchy.</p>
-
-            <p><strong>Sunbursts</strong> encode size as <em>angle</em> (arc degree). But there's a complication: two wedges with the same angle but different radii have different areas. Users must mentally integrate both angle and radius to judge size, which is cognitively demanding and error-prone.</p>
-
-            <div class="diagram">
-                <img src="perceptual-accuracy-modern.svg" alt="Diagram showing accuracy of area perception vs angle perception with example comparisons">
-                <p class="diagram-caption">Rectangular areas are perceived 50% more accurately than angular segments in controlled studies</p>
-            </div>
-
-            <h3 id="gestalt">2. The Gestalt Principle of Proximity</h3>
-
-            <p>Gestalt psychology teaches us that humans group visual elements based on proximity. Items close together are perceived as related; items far apart are seen as separate.</p>
-
-            <p>In <strong>icicle charts</strong>, all items at the same hierarchy level are aligned horizontally in a row. This spatial grouping immediately signals "these are siblings." The visual structure reinforces the data structure.</p>
-
-            <p>In <strong>sunbursts</strong>, siblings are distributed around a ring. Their proximity is circular rather than linear, which makes it harder to visually group them at a glance. You have to consciously trace the ring to collect related items, rather than seeing them as a natural cluster.</p>
-
-            <h3 id="density">3. Information Density and Visual Clutter</h3>
-
-            <p>Edward Tufte, in <em>The Visual Display of Quantitative Information</em>, introduced the concept of the "data-ink ratio": the proportion of a graphic's ink devoted to displaying data versus structural decoration. High data-ink ratios are desirable because they minimize visual clutter.</p>
-
-            <p>Sunbursts have an inherently lower data-ink ratio. The center circle, the gaps between rings, and the radial gridlines all contribute to the structure but not the data. As you move to outer rings, the gaps widen, reducing density.</p>
-
-            <p>Treemaps and icicles achieve near-perfect data-ink ratios. Every pixel is data. The only "ink" spent on structure is the thin borders separating rectangles, which also serve as visual boundaries that aid comprehension.</p>
-
-            <h3 id="hierarchy">4. The Hierarchical Readability Advantage</h3>
-
-            <p>Ben Shneiderman, who invented the treemap algorithm in the 1990s while working on visualizing directory structures, explicitly designed it to maximize hierarchical clarity. His original paper, <em>"Tree Visualization with Tree-Maps: A 2D Space-Filling Approach"</em> (1992), emphasizes nesting as a natural metaphor for containment.</p>
-
-            <p>Icicle charts build on the flame graph concept, originally developed for profiling software performance. The horizontal layout allows for easy comparison of items at the same depth, which is critical when analyzing hierarchical data like disk folders.</p>
-
-            <p>Both approaches leverage <strong>spatial encoding of hierarchy</strong> in ways that align with how we mentally model trees: parents contain or precede children, and siblings sit beside each other.</p>
-
-            <p>Sunbursts use <em>radial depth</em> to encode hierarchy, which is less intuitive. The metaphor — "deeper into the tree means farther from the center" — works conceptually but requires more cognitive effort to parse, especially when comparing items at different depths.</p>
-
-            <h3 id="eyetracking">5. Eye-Tracking Evidence</h3>
-
-            <p>Published research on hierarchical visualization usability provides compelling evidence for rectangular layouts.</p>
-
-            <p>A 2010 study by Stasko and Zhang, <em>"Focus+Context Display and Navigation Techniques for Enhancing Radial, Space-Filling Hierarchy Visualizations,"</em> found that users completed tasks <strong>40% faster</strong> with treemap-style layouts compared to radial (sunburst) layouts when asked to locate specific nodes or compare sizes. The study attributed this to reduced eye movement and clearer spatial relationships.</p>
-
-            <p>Another 2015 study, <em>"An Empirical Study on the Reliability of Perceiving Correlation Indices using Scatterplots"</em> (though focused on scatterplots), reinforced the finding that <strong>aligned visual elements</strong> (like the shared baseline in icicle charts) dramatically improve comparison accuracy.</p>
-
-            <h2 id="part3">Part 3: The Business Case</h2>
-
-            <p>Beyond perceptual theory, there's a concrete economic argument for choosing the right visualization. Let's translate that faster task completion from the research into real-world value.</p>
-
-            <p>Here's the key insight: professionals don't just use disk analyzers during major cleanups. They also scan storage when monitoring space before updates, browsing for files to archive, checking what's consuming resources, or simply exploring their file system visually. The tool becomes part of the regular workflow.</p>
-
-            <p>For a typical professional user (developer, designer, or creative), that means opening a disk analyzer about 2-3 times per month, around 30 sessions per year. Some sessions are quick scans, others are deeper explorations. On average, a session with a sunburst visualization takes about 8 minutes. With a rectangular layout (treemap or icicle), that drops to 5 minutes.</p>
-
-            <p>That's 3 minutes saved per session, a conservative estimate based on faster scanning, clearer comparisons, and less cognitive friction. Over 30 sessions per year, you reclaim 90 minutes, or 1.5 hours annually.</p>
-
-            <p>Now let's add dollar value. According to the U.S. Bureau of Labor Statistics, the blended hourly rate for knowledge workers (accounting for salary, benefits, and overhead) averages around $75/hour for developers and designers. At that rate, 1.5 hours of reclaimed time equals roughly <strong>$112 per year in productive value</strong>.</p>
-
-            <p>For a $6.99 one-time purchase, Klarity pays for itself after just 6 uses (about two months for typical users).</p>
-
-            <div class="diagram">
-                <img src="cost-savings-modern.svg" alt="Infographic showing calculation from time saved to annual cost savings for individuals and teams">
-                <p class="diagram-caption">Time savings compound when scaled across teams and years</p>
-            </div>
-
-            <p><strong>Power users see even better ROI.</strong> Video editors, machine learning engineers, and developers working with large datasets often check disk space weekly or more. At 50 sessions per year with 3-4 minutes saved each time, they reclaim nearly <strong>3 hours annually, worth approximately $247</strong> at standard professional rates.</p>
-
-            <p>But the real multiplier comes at the team level. A 10-person engineering team, with each member saving 1.5 hours per year, collectively reclaims 15 hours of productive time, worth over $1,100 annually. That's the cost of visualization design decisions at scale.</p>
-
-            <p>And there's a less tangible but equally important benefit: reduced cognitive load. Research on decision fatigue (Baumeister et al., 2008) shows that every unnecessary cognitive task (like mentally calculating arc lengths or rotating your head to read curved text) depletes your mental energy. When disk analysis is frictionless, you preserve that energy for actual creative or problem-solving work. Less frustration, better focus, higher quality output.</p>
-
-            <p>This is why visualization design isn't just an academic exercise. For professionals whose time is valuable, choosing a tool with optimal visualization is a small decision with measurable ROI.</p>
-
-            <h3 id="sunburst">7. Why Sunbursts Persist (And Where They Work)</h3>
-
-            <p>To be fair, sunbursts aren't bad. They're just suboptimal for disk space analysis. They excel when the goal is to show overall hierarchical structure at a glance, especially when the data has a clear, balanced tree with few levels. For example, organizational charts or taxonomies with symmetrical branching look elegant in sunburst form.</p>
-
-            <p>But disk hierarchies are messy. They're deep, unbalanced, and densely packed with thousands of nodes. This is precisely where sunbursts struggle and rectangular layouts thrive.</p>
-
-            <h2 id="conclusion">Conclusion: Design Decisions Matter</h2>
-
-            <p>Choosing a visualization isn't just about aesthetics or novelty. It's about matching the cognitive strengths of human perception to the task at hand. For disk space analysis on Mac, that task is: find large files fast, compare sizes accurately, and navigate hierarchies intuitively.</p>
-
-            <p>Treemaps and icicle charts win because they align with how our brains process spatial information. They leverage our strengths in judging lengths, aligned positions, and rectangular areas. They respect the natural Z-pattern of eye movement. And they maximize information density without sacrificing clarity.</p>
-
-            <p>Sunbursts, while visually striking, introduce unnecessary cognitive load through curved text, angular size judgments, and radial navigation. For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters.</p>
-
-            <p>That's why Klarity gives you both treemap and icicle options. Some users prefer the compactness of treemaps. Others love the hierarchical clarity of icicles. Either way, you get a rectangular layout optimized for how your brain actually works. And at $6.99 compared to DaisyDisk's $9.99, you get superior visualization methodology at a better price.</p>
-
-            <div class="cta-box">
-                <h3>Experience the Difference</h3>
-                <p>Try Klarity's dual visualization modes — switch between treemap and icicle with one click to find what works best for you.</p>
-                <a href="https://apps.apple.com/app/klarity-disk/id6758895498" class="cta-button">Download on the Mac App Store ($6.99)</a>
-            </div>
-
-            <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);">
-
-            <p style="font-size: 0.95rem; color: #888;"><strong>References:</strong></p>
-            <ul style="font-size: 0.95rem; color: #888;">
-                <li>Baumeister, R. F., et al. (2008). "Ego Depletion: Is the Active Self a Limited Resource?" <em>Journal of Personality and Social Psychology</em>, 74(5), 1252-1265.</li>
-                <li>Cleveland, W. S., & McGill, R. (1984). "Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods." <em>Journal of the American Statistical Association</em>, 79(387), 531-554.</li>
-                <li>Shneiderman, B. (1992). "Tree Visualization with Tree-Maps: A 2D Space-Filling Approach." <em>ACM Transactions on Graphics</em>, 11(1), 92-99.</li>
-                <li>Stasko, J., & Zhang, E. (2010). "Focus+Context Display and Navigation Techniques for Enhancing Radial, Space-Filling Hierarchy Visualizations." <em>IEEE InfoVis</em>.</li>
-                <li>Tufte, E. R. (2001). <em>The Visual Display of Quantitative Information</em> (2nd ed.). Graphics Press.</li>
-                <li>U.S. Bureau of Labor Statistics. (2025). "Occupational Employment and Wage Statistics — Software Developers."</li>
-            </ul>
-        </div>
-    </article>
+            <h2><a href="why-i-built-klarity.html">Why I Built Klarity — A DaisyDisk Alternative for $6.99</a></h2>
+            <p>The treemap visualization I wanted didn't exist on macOS. So I built it myself. Here's the story of going from a side project to the Mac App Store.</p>
+            <a href="why-i-built-klarity.html" class="read-more">Read more →</a>
+        </article>
+
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Klarity. <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../support.html">Support</a></p>
+        <p>© 2025–2026 Mukul Mehra. All rights reserved.</p>
+        <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../support.html">Support</a></li>
+            <li><a href="index.html">Blog</a></li>
+        </ul>
     </footer>
 </body>
 </html>
