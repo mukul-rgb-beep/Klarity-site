@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Klarity — See Your Disk. Clearly. | Mac Disk Analyzer</title>
-<meta name="description" content="Klarity is a stunning disk analyzer for macOS with interactive treemap and icicle visualizations. Half the price of DaisyDisk, twice the insight.">
+<meta name="description" content="Klarity is a macOS disk analyzer with treemap and icicle visualizations that make finding large files faster and more intuitive than sunburst charts. Built native for macOS with a built-in RAM monitor.">
 <meta name="keywords" content="disk analyzer, clarity, mac disk analyzer, storage visualizer, disk space, mac utility, treemap, disk cleaner, macos app, storage manager, disk usage, klarity, clarity disk">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://klaritydisk.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Klarity — See Your Disk. Clearly.">
-<meta property="og:description" content="A stunning disk analyzer for macOS. Interactive treemap & icicle visualizations.">
+<meta property="og:description" content="Treemap and icicle visualizations that make finding large files faster than any sunburst chart. Built-in RAM monitor. Native macOS.">
 <meta property="og:url" content="https://klaritydisk.com/">
 <meta property="og:image" content="https://klaritydisk.com/og-image.png">
 <meta property="og:site_name" content="Klarity">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Klarity — See Your Disk. Clearly.">
 <meta name="twitter:image" content="https://klaritydisk.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Klarity","description":"A beautiful disk analyzer for macOS with treemap and icicle visualizations.","operatingSystem":"macOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"6.99","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mukul Mehra"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Klarity","description":"A beautiful disk analyzer for macOS with treemap and icicle visualizations.","operatingSystem":"macOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mukul Mehra"}}</script>
 
 <!-- GSAP + ScrollTrigger -->
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
@@ -1526,6 +1526,178 @@ footer {
   background: linear-gradient(90deg, transparent, rgba(0,0,0,0.04), transparent);
 }
 [data-theme="light"] .hero-price strong { color: var(--teal); }
+/* ═══════════════════════════════════════════════════ */
+/* Launch Pricing Banner                               */
+/* ═══════════════════════════════════════════════════ */
+#launch-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10000;
+  background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(20,30,52,0.95));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(62,207,207,0.25);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--font-body);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#launch-banner.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.launch-tag {
+  background: linear-gradient(135deg, #3ECFCF, #2BA8A8);
+  color: #0a0f1a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.launch-text { color: #cbd5e1; font-size: 14px; }
+.launch-text strong { color: #fff; font-weight: 600; }
+.launch-old { color: #64748b; text-decoration: line-through; font-size: 13px; }
+.launch-new { color: #3ECFCF; font-size: 16px; font-weight: 700; }
+.launch-countdown { color: #94a3b8; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.launch-cta-btn {
+  background: linear-gradient(135deg, #3ECFCF, #2BA8A8);
+  color: #0a0f1a;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.launch-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(62,207,207,0.3); }
+.launch-close { background: none; border: none; color: #64748b; font-size: 18px; cursor: pointer; padding: 4px 8px; transition: color 0.15s; }
+.launch-close:hover { color: #fff; }
+body.has-launch-banner { padding-top: 44px !important; }
+body.has-launch-banner nav { top: 44px; }
+
+[data-theme="light"] #launch-banner {
+  background: linear-gradient(135deg, rgba(241,245,249,0.97), rgba(226,232,240,0.97));
+  border-bottom-color: rgba(62,207,207,0.35);
+}
+[data-theme="light"] .launch-text { color: #475569; }
+[data-theme="light"] .launch-text strong { color: #0f172a; }
+[data-theme="light"] .launch-new { color: #0e9393; }
+
+@media (max-width: 768px) {
+  #launch-banner { flex-wrap: wrap; gap: 8px; padding: 8px 16px; text-align: center; }
+  .launch-text { font-size: 13px; order: 2; flex-basis: 100%; }
+  .launch-tag { order: 1; }
+  .launch-countdown { order: 3; flex-basis: 100%; }
+  .launch-cta-btn { order: 4; }
+  .launch-close { position: absolute; right: 8px; top: 8px; }
+  body.has-launch-banner { padding-top: 80px !important; }
+  body.has-launch-banner nav { top: 80px; }
+}
+
+/* ═══════════════════════════════════════════════════ */
+/* "Why Different" Visualization Explainer Section     */
+/* ═══════════════════════════════════════════════════ */
+.why-different {
+  position: relative;
+  z-index: 2;
+  padding: 100px 24px 80px;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.viz-card {
+  padding: 32px 28px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  text-align: center;
+  transition: transform 0.4s var(--ease-out-expo), border-color 0.3s, box-shadow 0.3s;
+}
+.viz-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.viz-card.viz-highlight {
+  border-color: rgba(62,207,207,0.3);
+  background: rgba(62,207,207,0.04);
+}
+.viz-card .viz-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.viz-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.viz-card .viz-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.viz-tag-klarity {
+  background: rgba(62,207,207,0.12);
+  color: var(--teal);
+  border: 1px solid rgba(62,207,207,0.2);
+}
+.viz-tag-other {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.viz-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.why-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+.why-cta a {
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.why-cta a:hover { opacity: 0.8; }
+
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
+
+[data-theme="light"] .viz-card.viz-highlight {
+  border-color: rgba(20,114,114,0.25);
+  background: rgba(20,114,114,0.04);
+}
+[data-theme="light"] .viz-tag-klarity {
+  background: rgba(20,114,114,0.08);
+  border-color: rgba(20,114,114,0.2);
+}
+
 [data-theme="light"] .nav-links a::after { background: var(--teal); }
 [data-theme="light"] nav.scrolled {
   box-shadow: 0 4px 30px rgba(0,0,0,0.06);
@@ -1575,6 +1747,19 @@ footer {
 <!-- Treemap tooltip -->
 <div class="treemap-tooltip" id="treemapTooltip"></div>
 
+<!-- Launch Pricing Banner -->
+<div id="launch-banner">
+  <span class="launch-tag">Launch Offer</span>
+  <span class="launch-text">
+    <span class="launch-old">$6.99</span>
+    <span class="launch-new">$4.99</span>
+    for early adopters
+  </span>
+  <span class="launch-countdown" id="banner-countdown"></span>
+  <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="launch-cta-btn">Get It Now</a>
+  <button class="launch-close" id="banner-close" aria-label="Close banner">&times;</button>
+</div>
+
 <!-- Navigation -->
 <nav id="mainNav">
   <a href="/" class="nav-logo">
@@ -1616,7 +1801,7 @@ footer {
     <span class="line"><span class="word gradient-text">Clearly.</span></span>
   </h1>
 
-  <p class="hero-sub">Beautiful treemap and icicle visualizations that make finding space hogs effortless. Now with Move to Trash. Built native for macOS.</p>
+  <p class="hero-sub">Two visualization modes designed to find space hogs faster than any sunburst chart. Treemap for the big picture, icicle for the deep dive. Built native for macOS.</p>
 
   <div class="hero-ctas">
     <a href="#download" class="btn-magnetic btn-primary" data-magnetic>
@@ -1625,7 +1810,7 @@ footer {
     </a>
     <a href="#features" class="btn-magnetic btn-secondary" data-magnetic>Learn More</a>
   </div>
-  <p class="hero-price"><strong>$6.99</strong> — one-time purchase. No subscription.</p>
+  <p class="hero-price">No subscriptions. No telemetry. <strong>100% local.</strong></p>
 
   <!-- Interactive treemap hero -->
   <div class="hero-treemap reveal">
@@ -1672,15 +1857,49 @@ footer {
       <div class="stat-label">Files Scanned/Min</div>
     </div>
     <div class="stat-item reveal">
-      <div class="stat-number" data-count="0" data-suffix="" data-text="$6.99">$6.99</div>
-      <div class="stat-label">One-Time Price</div>
+      <div class="stat-number" data-count="0" data-suffix="" data-text="Zero">Zero</div>
+      <div class="stat-label">Data Collection</div>
     </div>
     <div class="stat-item reveal">
-      <div class="stat-number" data-count="0" data-suffix="" data-text="Zero">Zero</div>
-      <div class="stat-label">Subscriptions Needed</div>
+      <div class="stat-number" data-count="0" data-suffix="" data-text="Native">Native</div>
+      <div class="stat-label">macOS SwiftUI App</div>
     </div>
   </div>
 </div>
+
+<!-- ═══════════ WHY DIFFERENT ═══════════ -->
+<section class="why-different" id="why-different">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Why It's Different</span>
+      <h2 class="section-title">Not all visualizations<br>are created equal.</h2>
+      <p class="section-desc">Most disk analyzers use sunburst charts. Research shows rectangular layouts are measurably better at comparing file sizes. Klarity gives you both treemap and icicle views.</p>
+    </div>
+    <div class="why-grid">
+      <div class="viz-card viz-highlight reveal">
+        <span class="viz-icon">◫</span>
+        <span class="viz-tag viz-tag-klarity">Klarity</span>
+        <h3>Treemap</h3>
+        <p>Rectangles sized by file size. Your eye compares areas instantly. No angle math, no distortion at different depths.</p>
+      </div>
+      <div class="viz-card viz-highlight reveal">
+        <span class="viz-icon">▤</span>
+        <span class="viz-tag viz-tag-klarity">Klarity</span>
+        <h3>Icicle / Flame Graph</h3>
+        <p>Horizontal bars aligned on the same baseline. Compare folders at the same level by looking at bar width. Hierarchy is depth, not angle.</p>
+      </div>
+      <div class="viz-card reveal">
+        <span class="viz-icon">◎</span>
+        <span class="viz-tag viz-tag-other">Others</span>
+        <h3>Sunburst</h3>
+        <p>Encodes size as arc angle. Outer rings look visually larger even when they're not. Brendan Gregg calls them "the new pie chart."</p>
+      </div>
+    </div>
+    <div class="why-cta reveal">
+      <a href="/blog/treemap-icicle-vs-sunburst.html">Read the deep dive: why treemap and icicle beat sunburst →</a>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════ FEATURES ═══════════ -->
 <section id="features">
@@ -1824,8 +2043,8 @@ footer {
   <div class="container">
     <div class="reveal">
       <span class="section-label">Compare</span>
-      <h2 class="section-title">Why Klarity stands<br>above the rest.</h2>
-      <p class="section-desc">More visualization modes, a built-in RAM monitor, and no subscriptions — at a fraction of the price.</p>
+      <h2 class="section-title">Built different<br>from the ground up.</h2>
+      <p class="section-desc">Two visualization modes, a built-in RAM monitor, delete safety guards, and zero data collection. No other disk analyzer offers this combination.</p>
     </div>
     <div class="compare-table-wrap reveal">
       <table class="compare-table">
@@ -1847,7 +2066,7 @@ footer {
           <tr><td>Menu Bar Widget</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
           <tr><td>Theme Customization</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
           <tr><td>One-Time Purchase</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗ (subscription)</td></tr>
-          <tr><td>Price</td><td class="check">$6.99</td><td>$9.99+</td><td>$30–50/year</td></tr>
+          <tr><td>Price</td><td class="check">$4.99 (launch)</td><td>$9.99+</td><td>$30–50/year</td></tr>
         </tbody>
       </table>
     </div>
@@ -1934,8 +2153,8 @@ footer {
       <p class="section-desc" style="margin:0 auto 0;">One app. One price. No subscriptions, no telemetry, no nonsense.</p>
     </div>
     <div class="cta-price reveal">
-      <div class="price-tag">$6.99</div>
-      <div class="price-note">One-time purchase · macOS 14+ · Apple Silicon & Intel</div>
+      <div class="price-tag"><span style="text-decoration:line-through;color:var(--text-muted);font-size:0.55em;font-weight:400;vertical-align:middle;">$6.99</span> $4.99</div>
+      <div class="price-note">Launch pricing through March 31 · One-time purchase · macOS 14+ · Apple Silicon & Intel</div>
     </div>
     <div class="cta-buttons reveal">
       <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="btn-magnetic btn-primary" data-magnetic>
@@ -2345,6 +2564,51 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 document.querySelector('#lightboxImg')?.addEventListener('click', e => e.stopPropagation());
+
+/* ═══════════════════════════════════════════════════ */
+/* Launch Banner Countdown + Dismiss                   */
+/* ═══════════════════════════════════════════════════ */
+(function() {
+  const banner = document.getElementById('launch-banner');
+  const closeBtn = document.getElementById('banner-close');
+  const countdownEl = document.getElementById('banner-countdown');
+  const endDate = new Date('2026-04-01T06:59:59Z');
+
+  if (sessionStorage.getItem('launch-banner-dismissed') === 'true') {
+    banner.classList.add('hidden');
+  } else {
+    document.body.classList.add('has-launch-banner');
+  }
+
+  closeBtn.addEventListener('click', function() {
+    banner.classList.add('hidden');
+    document.body.classList.remove('has-launch-banner');
+    sessionStorage.setItem('launch-banner-dismissed', 'true');
+  });
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = endDate - now;
+    if (diff <= 0) {
+      banner.classList.add('hidden');
+      document.body.classList.remove('has-launch-banner');
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    if (days > 7) countdownEl.textContent = 'Ends March 31';
+    else if (days > 0) countdownEl.textContent = days + 'd ' + hours + 'h left';
+    else countdownEl.textContent = hours + 'h ' + mins + 'm left';
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+
+  if (new Date() >= endDate) {
+    banner.classList.add('hidden');
+    document.body.classList.remove('has-launch-banner');
+  }
+})();
 </script>
 </body>
 </html>
