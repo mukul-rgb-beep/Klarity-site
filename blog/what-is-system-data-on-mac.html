@@ -229,11 +229,11 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
 
     <h2>How to actually see inside it</h2>
 
-    <p>There is a catch. macOS marks <code>~/Library</code> as hidden, and Klarity&rsquo;s scanner skips hidden items. So if you scan your Home folder, <strong>you will not see <code>~/Library</code> at all</strong> &mdash; and the total will look suspiciously small.</p>
+    <p>One thing to know about the current version of Klarity (1.2): macOS marks <code>~/Library</code> as hidden, and the scanner skips hidden folders, so a plain Home scan does not show <code>~/Library</code> and the total looks suspiciously small. That is a limitation I am removing in the next update, which shows hidden folders by default and adds a Library shortcut to the folder menu. Until then there is a one-step workaround.</p>
 
     <p>The fix is simple: scan <code>~/Library</code> as the root of its own scan. In Klarity, choose <strong>Choose Folder&hellip;</strong>, and in the open panel press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G</strong> and type <code>~/Library</code> (or press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;.</strong> to reveal hidden folders and click through). Scanning a folder as the root always works, hidden or not. Then let the treemap do its job: the biggest rectangles are your answer, and you can drill into <code>Caches</code>, <code>Developer</code> and <code>Containers</code> from there.</p>
 
-    <p>If you would rather not install anything, Finder can get you most of the way: <strong>Go &rarr; Go to Folder&hellip;</strong> (Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G), type <code>~/Library</code>, then select a folder and press Cmd&nbsp;+&nbsp;I to see its size. It is slow and one folder at a time, but it is free and it is already on your Mac.</p>
+    <p>To double-check any number without an app, Finder can show one folder at a time: Go → Go to Folder… (Cmd + Shift + G), type <code>~/Library</code>, select a folder and press Cmd + I to see its size.</p>
 
     <div class="callout">
       <div class="callout-title">A useful trick</div>
