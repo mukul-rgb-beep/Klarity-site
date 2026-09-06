@@ -1747,19 +1747,6 @@ body.has-launch-banner nav { top: 44px; }
 <!-- Treemap tooltip -->
 <div class="treemap-tooltip" id="treemapTooltip"></div>
 
-<!-- Launch Pricing Banner -->
-<div id="launch-banner">
-  <span class="launch-tag">Launch Offer</span>
-  <span class="launch-text">
-    <span class="launch-old">$6.99</span>
-    <span class="launch-new">$4.99</span>
-    for early adopters
-  </span>
-  <span class="launch-countdown" id="banner-countdown"></span>
-  <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="launch-cta-btn">Get It Now</a>
-  <button class="launch-close" id="banner-close" aria-label="Close banner">&times;</button>
-</div>
-
 <!-- Navigation -->
 <nav id="mainNav">
   <a href="/" class="nav-logo">
@@ -2067,7 +2054,7 @@ body.has-launch-banner nav { top: 44px; }
           <tr><td>Menu Bar Widget</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td></tr>
           <tr><td>Theme Customization</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
           <tr><td>One-Time Purchase</td><td class="check">✓</td><td class="check">✓</td><td class="cross">✗ (subscription)</td></tr>
-          <tr><td>Price</td><td class="check">$4.99 (launch)</td><td>$9.99+</td><td>$30–50/year</td></tr>
+          <tr><td>Price</td><td class="check">$6.99</td><td>$9.99+</td><td>$30–50/year</td></tr>
         </tbody>
       </table>
     </div>
@@ -2169,8 +2156,8 @@ body.has-launch-banner nav { top: 44px; }
       <p class="section-desc" style="margin:0 auto 0;">One app. One price. No subscriptions, no telemetry, no nonsense.</p>
     </div>
     <div class="cta-price reveal">
-      <div class="price-tag"><span style="text-decoration:line-through;color:var(--text-muted);font-size:0.55em;font-weight:400;vertical-align:middle;">$6.99</span> $4.99</div>
-      <div class="price-note">Launch pricing through March 31 · One-time purchase · macOS 14+ · Apple Silicon & Intel</div>
+      <div class="price-tag">$6.99</div>
+      <div class="price-note">One-time purchase · macOS 14+ · Apple Silicon & Intel</div>
     </div>
     <div class="cta-buttons reveal">
       <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="btn-magnetic btn-primary" data-magnetic>
@@ -2583,50 +2570,6 @@ document.addEventListener('keydown', e => {
 });
 document.querySelector('#lightboxImg')?.addEventListener('click', e => e.stopPropagation());
 
-/* ═══════════════════════════════════════════════════ */
-/* Launch Banner Countdown + Dismiss                   */
-/* ═══════════════════════════════════════════════════ */
-(function() {
-  const banner = document.getElementById('launch-banner');
-  const closeBtn = document.getElementById('banner-close');
-  const countdownEl = document.getElementById('banner-countdown');
-  const endDate = new Date('2026-04-01T06:59:59Z');
-
-  if (sessionStorage.getItem('launch-banner-dismissed') === 'true') {
-    banner.classList.add('hidden');
-  } else {
-    document.body.classList.add('has-launch-banner');
-  }
-
-  closeBtn.addEventListener('click', function() {
-    banner.classList.add('hidden');
-    document.body.classList.remove('has-launch-banner');
-    sessionStorage.setItem('launch-banner-dismissed', 'true');
-  });
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = endDate - now;
-    if (diff <= 0) {
-      banner.classList.add('hidden');
-      document.body.classList.remove('has-launch-banner');
-      return;
-    }
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    if (days > 7) countdownEl.textContent = 'Ends March 31';
-    else if (days > 0) countdownEl.textContent = days + 'd ' + hours + 'h left';
-    else countdownEl.textContent = hours + 'h ' + mins + 'm left';
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 60000);
-
-  if (new Date() >= endDate) {
-    banner.classList.add('hidden');
-    document.body.classList.remove('has-launch-banner');
-  }
-})();
 </script>
 </body>
 </html>
