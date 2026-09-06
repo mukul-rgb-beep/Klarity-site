@@ -3,34 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why I Built Klarity — A DaisyDisk Alternative for $6.99 | Klarity Blog</title>
-<meta name="description" content="I wanted a better way to see what's eating my Mac's storage. Existing tools didn't cut it. So I built Klarity — a $6.99 disk analyzer with treemap and icicle visualizations.">
-<meta name="keywords" content="klarity, clarity, daisydisk alternative, mac disk analyzer, treemap visualization, icicle chart, mac storage full, disk space visualizer, macos utility, free up space mac">
+<title>How to Find Large Files on a Mac (Without Terminal) | Klarity Blog</title>
+<meta name="description" content="Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.">
+<meta name="keywords" content="find large files mac, mac large files, biggest files on mac, disk space analyzer mac, finder sort by size, calculate all sizes, treemap mac, klarity disk">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.klaritydisk.com/blog/why-i-built-klarity">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Why I Built Klarity — A DaisyDisk Alternative for $6.99">
-<meta property="og:description" content="I wanted a better way to see what's eating my Mac's storage. So I built Klarity.">
-<meta property="og:url" content="https://www.klaritydisk.com/blog/why-i-built-klarity">
+<meta property="og:title" content="How to Find Large Files on a Mac (Without Terminal)">
+<meta property="og:description" content="Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
-<meta property="article:published_time" content="2026-02-14">
+<meta property="article:published_time" content="2026-09-07">
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why I Built Klarity — A DaisyDisk Alternative for $6.99">
+<meta name="twitter:title" content="How to Find Large Files on a Mac (Without Terminal)">
+<meta name="twitter:description" content="Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Why I Built Klarity — A DaisyDisk Alternative for $6.99",
-  "description": "I wanted a better way to see what's eating my Mac's storage. So I built Klarity.",
-  "author": {"@type": "Person", "name": "Mukul Mehra"},
-  "datePublished": "2026-02-14",
-  "publisher": {"@type": "Organization", "name": "Klarity"},
-  "mainEntityOfPage": "https://www.klaritydisk.com/blog/why-i-built-klarity"
-}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Find Large Files on a Mac (Without Terminal)", "description": "Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.", "image": "https://www.klaritydisk.com/og-image.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-07", "dateModified": "2026-09-07", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Find Large Files on a Mac (Without Terminal)", "item": "https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I see file sizes on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "In Finder, switch to list view (Cmd + 2), press Cmd + J and turn on Calculate all sizes, then click the Size column. For a single file or folder, select it and press Cmd + I."}}, {"@type": "Question", "name": "How do I find files over 1 GB on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Press Cmd + F in Finder, set the scope to This Mac, add a File Size condition from the Other… list, and set it to greater than 1 GB. This finds large individual files but not folders made of many small files."}}, {"@type": "Question", "name": "Why doesn't Finder show the size of folders?", "acceptedAnswer": {"@type": "Answer", "text": "Folder sizes are off by default because calculating them is slow. Turn on Calculate all sizes in View Options (Cmd + J) for the current folder, or use a disk analyzer that computes every folder in one pass."}}, {"@type": "Question", "name": "What is the fastest way to find large files on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "A disk analyzer that draws a treemap. One scan sizes every folder on the disk and shows them to scale, so the biggest items are visible at a glance instead of being found one folder at a time."}}]}</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
@@ -130,6 +124,7 @@ nav.scrolled { background: var(--nav-bg-scrolled); box-shadow: 0 4px 30px rgba(0
 .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
 .article-body li { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 8px; }
 .callout { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 24px; margin: 32px 0; }
+.article-body code { font-family: var(--font-mono); font-size: 0.88em; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 5px; padding: 1px 5px; color: var(--text-primary); overflow-wrap: break-word; }
 .callout-title { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--teal); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
 
 .article-cta { max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
@@ -153,7 +148,7 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   .article-cta-inner { padding: 28px 20px; }
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Why I Built Klarity — A DaisyDisk Alternative for $6.99", "item": "https://www.klaritydisk.com/blog/why-i-built-klarity"}]}</script>
+<style>.article-body h3.faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin: 28px 0 8px; color: var(--text-primary); } .article-body ol li { padding-left: 4px; } .article-body figure { margin: 28px 0; } .article-body figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--glass-border); display: block; } .article-body figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }</style>
 </head>
 <body>
 
@@ -191,120 +186,119 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
 
 <main class="article-page">
   <div class="article-header">
-    <a href="/blog/" class="article-back"><span>←</span> Back to Blog</a>
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
     <div class="article-meta">
-      <span class="article-tag">Story</span>
-      <span class="article-date">February 14, 2026</span>
+      <span class="article-tag">Guide</span>
+      <span class="article-date">September 7, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
     </div>
-    <h1>Why I Built Klarity — A DaisyDisk Alternative for $6.99</h1>
-    <p class="article-subtitle">My Mac was full and I couldn't figure out why. The tools I tried were either outdated, expensive, or showed me charts I couldn't read. So I built what I actually wanted.</p>
+    <h1>How to Find Large Files on a Mac (Without Terminal)</h1>
+    <p class="article-subtitle">Finder can do it slowly, a search can do it partially, and a treemap does it in one look. Here is how each works and where the space usually hides.</p>
   </div>
 
   <div class="article-divider"><hr></div>
 
   <div class="article-body">
 
-    <h2>It started with a full disk</h2>
+    <h2>Why this is harder than it should be</h2>
 
-    <p>My 256GB MacBook was almost out of space. I had maybe 10GB left, the "Storage Full" warnings were popping up daily, and I had no idea where it all went. Sound familiar?</p>
+    <p>A Mac does not have a &ldquo;show me my biggest files&rdquo; button. Storage settings gives you categories, not files. Finder can sort a single folder by size but not a whole disk. Spotlight can search by size, but it only searches what it has indexed and it will not tell you which <em>folder</em> is the problem. So the honest answer is that there are three ways to do this, from slowest to fastest, and you should pick based on how much you need to find.</p>
 
-    <p>I tried the built-in macOS storage manager. It told me "System Data" was using 45GB. That's it. No breakdown, no details, just a grey bar labelled "System Data." Not exactly helpful.</p>
+    <h2>Method 1: Finder, one folder at a time</h2>
 
-    <p>So I went looking for something better — an app that could actually <strong>show me</strong> what was eating my storage, visually, in a way I could understand at a glance.</p>
+    <p>Free, built in, and fine when you already suspect a folder.</p>
 
-    <h2>The tools I tried (and why they fell short)</h2>
+    <ol>
+      <li>Open the folder in Finder and switch to list view (View &rarr; as List, or Cmd + 2).</li>
+      <li>Press Cmd + J to open View Options and tick <strong>Calculate all sizes</strong>. Without this, folders show &ldquo;--&rdquo; in the Size column.</li>
+      <li>Click the Size column header to sort largest first. Wait; on a big folder the sizes fill in over a minute or two.</li>
+      <li>Open the largest folder and repeat.</li>
+    </ol>
 
-    <p>I looked into every disk analyzer I could find for Mac. DaisyDisk is the most well-known — it's been around since 2011 and has a loyal following. From what I could tell from screenshots, reviews, and demo videos, it relies on a sunburst chart (those colourful rings that fan out from the center). Sunburst charts look beautiful, but they have a known limitation: it's surprisingly hard to compare sizes between slices. Two slices can look almost identical even when one is three times bigger than the other. That comparison problem is well-documented in data visualization research, and it's what pushed me to look for a different approach.</p>
+    <p>The limitation is obvious once you try it on your Home folder: you are drilling blind, one level at a time, and each level takes a recalculation. It also cannot see inside the hidden <code>~/Library</code> unless you press Cmd + Shift + . to show hidden files first.</p>
 
-    <p>GrandPerspective has been around forever but feels dated. OmniDiskSweeper just shows a plain list with no visual element at all. And CleanMyMac wants $30–50 per year as a subscription, which felt like overkill when all I wanted was to <em>see</em> my files clearly.</p>
+    <h2>Method 2: A Finder search by size</h2>
 
-    <p>What I really wanted was something called a <strong>treemap</strong> — a view where every file and folder becomes a rectangle, and the rectangle's size matches the file's size. Bigger file, bigger rectangle. No guesswork required. On Windows, tools like WinDirStat have offered this for decades. On Mac? Nothing modern existed.</p>
+    <p>Better when you want individual large files rather than large folders.</p>
 
-    <h2>So I built it myself</h2>
+    <ol>
+      <li>In Finder, press Cmd + F to start a search. Make sure the search scope is <strong>This Mac</strong>, not the current folder.</li>
+      <li>Click the first dropdown (it says Kind) and choose <strong>Other&hellip;</strong>, then tick <strong>File Size</strong> and press OK.</li>
+      <li>Set the condition to <strong>is greater than</strong> and type a threshold. 500&nbsp;MB is a good start; 1&nbsp;GB if the disk is very full.</li>
+      <li>Switch to list view and sort the results by Size.</li>
+    </ol>
 
-    <p>Klarity started as a personal project — the disk analyzer I wished someone else had already made. A few ideas guided the design from day one:</p>
+    <p>This finds forgotten disk images, old screen recordings and exported video well. It misses two things: folders made of thousands of small files (caches, node_modules, photo libraries, which Finder treats as one package), and anything Spotlight has not indexed, including most of <code>~/Library</code>.</p>
 
-    <p><strong>Make it visual.</strong> Klarity has two ways to look at your storage. The treemap view shows your files as coloured rectangles — you can instantly see that your 12GB Xcode folder dwarfs your 800MB Photos library just by looking. The icicle view stacks horizontal bars to show folder depth, making it easy to compare everything sitting at the same level. No other Mac disk analyzer offers both views.</p>
+    <h2>Method 3: A disk analyzer</h2>
 
-    <p><strong>Make it fast.</strong> Nobody wants to stare at a progress bar for five minutes. Klarity scans over 100,000 files per minute. Point it at any folder or drive and you'll have a complete visual map of your storage in seconds.</p>
+    <p>This is the method that actually answers the question for the whole disk, and it is why disk analyzers exist. Instead of a list, you get a <strong>treemap</strong>: every folder is a rectangle, and the rectangle&rsquo;s area is its size. Big things are big. You do not sort or search; you look.</p>
 
-    <p><strong>Make it honest.</strong> No subscription. No hidden upsells. No "scan for free, pay to delete" tricks. $6.99 once, and the app is yours — every core feature included.</p>
+    <figure>
+      <img src="/screenshot-treemap.png" alt="Klarity's treemap view of a Mac home folder scan: each folder is a rectangle sized by how much space it uses, with the largest folders visible at a glance" width="2000" height="1066" loading="lazy">
+      <figcaption>A real scan in Klarity. The largest folders are the largest rectangles; no sorting needed.</figcaption>
+    </figure>
 
-    <h2>Why the treemap view is a game-changer</h2>
+    <p>In <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12">Klarity</a> (a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a>, $6.99 on the App Store), the flow is:</p>
 
-    <p>Here's the thing about treemaps that made everything click for me: you don't need to read numbers. Your eyes do the work.</p>
-
-    <p>When you open Klarity and scan your drive, you see a mosaic of rectangles. The biggest rectangles are your biggest space hogs — and you spot them in under a second. Hover over any rectangle to see the file name and exact size. Double-click a folder to drill into it. Right-click to reveal it in Finder or move it straight to Trash.</p>
-
-    <p>Compare that to scrolling through a long list of folders trying to remember which one was bigger. Or squinting at a pie chart wondering if that slice is 5GB or 15GB. The treemap just <em>shows</em> you the answer.</p>
-
-    <h2>The icicle view — your secret weapon</h2>
-
-    <p>Klarity's second visualization is the icicle view, and it's useful for a different reason. While the treemap is great for spotting the biggest files anywhere on your disk, the icicle view is perfect for <strong>comparing folders at the same level</strong>.</p>
-
-    <p>Say you want to compare Documents vs. Downloads vs. Desktop. In the icicle view, those three folders appear as side-by-side bars at the same height. You can see immediately which one is the space hog. Then look one level deeper and compare everything inside each folder — all without losing the bigger picture.</p>
-
-    <p>Think of it like an X-ray for your hard drive. You see the full skeleton of your file system at once.</p>
-
-    <h2>Why $6.99 — and why no subscription, ever</h2>
-
-    <p>DaisyDisk costs $9.99. CleanMyMac costs $30–50 per year. I priced Klarity at $6.99 because I wanted it to be an easy, no-brainer decision — less than a coffee and a sandwich.</p>
-
-    <p>And it's a one-time purchase. No subscription, period. Klarity runs entirely on your Mac — no cloud services, no servers, no ongoing costs on my end. Charging monthly for an app that does all its work locally just didn't sit right with me.</p>
-
-    <p>That said, I'm a solo developer and Klarity is something I plan to keep improving. Down the road, I may add more advanced features that take a significant amount of my time to build — things like duplicate file detection or smart cleanup suggestions. If and when that happens, I may choose to charge for those premium additions. But the core app you buy today is yours, and it will keep working and receiving updates.</p>
-
-    <blockquote>
-      <p>One app. One price. No subscriptions, no telemetry, no nonsense.</p>
-    </blockquote>
-
-    <h2>Your files never leave your Mac</h2>
-
-    <p>This was non-negotiable. A disk analyzer sees the name, size, and location of every file on your machine. That's sensitive stuff. You don't want that going anywhere.</p>
-
-    <p>Klarity makes <strong>zero network connections</strong>. It doesn't phone home, it doesn't send analytics or crash reports to any server, and it doesn't even check for updates over the internet — the Mac App Store handles that. Your file data stays on your Mac, full stop.</p>
-
-    <p>This isn't just a line in a privacy policy. The app literally has no ability to connect to the internet. There's no "trust us" required.</p>
-
-    <h2>What you can do with Klarity today</h2>
-
-    <p>The latest release of v1.0 just shipped, and here's what's inside:</p>
-
-    <ul>
-      <li><strong>Treemap visualization</strong> — coloured rectangles showing file and folder sizes at a glance</li>
-      <li><strong>Icicle / flame graph view</strong> — stacked bars for comparing items at the same folder depth</li>
-      <li><strong>Move to Trash</strong> — right-click anything to trash it directly from Klarity, no need to switch to Finder</li>
-      <li><strong>Slide-to-unlock safety guard</strong> — when you try to delete a large folder (1GB or more), Klarity makes you slide to confirm before anything happens. This is important because files that are too large for the Trash bin get permanently deleted by macOS — so I built this extra step to make sure you never accidentally wipe something you meant to keep</li>
-      <li><strong>Live RAM monitor</strong> — see which apps are using the most memory, right from your menu bar</li>
-      <li><strong>Multiple volumes</strong> — scan your main drive, external hard drives, USB sticks — anything connected to your Mac</li>
-      <li><strong>Theme packs</strong> — because a utility app doesn't have to look boring</li>
-    </ul>
-
-    <p>The workflow is simple: scan a folder, see what's taking space, and deal with it. No bloat, no 47-feature settings panel, no "Pro" tier upsell.</p>
-
-    <h2>Who is Klarity for?</h2>
-
-    <p>If you've ever seen the "Your disk is almost full" notification and thought <em>"but I have no idea what's using all this space"</em> — Klarity was built for exactly that moment.</p>
-
-    <p>It's great for anyone with an older Mac or a smaller SSD who needs to be smart about storage. For anyone who's tried other disk analyzers and wished they'd just <em>show</em> you the answer instead of making you dig for it. For anyone who doesn't want to pay a yearly subscription just to see what's on their own hard drive.</p>
-
-    <p>Klarity isn't a cleanup suite. It doesn't promise to magically free 50GB with one click. What it does is give you a clear, honest picture of your storage — and then gets out of your way so you can decide what to keep and what to toss.</p>
+    <ol>
+      <li>Open the app from the menu bar and pick a starting point: <strong>Home Folder</strong>, <strong>Downloads</strong>, the whole disk, or <strong>Choose Folder&hellip;</strong> for anything else, including an external drive. The first time you scan outside your home folder, macOS asks you to grant access once.</li>
+      <li>Let the scan run. A home folder with a few hundred thousand files takes seconds on an SSD.</li>
+      <li>Look at the treemap. The largest rectangles are your answer. Hover for the exact size; double-click to drill in; press Escape to come back up.</li>
+      <li>Switch to the <strong>Large Files</strong> tab for a flat list of the 200 biggest files across everything you scanned, sorted largest first. Filter by type (video, images, archives, disk images and so on) or by age (older than 30 days, 90 days, 6 months, a year) to find the stale ones.</li>
+      <li>Right-click anything to <strong>Reveal in Finder</strong> or <strong>Move to Trash</strong>. Trash always asks first, and anything over 1&nbsp;GB needs a slide to confirm.</li>
+    </ol>
 
     <div class="callout">
-      <div class="callout-title">Give it a try</div>
-      <p>Klarity is $6.99 on the Mac App Store — a one-time purchase. Works on macOS 14 and later, on both Apple Silicon and Intel Macs. Scan any folder or drive and see your storage in a whole new way.</p>
+      <div class="callout-title">The age heatmap</div>
+      <p>Size alone is not enough: a 30&nbsp;GB folder you used yesterday is not clutter. Klarity colours every rectangle by its last-modified date, so the useful combination, large <em>and</em> old, stands out immediately. The filters in the Large Files list do the same thing for individual files.</p>
     </div>
 
-    <p>If you try it, I'd love to hear what you think. And if you find it useful, a quick review on the App Store makes a huge difference for a solo developer like me. Thanks for reading.</p>
+    <h2>Where the large files usually are</h2>
 
-    <p>— Mukul</p>
+    <p>After scanning a lot of Macs, the same suspects come up nearly every time. Check these first, whichever method you use:</p>
+
+    <ul>
+      <li><strong>~/Downloads</strong>: installers, disk images, zip archives you already extracted.</li>
+      <li><strong>~/Movies and ~/Desktop</strong>: screen recordings, exported video, Zoom recordings.</li>
+      <li><strong>~/Library/Developer</strong>: Xcode DerivedData, simulator runtimes and device support files. Often the largest single folder on a developer&rsquo;s Mac.</li>
+      <li><strong>~/Library/Caches</strong>: app caches. Safe to clear; apps rebuild them.</li>
+      <li><strong>~/Library/Application Support/MobileSync/Backup</strong>: iPhone and iPad backups. Delete these through Finder&rsquo;s Manage Backups, not by hand.</li>
+      <li><strong>~/Library/Containers</strong>: data for sandboxed apps, including Mail attachments and Messages media.</li>
+      <li><strong>Virtual machine and Docker images</strong>: wherever Parallels, UTM or Docker Desktop keep them, and they only ever grow.</li>
+    </ul>
+
+    <p>Notice how many of those are inside <code>~/Library</code>, which macOS hides. That folder is also most of the grey &ldquo;System Data&rdquo; bar in Storage settings. If that bar is what sent you here, read <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a> next, and for the deleting half of the job, <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a>.</p>
+
+    <h2>Terminal, for completeness</h2>
+
+    <p>The title promised no Terminal, and you do not need it. But if you are comfortable there, one command does the folder-sizing part: <code>du -sh ~/* ~/Library/* 2&gt;/dev/null | sort -rh | head -20</code> lists the twenty largest items in your home folder and Library. It is slow on a big disk, shows sizes in a list rather than to scale, and you still have to repeat it for every level you drill into. That repetition is the whole reason the treemap exists.</p>
+
+    <h2>Before you delete</h2>
+
+    <p>Finding is the safe half. Two rules for the other half: move things to the Trash rather than deleting outright, and if you cannot say what created a file, leave it. The guide on <a href="/blog/how-to-clean-up-mac-storage">cleaning up Mac storage</a> goes through what is safe category by category.</p>
+
+    <p><a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 on the Mac App Store</a>, one payment, and the scan-look-act loop above is about thirty seconds on most Macs. If something here is out of date, <a href="/support">let me know</a>.</p>
+
+
+    <h2>Questions people ask</h2>
+    <h3 class="faq-q">How do I see file sizes on a Mac?</h3>
+    <p>In Finder, switch to list view (Cmd + 2), press Cmd + J and turn on Calculate all sizes, then click the Size column. For a single file or folder, select it and press Cmd + I.</p>
+    <h3 class="faq-q">How do I find files over 1 GB on a Mac?</h3>
+    <p>Press Cmd + F in Finder, set the scope to This Mac, add a File Size condition from the Other… list, and set it to greater than 1 GB. This finds large individual files but not folders made of many small files.</p>
+    <h3 class="faq-q">Why doesn&#x27;t Finder show the size of folders?</h3>
+    <p>Folder sizes are off by default because calculating them is slow. Turn on Calculate all sizes in View Options (Cmd + J) for the current folder, or use a disk analyzer that computes every folder in one pass.</p>
+    <h3 class="faq-q">What is the fastest way to find large files on a Mac?</h3>
+    <p>A disk analyzer that draws a treemap. One scan sizes every folder on the disk and shows them to scale, so the biggest items are visible at a glance instead of being found one folder at a time.</p>
+
+    <p>&mdash; Mukul</p>
 
   </div>
 
   <div class="article-cta">
     <div class="article-cta-inner">
       <h3>See your disk. Clearly.</h3>
-      <p>$6.99 one-time · macOS 14+ · Apple Silicon & Intel</p>
+      <p>$6.99 one-time &middot; macOS 14+ &middot; Apple Silicon &amp; Intel</p>
       <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
     </div>
   </div>
@@ -312,8 +306,9 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   <div class="article-cta" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
     <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
-      <li><a href="/blog/building-liquid-glass-ui-macos" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How I Built Glassmorphism on macOS 14 While Apple Requires macOS 26 →</a></li>
-      <li><a href="/blog/treemap-icicle-vs-sunburst" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Treemap vs Sunburst: Why Klarity over DaisyDisk →</a></li>
+      <li><a href="/blog/how-to-clean-up-mac-storage" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Clean Up Mac Storage: What’s Safe to Delete in 2026 &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">What Is “System Data” on a Mac, and What’s Safe to Clear? &rarr;</a></li>
+      <li><a href="/blog/treemap-icicle-vs-sunburst" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Treemap vs Sunburst: Which Disk Map Finds Big Files Faster? &rarr;</a></li>
     </ul>
   </div>
 </main>

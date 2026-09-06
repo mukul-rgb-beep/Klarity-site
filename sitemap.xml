@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.klaritydisk.com/</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.klaritydisk.com/</loc><lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.klaritydisk.com/daisydisk-alternative</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.klaritydisk.com/changelog</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.klaritydisk.com/support</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/support</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.klaritydisk.com/privacy</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.klaritydisk.com/terms</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.klaritydisk.com/age-suitability</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.klaritydisk.com/press</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://www.klaritydisk.com/blog/</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.klaritydisk.com/blog/why-i-built-klarity</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.klaritydisk.com/blog/building-liquid-glass-ui-macos</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.klaritydisk.com/blog/what-is-system-data-on-mac</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/what-is-system-data-on-mac</loc><lastmod>2026-09-07</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/how-to-clean-up-mac-storage</loc><lastmod>2026-09-07</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac</loc><lastmod>2026-09-07</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

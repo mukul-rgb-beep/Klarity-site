@@ -28,6 +28,8 @@
   "description": "macOS puts everything it can't categorise into System Data. Here's what's really in there and what you can safely delete.",
   "author": {"@type": "Person", "name": "Mukul Mehra"},
   "datePublished": "2026-09-06",
+  "dateModified": "2026-09-07",
+  "image": "https://www.klaritydisk.com/screenshot-treemap.png",
   "publisher": {"@type": "Organization", "name": "Klarity"},
   "mainEntityOfPage": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"
 }</script>
@@ -154,6 +156,9 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   .article-cta-inner { padding: 28px 20px; }
 }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "What Is “System Data” on a Mac, and What’s Safe to Clear?", "item": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I delete System Data on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Parts of it. The safe targets are app caches in ~/Library/Caches, Xcode DerivedData and old simulator runtimes, local Time Machine snapshots, and the Trash. Preferences, Keychains, Application Support for apps you use, and app Containers are real data, not cache, and should stay."}}, {"@type": "Question", "name": "Why is my System Data 100 GB or more?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always one of three things: Xcode simulator runtimes and DerivedData if you write software, local Time Machine snapshots waiting to be thinned, or a single app's cache that has grown unchecked. Scan ~/Library sorted by size and the answer is usually the top two folders."}}, {"@type": "Question", "name": "Why does System Data not match what a folder scan shows?", "acceptedAnswer": {"@type": "Answer", "text": "Storage settings counts purgeable space and APFS snapshots, which are not files a scanner can walk to. A folder scan adds up what is really on disk. Treat Storage settings as the headline and the scan as the explanation; local snapshots are usually the gap."}}, {"@type": "Question", "name": "Will System Data come back after I clear it?", "acceptedAnswer": {"@type": "Answer", "text": "Some of it, yes. Caches are rebuilt as you use apps, and snapshots are created every hour while Time Machine is on. That is normal. What should not come back is the stale material: old simulator runtimes, caches for apps you removed, and backups of devices you no longer own."}}]}</script>
+<style>.article-body h3.faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin: 28px 0 8px; color: var(--text-primary); } .article-body figure { margin: 28px 0; } .article-body figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--glass-border); display: block; } .article-body figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }</style>
 </head>
 <body>
 
@@ -209,7 +214,7 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
 
     <p>Open System Settings &rarr; General &rarr; Storage on macOS 13 or later and you get a coloured bar: Applications, Documents, Photos, Messages, macOS &mdash; and then a grey block called <strong>System Data</strong>. On my own Mac it has been anywhere between 20&nbsp;GB and 130&nbsp;GB. Click it and macOS gives you no breakdown at all. Just a size.</p>
 
-    <p>That grey bar is the reason I started building <a href="https://www.klaritydisk.com/">Klarity Disk</a> in the first place. It is not a bug, and it is not a virus, and it is almost never something you need to panic about. But it is genuinely unhelpful, so here is what is hiding in there.</p>
+    <p>That grey bar is the reason I started building Klarity, a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a>, in the first place. It is not a bug, and it is not a virus, and it is almost never something you need to panic about. But it is genuinely unhelpful, so here is what is hiding in there.</p>
 
     <h2>What System Data actually is</h2>
 
@@ -232,6 +237,11 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
     <p>One thing to know about the current version of Klarity (1.2): macOS marks <code>~/Library</code> as hidden, and the scanner skips hidden folders, so a plain Home scan does not show <code>~/Library</code> and the total looks suspiciously small. That is a limitation I am removing. Version 1.3 is in App Review as I write this, and hidden-folder scanning, with a Library shortcut in the folder menu, is planned for the update after it. Until then there is a one-step workaround.</p>
 
     <p>The fix is simple: scan <code>~/Library</code> as the root of its own scan. In Klarity, choose <strong>Choose Folder&hellip;</strong>, and in the open panel press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G</strong> and type <code>~/Library</code> (or press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;.</strong> to reveal hidden folders and click through). Scanning a folder as the root always works, hidden or not. Then let the treemap do its job: the biggest rectangles are your answer, and you can drill into <code>Caches</code>, <code>Developer</code> and <code>Containers</code> from there.</p>
+
+    <figure>
+      <img src="/screenshot-treemap.png" alt="Klarity's treemap of a Mac folder scan, with each folder drawn as a rectangle sized by the space it uses and coloured by age" width="2000" height="1066" loading="lazy">
+      <figcaption>Klarity's treemap view. Pointed at ~/Library, the Caches, Developer and Containers folders are usually the three biggest rectangles.</figcaption>
+    </figure>
 
     <p>To double-check any number without an app, Finder can show one folder at a time: Go → Go to Folder… (Cmd + Shift + G), type <code>~/Library</code>, select a folder and press Cmd + I to see its size.</p>
 
@@ -288,7 +298,19 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
 
     <p>System Data is not mysterious once you look at it. It is mostly caches, mostly Xcode if you are a developer, and mostly recoverable. Scan <code>~/Library</code> as its own root, sort by size, check the dates, and deal with the two or three folders that account for nearly all of it. Then stop &mdash; the long tail is not worth the risk.</p>
 
-    <p>Klarity Disk is $6.99 on the Mac App Store, one payment, and it makes that particular scan about a thirty-second job. If you hit something I have not covered here, <a href="/support">get in touch</a> &mdash; I answer my own support mail.</p>
+    <p><a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12">Klarity Disk is $6.99 on the Mac App Store</a>, one payment, and it makes that particular scan about a thirty-second job. If you hit something I have not covered here, <a href="/support">get in touch</a> &mdash; I answer my own support mail.</p>
+
+    <h2>Questions people ask</h2>
+    <h3 class="faq-q">Can I delete System Data on a Mac?</h3>
+    <p>Parts of it. The safe targets are app caches in <code>~/Library/Caches</code>, Xcode DerivedData and old simulator runtimes, local Time Machine snapshots, and the Trash. Preferences, Keychains, Application Support for apps you use, and app Containers are real data, not cache, and should stay.</p>
+    <h3 class="faq-q">Why is my System Data 100 GB or more?</h3>
+    <p>Almost always one of three things: Xcode simulator runtimes and DerivedData if you write software, local Time Machine snapshots waiting to be thinned, or a single app&#x27;s cache that has grown unchecked. Scan ~/Library sorted by size and the answer is usually the top two folders.</p>
+    <h3 class="faq-q">Why does System Data not match what a folder scan shows?</h3>
+    <p>Storage settings counts purgeable space and APFS snapshots, which are not files a scanner can walk to. A folder scan adds up what is really on disk. Treat Storage settings as the headline and the scan as the explanation; local snapshots are usually the gap.</p>
+    <h3 class="faq-q">Will System Data come back after I clear it?</h3>
+    <p>Some of it, yes. Caches are rebuilt as you use apps, and snapshots are created every hour while Time Machine is on. That is normal. What should not come back is the stale material: old simulator runtimes, caches for apps you removed, and backups of devices you no longer own.</p>
+
+    <p>For the wider job of freeing up space, see <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a> and <a href="/blog/how-to-find-large-files-on-mac">how to find large files on a Mac</a>.</p>
 
     <p>&mdash; Mukul</p>
 
@@ -306,7 +328,9 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
     <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
       <li><a href="/blog/why-i-built-klarity" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Why I Built Klarity &mdash; A DaisyDisk Alternative for $6.99 &rarr;</a></li>
-      <li><a href="/blog/treemap-icicle-vs-sunburst" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Treemap vs Sunburst: Why Klarity over DaisyDisk &rarr;</a></li>
+      <li><a href="/blog/how-to-clean-up-mac-storage" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Clean Up Mac Storage: What&rsquo;s Safe to Delete in 2026 &rarr;</a></li>
+      <li><a href="/blog/how-to-find-large-files-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Find Large Files on a Mac (Without Terminal) &rarr;</a></li>
+      <li><a href="/blog/treemap-icicle-vs-sunburst" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Treemap vs Sunburst: Which Disk Map Finds Big Files Faster? &rarr;</a></li>
     </ul>
   </div>
 </main>

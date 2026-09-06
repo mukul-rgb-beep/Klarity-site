@@ -16,6 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Support & FAQs — Klarity Mac Disk Analyzer">
   <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why can't Klarity see some folders?", "acceptedAnswer": {"@type": "Answer", "text": "Some system folders are protected by macOS. To scan everything, grant Klarity \"Full Disk Access\" in System Settings → Privacy & Security → Full Disk Access. Without it, Klarity can still scan your home folder and most user-accessible locations."}}, {"@type": "Question", "name": "Is my data sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity runs 100% locally on your Mac. No data is collected, transmitted, or stored remotely. There are no analytics, no accounts, and no cloud services. See our Privacy Policy for details."}}, {"@type": "Question", "name": "How do I drill down into a folder?", "acceptedAnswer": {"@type": "Answer", "text": "Double-click any folder in the treemap or icicle view to drill into it. Use the breadcrumb navigation at the top to go back up. You can also right-click any item for options like \"Reveal in Finder\" or \"Drill Into\"."}}, {"@type": "Question", "name": "Can I switch between visualization modes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Go to Settings → Appearance → Disk Visualization and choose between Treemap (rectangles sized by file/folder size) or Icicle (stacked bars by hierarchy depth). Your preference is saved automatically."}}, {"@type": "Question", "name": "Does Klarity delete files?", "acceptedAnswer": {"@type": "Answer", "text": "Not permanently. Klarity can move an item to the Trash, but only after you confirm — and anything over 1 GB asks for a deliberate slide to confirm. It never empties the Trash and never touches system folders on its own, so a mistake is recoverable until you empty the Trash yourself. You can also use \"Reveal in Finder\" to manage files by hand."}}, {"@type": "Question", "name": "Can I monitor RAM usage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Toggle \"Show RAM\" in Settings → Appearance → RAM Display Mode. Klarity will show real-time memory usage in the app. You can adjust the refresh interval in the same settings panel."}}, {"@type": "Question", "name": "Does Klarity work with external drives and HDDs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Klarity scans any mounted volume — internal SSDs, external SSDs, USB hard drives, and even network drives. Scan speed depends on the drive: internal SSDs are fastest (a full scan in seconds), external SSDs are nearly as quick, while traditional HDDs can take longer due to mechanical read speeds. For very large external drives (4 TB+), the initial scan may take a few minutes but you can browse results as they come in."}}, {"@type": "Question", "name": "Why doesn't a Home scan show my Library folder or System Data?", "acceptedAnswer": {"@type": "Answer", "text": "macOS marks ~/Library as hidden, and the current version skips hidden folders, so a Home scan leaves it out and the total looks small. Scan ~/Library as its own root instead: choose \"Choose Folder…\", press Cmd + Shift + G and type ~/Library. Scanning a folder as the root always works. Hidden-folder scanning with a Library shortcut is planned for 1.3.1. See what System Data on a Mac actually is."}}]}</script>
   <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -313,7 +314,7 @@
       Does Klarity delete files?
     </div>
     <div class="faq-a">
-      No. Klarity is a read-only analyzer — it only reads file metadata (names and sizes) to create visualizations. It never modifies, moves, or deletes any files. You can use the "Reveal in Finder" option to manage files yourself.
+      Not permanently. Klarity can move an item to the Trash, but only after you confirm — and anything over 1 GB asks for a deliberate slide to confirm. It never empties the Trash and never touches system folders on its own, so a mistake is recoverable until you empty the Trash yourself. You can also use "Reveal in Finder" to manage files by hand.
     </div>
   </div>
 
@@ -335,6 +336,15 @@
     </div>
   </div>
 
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      Why doesn't a Home scan show my Library folder or System Data?
+    </div>
+    <div class="faq-a">
+      macOS marks ~/Library as hidden, and the current version skips hidden folders, so a Home scan leaves it out and the total looks small. Scan ~/Library as its own root instead: choose "Choose Folder…", press Cmd + Shift + G and type ~/Library. Scanning a folder as the root always works. Hidden-folder scanning with a Library shortcut is planned for 1.3.1. See <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a>.
+    </div>
+  </div>
+
   <!-- System Requirements -->
   <div class="requirements">
     <h3>System Requirements</h3>
@@ -348,7 +358,7 @@
 </div>
 
 <footer>
-  © 2025–2026 Klarity. Built by Mukul Mehra. · <a href="/privacy">Privacy Policy</a> · <a href="/age-suitability">Age Suitability</a> · <a href="/press">Press</a> · <a href="/daisydisk-alternative">DaisyDisk alternative</a> · <a href="/changelog">Changelog</a> · <a href="/blog/">Blog</a>
+  © 2025–2026 Klarity. Built by Mukul Mehra. · <a href="/">Mac disk space analyzer</a> · <a href="/blog/">Blog</a> · <a href="/changelog">Changelog</a> · <a href="/daisydisk-alternative">DaisyDisk alternative</a> · <a href="/press">Press</a> · <a href="/age-suitability">Age Suitability</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Use</a>
 </footer>
 
 <script>

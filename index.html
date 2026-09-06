@@ -18,17 +18,18 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Klarity — Mac Disk Space Analyzer. See Your Disk. Clearly.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Klarity","description":"A beautiful disk analyzer for macOS with treemap and icicle visualizations.","operatingSystem":"macOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"6.99","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mukul Mehra"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Klarity Disk","alternateName":"Klarity","url":"https://www.klaritydisk.com/","description":"A $6.99 Mac disk space analyzer. Treemap and icicle views show what's eating your storage in seconds. Native macOS, no subscription, no telemetry.","image":"https://www.klaritydisk.com/og-image.png","screenshot":["https://www.klaritydisk.com/screenshot-treemap.png","https://www.klaritydisk.com/screenshot-overview.png","https://www.klaritydisk.com/screenshot-ram.png","https://www.klaritydisk.com/screenshot-menubar.png"],"operatingSystem":"macOS 14.6 or later","applicationCategory":"UtilitiesApplication","softwareVersion":"1.3","datePublished":"2026-02-14","downloadUrl":"https://apps.apple.com/app/klarity-disk/id6758895498?mt=12","installUrl":"https://apps.apple.com/app/klarity-disk/id6758895498?mt=12","featureList":["Squarified treemap disk visualization","Icicle / flame graph view","Age heatmap by last-modified date","Large file finder","Move to Trash with confirmation","Live RAM monitor in the menu bar","Scan any mounted volume"],"offers":{"@type":"Offer","price":"6.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://apps.apple.com/app/klarity-disk/id6758895498?mt=12"},"author":{"@type":"Person","name":"Mukul Mehra","url":"https://www.klaritydisk.com/blog/why-i-built-klarity"},"publisher":{"@type":"Organization","name":"Klarity","url":"https://www.klaritydisk.com/","logo":{"@type":"ImageObject","url":"https://www.klaritydisk.com/icon-180.png"}}}</script>
 
-<!-- GSAP + ScrollTrigger -->
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
 <script>
 // Prevent FOUC: apply saved theme before first paint
 (function(){var t=localStorage.getItem('klarity-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- GSAP + ScrollTrigger (deferred: the page renders without them; the inline script below waits for DOMContentLoaded) -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -497,8 +498,6 @@ nav.scrolled {
 }
 .hero h1 .word {
   display: inline-block;
-  transform: translateY(120%);
-  opacity: 0;
 }
 .gradient-text {
   background: linear-gradient(135deg, var(--teal), var(--blue), var(--mint));
@@ -1908,13 +1907,13 @@ body.has-launch-banner nav { top: 44px; }
     <div class="reveal">
       <span class="section-label">Features</span>
       <h2 class="section-title">Everything you need to<br>understand your storage.</h2>
-      <p class="section-desc">Klarity combines powerful analysis with a beautiful interface. No bloat, no telemetry, no subscriptions.</p>
+      <p class="section-desc">Klarity combines powerful analysis with a beautiful interface. No bloat, no telemetry, no subscriptions. Start with <a href="/blog/what-is-system-data-on-mac" style="color:var(--teal);text-decoration:none;">what &ldquo;System Data&rdquo; on a Mac really is</a>, or the guides on <a href="/blog/how-to-clean-up-mac-storage" style="color:var(--teal);text-decoration:none;">cleaning up Mac storage</a> and <a href="/blog/how-to-find-large-files-on-mac" style="color:var(--teal);text-decoration:none;">finding large files</a>.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon">◫</div>
         <h3>Squarified Treemap</h3>
-        <p>See every file and folder as proportional rectangles. Instantly spot what's consuming your space at a glance.</p>
+        <p>See every file and folder as proportional rectangles. Instantly spot what's consuming your space at a glance. <a href="/blog/treemap-icicle-vs-sunburst" style="color:var(--teal);text-decoration:none;">Why a treemap beats a sunburst &rarr;</a></p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">▤</div>
@@ -2032,7 +2031,7 @@ body.has-launch-banner nav { top: 44px; }
         <div class="showcase-step" id="step3">
           <span class="step-number">03 — ACT</span>
           <h2>Reclaim your<br><span class="gradient-text">storage.</span></h2>
-          <p>Right-click to reveal in Finder. Identify forgotten downloads, bloated caches, and duplicate files. Free up space in minutes.</p>
+          <p>Move space hogs to the Trash or reveal them in Finder. Identify forgotten downloads, bloated caches, and stale Xcode data. Free up space in minutes. Wondering what <a href="/blog/what-is-system-data-on-mac" style="color:var(--teal);text-decoration:none;">System Data</a> actually is?</p>
         </div>
       </div>
     </div>
@@ -2188,19 +2187,20 @@ body.has-launch-banner nav { top: 44px; }
   <div class="footer-inner">
     <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
     <ul class="footer-links">
-      <li><a href="/privacy">Privacy Policy</a></li>
-      <li><a href="/age-suitability">Age Suitability</a></li>
-      <li><a href="/terms">Terms of Use</a></li>
       <li><a href="/support">Support</a></li>
-      <li><a href="/press">Press</a></li>
-      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
       <li><a href="/changelog">Changelog</a></li>
       <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
     </ul>
   </div>
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
 /* ═══════════════════════════════════════════════════ */
 /* GSAP + ScrollTrigger Setup                          */
 /* ═══════════════════════════════════════════════════ */
@@ -2211,6 +2211,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 // ─── Page Loader ───
 window.addEventListener('load', () => {
   const loader = document.getElementById('pageLoader');
+  if (typeof gsap === 'undefined') { loader.style.display = 'none'; document.querySelectorAll('.reveal').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; }); return; }
   const logo = loader.querySelector('.loader-logo');
 
   gsap.to(logo, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' });
@@ -2227,7 +2228,7 @@ window.addEventListener('load', () => {
 
 function initAnimations() {
   // ─── Hero text reveal ───
-  gsap.to('.hero .word', {
+  gsap.fromTo('.hero .word', { y: '120%', opacity: 0 }, {
     y: 0, opacity: 1,
     duration: 1,
     ease: 'expo.out',
@@ -2585,7 +2586,9 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 document.querySelector('#lightboxImg')?.addEventListener('click', e => e.stopPropagation());
-
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+});
 </script>
 </body>
 </html>
