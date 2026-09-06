@@ -1,39 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://www.klaritydisk.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.klaritydisk.com/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.klaritydisk.com/de/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.klaritydisk.com/ja/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.klaritydisk.com/fr/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.klaritydisk.com/es/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.klaritydisk.com/ko/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.klaritydisk.com/pt/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.klaritydisk.com/zh-hans/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.klaritydisk.com/zh-hant/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.klaritydisk.com/it/" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.klaritydisk.com/nl/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.klaritydisk.com/" />
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url><loc>https://www.klaritydisk.com/de/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/ja/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/fr/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/es/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/ko/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/pt/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/zh-hans/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/zh-hant/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/it/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/nl/</loc><lastmod>2026-03-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/blog/</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst</loc><lastmod>2026-02-16</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/blog/building-liquid-glass-ui-macos</loc><lastmod>2026-02-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.klaritydisk.com/privacy.html</loc><lastmod>2026-02-11</lastmod><priority>0.3</priority></url>
-  <url><loc>https://www.klaritydisk.com/terms.html</loc><lastmod>2026-02-11</lastmod><priority>0.3</priority></url>
-  <url><loc>https://www.klaritydisk.com/support.html</loc><lastmod>2026-02-11</lastmod><priority>0.5</priority></url>
-  <url><loc>https://www.klaritydisk.com/changelog</loc><lastmod>2026-09-06</lastmod><priority>0.5</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.klaritydisk.com/</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.klaritydisk.com/changelog</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/support</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/privacy</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.klaritydisk.com/terms</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/why-i-built-klarity</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.klaritydisk.com/blog/building-liquid-glass-ui-macos</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 </urlset>
