@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is "System Data" on a Mac, and What's Safe to Clear? | Klarity Blog</title>
+<meta name="description" content="System Data is macOS's catch-all storage category: caches, logs, Xcode data, snapshots and more. Here's what's actually inside it, how to look, and what you can safely delete.">
+<meta name="keywords" content="system data mac, macos system data large, what is system data, clear system data mac, mac storage full, ~/Library/Caches, xcode derived data, local snapshots, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/what-is-system-data-on-mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is &quot;System Data&quot; on a Mac, and What's Safe to Clear?">
+<meta property="og:description" content="macOS puts everything it can't categorise into System Data. Here's what's really in there and what you can safely delete.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/what-is-system-data-on-mac">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-09-06">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is &quot;System Data&quot; on a Mac, and What's Safe to Clear?">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Is \u201cSystem Data\u201d on a Mac, and What\u2019s Safe to Clear?",
+  "description": "macOS puts everything it can't categorise into System Data. Here's what's really in there and what you can safely delete.",
+  "author": {"@type": "Person", "name": "Mukul Mehra"},
+  "datePublished": "2026-09-06",
+  "publisher": {"@type": "Organization", "name": "Klarity"},
+  "mainEntityOfPage": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"
+}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<script>
+(function(){var t=localStorage.getItem('klarity-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal: #3ECFCF; --teal-dim: #2a9e9e; --blue: #5B8DEF; --mint: #47E0B0;
+  --lavender: #7BA4F7; --coral: #FF6B6B; --bg-deep: #060810;
+  --bg-card: rgba(255,255,255,0.03); --bg-card-hover: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(255,255,255,0.12);
+  --text-primary: rgba(255,255,255,0.92); --text-secondary: rgba(255,255,255,0.55);
+  --text-muted: rgba(255,255,255,0.3); --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08); --nav-bg: rgba(6,8,16,0.7);
+  --nav-bg-scrolled: rgba(6,8,16,0.92); --nav-mobile-bg: rgba(6,8,16,0.96);
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-theme="light"] {
+  --bg-deep: #f4f5f7; --bg-card: rgba(0,0,0,0.03); --bg-card-hover: rgba(0,0,0,0.06);
+  --border: rgba(0,0,0,0.12); --border-hover: rgba(0,0,0,0.2);
+  --text-primary: rgba(0,0,0,0.88); --text-secondary: rgba(0,0,0,0.58);
+  --text-muted: rgba(0,0,0,0.38); --glass-bg: rgba(255,255,255,0.75);
+  --glass-border: rgba(0,0,0,0.08); --teal: #147272; --teal-dim: #0f5c5c;
+  --blue: #3a6ac9; --mint: #167a5e; --lavender: #5a7fd4; --coral: #d94545;
+  --nav-bg: rgba(255,255,255,0.72); --nav-bg-scrolled: rgba(255,255,255,0.92);
+  --nav-mobile-bg: rgba(255,255,255,0.96);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { cursor: pointer; }
+
+.ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.ambient-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.10; animation: orbFloat 20s ease-in-out infinite alternate; }
+.ambient-orb:nth-child(1) { width: 500px; height: 500px; background: var(--teal); top: -10%; left: -10%; }
+.ambient-orb:nth-child(2) { width: 400px; height: 400px; background: var(--blue); top: 50%; right: -15%; animation-delay: -7s; }
+@keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.03); } 100% { transform: translate(-15px,10px) scale(0.97); } }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 48px; height: 72px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); background: var(--nav-bg); border-bottom: 1px solid var(--border); transition: background 0.3s, box-shadow 0.3s; }
+nav.scrolled { background: var(--nav-bg-scrolled); box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--text-primary); letter-spacing: -0.02em; }
+.nav-logo svg { flex-shrink: 0; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--teal); transition: width 0.3s var(--ease-out-expo); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--teal); }
+.nav-links a.active::after { width: 100%; }
+.nav-cta { background: linear-gradient(135deg, var(--teal), var(--blue)); color: #fff !important; padding: 8px 20px; border-radius: 100px; font-weight: 600 !important; font-size: 0.85rem !important; transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s !important; box-shadow: 0 2px 16px rgba(62,207,207,0.2); }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 24px rgba(62,207,207,0.35) !important; }
+[data-theme="light"] .nav-cta { color: #fff !important; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.theme-toggle:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 8px; cursor: pointer; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: 0.3s; }
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-hamburger { display: flex; }
+  .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: var(--nav-mobile-bg); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 20px; gap: 20px; border-bottom: 1px solid var(--border); transform: translateY(-120%); transition: transform 0.4s var(--ease-out-expo); }
+  .nav-links.open { transform: translateY(0); }
+}
+
+.article-page { position: relative; z-index: 2; min-height: 100vh; padding-top: 72px; }
+.article-header { max-width: 720px; margin: 0 auto; padding: 80px 24px 40px; }
+.article-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 500; color: var(--teal); text-decoration: none; margin-bottom: 32px; transition: gap 0.3s var(--ease-out-expo); }
+.article-back:hover { gap: 10px; }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.article-tag { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); background: rgba(62,207,207,0.08); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(62,207,207,0.15); }
+[data-theme="light"] .article-tag { background: rgba(20,114,114,0.08); border-color: rgba(20,114,114,0.15); }
+.article-date { font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); }
+.article-header h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px; }
+.article-subtitle { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.65; }
+.article-divider { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.article-divider hr { border: none; height: 1px; background: var(--border); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+.article-body h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--text-primary); }
+.article-body h2:first-child { margin-top: 0; }
+.article-body p { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }
+.article-body strong { color: var(--text-primary); font-weight: 600; }
+.article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+.article-body a:hover { opacity: 0.8; }
+.article-body blockquote { border-left: 3px solid var(--teal); padding: 16px 24px; margin: 28px 0; background: var(--glass-bg); border-radius: 0 12px 12px 0; }
+.article-body blockquote p { color: var(--text-primary); font-style: italic; margin-bottom: 0; }
+.article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+.article-body li { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 8px; }
+.callout { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 24px; margin: 32px 0; }
+.article-body code { font-family: var(--font-mono); font-size: 0.88em; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 5px; padding: 1px 5px; color: var(--text-primary); overflow-wrap: break-word; }
+.callout-title { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--teal); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.article-cta { max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
+.article-cta-inner { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 40px; text-align: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.article-cta-inner h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
+.article-cta-inner p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px; }
+.cta-button { display: inline-block; background: linear-gradient(135deg, var(--teal), var(--blue)); color: #fff; padding: 12px 32px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s; box-shadow: 0 2px 16px rgba(62,207,207,0.2); }
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(62,207,207,0.35); color: #fff; }
+
+footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+@media (max-width: 600px) {
+  .article-header { padding: 60px 20px 32px; }
+  .article-body { padding: 32px 20px 60px; }
+  .article-cta { padding: 0 20px; }
+  .article-cta-inner { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="ambient">
+  <div class="ambient-orb"></div>
+  <div class="ambient-orb"></div>
+</div>
+
+<nav id="mainNav">
+  <a href="/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+      <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+      <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+      <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+      <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+      <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+      <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+      <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+    </svg>
+    Klarity
+  </a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#features">Features</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#compare">Compare</a></li>
+    <li><a href="/support">Support</a></li>
+    <li><a href="/changelog">Changelog</a></li>
+    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+    <li><a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">macOS</span>
+      <span class="article-date">September 6, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
+    </div>
+    <h1>What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear?</h1>
+    <p class="article-subtitle">It is the biggest, vaguest bar in your storage settings, and macOS tells you almost nothing about it. Here is what is actually inside, how to look at it yourself, and which parts you can delete without regret.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>The number nobody can explain</h2>
+
+    <p>Open System Settings &rarr; General &rarr; Storage on macOS 13 or later and you get a coloured bar: Applications, Documents, Photos, Messages, macOS &mdash; and then a grey block called <strong>System Data</strong>. On my own Mac it has been anywhere between 20&nbsp;GB and 130&nbsp;GB. Click it and macOS gives you no breakdown at all. Just a size.</p>
+
+    <p>That grey bar is the reason I started building <a href="https://www.klaritydisk.com/">Klarity Disk</a> in the first place. It is not a bug, and it is not a virus, and it is almost never something you need to panic about. But it is genuinely unhelpful, so here is what is hiding in there.</p>
+
+    <h2>What System Data actually is</h2>
+
+    <p>System Data is not a folder. It is a leftover bucket: everything on your disk that macOS could not confidently assign to one of the named categories gets counted here. In practice that means:</p>
+
+    <ul>
+      <li><strong>App caches</strong> &mdash; mostly <code>~/Library/Caches</code>, where apps keep downloaded data they can regenerate.</li>
+      <li><strong>Logs and app support data</strong> &mdash; diagnostic logs and the working files apps keep in Application Support.</li>
+      <li><strong>Xcode</strong> &mdash; <code>~/Library/Developer</code>: DerivedData build output, iOS and watchOS simulator runtimes, and device support files. If you write software, this is usually the biggest single item.</li>
+      <li><strong>Time Machine local snapshots</strong> &mdash; APFS snapshots kept on your internal disk between backups. List them with <code>tmutil listlocalsnapshots /</code>.</li>
+      <li><strong>Swap and the sleep image</strong> &mdash; virtual memory files in <code>/private/var/vm</code>, sized by how much RAM pressure your Mac is under.</li>
+      <li><strong>Spotlight indexes</strong>, mail attachments, browser profiles and disk images.</li>
+      <li><strong>Container data for sandboxed apps</strong> &mdash; <code>~/Library/Containers</code> and <code>~/Library/Group Containers</code>, where App Store apps keep their real data.</li>
+    </ul>
+
+    <p>Notice how much of that lives in one place: <code>~/Library</code>, the Library folder inside your home folder. That is where you should look first.</p>
+
+    <h2>How to actually see inside it</h2>
+
+    <p>There is a catch. macOS marks <code>~/Library</code> as hidden, and Klarity&rsquo;s scanner skips hidden items. So if you scan your Home folder, <strong>you will not see <code>~/Library</code> at all</strong> &mdash; and the total will look suspiciously small.</p>
+
+    <p>The fix is simple: scan <code>~/Library</code> as the root of its own scan. In Klarity, choose <strong>Choose Folder&hellip;</strong>, and in the open panel press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G</strong> and type <code>~/Library</code> (or press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;.</strong> to reveal hidden folders and click through). Scanning a folder as the root always works, hidden or not. Then let the treemap do its job: the biggest rectangles are your answer, and you can drill into <code>Caches</code>, <code>Developer</code> and <code>Containers</code> from there.</p>
+
+    <p>If you would rather not install anything, Finder can get you most of the way: <strong>Go &rarr; Go to Folder&hellip;</strong> (Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G), type <code>~/Library</code>, then select a folder and press Cmd&nbsp;+&nbsp;I to see its size. It is slow and one folder at a time, but it is free and it is already on your Mac.</p>
+
+    <div class="callout">
+      <div class="callout-title">A useful trick</div>
+      <p>Klarity&rsquo;s age heatmap colours everything by last-modified date. Point it at <code>~/Library</code> and the stale material stands out immediately &mdash; caches for apps you uninstalled two years ago, simulator runtimes for an iOS version nobody targets any more. Old and large is the combination worth acting on.</p>
+    </div>
+
+    <p>To put a number on it: on my own Mac, <code>~/Library/Caches</code> was <strong>9.7&nbsp;GB</strong> and <code>~/Library/Developer</code> was <strong>91&nbsp;GB</strong> &mdash; almost all of it simulator runtimes and DerivedData. That is a hundred gigabytes of &ldquo;System Data&rdquo; explained by two folders.</p>
+
+    <h2>What is safe to clear</h2>
+
+    <p>These are the things I delete on my own machine without hesitating:</p>
+
+    <ul>
+      <li><strong>The contents of <code>~/Library/Caches</code></strong>. Apps rebuild caches on demand. Delete the contents of the subfolders, quit the apps first where you can, and expect the first launch afterwards to be a little slower.</li>
+      <li><strong>Xcode DerivedData</strong> (<code>~/Library/Developer/Xcode/DerivedData</code>). It is build output. Your next build regenerates it.</li>
+      <li><strong>Unused simulator runtimes.</strong> Remove these properly through <strong>Xcode &rarr; Settings &rarr; Platforms</strong> rather than deleting files by hand, so Xcode&rsquo;s bookkeeping stays consistent.</li>
+      <li><strong>Old <code>~/Library/Developer/Xcode/iOS DeviceSupport</code> folders.</strong> One per iOS version you have ever debugged against; the ancient ones are dead weight.</li>
+      <li><strong>Old iOS device backups</strong> you no longer need &mdash; manage those in Finder&rsquo;s device backup manager, not by deleting folders.</li>
+      <li><strong>Local Time Machine snapshots</strong>, with <code>tmutil deletelocalsnapshots</code>. macOS thins these automatically when space gets tight, so this is mostly for when you need space right now.</li>
+      <li><strong>The Trash.</strong> Obvious, but easy to forget &mdash; items sitting in it still occupy the disk.</li>
+    </ul>
+
+    <p>Worth saying plainly how Klarity behaves here, because deletion tools deserve scrutiny: Klarity only ever moves items to the Trash, and only after you confirm &mdash; anything over 1&nbsp;GB needs a deliberate slide to confirm. It never empties the Trash for you, and it never touches system folders on its own initiative. If you change your mind, the file is still there.</p>
+
+    <h2>What to leave alone</h2>
+
+    <p>Some of System Data is load-bearing. Do not go near:</p>
+
+    <ul>
+      <li><code>/System</code> &mdash; the sealed system volume. It is protected for good reason.</li>
+      <li><code>/Library</code> system frameworks &mdash; shared machinery that apps depend on.</li>
+      <li><code>~/Library/Preferences</code> &mdash; your settings for every app you own.</li>
+      <li><code>~/Library/Keychains</code> &mdash; your passwords and certificates. Deleting this is genuinely destructive.</li>
+      <li><code>~/Library/Application Support</code> for apps you actually use &mdash; despite the vague name, this is often real data, not cache.</li>
+      <li>Anything in <code>Containers</code> or <code>Group Containers</code> for an app you still use. For a sandboxed app, that folder <em>is</em> the app&rsquo;s documents.</li>
+    </ul>
+
+    <p>The rule I use: if I cannot name what created a folder and why, I leave it. Reclaiming four gigabytes is not worth an afternoon of reconfiguring an app.</p>
+
+    <h2>Why the numbers will never match</h2>
+
+    <p>Once you start measuring, you will find the figure in Storage settings does not agree with what a folder scan reports. That is expected, not an error in either tool.</p>
+
+    <p>Storage settings counts purgeable space &mdash; material macOS is willing to evict automatically when you need room &mdash; and it counts APFS snapshots, which are not files you can walk to. A scanner walks directories and adds up what is really there. The two are answering slightly different questions, so treat Storage settings as the headline and a folder scan as the explanation. When they disagree by tens of gigabytes, local snapshots are usually the difference.</p>
+
+    <h2>In short</h2>
+
+    <p>System Data is not mysterious once you look at it. It is mostly caches, mostly Xcode if you are a developer, and mostly recoverable. Scan <code>~/Library</code> as its own root, sort by size, check the dates, and deal with the two or three folders that account for nearly all of it. Then stop &mdash; the long tail is not worth the risk.</p>
+
+    <p>Klarity Disk is $6.99 on the Mac App Store, one payment, and it makes that particular scan about a thirty-second job. If you hit something I have not covered here, <a href="/support">get in touch</a> &mdash; I answer my own support mail.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/in/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
+    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/why-i-built-klarity" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Why I Built Klarity &mdash; A DaisyDisk Alternative for $6.99 &rarr;</a></li>
+      <li><a href="/blog/treemap-icicle-vs-sunburst" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Treemap vs Sunburst: Why Klarity over DaisyDisk &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+const hamburger = document.getElementById('navHamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('klarity-theme', next);
+  themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+});
+if (document.documentElement.getAttribute('data-theme') === 'light') themeToggle.textContent = '☀️';
+</script>
+</body>
+</html>
