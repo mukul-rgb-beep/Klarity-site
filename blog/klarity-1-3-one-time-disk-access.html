@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files | Klarity Blog</title>
-<meta name="description" content="Klarity 1.3 makes Move to Trash work everywhere. Here is what Apple's app sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.">
-<meta name="keywords" content="klarity 1.3, macos app sandbox, security-scoped bookmarks, powerbox macos, sandboxed app delete files, move to trash mac app, user-selected read-write, mac disk space analyzer">
+<title>Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed | Klarity Blog</title>
+<meta name="description" content="Klarity 1.3 makes Move to Trash work everywhere. Why an App Store app cannot touch your files until you point at them, explained without jargon.">
+<meta name="keywords" content="klarity 1.3, move to trash mac app, mac app store app permissions, why mac app cannot delete files, mac disk space analyzer, macos folder access, klarity disk update">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files">
-<meta property="og:description" content="Move to Trash works everywhere in 1.3. Here is what the macOS sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.">
+<meta property="og:title" content="Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed">
+<meta property="og:description" content="Move to Trash now works everywhere in 1.3. Why an App Store app cannot touch your files until you point at them, explained without the jargon.">
 <meta property="og:url" content="https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
 <meta property="article:published_time" content="2026-09-10">
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files">
-<meta name="twitter:description" content="Move to Trash works everywhere in 1.3. Here is what the macOS sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.">
+<meta name="twitter:title" content="Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed">
+<meta name="twitter:description" content="Move to Trash now works everywhere in 1.3. Why an App Store app cannot touch your files until you point at them, explained without the jargon.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files", "description": "Move to Trash works everywhere in 1.3. Here is what the macOS sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-10", "dateModified": "2026-09-10", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files", "item": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed", "description": "Move to Trash now works everywhere in 1.3. Why an App Store app cannot touch your files until you point at them, explained without the jargon.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-10", "dateModified": "2026-09-10", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed", "item": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}]}</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
@@ -189,10 +189,10 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
     <div class="article-meta">
       <span class="article-tag">Release</span>
       <span class="article-date">September 10, 2026</span>
-      <span class="article-date">Mukul Mehra &middot; 7 min read</span>
+      <span class="article-date">Mukul Mehra &middot; 5 min read</span>
     </div>
-    <h1>Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files</h1>
-    <p class="article-subtitle">Version 1.3 shipped today, and its headline feature is that Move to Trash works. That sounds like an admission, and it is. Here is what Apple&rsquo;s sandbox actually does, and why fixing it took a whole release.</p>
+    <h1>Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed</h1>
+    <p class="article-subtitle">Version 1.3 shipped today, and its headline feature is that Move to Trash works. That sounds like an admission, and it is. Here is what was actually going wrong, in plain words.</p>
   </div>
 
   <div class="article-divider"><hr></div>
@@ -201,73 +201,73 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
 
     <h2>The feature that only worked sometimes</h2>
 
-    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity Disk</a> 1.3, build 1300, went live on the Mac App Store today. The change worth writing about is not a new chart. It is that right-clicking a folder and choosing <strong>Move to Trash</strong> now works where you would expect it to, rather than where I happened to have tested.</p>
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity Disk</a> 1.3 (build 1300) is on the Mac App Store today. The change worth writing about is not a new chart. It is that right-clicking a folder and choosing <strong>Move to Trash</strong> now works wherever you use it, not only where I happened to have tested.</p>
 
-    <p>Before 1.3 the behaviour depended on where the file was, in a way I could explain and no user should have to. Inside a folder you had already pointed Klarity at: fine. In Downloads, before any such grant: nothing, or an error after the fact. On an external drive: also nothing. The app was not broken in the ordinary sense &mdash; it was doing exactly what macOS allowed, which was less than the interface implied. That gap is the subject of this post.</p>
+    <p>Before 1.3 it depended on where the file was. Inside a folder you had already pointed Klarity at, fine. In Downloads, before you had ever pointed at Downloads, deleting a file did nothing at all &mdash; and Klarity did not even tell you. On an external drive, the same.</p>
 
-    <h2>What the sandbox actually is</h2>
+    <p>It was not broken in the ordinary sense. It was doing exactly what macOS allowed, which was less than the buttons implied.</p>
 
-    <p>Every app on the Mac App Store runs in Apple&rsquo;s <strong>app sandbox</strong>. It is not a setting, it is a condition of being on the store. At launch the kernel wraps the app in a policy that says, roughly: read and write inside your own container directory and nowhere else, unless you have been given a specific exception.</p>
+    <h2>Why the app could not touch your files</h2>
 
-    <p>Those exceptions are called entitlements. Klarity declares exactly one for files, <code>user-selected.read-write</code>, and nothing else: no network, no camera, no microphone, no contacts. It cannot make a network connection at all, which is the other thing I care about and have <a href="/blog/why-i-built-klarity">written about before</a>.</p>
+    <p>Every app sold through the Mac App Store is walled off from the rest of your Mac. That is not a setting I chose; it is a condition of being on the store. By default such an app may read and write inside its own private folder and nowhere else.</p>
 
-    <p><code>user-selected.read-write</code> is narrower than it sounds. It means: <em>the only files this app may touch are ones you have explicitly pointed at, through a system file picker</em>. Not your home folder, not Downloads, not a folder whose path the app happens to know. If Klarity builds a path and calls <code>FileManager</code> on it with no grant behind it, the call fails &mdash; and it tends to fail quietly, as an empty directory listing rather than a loud error.</p>
+    <p>The only way through that wall is you. If you point the app at a folder yourself, macOS opens the wall for it. Nothing else counts: not knowing where a folder is, not being an app you paid for. You have to point.</p>
 
-    <p>Which is how you get a disk analyzer that reports your Downloads folder as containing nothing at all.</p>
+    <p>So when Klarity reached for a folder you had never shown it, macOS refused. The trouble is how: the refusal comes back looking like an empty folder rather than an error. Which is how you get a disk analyzer telling you Downloads contains nothing.</p>
 
-    <h2>The picker is not Klarity&rsquo;s picker</h2>
+    <h2>The file picker is not mine</h2>
 
-    <p>The interesting part is <em>how</em> the exception gets made, because almost nobody outside the platform knows the mechanism. When a sandboxed app opens a file picker, the panel you see is not drawn by that app. macOS runs it in a separate system process &mdash; the one Apple&rsquo;s documentation calls the <strong>powerbox</strong>. The app asks for a panel and gets back a result. It cannot read the names of files you scroll past, and it cannot see what you decided not to choose. The panel is a piece of the system that happens to appear inside the app&rsquo;s window.</p>
+    <p>Here is the part almost nobody is told. When an App Store app shows you a window to choose a folder, that window is not drawn by the app. macOS draws it and runs it separately. Klarity asks for a picker and gets back one thing: what you chose. It cannot see the files you scrolled past, or the folders you decided against.</p>
 
-    <p>The moment you click Open, the kernel widens the app&rsquo;s sandbox to include what you chose. That is the whole model in one sentence: <strong>your click is the permission</strong>. Not a dialog the app can phrase persuasively, not a checkbox buried in settings &mdash; an actual selection, made in a panel the app cannot influence.</p>
+    <p>The moment you click Open, macOS widens the wall to include what you picked. That is the whole idea in one sentence: <strong>choosing the folder is the permission</strong>. Not a dialog I wrote and phrased persuasively. An actual choice, made in a window I have no control over.</p>
 
-    <p>The access you get that way normally dies when the app quits. To keep it, the app asks macOS for a <strong>security-scoped bookmark</strong>: an opaque blob encoding both the location and the permission, stored and handed back on the next launch to reopen the same access. That is the piece that turns &ldquo;you allowed this once&rdquo; into &ldquo;you allowed this&rdquo;.</p>
+    <p>Access given that way would normally vanish when the app quits. macOS lets an app ask to remember it instead, so you are asked once rather than at every launch, and only about what you chose.</p>
 
-    <h2>What 1.3 actually changed</h2>
+    <h2>What 1.3 changed</h2>
 
-    <p>Version 1.2 kept one bookmark. One. You could grant Klarity access to a folder, and that was the folder it had; everything else took the quiet-failure path above. The fix in 1.3 is not clever, just done properly, and it has three parts.</p>
+    <p>Version 1.2 could remember exactly one folder. One. Everything else took the silent path above. The fix is not clever, just done properly, and it has three parts.</p>
 
-    <p><strong>Grants are stored per volume, not per folder.</strong> When Klarity needs a path it cannot reach, it works out which volume root that path belongs to &mdash; <code>/</code> for your startup disk, <code>/Volumes/&lt;name&gt;</code> for anything external &mdash; and asks for that. A store now keeps many such bookmarks and reopens all of them at launch, so the question is asked once per drive, not once per folder and certainly not once per file.</p>
+    <p><strong>One permission per drive, not per folder.</strong> When Klarity needs to reach somewhere it cannot, it now asks for the whole drive that thing lives on &mdash; your startup disk, or the external you plugged in &mdash; and remembers each drive separately. Once per drive, not once per file.</p>
 
-    <p><strong>Access is checked before anything is attempted.</strong> Every scan and every trash operation now goes through one coordinator whose job is to answer &ldquo;can we reach this yet, and if not, ask&rdquo;. If a grant already covers the path it returns at once and you see nothing. If not, you get a single sheet naming the volume and the reason &mdash; &ldquo;Klarity needs this to move &lsquo;DerivedData&rsquo; to the Trash&rdquo; &mdash; then the system picker, opened at that volume. No error-then-fix loop, because the check happens before the operation rather than after it fails.</p>
+    <p><strong>It asks before acting, instead of failing afterwards.</strong> Every scan and every delete checks access first. If you have already granted it, you see nothing. If not, you get one sheet naming the drive and the reason &mdash; &ldquo;Klarity needs this to move &lsquo;DerivedData&rsquo; to the Trash&rdquo; &mdash; then the macOS picker, open in the right place.</p>
 
-    <p><strong>Scanning a folder it cannot read asks, instead of returning nothing.</strong> Same coordinator, applied to the scan path. Pointing Klarity at Downloads before any grant used to produce a confident, empty, wrong answer. Now it asks.</p>
+    <p><strong>A folder it cannot read asks, instead of showing you nothing.</strong> Pointing Klarity at Downloads before granting anything used to give a confident, empty, wrong answer. Now it asks.</p>
 
     <figure>
-      <img src="/screenshot-treemap.png" alt="Klarity's treemap view, with folders drawn as rectangles sized by the space they use and coloured by age" width="2000" height="1066" loading="lazy">
+      <img src="/screenshot-treemap.png" alt="Klarity&rsquo;s treemap view, with folders drawn as rectangles sized by the space they use and coloured by age" width="2000" height="1066" loading="lazy">
       <figcaption>The treemap. Right-clicking a rectangle is where Move to Trash lives &mdash; and in 1.3 that right-click checks access before it does anything else.</figcaption>
     </figure>
 
-    <h2>Scan Macintosh HD, and stop counting it twice</h2>
+    <h2>One click for the whole Mac</h2>
 
-    <p>Once grants work per volume, scanning the whole startup disk stops being a special case, so 1.3 adds a header button that does it in one click. That surfaced a second bug, and a nice example of modern macOS being strange. Since Catalina your startup disk is really two APFS volumes, and the data volume &mdash; the one holding everything you own &mdash; appears in two places at once: as <code>/System/Volumes/Data</code>, and, through firmlinks, as the familiar <code>/Users</code> and <code>/Applications</code>. Walk <code>/</code> naively and you add the whole disk to the whole disk, reporting a Mac twice as full as it is. 1.3 skips volume roots below the scan root, so the total is the total.</p>
+    <p>Once permission works per drive, scanning your whole startup disk stops being a special case, so 1.3 adds a button that does it in one click. That turned up a second bug: modern macOS shows parts of your disk in more than one place at once, and the old scan counted them twice, so your Mac appeared twice as full as it was. 1.3 counts each thing once.</p>
 
     <h2>When macOS says no and means it</h2>
 
-    <p>Some deletions fail even with a perfectly good grant, because the file is owned by root or protected by System Integrity Protection. Nothing an App Store app can do will help there.</p>
+    <p>Some files will not go to the Trash no matter what you allow. They belong to the system, and macOS guards them. Nothing an App Store app can do changes that.</p>
 
-    <p>The old behaviour was to show a Grant Access prompt, which asked you to perform a ritual that could not possibly succeed. 1.3 tells the two cases apart. A permission failure <em>outside</em> what you have granted still offers Grant Access, which is now rare. One <em>inside</em> a granted area means macOS itself is refusing, so Klarity says &ldquo;Finder needs an admin password to delete this&rdquo; and offers <strong>Reveal in Finder</strong>. Not a solution. But an honest sentence beats a hopeful one.</p>
+    <p>The old version offered a Grant Access button, inviting you to perform a ritual that could not possibly work. 1.3 tells the two cases apart. A refusal from somewhere you never granted still offers Grant Access, which is now rare. One from somewhere you did grant means macOS itself is saying no, so Klarity says Finder needs an admin password to delete this, and offers <strong>Reveal in Finder</strong>. Not a solution. But an honest sentence beats a hopeful one.</p>
 
-    <p>Smaller things in the same release: <strong>Refresh Interval</strong> in Settings now actually changes how often RAM and process data update, and is remembered &mdash; it was being read once and then ignored, which is embarrassing to write down. Menu bar usage text and display mode persist across launches too. And the build number now shows after the version, e.g. 1.3 (1300), so a bug report can name a build. Full list on the <a href="/changelog">changelog</a>.</p>
+    <p>Smaller things: <strong>Refresh Interval</strong> in Settings now actually changes how often the RAM figures update, and it is remembered &mdash; it was read once and then ignored, which is embarrassing to write down. The menu bar settings are remembered too, and the build number now shows after the version, as 1.3 (1300). Full list on the <a href="/changelog">changelog</a>.</p>
 
     <div class="callout">
       <div class="callout-title">Nothing changes about what Klarity does with access</div>
-      <p>A grant lets Klarity read sizes and move items to the Trash. It never empties the Trash, never deletes outright, and never touches anything without a confirmation &mdash; a folder over 1&nbsp;GB needs a deliberate slide to confirm. And it makes no network connections, so nothing it learns about your disk can leave your Mac even in principle.</p>
+      <p>Permission lets Klarity measure sizes and move things to the Trash. It never empties the Trash, never deletes outright, and never acts without a confirmation &mdash; for a folder of 1&nbsp;GB or more, a deliberate slide. It makes no network connections, so nothing it learns can leave your Mac.</p>
     </div>
 
-    <h2>What 1.3 does not do</h2>
+    <h2>What 1.3 still does not do</h2>
 
-    <p>One limitation, stated plainly, because you will hit it and I would rather you heard it here. The shipping scanner passes <code>.skipsHiddenFiles</code>, and macOS marks <code>~/Library</code> as hidden. So a plain scan of your Home folder does not include <code>~/Library</code> &mdash; precisely where caches, Xcode DerivedData, simulator runtimes and app containers live. The folder that explains most of the grey &ldquo;System Data&rdquo; bar is the one a Home scan silently leaves out, and your Home total therefore looks smaller than it should. That is not the sandbox&rsquo;s fault; it is mine.</p>
+    <p>One limitation, stated plainly, because you will hit it. Today&rsquo;s version skips folders that macOS marks as hidden, and your Library folder is one of them. So a scan of your Home folder leaves out Library &mdash; where caches, Xcode leftovers and app data pile up. The folder that explains most of that grey &ldquo;System Data&rdquo; bar is the one a Home scan silently omits. That is not macOS&rsquo;s fault; it is mine.</p>
 
-    <p>Hidden-folder scanning, plus a Library shortcut in the folder menu, is what 1.3.1 is for. Until it ships the workaround is one step: scan <code>~/Library</code> as the root of its own scan, via <strong>Choose Folder&hellip;</strong> and then Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G in the open panel. Scanning a folder as the root works whether it is hidden or not. The walkthrough, and what is safe to delete once you are in there, is in <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a>.</p>
+    <p>Hidden folders, plus a Library shortcut in the folder menu, is what 1.3.1 is for. Until it ships the workaround is one step: pick <strong>Choose Folder&hellip;</strong>, press Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G in the panel, and type <code>~/Library</code>. What is safe to delete in there is in <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a>.</p>
 
-    <h2>Why bother explaining any of this</h2>
+    <h2>Why explain any of this</h2>
 
-    <p>I could have shipped 1.3 with a line saying &ldquo;improved reliability&rdquo; and moved on. But a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> is an app you point at your entire life&rsquo;s files and then let move things to the Trash. The reasonable response to that is suspicion, and suspicion is answered with specifics, not reassurance.</p>
+    <p>I could have shipped 1.3 with a line saying &ldquo;improved reliability&rdquo; and moved on. But a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> is an app you point at every file you own and then let move things to the Trash. The reasonable response is suspicion, and suspicion is answered with specifics, not reassurance.</p>
 
-    <p>The sandbox is why the app cannot see your disk until you show it. The powerbox is why the picker is worth trusting. The bookmark is why you are asked once and not every launch. What 1.3 fixed is that Klarity had been hiding all of that behind a button that sometimes did nothing.</p>
+    <p>The wall is why Klarity cannot see your disk until you show it. macOS running the picker, not me, is why the picker is worth trusting. macOS remembering your answer is why you are asked once. It also makes no network connections, the other thing I care about and have <a href="/blog/why-i-built-klarity">written about before</a>. What 1.3 fixed is that all of this had been hiding behind a button that sometimes did nothing.</p>
 
-    <p>If it still does nothing somewhere I have not thought of, <a href="/support">tell me</a> &mdash; I answer my own support mail. And if you are here for the practical question of what to actually delete, start with <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a>, or, if this began right after a system update, <a href="/blog/mac-storage-full-after-update">where the space goes after a macOS update</a>.</p>
+    <p>If it still does nothing somewhere I have not thought of, <a href="/support">tell me</a>; I answer my own support mail. For what to actually delete, start with <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a>, or, if this began right after a system update, <a href="/blog/mac-storage-full-after-update">where the space goes after a macOS update</a>.</p>
 
     <p>&mdash; Mukul</p>
 
