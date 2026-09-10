@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Find Large Files on a Mac (Without Terminal) | Klarity Blog</title>
-<meta name="description" content="Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.">
-<meta name="keywords" content="find large files mac, mac large files, biggest files on mac, disk space analyzer mac, finder sort by size, calculate all sizes, treemap mac, klarity disk">
+<title>Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files | Klarity Blog</title>
+<meta name="description" content="Klarity 1.3 makes Move to Trash work everywhere. Here is what Apple's app sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.">
+<meta name="keywords" content="klarity 1.3, macos app sandbox, security-scoped bookmarks, powerbox macos, sandboxed app delete files, move to trash mac app, user-selected read-write, mac disk space analyzer">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Find Large Files on a Mac (Without Terminal)">
-<meta property="og:description" content="Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.">
-<meta property="og:url" content="https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac">
+<meta property="og:title" content="Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files">
+<meta property="og:description" content="Move to Trash works everywhere in 1.3. Here is what the macOS sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
-<meta property="article:published_time" content="2026-09-07">
+<meta property="article:published_time" content="2026-09-10">
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Find Large Files on a Mac (Without Terminal)">
-<meta name="twitter:description" content="Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.">
+<meta name="twitter:title" content="Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files">
+<meta name="twitter:description" content="Move to Trash works everywhere in 1.3. Here is what the macOS sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Find Large Files on a Mac (Without Terminal)", "description": "Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.", "image": "https://www.klaritydisk.com/og-image.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-07", "dateModified": "2026-09-07", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Find Large Files on a Mac (Without Terminal)", "item": "https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I see file sizes on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "In Finder, switch to list view (Cmd + 2), press Cmd + J and turn on Calculate all sizes, then click the Size column. For a single file or folder, select it and press Cmd + I."}}, {"@type": "Question", "name": "How do I find files over 1 GB on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Press Cmd + F in Finder, set the scope to This Mac, add a File Size condition from the Other… list, and set it to greater than 1 GB. This finds large individual files but not folders made of many small files."}}, {"@type": "Question", "name": "Why doesn't Finder show the size of folders?", "acceptedAnswer": {"@type": "Answer", "text": "Folder sizes are off by default because calculating them is slow. Turn on Calculate all sizes in View Options (Cmd + J) for the current folder, or use a disk analyzer that computes every folder in one pass."}}, {"@type": "Question", "name": "What is the fastest way to find large files on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "A disk analyzer that draws a treemap. One scan sizes every folder on the disk and shows them to scale, so the biggest items are visible at a glance instead of being found one folder at a time."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files", "description": "Move to Trash works everywhere in 1.3. Here is what the macOS sandbox, the powerbox picker and security-scoped bookmarks actually are, and why one grant per volume fixes it.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-10", "dateModified": "2026-09-10", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files", "item": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}]}</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
@@ -148,7 +147,7 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   .article-cta-inner { padding: 28px 20px; }
 }
 </style>
-<style>.article-body h3.faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin: 28px 0 8px; color: var(--text-primary); } .article-body ol li { padding-left: 4px; } .article-body figure { margin: 28px 0; } .article-body figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--glass-border); display: block; } .article-body figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }</style>
+<style>.article-body figure { margin: 28px 0; } .article-body figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--glass-border); display: block; } .article-body figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }</style>
 </head>
 <body>
 
@@ -188,108 +187,87 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   <div class="article-header">
     <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
     <div class="article-meta">
-      <span class="article-tag">Guide</span>
-      <span class="article-date">September 7, 2026</span>
-      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
+      <span class="article-tag">Release</span>
+      <span class="article-date">September 10, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 7 min read</span>
     </div>
-    <h1>How to Find Large Files on a Mac (Without Terminal)</h1>
-    <p class="article-subtitle">Finder can do it slowly, a search can do it partially, and a treemap does it in one look. Here is how each works and where the space usually hides.</p>
+    <h1>Klarity 1.3: Why a Sandboxed Mac App Cannot Delete Your Files</h1>
+    <p class="article-subtitle">Version 1.3 shipped today, and its headline feature is that Move to Trash works. That sounds like an admission, and it is. Here is what Apple&rsquo;s sandbox actually does, and why fixing it took a whole release.</p>
   </div>
 
   <div class="article-divider"><hr></div>
 
   <div class="article-body">
 
-    <h2>Why this is harder than it should be</h2>
+    <h2>The feature that only worked sometimes</h2>
 
-    <p>A Mac does not have a &ldquo;show me my biggest files&rdquo; button. Storage settings gives you categories, not files. Finder can sort a single folder by size but not a whole disk. Spotlight can search by size, but it only searches what it has indexed and it will not tell you which <em>folder</em> is the problem. So the honest answer is that there are three ways to do this, from slowest to fastest, and you should pick based on how much you need to find.</p>
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity Disk</a> 1.3, build 1300, went live on the Mac App Store today. The change worth writing about is not a new chart. It is that right-clicking a folder and choosing <strong>Move to Trash</strong> now works where you would expect it to, rather than where I happened to have tested.</p>
 
-    <h2>Method 1: Finder, one folder at a time</h2>
+    <p>Before 1.3 the behaviour depended on where the file was, in a way I could explain and no user should have to. Inside a folder you had already pointed Klarity at: fine. In Downloads, before any such grant: nothing, or an error after the fact. On an external drive: also nothing. The app was not broken in the ordinary sense &mdash; it was doing exactly what macOS allowed, which was less than the interface implied. That gap is the subject of this post.</p>
 
-    <p>Free, built in, and fine when you already suspect a folder.</p>
+    <h2>What the sandbox actually is</h2>
 
-    <ol>
-      <li>Open the folder in Finder and switch to list view (View &rarr; as List, or Cmd + 2).</li>
-      <li>Press Cmd + J to open View Options and tick <strong>Calculate all sizes</strong>. Without this, folders show &ldquo;--&rdquo; in the Size column.</li>
-      <li>Click the Size column header to sort largest first. Wait; on a big folder the sizes fill in over a minute or two.</li>
-      <li>Open the largest folder and repeat.</li>
-    </ol>
+    <p>Every app on the Mac App Store runs in Apple&rsquo;s <strong>app sandbox</strong>. It is not a setting, it is a condition of being on the store. At launch the kernel wraps the app in a policy that says, roughly: read and write inside your own container directory and nowhere else, unless you have been given a specific exception.</p>
 
-    <p>The limitation is obvious once you try it on your Home folder: you are drilling blind, one level at a time, and each level takes a recalculation. It also cannot see inside the hidden <code>~/Library</code> unless you press Cmd + Shift + . to show hidden files first.</p>
+    <p>Those exceptions are called entitlements. Klarity declares exactly one for files, <code>user-selected.read-write</code>, and nothing else: no network, no camera, no microphone, no contacts. It cannot make a network connection at all, which is the other thing I care about and have <a href="/blog/why-i-built-klarity">written about before</a>.</p>
 
-    <h2>Method 2: A Finder search by size</h2>
+    <p><code>user-selected.read-write</code> is narrower than it sounds. It means: <em>the only files this app may touch are ones you have explicitly pointed at, through a system file picker</em>. Not your home folder, not Downloads, not a folder whose path the app happens to know. If Klarity builds a path and calls <code>FileManager</code> on it with no grant behind it, the call fails &mdash; and it tends to fail quietly, as an empty directory listing rather than a loud error.</p>
 
-    <p>Better when you want individual large files rather than large folders.</p>
+    <p>Which is how you get a disk analyzer that reports your Downloads folder as containing nothing at all.</p>
 
-    <ol>
-      <li>In Finder, press Cmd + F to start a search. Make sure the search scope is <strong>This Mac</strong>, not the current folder.</li>
-      <li>Click the first dropdown (it says Kind) and choose <strong>Other&hellip;</strong>, then tick <strong>File Size</strong> and press OK.</li>
-      <li>Set the condition to <strong>is greater than</strong> and type a threshold. 500&nbsp;MB is a good start; 1&nbsp;GB if the disk is very full.</li>
-      <li>Switch to list view and sort the results by Size.</li>
-    </ol>
+    <h2>The picker is not Klarity&rsquo;s picker</h2>
 
-    <p>This finds forgotten disk images, old screen recordings and exported video well. It misses two things: folders made of thousands of small files (caches, node_modules, photo libraries, which Finder treats as one package), and anything Spotlight has not indexed, including most of <code>~/Library</code>.</p>
+    <p>The interesting part is <em>how</em> the exception gets made, because almost nobody outside the platform knows the mechanism. When a sandboxed app opens a file picker, the panel you see is not drawn by that app. macOS runs it in a separate system process &mdash; the one Apple&rsquo;s documentation calls the <strong>powerbox</strong>. The app asks for a panel and gets back a result. It cannot read the names of files you scroll past, and it cannot see what you decided not to choose. The panel is a piece of the system that happens to appear inside the app&rsquo;s window.</p>
 
-    <h2>Method 3: A disk analyzer</h2>
+    <p>The moment you click Open, the kernel widens the app&rsquo;s sandbox to include what you chose. That is the whole model in one sentence: <strong>your click is the permission</strong>. Not a dialog the app can phrase persuasively, not a checkbox buried in settings &mdash; an actual selection, made in a panel the app cannot influence.</p>
 
-    <p>This is the method that actually answers the question for the whole disk, and it is why disk analyzers exist. Instead of a list, you get a <strong>treemap</strong>: every folder is a rectangle, and the rectangle&rsquo;s area is its size. Big things are big. You do not sort or search; you look.</p>
+    <p>The access you get that way normally dies when the app quits. To keep it, the app asks macOS for a <strong>security-scoped bookmark</strong>: an opaque blob encoding both the location and the permission, stored and handed back on the next launch to reopen the same access. That is the piece that turns &ldquo;you allowed this once&rdquo; into &ldquo;you allowed this&rdquo;.</p>
+
+    <h2>What 1.3 actually changed</h2>
+
+    <p>Version 1.2 kept one bookmark. One. You could grant Klarity access to a folder, and that was the folder it had; everything else took the quiet-failure path above. The fix in 1.3 is not clever, just done properly, and it has three parts.</p>
+
+    <p><strong>Grants are stored per volume, not per folder.</strong> When Klarity needs a path it cannot reach, it works out which volume root that path belongs to &mdash; <code>/</code> for your startup disk, <code>/Volumes/&lt;name&gt;</code> for anything external &mdash; and asks for that. A store now keeps many such bookmarks and reopens all of them at launch, so the question is asked once per drive, not once per folder and certainly not once per file.</p>
+
+    <p><strong>Access is checked before anything is attempted.</strong> Every scan and every trash operation now goes through one coordinator whose job is to answer &ldquo;can we reach this yet, and if not, ask&rdquo;. If a grant already covers the path it returns at once and you see nothing. If not, you get a single sheet naming the volume and the reason &mdash; &ldquo;Klarity needs this to move &lsquo;DerivedData&rsquo; to the Trash&rdquo; &mdash; then the system picker, opened at that volume. No error-then-fix loop, because the check happens before the operation rather than after it fails.</p>
+
+    <p><strong>Scanning a folder it cannot read asks, instead of returning nothing.</strong> Same coordinator, applied to the scan path. Pointing Klarity at Downloads before any grant used to produce a confident, empty, wrong answer. Now it asks.</p>
 
     <figure>
-      <img src="/screenshot-treemap.png" alt="Klarity's treemap view of a Mac home folder scan: each folder is a rectangle sized by how much space it uses, with the largest folders visible at a glance" width="2000" height="1066" loading="lazy">
-      <figcaption>A real scan in Klarity. The largest folders are the largest rectangles; no sorting needed.</figcaption>
+      <img src="/screenshot-treemap.png" alt="Klarity's treemap view, with folders drawn as rectangles sized by the space they use and coloured by age" width="2000" height="1066" loading="lazy">
+      <figcaption>The treemap. Right-clicking a rectangle is where Move to Trash lives &mdash; and in 1.3 that right-click checks access before it does anything else.</figcaption>
     </figure>
 
-    <p>In <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity</a> (a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a>, $6.99 on the App Store), the flow is:</p>
+    <h2>Scan Macintosh HD, and stop counting it twice</h2>
 
-    <ol>
-      <li>Open the app from the menu bar and pick a starting point: <strong>Home Folder</strong>, <strong>Downloads</strong>, the whole disk, or <strong>Choose Folder&hellip;</strong> for anything else, including an external drive. The first time you scan outside your home folder, macOS asks you to grant access once.</li>
-      <li>Let the scan run. A home folder with a few hundred thousand files takes seconds on an SSD.</li>
-      <li>Look at the treemap. The largest rectangles are your answer. Hover for the exact size; double-click to drill in; press Escape to come back up.</li>
-      <li>Switch to the <strong>Large Files</strong> tab for a flat list of the 200 biggest files across everything you scanned, sorted largest first. Filter by type (video, images, archives, disk images and so on) or by age (older than 30 days, 90 days, 6 months, a year) to find the stale ones.</li>
-      <li>Right-click anything to <strong>Reveal in Finder</strong> or <strong>Move to Trash</strong>. Trash always asks first, and anything over 1&nbsp;GB needs a slide to confirm.</li>
-    </ol>
+    <p>Once grants work per volume, scanning the whole startup disk stops being a special case, so 1.3 adds a header button that does it in one click. That surfaced a second bug, and a nice example of modern macOS being strange. Since Catalina your startup disk is really two APFS volumes, and the data volume &mdash; the one holding everything you own &mdash; appears in two places at once: as <code>/System/Volumes/Data</code>, and, through firmlinks, as the familiar <code>/Users</code> and <code>/Applications</code>. Walk <code>/</code> naively and you add the whole disk to the whole disk, reporting a Mac twice as full as it is. 1.3 skips volume roots below the scan root, so the total is the total.</p>
+
+    <h2>When macOS says no and means it</h2>
+
+    <p>Some deletions fail even with a perfectly good grant, because the file is owned by root or protected by System Integrity Protection. Nothing an App Store app can do will help there.</p>
+
+    <p>The old behaviour was to show a Grant Access prompt, which asked you to perform a ritual that could not possibly succeed. 1.3 tells the two cases apart. A permission failure <em>outside</em> what you have granted still offers Grant Access, which is now rare. One <em>inside</em> a granted area means macOS itself is refusing, so Klarity says &ldquo;Finder needs an admin password to delete this&rdquo; and offers <strong>Reveal in Finder</strong>. Not a solution. But an honest sentence beats a hopeful one.</p>
+
+    <p>Smaller things in the same release: <strong>Refresh Interval</strong> in Settings now actually changes how often RAM and process data update, and is remembered &mdash; it was being read once and then ignored, which is embarrassing to write down. Menu bar usage text and display mode persist across launches too. And the build number now shows after the version, e.g. 1.3 (1300), so a bug report can name a build. Full list on the <a href="/changelog">changelog</a>.</p>
 
     <div class="callout">
-      <div class="callout-title">The age heatmap</div>
-      <p>Size alone is not enough: a 30&nbsp;GB folder you used yesterday is not clutter. Klarity colours every rectangle by its last-modified date, so the useful combination, large <em>and</em> old, stands out immediately. The filters in the Large Files list do the same thing for individual files.</p>
+      <div class="callout-title">Nothing changes about what Klarity does with access</div>
+      <p>A grant lets Klarity read sizes and move items to the Trash. It never empties the Trash, never deletes outright, and never touches anything without a confirmation &mdash; a folder over 1&nbsp;GB needs a deliberate slide to confirm. And it makes no network connections, so nothing it learns about your disk can leave your Mac even in principle.</p>
     </div>
 
-    <h2>Where the large files usually are</h2>
+    <h2>What 1.3 does not do</h2>
 
-    <p>After scanning a lot of Macs, the same suspects come up nearly every time. Check these first, whichever method you use:</p>
+    <p>One limitation, stated plainly, because you will hit it and I would rather you heard it here. The shipping scanner passes <code>.skipsHiddenFiles</code>, and macOS marks <code>~/Library</code> as hidden. So a plain scan of your Home folder does not include <code>~/Library</code> &mdash; precisely where caches, Xcode DerivedData, simulator runtimes and app containers live. The folder that explains most of the grey &ldquo;System Data&rdquo; bar is the one a Home scan silently leaves out, and your Home total therefore looks smaller than it should. That is not the sandbox&rsquo;s fault; it is mine.</p>
 
-    <ul>
-      <li><strong>~/Downloads</strong>: installers, disk images, zip archives you already extracted.</li>
-      <li><strong>~/Movies and ~/Desktop</strong>: screen recordings, exported video, Zoom recordings.</li>
-      <li><strong>~/Library/Developer</strong>: Xcode DerivedData, simulator runtimes and device support files. Often the largest single folder on a developer&rsquo;s Mac.</li>
-      <li><strong>~/Library/Caches</strong>: app caches. Safe to clear; apps rebuild them.</li>
-      <li><strong>~/Library/Application Support/MobileSync/Backup</strong>: iPhone and iPad backups. Delete these through Finder&rsquo;s Manage Backups, not by hand.</li>
-      <li><strong>~/Library/Containers</strong>: data for sandboxed apps, including Mail attachments and Messages media.</li>
-      <li><strong>Virtual machine and Docker images</strong>: wherever Parallels, UTM or Docker Desktop keep them, and they only ever grow.</li>
-    </ul>
+    <p>Hidden-folder scanning, plus a Library shortcut in the folder menu, is what 1.3.1 is for. Until it ships the workaround is one step: scan <code>~/Library</code> as the root of its own scan, via <strong>Choose Folder&hellip;</strong> and then Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G in the open panel. Scanning a folder as the root works whether it is hidden or not. The walkthrough, and what is safe to delete once you are in there, is in <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a>.</p>
 
-    <p>Notice how many of those are inside <code>~/Library</code>, which macOS hides. That folder is also most of the grey &ldquo;System Data&rdquo; bar in Storage settings. If that bar is what sent you here, read <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a> next, and for the deleting half of the job, <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a>.</p>
+    <h2>Why bother explaining any of this</h2>
 
-    <h2>Terminal, for completeness</h2>
+    <p>I could have shipped 1.3 with a line saying &ldquo;improved reliability&rdquo; and moved on. But a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> is an app you point at your entire life&rsquo;s files and then let move things to the Trash. The reasonable response to that is suspicion, and suspicion is answered with specifics, not reassurance.</p>
 
-    <p>The title promised no Terminal, and you do not need it. But if you are comfortable there, one command does the folder-sizing part: <code>du -sh ~/* ~/Library/* 2&gt;/dev/null | sort -rh | head -20</code> lists the twenty largest items in your home folder and Library. It is slow on a big disk, shows sizes in a list rather than to scale, and you still have to repeat it for every level you drill into. That repetition is the whole reason the treemap exists.</p>
+    <p>The sandbox is why the app cannot see your disk until you show it. The powerbox is why the picker is worth trusting. The bookmark is why you are asked once and not every launch. What 1.3 fixed is that Klarity had been hiding all of that behind a button that sometimes did nothing.</p>
 
-    <h2>Before you delete</h2>
-
-    <p>Finding is the safe half. Two rules for the other half: move things to the Trash rather than deleting outright, and if you cannot say what created a file, leave it. The guide on <a href="/blog/how-to-clean-up-mac-storage">cleaning up Mac storage</a> goes through what is safe category by category.</p>
-
-    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 on the Mac App Store</a>, one payment, and the scan-look-act loop above is about thirty seconds on most Macs. If something here is out of date, <a href="/support">let me know</a>.</p>
-
-
-    <h2>Questions people ask</h2>
-    <h3 class="faq-q">How do I see file sizes on a Mac?</h3>
-    <p>In Finder, switch to list view (Cmd + 2), press Cmd + J and turn on Calculate all sizes, then click the Size column. For a single file or folder, select it and press Cmd + I.</p>
-    <h3 class="faq-q">How do I find files over 1 GB on a Mac?</h3>
-    <p>Press Cmd + F in Finder, set the scope to This Mac, add a File Size condition from the Other… list, and set it to greater than 1 GB. This finds large individual files but not folders made of many small files.</p>
-    <h3 class="faq-q">Why doesn&#x27;t Finder show the size of folders?</h3>
-    <p>Folder sizes are off by default because calculating them is slow. Turn on Calculate all sizes in View Options (Cmd + J) for the current folder, or use a disk analyzer that computes every folder in one pass.</p>
-    <h3 class="faq-q">What is the fastest way to find large files on a Mac?</h3>
-    <p>A disk analyzer that draws a treemap. One scan sizes every folder on the disk and shows them to scale, so the biggest items are visible at a glance instead of being found one folder at a time.</p>
+    <p>If it still does nothing somewhere I have not thought of, <a href="/support">tell me</a> &mdash; I answer my own support mail. And if you are here for the practical question of what to actually delete, start with <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a>, or, if this began right after a system update, <a href="/blog/mac-storage-full-after-update">where the space goes after a macOS update</a>.</p>
 
     <p>&mdash; Mukul</p>
 
@@ -306,10 +284,10 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   <div class="article-cta" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
     <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
-      <li><a href="/blog/mac-storage-full-after-update" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Mac Storage Full After a macOS Update? Where the Space Went &rarr;</a></li>
-      <li><a href="/blog/how-to-clean-up-mac-storage" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Clean Up Mac Storage: What’s Safe to Delete in 2026 &rarr;</a></li>
-      <li><a href="/blog/what-is-system-data-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">What Is “System Data” on a Mac, and What’s Safe to Clear? &rarr;</a></li>
-      <li><a href="/blog/treemap-icicle-vs-sunburst" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Treemap vs Sunburst: Which Disk Map Finds Big Files Faster? &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+      <li><a href="/blog/how-to-clean-up-mac-storage" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Clean Up Mac Storage: What&rsquo;s Safe to Delete in 2026 &rarr;</a></li>
+      <li><a href="/blog/how-to-find-large-files-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Find Large Files on a Mac (Without Terminal) &rarr;</a></li>
+      <li><a href="/blog/why-i-built-klarity" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Why I Built Klarity &mdash; A DaisyDisk Alternative for $6.99 &rarr;</a></li>
     </ul>
   </div>
 </main>
