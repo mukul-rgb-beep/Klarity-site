@@ -234,7 +234,7 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
 
     <h2>How to actually see inside it</h2>
 
-    <p>One thing to know about the current version of Klarity (1.2): macOS marks <code>~/Library</code> as hidden, and the scanner skips hidden folders, so a plain Home scan does not show <code>~/Library</code> and the total looks suspiciously small. That is a limitation I am removing. Version 1.3 is in App Review as I write this, and hidden-folder scanning, with a Library shortcut in the folder menu, is planned for the update after it. Until then there is a one-step workaround.</p>
+    <p>One thing to know about the current version of Klarity (1.3): macOS marks <code>~/Library</code> as hidden, and the scanner skips hidden folders, so a plain Home scan does not show <code>~/Library</code> and the total looks suspiciously small. That is a limitation I am removing &mdash; hidden-folder scanning, with a Library shortcut in the folder menu, lands in 1.3.1. Until then there is a one-step workaround.</p>
 
     <p>The fix is simple: scan <code>~/Library</code> as the root of its own scan. In Klarity, choose <strong>Choose Folder&hellip;</strong>, and in the open panel press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G</strong> and type <code>~/Library</code> (or press <strong>Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;.</strong> to reveal hidden folders and click through). Scanning a folder as the root always works, hidden or not. Then let the treemap do its job: the biggest rectangles are your answer, and you can drill into <code>Caches</code>, <code>Developer</code> and <code>Containers</code> from there.</p>
 
