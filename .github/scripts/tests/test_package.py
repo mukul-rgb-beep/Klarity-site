@@ -59,6 +59,21 @@ class LoadPackagesTest(unittest.TestCase):
     def test_readme_is_not_a_package(self):
         self.assertEqual(len(self.load()), 1)
 
+    def test_requires_must_be_a_version_string(self):
+        for bad in (1.3, "1.3.1b", ["1.3.1"]):
+            data = default_package()
+            data["requires"] = bad
+            (self.root / "_scheduled" / DIRNAME / "package.json").write_text(json.dumps(data))
+            self.assertTrue(any("requires" in e for e in self.load()[0].errors), bad)
+        data = default_package()
+        data["requires"] = "1.3.1"
+        (self.root / "_scheduled" / DIRNAME / "package.json").write_text(json.dumps(data))
+        self.assertEqual(self.load()[0].errors, [])
+
+    def test_top_level_must_be_an_object(self):
+        (self.root / "_scheduled" / DIRNAME / "package.json").write_text("[]")
+        self.assertTrue(any("must be a JSON object" in e for e in self.load()[0].errors))
+
 
 if __name__ == "__main__":
     unittest.main()

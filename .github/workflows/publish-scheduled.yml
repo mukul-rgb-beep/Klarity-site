@@ -17,13 +17,10 @@ permissions:
   contents: write
   issues: write
 
-concurrency:
-  group: publish-scheduled
-  cancel-in-progress: false
-
 env:
   SITE: https://www.klaritydisk.com
   GH_TOKEN: ${{ github.token }}
+  PYTHONDONTWRITEBYTECODE: "1"
   RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 jobs:
@@ -42,6 +39,9 @@ jobs:
   publish:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
+    concurrency:
+      group: publish-scheduled
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -50,7 +50,13 @@ jobs:
       - name: Exposure guard (drafts must 404 on every host)
         run: |
           for u in "$SITE/_scheduled/README.md" "https://mukul-rgb-beep.github.io/Klarity-site/_scheduled/README.md"; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' "$u?v=$GITHUB_RUN_ID")
+            for i in 1 2 3; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "$u?v=$GITHUB_RUN_ID-$i" || true)
+              case $code in 000|5??) sleep 20 ;; *) break ;; esac
+            done
+            case $code in
+              000|5??) echo "::warning::$u unreachable (HTTP $code); exposure not verified this run"; continue ;;
+            esac
             if [ "$code" != "404" ]; then
               .github/scripts/issue.sh open "Drafts are exposed on the live site" \
                 "$u returned HTTP $code instead of 404. Queued drafts may be public and indexable. Check .assetsignore and GitHub Pages. Run: $RUN_URL"
@@ -120,7 +126,7 @@ jobs:
             live=no
             for i in $(seq 1 10); do
               sleep 30
-              body=$(curl -s -w '\n%{http_code}' "$url?v=$GITHUB_RUN_ID-$i")
+              body=$(curl -s -w '\n%{http_code}' "$url?v=$GITHUB_RUN_ID-$i" || true)
               if [ "$(tail -n1 <<<"$body")" = "200" ] && grep -qF -- "$tag" <<<"$body"; then live=yes; break; fi
             done
             urls=$(jq -c --arg site "$SITE" '[.url, ($site + "/blog/")] + .inbound_urls' <<<"$p")

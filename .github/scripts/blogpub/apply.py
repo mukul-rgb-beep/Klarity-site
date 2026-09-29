@@ -32,6 +32,9 @@ def apply_package(tree, pkg, meta, day: str) -> list[str]:
     slug, url = pkg.slug, pkg.url
     bp = meta.schema("BlogPosting") or {}
 
+    if tree.exists(f"blog/{slug}.html"):
+        raise ApplyError(f"blog/{slug}.html already exists")
+
     # 1. The page and its assets
     tree.write(f"blog/{slug}.html", tree.read(f"{pkg.path}/post.html"))
     for f in tree.files_under(f"{pkg.path}/assets"):

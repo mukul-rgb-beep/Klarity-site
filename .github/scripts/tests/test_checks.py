@@ -105,6 +105,12 @@ class ChecksTest(unittest.TestCase):
         self.assertEqual(result[DIRNAME], [])
         self.assertError("clashes", result["2026-10-13-second"])
 
+    def test_check_all_rejects_two_packages_with_one_slug(self):
+        make_package(self.root, "2026-10-07-test-post", package=default_package("test-post", "2026-10-07"))
+        tree = Tree(self.root)
+        result = check_all(tree, load_packages(tree))
+        self.assertError("blog/test-post.html already exists", result["2026-10-07-test-post"])
+
 
 if __name__ == "__main__":
     unittest.main()

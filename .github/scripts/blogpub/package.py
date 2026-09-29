@@ -10,6 +10,7 @@ from blogpub import SCHEDULED, SITE
 
 DIR_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+VERSION_RE = re.compile(r"^\d+(\.\d+)*$")
 
 
 @dataclass
@@ -50,9 +51,15 @@ def load_package(tree, dirname: str) -> Package:
     except json.JSONDecodeError as e:
         pkg.errors.append(f"package.json does not parse: {e}")
         return pkg
+    if not isinstance(data, dict):
+        pkg.errors.append("package.json must be a JSON object")
+        return pkg
     pkg.slug = str(data.get("slug") or "")
     pkg.publish_date = str(data.get("publish_date") or "")
     pkg.requires = data.get("requires")
+    if pkg.requires is not None and not (isinstance(pkg.requires, str) and VERSION_RE.match(pkg.requires)):
+        pkg.errors.append(f"requires {pkg.requires!r} must be null or a version string such as \"1.3.1\"")
+        pkg.requires = None
     try:
         if not DATE_RE.match(pkg.publish_date):
             raise ValueError
