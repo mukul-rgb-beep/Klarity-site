@@ -1,0 +1,138 @@
+name: Publish scheduled posts
+
+on:
+  schedule:
+    - cron: "30 3 * * *"          # 09:00 IST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print what would be published; change nothing"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["_scheduled/**", ".github/**"]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: publish-scheduled
+  cancel-in-progress: false
+
+env:
+  SITE: https://www.klaritydisk.com
+  GH_TOKEN: ${{ github.token }}
+  RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+jobs:
+  validate:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Unit tests
+        run: python -m unittest discover -s .github/scripts/tests -t .github/scripts
+      - name: Check the queue
+        run: python .github/scripts/publish.py check
+
+  publish:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Exposure guard (drafts must 404 on every host)
+        run: |
+          for u in "$SITE/_scheduled/README.md" "https://mukul-rgb-beep.github.io/Klarity-site/_scheduled/README.md"; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$u?v=$GITHUB_RUN_ID")
+            if [ "$code" != "404" ]; then
+              .github/scripts/issue.sh open "Drafts are exposed on the live site" \
+                "$u returned HTTP $code instead of 404. Queued drafts may be public and indexable. Check .assetsignore and GitHub Pages. Run: $RUN_URL"
+              exit 1
+            fi
+          done
+          .github/scripts/issue.sh close "Drafts are exposed on the live site" "Drafts return 404 again. Run: $RUN_URL"
+
+      - name: Unit tests
+        run: python -m unittest discover -s .github/scripts/tests -t .github/scripts
+
+      - name: Check the queue (opens or closes "Publish blocked" issues)
+        run: |
+          set +e
+          python .github/scripts/publish.py check --report "$RUNNER_TEMP/check.json"
+          set -e
+          for d in $(jq -r '.packages[]' "$RUNNER_TEMP/check.json"); do
+            errs=$(jq -r --arg d "$d" '(.errors[$d] // []) | map("- " + .) | join("\n")' "$RUNNER_TEMP/check.json")
+            if [ -n "$errs" ]; then
+              .github/scripts/issue.sh open "Publish blocked: $d" \
+                "$(printf 'publish.py check found these problems in _scheduled/%s:\n\n%s\n\nFix the package and push; the next daily run retries.\n\nRun: %s' "$d" "$errs" "$RUN_URL")"
+            else
+              .github/scripts/issue.sh close "Publish blocked: $d" "The package passes its checks now. Run: $RUN_URL"
+            fi
+          done
+
+      - name: Live App Store version
+        id: ver
+        run: |
+          v=$(curl -fsS 'https://itunes.apple.com/lookup?id=6758895498&country=us' | jq -r '.results[0].version // empty' || true)
+          echo "Live version: ${v:-unknown}"
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+
+      - name: Publish due packages
+        run: |
+          args=(publish --date "$(date -u +%F)" --live-version "${{ steps.ver.outputs.version }}" --report "$RUNNER_TEMP/publish.json")
+          if [ "${{ inputs.dry_run }}" = "true" ]; then args+=(--dry-run); fi
+          python .github/scripts/publish.py "${args[@]}"
+
+      - name: Held issues
+        run: |
+          jq -c '.held[]' "$RUNNER_TEMP/publish.json" | while read -r h; do
+            req=$(jq -r .requires <<<"$h"); head=$(jq -r .headline <<<"$h"); dir=$(jq -r .dirname <<<"$h")
+            .github/scripts/issue.sh open "Held until Klarity $req: $head" \
+              "_scheduled/$dir is due but the App Store shows Klarity ${{ steps.ver.outputs.version || 'unknown' }}. It publishes on the first daily run after $req is live, keeping its written datePublished; re-date the package if that matters. Run: $RUN_URL"
+          done
+
+      - name: Commit and push
+        id: push
+        if: inputs.dry_run != true
+        run: |
+          if [ "$(jq '.published | length' "$RUNNER_TEMP/publish.json")" = "0" ]; then echo "Nothing due."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "$(jq -r '"Publish: " + ([.published[].headline] | join("; "))' "$RUNNER_TEMP/publish.json")"
+          git push || { git pull --rebase && git push; }
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Verify live, ping IndexNow, announce
+        if: inputs.dry_run != true && steps.push.outputs.sha != ''
+        run: |
+          key=$(tr -d '[:space:]' < indexnow-key.txt)
+          commit_url="${{ github.server_url }}/${{ github.repository }}/commit/${{ steps.push.outputs.sha }}"
+          jq -c '.published[]' "$RUNNER_TEMP/publish.json" | while read -r p; do
+            url=$(jq -r .url <<<"$p"); head=$(jq -r .headline <<<"$p"); tag=$(jq -r .title_tag <<<"$p"); dir=$(jq -r .dirname <<<"$p")
+            live=no
+            for i in $(seq 1 10); do
+              sleep 30
+              body=$(curl -s -w '\n%{http_code}' "$url?v=$GITHUB_RUN_ID-$i")
+              if [ "$(tail -n1 <<<"$body")" = "200" ] && grep -qF -- "$tag" <<<"$body"; then live=yes; break; fi
+            done
+            urls=$(jq -c --arg site "$SITE" '[.url, ($site + "/blog/")] + .inbound_urls' <<<"$p")
+            payload=$(jq -n --arg key "$key" --argjson urls "$urls" \
+              '{host: "www.klaritydisk.com", key: $key, keyLocation: "https://www.klaritydisk.com/indexnow-key.txt", urlList: $urls}')
+            inow=$(curl -s -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json; charset=utf-8' \
+                   -d "$payload" https://api.indexnow.org/indexnow || echo "failed")
+            title="Published: $head"; [ "$live" = yes ] || title="Published but not verified: $head"
+            .github/scripts/issue.sh open "$title" "$(printf '%s\n\n- Live check (200 + matching title): **%s**\n- IndexNow (%s URLs): HTTP %s (200/202 = accepted)\n- Commit: %s\n- Run: %s\n\n- [ ] Request indexing in Search Console for %s\n\nClose this issue once indexing is requested.' \
+              "$url" "$live" "$(jq length <<<"$urls")" "$inow" "$commit_url" "$RUN_URL" "$url")"
+            .github/scripts/issue.sh close "Publish blocked: $dir" "Published: $url"
+            req=$(jq -r '.requires // empty' <<<"$p")
+            if [ -n "$req" ]; then .github/scripts/issue.sh close "Held until Klarity $req: $head" "Published: $url"; fi
+            echo "- [$head]($url): live=$live, IndexNow=$inow" >> "$GITHUB_STEP_SUMMARY"
+          done
