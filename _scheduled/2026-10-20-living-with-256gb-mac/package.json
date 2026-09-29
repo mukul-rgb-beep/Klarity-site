@@ -1,0 +1,27 @@
+{
+  "slug": "living-with-256gb-mac",
+  "publish_date": "2026-10-20",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "The tool becomes part of the regular workflow.",
+      "replace": "The tool becomes part of the regular workflow, on a base-model Mac most of all, as <a href=\"/blog/living-with-256gb-mac\">managing storage on a 256GB MacBook</a> explains."
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": "a small disk that has been in daily use for a couple of years rarely has it spare.",
+      "replace": "a small disk that has been in daily use for a couple of years rarely has it spare. For the everyday side, see <a href=\"/blog/living-with-256gb-mac\">managing storage on a 256&nbsp;GB Mac day to day</a>."
+    },
+    {
+      "file": "blog/mac-storage-full-after-update.html",
+      "find": "because the folder that grew is the one you never thought to check.",
+      "replace": "because the folder that grew is the one you never thought to check. On a small disk, <a href=\"/blog/living-with-256gb-mac\">a monthly look at what is growing on a 256&nbsp;GB Mac</a> catches it sooner."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "Check Storage settings and admire the difference.",
+      "replace": "Check Storage settings and admire the difference. If your Mac has a 256&nbsp;GB drive, <a href=\"/blog/living-with-256gb-mac\">a short monthly routine for a 256&nbsp;GB Mac</a> keeps the next clean-up small."
+    }
+  ]
+}
