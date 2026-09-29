@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Much Space Does macOS 27 Golden Gate Need to Install? | Klarity Blog</title>
+<meta name="description" content="macOS 27 Golden Gate won&#x27;t install without room to spare. How much free space it really needs, why sites quote different numbers, and how to find it fast.">
+<meta name="keywords" content="how much space does macos 27 need, macos golden gate storage, not enough space to update mac, not enough free space to install macos, macos 27 update size, free up space for macos update, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/how-much-space-for-macos-27">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Much Space Does macOS 27 Golden Gate Need to Install?">
+<meta property="og:description" content="macOS 27 Golden Gate won&#x27;t install without room to spare. How much free space it really needs, why sites quote different numbers, and how to find it fast.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/how-much-space-for-macos-27">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-09-29">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much Space Does macOS 27 Golden Gate Need to Install?">
+<meta name="twitter:description" content="macOS 27 Golden Gate won&#x27;t install without room to spare. How much free space it really needs, why sites quote different numbers, and how to find it fast.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Much Space Does macOS 27 Golden Gate Need to Install?", "description": "macOS 27 Golden Gate won't install without room to spare. How much free space it really needs, why sites quote different numbers, and how to find it fast.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-29", "dateModified": "2026-09-29", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/how-much-space-for-macos-27"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How Much Space Does macOS 27 Golden Gate Need to Install?", "item": "https://www.klaritydisk.com/blog/how-much-space-for-macos-27"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much free space do I need to install macOS 27 Golden Gate?", "acceptedAnswer": {"@type": "Answer", "text": "Apple does not publish a figure. The download is about 18 GB, the installer needs room to unpack it and to keep your current system until the new one works, and Apple Intelligence then downloads models Apple puts at up to 14 GB, which owners report reaching 20 to 30 GB. Plan for 40 GB free before you start, and 50 GB if you want it to go smoothly."}}, {"@type": "Question", "name": "Why does my Mac say there is not enough space when Storage settings shows enough?", "acceptedAnswer": {"@type": "Answer", "text": "Storage settings shows available space, which includes purgeable space: snapshots, caches and iCloud files macOS can remove when something needs the room. It does not always remove them in time for the installer. Restart, wait a few minutes and try again. If it still refuses, the space has to come from your own files."}}, {"@type": "Question", "name": "Can a Mac with 256 GB of storage run macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every Mac with Apple silicon can run macOS 27, including 256 GB models such as older MacBook Air models and the MacBook Neo. On a small disk the difficulty is making room for the upgrade, not running the new system, and the room usually comes from old installers, downloads, videos and device backups."}}, {"@type": "Question", "name": "Is it safe to delete old Install macOS apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. An installer for an older macOS, such as Install macOS Tahoe, has no further use once your Mac has moved on, and it is usually more than ten gigabytes. Move it to the Trash and empty the Trash. Apple keeps recent versions available to download again if you ever need one."}}, {"@type": "Question", "name": "Does Klarity delete my files?", "acceptedAnswer": {"@type": "Answer", "text": "No. It only ever moves things to the Trash, and it asks first every time. A folder of 1 GB or more needs a deliberate slide to confirm rather than a click, and anything smaller gets a plain confirmation alert. It never deletes outright and never empties the Trash for you."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<script>
+(function(){var t=localStorage.getItem('klarity-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal: #3ECFCF; --teal-dim: #2a9e9e; --blue: #5B8DEF; --mint: #47E0B0;
+  --lavender: #7BA4F7; --coral: #FF6B6B; --bg-deep: #060810;
+  --bg-card: rgba(255,255,255,0.03); --bg-card-hover: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(255,255,255,0.12);
+  --text-primary: rgba(255,255,255,0.92); --text-secondary: rgba(255,255,255,0.55);
+  --text-muted: rgba(255,255,255,0.3); --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08); --nav-bg: rgba(6,8,16,0.7);
+  --nav-bg-scrolled: rgba(6,8,16,0.92); --nav-mobile-bg: rgba(6,8,16,0.96);
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-theme="light"] {
+  --bg-deep: #f4f5f7; --bg-card: rgba(0,0,0,0.03); --bg-card-hover: rgba(0,0,0,0.06);
+  --border: rgba(0,0,0,0.12); --border-hover: rgba(0,0,0,0.2);
+  --text-primary: rgba(0,0,0,0.88); --text-secondary: rgba(0,0,0,0.58);
+  --text-muted: rgba(0,0,0,0.38); --glass-bg: rgba(255,255,255,0.75);
+  --glass-border: rgba(0,0,0,0.08); --teal: #147272; --teal-dim: #0f5c5c;
+  --blue: #3a6ac9; --mint: #167a5e; --lavender: #5a7fd4; --coral: #d94545;
+  --nav-bg: rgba(255,255,255,0.72); --nav-bg-scrolled: rgba(255,255,255,0.92);
+  --nav-mobile-bg: rgba(255,255,255,0.96);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { cursor: pointer; }
+
+.ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.ambient-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.10; animation: orbFloat 20s ease-in-out infinite alternate; }
+.ambient-orb:nth-child(1) { width: 500px; height: 500px; background: var(--teal); top: -10%; left: -10%; }
+.ambient-orb:nth-child(2) { width: 400px; height: 400px; background: var(--blue); top: 50%; right: -15%; animation-delay: -7s; }
+@keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.03); } 100% { transform: translate(-15px,10px) scale(0.97); } }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 48px; height: 72px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); background: var(--nav-bg); border-bottom: 1px solid var(--border); transition: background 0.3s, box-shadow 0.3s; }
+nav.scrolled { background: var(--nav-bg-scrolled); box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--text-primary); letter-spacing: -0.02em; }
+.nav-logo svg { flex-shrink: 0; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--teal); transition: width 0.3s var(--ease-out-expo); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--teal); }
+.nav-links a.active::after { width: 100%; }
+.nav-cta { background: linear-gradient(135deg, var(--teal), var(--blue)); color: #fff !important; padding: 8px 20px; border-radius: 100px; font-weight: 600 !important; font-size: 0.85rem !important; transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s !important; box-shadow: 0 2px 16px rgba(62,207,207,0.2); }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 24px rgba(62,207,207,0.35) !important; }
+[data-theme="light"] .nav-cta { color: #fff !important; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.theme-toggle:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 8px; cursor: pointer; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: 0.3s; }
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-hamburger { display: flex; }
+  .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: var(--nav-mobile-bg); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 20px; gap: 20px; border-bottom: 1px solid var(--border); transform: translateY(-120%); transition: transform 0.4s var(--ease-out-expo); }
+  .nav-links.open { transform: translateY(0); }
+}
+
+.article-page { position: relative; z-index: 2; min-height: 100vh; padding-top: 72px; }
+.article-header { max-width: 720px; margin: 0 auto; padding: 80px 24px 40px; }
+.article-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 500; color: var(--teal); text-decoration: none; margin-bottom: 32px; transition: gap 0.3s var(--ease-out-expo); }
+.article-back:hover { gap: 10px; }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.article-tag { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); background: rgba(62,207,207,0.08); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(62,207,207,0.15); }
+[data-theme="light"] .article-tag { background: rgba(20,114,114,0.08); border-color: rgba(20,114,114,0.15); }
+.article-date { font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); }
+.article-header h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px; }
+.article-subtitle { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.65; }
+.article-divider { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.article-divider hr { border: none; height: 1px; background: var(--border); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+.article-body h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--text-primary); }
+.article-body h2:first-child { margin-top: 0; }
+.article-body p { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }
+.article-body strong { color: var(--text-primary); font-weight: 600; }
+.article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+.article-body a:hover { opacity: 0.8; }
+.article-body blockquote { border-left: 3px solid var(--teal); padding: 16px 24px; margin: 28px 0; background: var(--glass-bg); border-radius: 0 12px 12px 0; }
+.article-body blockquote p { color: var(--text-primary); font-style: italic; margin-bottom: 0; }
+.article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+.article-body li { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 8px; }
+.callout { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 24px; margin: 32px 0; }
+.article-body code { font-family: var(--font-mono); font-size: 0.88em; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 5px; padding: 1px 5px; color: var(--text-primary); overflow-wrap: break-word; }
+.callout-title { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--teal); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.article-cta { max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
+.article-cta-inner { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 40px; text-align: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.article-cta-inner h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
+.article-cta-inner p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px; }
+.cta-button { display: inline-block; background: linear-gradient(135deg, var(--teal), var(--blue)); color: #fff; padding: 12px 32px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s; box-shadow: 0 2px 16px rgba(62,207,207,0.2); }
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(62,207,207,0.35); color: #fff; }
+
+footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+@media (max-width: 600px) {
+  .article-header { padding: 60px 20px 32px; }
+  .article-body { padding: 32px 20px 60px; }
+  .article-cta { padding: 0 20px; }
+  .article-cta-inner { padding: 28px 20px; }
+}
+</style>
+<style>.article-body h3.faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin: 28px 0 8px; color: var(--text-primary); } .article-body figure { margin: 28px 0; } .article-body figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--glass-border); display: block; } .article-body figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }</style>
+</head>
+<body>
+
+<div class="ambient">
+  <div class="ambient-orb"></div>
+  <div class="ambient-orb"></div>
+</div>
+
+<nav id="mainNav">
+  <a href="/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+      <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+      <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+      <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+      <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+      <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+      <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+      <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+    </svg>
+    Klarity
+  </a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#features">Features</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#compare">Compare</a></li>
+    <li><a href="/support">Support</a></li>
+    <li><a href="/changelog">Changelog</a></li>
+    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+    <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">September 29, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 7 min read</span>
+    </div>
+    <h1>How Much Space Does macOS 27 Golden Gate Need to Install?</h1>
+    <p class="article-subtitle">Software Update says there is not enough free space, and every site you check gives a different number. Here is the number worth planning for, why it is bigger than the download, and the quickest way to find the gigabytes to cover it.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>&ldquo;There is not enough free space to install macOS 27&rdquo;</h2>
+
+    <p><strong>macOS 27 Golden Gate needs about 40&nbsp;GB of free space to install, and 50&nbsp;GB to go smoothly.</strong> Apple publishes no official figure: the download is about 18&nbsp;GB, and the upgrade also needs room to unpack it and to keep your current system until the new one works. Apple Intelligence then takes another 20&nbsp;GB or so once it is done.</p>
+
+    <p>macOS 27 Golden Gate arrived on 14 September, and the first fix, 27.0.1, followed on 28 September. For a lot of people the upgrade stops before it starts: Software Update says the disk is too full and asks you to free up space, without saying how much, or where it should come from.</p>
+
+    <p>If your Mac has a 256&nbsp;GB drive &mdash; a 256&nbsp;GB MacBook Air, one of the M1 machines still going strong, the new MacBook Neo &mdash; this is not bad luck. It is arithmetic. An upgrade needs room to work, and a small disk that has been in daily use for a couple of years rarely has it spare.</p>
+
+    <h2>How much free space macOS 27 actually needs</h2>
+
+    <p>Apple does not publish a figure for Golden Gate. Its <a href="https://support.apple.com/en-us/127255" rel="noopener" target="_blank">compatibility list</a> says which Macs qualify (every Mac with Apple silicon, and no Intel models), and its upgrade guide says to back up first, but neither gives a number. That is why the sites you have already checked disagree: each is estimating from a different measurement.</p>
+
+    <p>Here is what the space is actually for:</p>
+
+    <ul>
+      <li><strong>The download.</strong> The full installer is about 18&nbsp;GB.</li>
+      <li><strong>Room to unpack it.</strong> The download is compressed, and the installer expands it before it puts anything in place.</li>
+      <li><strong>Your current system, kept until the new one works.</strong> macOS holds on to it so a failed install can roll back, and lets it go afterwards.</li>
+      <li><strong>Apple Intelligence, straight afterwards.</strong> Its on-device models download automatically once the upgrade finishes, and in macOS 27 they cannot be switched off. <a href="https://support.apple.com/en-us/121115" rel="noopener" target="_blank">Apple says</a> they use up to 8&nbsp;GB, or 14&nbsp;GB on M3 and later Macs with at least 12&nbsp;GB of memory, but <a href="https://www.macrumors.com/2026/09/23/apple-intelligence-30gb-some-macs-macos-27/" rel="noopener" target="_blank">owners are measuring 20 to 30&nbsp;GB</a>, so leave room for that too.</li>
+    </ul>
+
+    <p>Put together, the practical answer is this: <strong>have 40&nbsp;GB free before you press Update, and 50&nbsp;GB if you want it to go smoothly</strong> &mdash; then expect Apple Intelligence to claim another 20&nbsp;GB or so in the days after. The minimum you will see quoted is around 35&nbsp;GB, which leaves no margin at all. On a 256&nbsp;GB Mac, 40&nbsp;GB is about a sixth of the whole disk.</p>
+
+    <h2>Why Storage settings says you have enough, and the installer disagrees</h2>
+
+    <p>System Settings &rarr; General &rarr; Storage shows <em>available</em> space, and that includes space macOS has marked as purgeable: Time Machine&rsquo;s local snapshots, caches, iCloud files it can download again. macOS clears those when something needs the room, but not always in time for an installer that checks before it begins.</p>
+
+    <p>So before deleting anything, restart, wait a few minutes and try once more. If Software Update still refuses, the space has to come from your own files &mdash; and that is where most people lose an evening. A disk map such as Klarity turns that evening into minutes.</p>
+
+    <h2>Finding 40&nbsp;GB in minutes, not an evening</h2>
+
+    <p>Freeing space is not the hard part. Finding it is. The Storage settings bar can tell you Documents is 60&nbsp;GB. It cannot tell you that 40 of those are two screen recordings and a video export you forgot about.</p>
+
+    <p>Klarity, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, draws your disk as a treemap. Every folder is a rectangle, and its area is the space it holds. Click <strong>Scan Macintosh HD</strong>, give it access once, and the things standing between you and macOS 27 are the biggest shapes on the screen. Each one is coloured by how long since it last changed, so <strong>big and untouched for a year</strong> is exactly where to start.</p>
+
+    <figure>
+      <img src="/screenshot-treemap.png" alt="Klarity treemap showing which folders to clear to free up space for the macOS 27 upgrade, each folder sized by the space it uses and coloured by age" width="2000" height="1066" loading="lazy">
+      <figcaption>A real scan. The largest rectangles are where your 40&nbsp;GB is.</figcaption>
+    </figure>
+
+    <p>Right-click a rectangle and choose <strong>Move to Trash</strong>. It asks first every time, a folder of 1&nbsp;GB or more needs a deliberate slide to confirm rather than a click, and it never deletes anything outright. Then empty the Trash yourself &mdash; until you do, the space is not free, and the installer knows it.</p>
+
+    <p>It is <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">$6.99 on the Mac App Store</a> &mdash; one payment, no subscription, macOS 14.6 or later. If Software Update is waiting on you right now, it is the quickest way to find the space.</p>
+
+    <h2>What usually makes up the 40&nbsp;GB</h2>
+
+    <p>On a Mac that has been in use for a year or two, the same few things turn up as the big rectangles:</p>
+
+    <ul>
+      <li><strong>Old macOS installers in Applications.</strong> An <code>Install macOS Tahoe</code> or <code>Install macOS Sequoia</code> left from a previous year is usually more than 10&nbsp;GB, and it will never be used again. The safest big win there is.</li>
+      <li><strong>Downloads.</strong> Disk images for apps you installed long ago, zip files you already opened, videos you meant to watch. Pick Downloads from Klarity&rsquo;s folder menu, or open its large-file finder to see them biggest first.</li>
+      <li><strong>Movies, screen recordings and video projects.</strong> A few minutes of screen recording runs to gigabytes. iMovie and Final Cut libraries also hold render files that can be removed from inside the app, which is better than deleting them by hand.</li>
+      <li><strong>Virtual machines.</strong> A Parallels virtual machine is one bundle that often runs to tens of gigabytes. If you no longer start it up, it is often the single biggest win on this list.</li>
+      <li><strong>iPhone and iPad backups.</strong> Often 10 to 50&nbsp;GB each. They live inside a hidden Library folder, which the current version of Klarity does not open on a normal scan (1.3.1 fixes that), so remove them the supported way: Finder &rarr; your device in the sidebar &rarr; Manage Backups.</li>
+      <li><strong>The Trash.</strong> Anything in it still takes up the disk.</li>
+    </ul>
+
+    <p>Two things never to delete by hand: your Photos library (turn on <strong>Optimize Mac Storage</strong> in Photos settings instead, if you use iCloud Photos) and anything inside the System folder. If the biggest rectangle on your scan is something you do not recognise, <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a> explains what lives in there.</p>
+
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 on the Mac App Store</a>. One scan shows you where your 40&nbsp;GB is.</p>
+
+    <h2>Before you press Update</h2>
+
+    <ol>
+      <li><strong>Back up.</strong> Apple&rsquo;s own advice, and the one step that turns a failed install into an inconvenience instead of a loss.</li>
+      <li><strong>Leave Time Machine switched on.</strong> Turning it off to claw back snapshot space trades a small problem for a large one.</li>
+      <li><strong>Plug in the charger</strong> and give it an hour you do not need the Mac for.</li>
+      <li><strong>Restart once</strong>, then check Storage settings again. Some purgeable space comes back on its own.</li>
+      <li><strong>Afterwards, look again.</strong> If a full installer is sitting in Applications &mdash; one you downloaded but never ran &mdash; it is safe to remove, and a few other things grow for a day or two after an upgrade. <a href="/blog/mac-storage-full-after-update">Where the space goes after a macOS update</a> covers what to clear and what comes back by itself.</li>
+    </ol>
+
+    <h2>Why $6.99 once is the right price for this</h2>
+
+    <p>You will be making room again next September, and the September after. Klarity is one payment: no subscription, no account, no sign-in, and no network access at all &mdash; the app has no way to send anything anywhere. It runs on macOS 14.6 or later, on Apple Silicon and Intel.</p>
+
+    <p>A subscription cleaner bills you every year for a job you do once or twice a year, and asks for broad authority over your files in return. Klarity shows you the disk, moves to the Trash only what you choose, and cannot remove anything permanently. Weighing it against another analyser? Here is an <a href="/daisydisk-alternative">honest comparison</a>, including where the other one is better. For a wider tidy-up once the upgrade is done, see <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a>.</p>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">How much free space do I need to install macOS 27 Golden Gate?</h3>
+    <p>Apple does not publish a figure. The download is about 18 GB, the installer needs room to unpack it and to keep your current system until the new one works, and Apple Intelligence then downloads models Apple puts at up to 14 GB, which owners report reaching 20 to 30 GB. Plan for 40 GB free before you start, and 50 GB if you want it to go smoothly.</p>
+
+    <h3 class="faq-q">Why does my Mac say there is not enough space when Storage settings shows enough?</h3>
+    <p>Storage settings shows available space, which includes purgeable space: snapshots, caches and iCloud files macOS can remove when something needs the room. It does not always remove them in time for the installer. Restart, wait a few minutes and try again. If it still refuses, the space has to come from your own files.</p>
+
+    <h3 class="faq-q">Can a Mac with 256 GB of storage run macOS 27?</h3>
+    <p>Yes. Every Mac with Apple silicon can run macOS 27, including 256 GB models such as older MacBook Air models and the MacBook Neo. On a small disk the difficulty is making room for the upgrade, not running the new system, and the room usually comes from old installers, downloads, videos and device backups.</p>
+
+    <h3 class="faq-q">Is it safe to delete old Install macOS apps?</h3>
+    <p>Yes. An installer for an older macOS, such as Install macOS Tahoe, has no further use once your Mac has moved on, and it is usually more than ten gigabytes. Move it to the Trash and empty the Trash. Apple keeps recent versions available to download again if you ever need one.</p>
+
+    <h3 class="faq-q">Does Klarity delete my files?</h3>
+    <p>No. It only ever moves things to the Trash, and it asks first every time. A folder of 1 GB or more needs a deliberate slide to confirm rather than a click, and anything smaller gets a plain confirmation alert. It never deletes outright and never empties the Trash for you.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
+    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/mac-storage-full-after-update" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Mac Storage Full After a macOS Update? Where the Space Went &rarr;</a></li>
+      <li><a href="/blog/how-to-find-large-files-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Find Large Files on a Mac (Without Terminal) &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+      <li><a href="/daisydisk-alternative" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Looking for a DaisyDisk alternative? An honest comparison &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+const hamburger = document.getElementById('navHamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('klarity-theme', next);
+  themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+});
+if (document.documentElement.getAttribute('data-theme') === 'light') themeToggle.textContent = '☀️';
+</script>
+</body>
+</html>

@@ -234,7 +234,7 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
     <p>After an update the same few things show up large. Here is how to recognise each on your own screen.</p>
 
     <ul>
-      <li><strong>A 10&nbsp;GB-plus block in Applications called <code>Install macOS &lt;name&gt;.app</code>.</strong> The full installer, still there after doing its job. Move it to the Trash and empty the Trash; it is re-downloadable from the App Store. The easiest win on the list.</li>
+      <li><strong>A 10&nbsp;GB-plus block in Applications called <code>Install macOS &lt;name&gt;.app</code>.</strong> The full installer, still there after doing its job. Move it to the Trash and empty the Trash; it is re-downloadable from the App Store. The easiest win on the list. (Clearing room <em>before</em> an upgrade instead? See <a href="/blog/how-much-space-for-macos-27">how much free space to clear before upgrading</a>.)</li>
       <li><strong>A large folder under <code>Application Support</code> named <code>MobileSync</code>.</strong> iPhone and iPad backups, one folder each, commonly 10 to 50&nbsp;GB. Delete them the supported way rather than by hand: Finder &rarr; your device in the sidebar &rarr; Manage Backups.</li>
       <li><strong>A <code>Developer</code> folder that dwarfs everything else.</strong> Only if you write software. <code>Xcode/iOS DeviceSupport</code> keeps a folder per OS version you have debugged against, and <code>DerivedData</code> is build output that regenerates itself. Both can go. Remove unused simulator runtimes through Xcode &rarr; Settings &rarr; Platforms.</li>
       <li><strong>A large <code>Caches</code> folder coloured as changed today.</strong> Browsers, Mail and the search index all rebuild after an update, so it climbs for a day or two and then levels off. The colour is the tell: clearing it mid-rebuild makes your Mac do the work twice.</li>
@@ -297,6 +297,7 @@ footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1p
   <div class="article-cta" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
     <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/how-much-space-for-macos-27" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How Much Space Does macOS 27 Golden Gate Need to Install? &rarr;</a></li>
       <li><a href="/blog/what-is-system-data-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
       <li><a href="/blog/how-to-clean-up-mac-storage" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Clean Up Mac Storage: What&rsquo;s Safe to Delete in 2026 &rarr;</a></li>
       <li><a href="/blog/how-to-find-large-files-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">How to Find Large Files on a Mac (Without Terminal) &rarr;</a></li>
