@@ -32,6 +32,11 @@
       "file": "blog/treemap-icicle-vs-sunburst.html",
       "find": "For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters.",
       "replace": "For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters. Not all of it lives in the chart, either, as <a href=\"/blog/klarity-disk-macworld-review\">an honest review of Klarity</a> showed me."
+    },
+    {
+      "file": "index.html",
+      "find": "<p class=\"hero-price\">No subscriptions. No telemetry. <strong>100% local.</strong></p>",
+      "replace": "<p class=\"hero-price\">No subscriptions. No telemetry. <strong>100% local.</strong></p>\n  <style>\n  .press-proof { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--glass-border, rgba(255,255,255,0.08)); background: var(--glass-bg, rgba(255,255,255,0.04)); color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; transition: border-color 0.3s, color 0.3s; }\n  .press-proof:hover { border-color: var(--teal); color: var(--text-primary); }\n  .press-proof .pp-name { font-weight: 800; letter-spacing: -0.01em; color: var(--text-primary); }\n  .press-proof .pp-stars { color: #F5B942; letter-spacing: 1px; }\n  .press-proof .pp-more { color: var(--teal); }\n  .press-proof > span { white-space: nowrap; }\n  @media (max-width: 600px) { .press-proof { font-size: 0.85rem; gap: 8px; padding: 8px 14px; } .press-proof .pp-more { display: none; } }\n  </style>\n  <a class=\"press-proof\" href=\"/blog/klarity-disk-macworld-review\"><span>Reviewed by <span class=\"pp-name\">Macworld</span></span> <span class=\"pp-stars\" aria-hidden=\"true\">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span>4 out of 5</span> <span class=\"pp-more\">&middot; What changed since &rarr;</span></a>"
     }
   ]
 }
