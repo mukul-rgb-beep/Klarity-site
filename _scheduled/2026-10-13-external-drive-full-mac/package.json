@@ -1,0 +1,27 @@
+{
+  "slug": "external-drive-full-mac",
+  "publish_date": "2026-10-13",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "Every pixel is data. The only",
+      "replace": "Every pixel is data, whether the disk is your Mac&rsquo;s own or <a href=\"/blog/external-drive-full-mac\">a full external drive</a>. The only"
+    },
+    {
+      "file": "blog/klarity-1-3-one-time-disk-access.html",
+      "find": "or the external you plugged in &mdash;",
+      "replace": "or the <a href=\"/blog/external-drive-full-mac\">external drive you plugged in</a> &mdash;"
+    },
+    {
+      "file": "daisydisk-alternative.html",
+      "find": "It never empties the Trash for you. If you change your mind, the file is still there.</p>",
+      "replace": "It never empties the Trash for you, which is also why trashing files from <a href=\"/blog/external-drive-full-mac\">a full external drive</a> frees nothing until you do. If you change your mind, the file is still there.</p>"
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "Obvious, but easy to forget &mdash; items sitting in it still occupy the disk.",
+      "replace": "Obvious, but easy to forget &mdash; items sitting in it still occupy the disk, and <a href=\"/blog/external-drive-full-mac\">files trashed from an external drive</a> stay on that drive until you empty it."
+    }
+  ]
+}
