@@ -1,0 +1,37 @@
+{
+  "slug": "klarity-disk-macworld-review",
+  "publish_date": "2026-10-01",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "press.html",
+      "find": "Whether that fully settles the complaint is for a reviewer to judge, not me.",
+      "replace": "Whether that fully settles the complaint is for a reviewer to judge, not me. I wrote up <a href=\"/blog/klarity-disk-macworld-review\">what the Macworld review changed</a>."
+    },
+    {
+      "file": "blog/klarity-1-3-one-time-disk-access.html",
+      "find": "not only where I happened to have tested.",
+      "replace": "not only where I happened to have tested, which is exactly the gap Macworld&rsquo;s review found (<a href=\"/blog/klarity-disk-macworld-review\">what that review changed</a>)."
+    },
+    {
+      "file": "blog/why-i-built-klarity.html",
+      "find": "If you try it, I'd love to hear what you think.",
+      "replace": "If you try it, I'd love to hear what you think, criticism included; <a href=\"/blog/klarity-disk-macworld-review\">my reply to Macworld's Klarity Disk review</a> shows how much it helps."
+    },
+    {
+      "file": "daisydisk-alternative.html",
+      "find": "asks for disk access once per volume through Apple&rsquo;s own folder picker,",
+      "replace": "asks for disk access once per volume through Apple&rsquo;s own folder picker (1.3&rsquo;s answer to <a href=\"/blog/klarity-disk-macworld-review\">the permissions bug in Macworld&rsquo;s Klarity Disk review</a>),"
+    },
+    {
+      "file": "changelog.html",
+      "find": "Klarity asks for access to your disk once, explains why, and remembers it per volume.",
+      "replace": "Klarity asks for access to your disk once, explains why, and remembers it per volume. This addresses <a href=\"/blog/klarity-disk-macworld-review\">the permissions bug Macworld found</a>."
+    },
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters.",
+      "replace": "For a Mac disk analyzer you use when frustrated about running out of storage, every bit of friction matters. Not all of it lives in the chart, either, as <a href=\"/blog/klarity-disk-macworld-review\">an honest review of Klarity</a> showed me."
+    }
+  ]
+}

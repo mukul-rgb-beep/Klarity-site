@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klarity Disk Review: What Macworld Found, and What I Fixed | Klarity Blog</title>
+<meta name="description" content="Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what is still to do.">
+<meta name="keywords" content="klarity disk review, macworld klarity disk, klarity disk permissions bug, mac disk space analyzer, daisydisk alternative, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/klarity-disk-macworld-review">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Klarity Disk Review: What Macworld Found, and What I Fixed">
+<meta property="og:description" content="Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what is still to do.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/klarity-disk-macworld-review">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-10-01">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Klarity Disk Review: What Macworld Found, and What I Fixed">
+<meta name="twitter:description" content="Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what is still to do.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Klarity Disk Review: What Macworld Found, and What I Fixed", "description": "Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what is still to do.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/klarity-disk-macworld-review"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Klarity Disk Review: What Macworld Found, and What I Fixed", "item": "https://www.klaritydisk.com/blog/klarity-disk-macworld-review"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What did Macworld say about Klarity Disk?", "acceptedAnswer": {"@type": "Answer", "text": "Macworld reviewed version 1.1 on 13 April 2026 and rated it 4 out of 5. It praised the settings, the RAM and CPU tools, the one-time $6.99 price and the interface, and found a permissions bug that stopped the app deleting apps. It advised waiting for a fix."}}, {"@type": "Question", "name": "Did Klarity fix the permissions bug Macworld found?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Klarity 1.3, released on 10 September 2026, asks for access once per drive, remembers it, and checks access before every scan and every delete. Items that macOS itself protects still need an administrator password, and Klarity now says so and shows them in Finder."}}, {"@type": "Question", "name": "Can Klarity Disk delete apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for apps you installed yourself by dragging them into Applications. Apps from the App Store need an administrator password, which Finder asks for. Apps that came with your Mac cannot be removed by any app."}}, {"@type": "Question", "name": "Is Klarity Disk worth it?", "acceptedAnswer": {"@type": "Answer", "text": "If you want to see what fills your Mac and clear it safely, it costs $6.99 once, with no subscription. It shows your disk as a map, can colour it by age, and only moves files to the Trash after you confirm."}}, {"@type": "Question", "name": "Does Klarity Disk collect any data?", "acceptedAnswer": {"@type": "Answer", "text": "No. It has no network access at all, no accounts and no analytics. What it learns about your disk stays on your Mac."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<script>
+(function(){var t=localStorage.getItem('klarity-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal: #3ECFCF; --teal-dim: #2a9e9e; --blue: #5B8DEF; --mint: #47E0B0;
+  --lavender: #7BA4F7; --coral: #FF6B6B; --bg-deep: #060810;
+  --bg-card: rgba(255,255,255,0.03); --bg-card-hover: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(255,255,255,0.12);
+  --text-primary: rgba(255,255,255,0.92); --text-secondary: rgba(255,255,255,0.55);
+  --text-muted: rgba(255,255,255,0.3); --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08); --nav-bg: rgba(6,8,16,0.7);
+  --nav-bg-scrolled: rgba(6,8,16,0.92); --nav-mobile-bg: rgba(6,8,16,0.96);
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-theme="light"] {
+  --bg-deep: #f4f5f7; --bg-card: rgba(0,0,0,0.03); --bg-card-hover: rgba(0,0,0,0.06);
+  --border: rgba(0,0,0,0.12); --border-hover: rgba(0,0,0,0.2);
+  --text-primary: rgba(0,0,0,0.88); --text-secondary: rgba(0,0,0,0.58);
+  --text-muted: rgba(0,0,0,0.38); --glass-bg: rgba(255,255,255,0.75);
+  --glass-border: rgba(0,0,0,0.08); --teal: #147272; --teal-dim: #0f5c5c;
+  --blue: #3a6ac9; --mint: #167a5e; --lavender: #5a7fd4; --coral: #d94545;
+  --nav-bg: rgba(255,255,255,0.72); --nav-bg-scrolled: rgba(255,255,255,0.92);
+  --nav-mobile-bg: rgba(255,255,255,0.96);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { cursor: pointer; }
+
+.ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.ambient-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.10; animation: orbFloat 20s ease-in-out infinite alternate; }
+.ambient-orb:nth-child(1) { width: 500px; height: 500px; background: var(--teal); top: -10%; left: -10%; }
+.ambient-orb:nth-child(2) { width: 400px; height: 400px; background: var(--blue); top: 50%; right: -15%; animation-delay: -7s; }
+@keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.03); } 100% { transform: translate(-15px,10px) scale(0.97); } }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 48px; height: 72px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); background: var(--nav-bg); border-bottom: 1px solid var(--border); transition: background 0.3s, box-shadow 0.3s; }
+nav.scrolled { background: var(--nav-bg-scrolled); box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--text-primary); letter-spacing: -0.02em; }
+.nav-logo svg { flex-shrink: 0; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--teal); transition: width 0.3s var(--ease-out-expo); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--teal); }
+.nav-links a.active::after { width: 100%; }
+.nav-cta { background: linear-gradient(135deg, var(--teal), var(--blue)); color: #fff !important; padding: 8px 20px; border-radius: 100px; font-weight: 600 !important; font-size: 0.85rem !important; transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s !important; box-shadow: 0 2px 16px rgba(62,207,207,0.2); }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 24px rgba(62,207,207,0.35) !important; }
+[data-theme="light"] .nav-cta { color: #fff !important; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.theme-toggle:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 8px; cursor: pointer; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: 0.3s; }
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-hamburger { display: flex; }
+  .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: var(--nav-mobile-bg); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 20px; gap: 20px; border-bottom: 1px solid var(--border); transform: translateY(-120%); transition: transform 0.4s var(--ease-out-expo); }
+  .nav-links.open { transform: translateY(0); }
+}
+
+.article-page { position: relative; z-index: 2; min-height: 100vh; padding-top: 72px; }
+.article-header { max-width: 720px; margin: 0 auto; padding: 80px 24px 40px; }
+.article-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 500; color: var(--teal); text-decoration: none; margin-bottom: 32px; transition: gap 0.3s var(--ease-out-expo); }
+.article-back:hover { gap: 10px; }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.article-tag { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); background: rgba(62,207,207,0.08); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(62,207,207,0.15); }
+[data-theme="light"] .article-tag { background: rgba(20,114,114,0.08); border-color: rgba(20,114,114,0.15); }
+.article-date { font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); }
+.article-header h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px; }
+.article-subtitle { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.65; }
+.article-divider { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.article-divider hr { border: none; height: 1px; background: var(--border); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+.article-body h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--text-primary); }
+.article-body h2:first-child { margin-top: 0; }
+.article-body p { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }
+.article-body strong { color: var(--text-primary); font-weight: 600; }
+.article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.2s; }
+.article-body a:hover { opacity: 0.8; }
+.article-body blockquote { border-left: 3px solid var(--teal); padding: 16px 24px; margin: 28px 0; background: var(--glass-bg); border-radius: 0 12px 12px 0; }
+.article-body blockquote p { color: var(--text-primary); font-style: italic; margin-bottom: 0; }
+.article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+.article-body li { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 8px; }
+.callout { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 24px; margin: 32px 0; }
+.article-body code { font-family: var(--font-mono); font-size: 0.88em; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 5px; padding: 1px 5px; color: var(--text-primary); overflow-wrap: break-word; }
+.callout-title { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--teal); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.article-cta { max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
+.article-cta-inner { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 40px; text-align: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.article-cta-inner h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
+.article-cta-inner p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 24px; }
+.cta-button { display: inline-block; background: linear-gradient(135deg, var(--teal), var(--blue)); color: #fff; padding: 12px 32px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s; box-shadow: 0 2px 16px rgba(62,207,207,0.2); }
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(62,207,207,0.35); color: #fff; }
+
+footer { position: relative; z-index: 2; padding: 48px 24px 32px; border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+@media (max-width: 600px) {
+  .article-header { padding: 60px 20px 32px; }
+  .article-body { padding: 32px 20px 60px; }
+  .article-cta { padding: 0 20px; }
+  .article-cta-inner { padding: 28px 20px; }
+}
+</style>
+<style>.article-body h3.faq-q { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin: 28px 0 8px; color: var(--text-primary); } .article-body figure { margin: 28px 0; } .article-body figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--glass-border); display: block; } .article-body figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }</style>
+<style>
+.article-body .callout ul { margin-bottom: 0; }
+.article-body .callout li:last-child { margin-bottom: 0; }
+.article-body .table-wrap { margin: 28px 0 32px; border: 1px solid var(--glass-border); border-radius: 12px; background: var(--glass-bg); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.article-body .table-wrap:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.article-body table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.92rem; line-height: 1.55; }
+.article-body caption { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.article-body th, .article-body td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+.article-body thead th { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--text-primary); }
+.article-body thead th:last-child { color: var(--teal); background: rgba(62,207,207,0.05); }
+.article-body tbody th { font-weight: 600; color: var(--text-primary); }
+.article-body tbody td { color: var(--text-secondary); }
+.article-body tbody td:last-child { color: var(--text-primary); background: rgba(62,207,207,0.03); }
+[data-theme="light"] .article-body thead th:last-child { background: rgba(20,114,114,0.06); }
+[data-theme="light"] .article-body tbody td:last-child { background: rgba(20,114,114,0.04); }
+.article-body tbody tr:last-child th, .article-body tbody tr:last-child td { border-bottom: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 600px) {
+  .footer-links { flex-wrap: wrap; gap: 12px 20px; }
+  .article-body .table-wrap { border: none; background: none; border-radius: 0; overflow: visible; }
+  .article-body table, .article-body tbody, .article-body tr, .article-body tbody th, .article-body tbody td { display: block; width: 100%; }
+  .article-body table { min-width: 0; font-size: 0.95rem; }
+  .article-body thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+  .article-body tbody tr { border: 1px solid var(--glass-border); border-radius: 12px; background: var(--glass-bg); margin-bottom: 12px; overflow: hidden; }
+  .article-body tbody th, .article-body tbody tr:last-child th { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .article-body tbody td { padding: 10px 16px; border-bottom: none; }
+  .article-body tbody td:nth-of-type(1) { padding-bottom: 4px; }
+  .article-body tbody td::before { content: attr(data-label); display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 2px; }
+  .article-body tbody td:last-child::before { color: var(--teal); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient">
+  <div class="ambient-orb"></div>
+  <div class="ambient-orb"></div>
+</div>
+
+<nav id="mainNav">
+  <a href="/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+      <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+      <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+      <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+      <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+      <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+      <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+      <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+    </svg>
+    Klarity
+  </a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#features">Features</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#compare">Compare</a></li>
+    <li><a href="/support">Support</a></li>
+    <li><a href="/changelog">Changelog</a></li>
+    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+    <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Story</span>
+      <span class="article-date">October 1, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
+    </div>
+    <h1>Klarity Disk Review: What Macworld Found, and What I Fixed</h1>
+    <p class="article-subtitle">Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what is still to do.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <p>If you searched for a Klarity Disk review, you probably met Macworld&rsquo;s headline first: &ldquo;Affordable Mac disk analyzer held back by permissions bug.&rdquo; It is a fair headline. I have read Macworld for years, so being reviewed there at all meant a lot, even with that verdict. This is a thank-you to Chris Barylick, who wrote it, and an honest account of what his review changed.</p>
+
+    <div class="callout">
+      <div class="callout-title">The short version</div>
+      <ul>
+        <li><strong>13 April 2026:</strong> Macworld reviews Klarity Disk 1.1 and rates it 4 out of 5. It likes the app and finds a bug that stops it deleting apps.</li>
+        <li><strong>10 September 2026:</strong> Klarity 1.3 ships, rebuilt around that bug.</li>
+        <li><strong>Next:</strong> Klarity 1.3.1 will let Klarity see hidden folders such as Library. More on that below.</li>
+      </ul>
+    </div>
+
+    <h2>What Macworld liked</h2>
+
+    <p>Most of the review was kind, and specific enough to be useful. It liked how much of the app you can adjust in Settings, and the RAM and CPU tools that sit beside the disk map. It liked the one-time price: $6.99, about $3 less than <a href="/daisydisk-alternative">DaisyDisk</a>, with no subscription. It liked the look of the interface across its six colour themes. It also noted the privacy promises, which still hold: no cloud, no account, no analytics.</p>
+
+    <h2>What went wrong</h2>
+
+    <p>Then came the part that mattered more. When Chris tried to delete apps with Klarity, it kept telling him he did not have permission, even though he was an administrator on his own Mac. His advice was to wait for a fix before buying. For version 1.1, that was the right advice.</p>
+
+    <p>Here is the plain version of why. Every app sold on the Mac App Store is walled off from the rest of your Mac. It can only touch the places you have pointed it at yourself. Version 1.1 remembered very little of what you pointed at, so a delete anywhere else was refused, and the message sent you looking for the wrong fix.</p>
+
+    <p>I test Klarity on my own Mac, in the folders I use every day. Chris used it the way a new owner would: he went straight to his Applications folder to clear out apps. I could have tested for months without doing that.</p>
+
+    <h2>What changed in Klarity 1.3</h2>
+
+    <p>Klarity 1.3 is built around that one paragraph of the review. The technical story is in <a href="/blog/klarity-1-3-one-time-disk-access">Klarity 1.3: why Move to Trash used to fail</a>. Here is what you see now:</p>
+
+    <div class="table-wrap" role="region" aria-label="Klarity 1.1 compared with Klarity 1.3" tabindex="0">
+      <table role="table">
+        <caption>Klarity 1.1, as Macworld tested it, compared with Klarity 1.3 today</caption>
+        <thead role="rowgroup">
+          <tr role="row"><th scope="col" role="columnheader"><span class="visually-hidden">Situation</span></th><th scope="col" role="columnheader">Klarity 1.1, as Macworld tested it</th><th scope="col" role="columnheader">Klarity 1.3, today</th></tr>
+        </thead>
+        <tbody role="rowgroup">
+          <tr role="row"><th scope="row" role="rowheader">Deleting outside a folder you had picked</th><td role="cell" data-label="Klarity 1.1, as Macworld tested it">Refused, with a confusing error</td><td role="cell" data-label="Klarity 1.3, today">Asks once for that drive, then works</td></tr>
+          <tr role="row"><th scope="row" role="rowheader">What it remembers</th><td role="cell" data-label="Klarity 1.1, as Macworld tested it">One folder</td><td role="cell" data-label="Klarity 1.3, today">Every drive you grant</td></tr>
+          <tr role="row"><th scope="row" role="rowheader">Scanning Downloads before you had picked it</th><td role="cell" data-label="Klarity 1.1, as Macworld tested it">Showed an empty folder</td><td role="cell" data-label="Klarity 1.3, today">Asks for access first</td></tr>
+          <tr role="row"><th scope="row" role="rowheader">Something macOS itself protects</th><td role="cell" data-label="Klarity 1.1, as Macworld tested it">A button that could never work</td><td role="cell" data-label="Klarity 1.3, today">Says so plainly and shows it in Finder</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>When Klarity needs access, it now tells you exactly what for, in words like these:</p>
+
+    <blockquote><p>Klarity needs this to move &ldquo;Old Project&rdquo; to the Trash.</p></blockquote>
+
+    <p>Then it opens Apple&rsquo;s own folder picker, which Klarity cannot see into or control. You choose your drive once, and Klarity remembers it.</p>
+
+    <p>And when macOS itself says no, Klarity no longer pretends otherwise:</p>
+
+    <blockquote><p>Finder needs an admin password to delete Keynote.</p></blockquote>
+
+    <p>Next to it is a Reveal in Finder button, so you can finish the job with your password.</p>
+
+    <p>So, for the apps in Macworld&rsquo;s test: an app you installed by dragging it into Applications now goes to the Trash after that one-time grant. An app installed from the App Store, like Keynote, is protected by macOS, so it needs your administrator password, and Klarity sends you to Finder for it. Apps that came with your Mac cannot be removed by any app, and that is by design.</p>
+
+    <p>Deleting is still careful. Klarity only ever moves things to the Trash and never empties it. Every delete asks first, and a folder of 1&nbsp;GB or more needs a deliberate slide to confirm.</p>
+
+    <h2>Three things the review taught me</h2>
+
+    <p><strong>Test like a stranger.</strong> The bug lived exactly where I never went. Now every scan and every delete checks access first, wherever it happens, instead of relying on the paths I happen to use.</p>
+
+    <p><strong>A quiet failure is worse than a loud one.</strong> Klarity 1.1 sometimes did nothing and said nothing. That is worse than an error, because you blame yourself. In 1.3, if something cannot happen, you are told why.</p>
+
+    <p><strong>An honest sentence beats a hopeful button.</strong> Offering &ldquo;Grant Access&rdquo; for a file macOS would never release was a small lie. &ldquo;Finder needs an admin password&rdquo; is less magical, and true.</p>
+
+    <p>A <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> is only worth having if you can act on what it shows you. In 1.1, acting was the weak spot. Every change above came from taking the review seriously instead of arguing with it.</p>
+
+    <h2>Thank you, Macworld</h2>
+
+    <p>Reviewing a small app from a solo developer takes time, and naming a real bug in public is the most useful thing a reviewer can do. It gave me a better app. So: thank you, Chris, and thank you, Macworld.</p>
+
+    <p>Chris, if you would like to take a second look at 1.3, a promo code is yours. The same goes for any reviewer: ask through the <a href="/support">support page</a>.</p>
+
+    <h2>What is still to do</h2>
+
+    <p>One limitation, stated plainly. Klarity 1.3 skips folders that macOS marks as hidden, and your Library folder is one of them. That is where caches and app leftovers pile up. Version 1.3.1 fixes it and is on its way. Until then, pick <strong>Choose Folder&hellip;</strong>, press Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G in the panel, and type <code>~/Library</code>. <a href="/blog/what-is-system-data-on-mac">What System Data on a Mac actually is</a> explains what is safe to clear in there.</p>
+
+    <h2>Try it for yourself</h2>
+
+    <figure>
+      <img src="/screenshot-treemap.png" alt="Klarity Disk treemap of a Mac disk, with each folder drawn as a rectangle sized by the space it uses and coloured by how long since it last changed" width="2000" height="1066" loading="lazy">
+    </figure>
+
+    <p>Klarity Disk is $6.99 once on the <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Mac App Store</a>, for macOS 14.6 and later. It draws your disk as a map where the biggest rectangles are the folders using the most space, and it can colour them by age, so what is both large and long forgotten stands out. Read <a href="https://www.macworld.com/article/3112596/klarity-disk-review.html">Macworld&rsquo;s full review</a> too, and judge for yourself.</p>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">What did Macworld say about Klarity Disk?</h3>
+    <p>Macworld reviewed version 1.1 on 13 April 2026 and rated it 4 out of 5. It praised the settings, the RAM and CPU tools, the one-time $6.99 price and the interface, and found a permissions bug that stopped the app deleting apps. It advised waiting for a fix.</p>
+
+    <h3 class="faq-q">Did Klarity fix the permissions bug Macworld found?</h3>
+    <p>Yes. Klarity 1.3, released on 10 September 2026, asks for access once per drive, remembers it, and checks access before every scan and every delete. Items that macOS itself protects still need an administrator password, and Klarity now says so and shows them in Finder.</p>
+
+    <h3 class="faq-q">Can Klarity Disk delete apps?</h3>
+    <p>Yes, for apps you installed yourself by dragging them into Applications. Apps from the App Store need an administrator password, which Finder asks for. Apps that came with your Mac cannot be removed by any app.</p>
+
+    <h3 class="faq-q">Is Klarity Disk worth it?</h3>
+    <p>If you want to see what fills your Mac and clear it safely, it costs $6.99 once, with no subscription. It shows your disk as a map, can colour it by age, and only moves files to the Trash after you confirm.</p>
+
+    <h3 class="faq-q">Does Klarity Disk collect any data?</h3>
+    <p>No. It has no network access at all, no accounts and no analytics. What it learns about your disk stays on your Mac.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
+    <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--teal, #3ECFCF);">More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/klarity-1-3-one-time-disk-access" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed &rarr;</a></li>
+      <li><a href="/blog/why-i-built-klarity" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Why I Built Klarity &mdash; A DaisyDisk Alternative for $6.99 &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac" style="color: var(--lavender, #7BA4F7); text-decoration: none;">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+      <li><a href="/daisydisk-alternative" style="color: var(--lavender, #7BA4F7); text-decoration: none;">Looking for a DaisyDisk alternative? An honest comparison &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+const hamburger = document.getElementById('navHamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('klarity-theme', next);
+  themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+});
+if (document.documentElement.getAttribute('data-theme') === 'light') themeToggle.textContent = '☀️';
+</script>
+</body>
+</html>
