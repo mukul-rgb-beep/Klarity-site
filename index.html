@@ -87,8 +87,129 @@ footer{background:var(--bg2);border-top:1px solid var(--line);margin-top:120px}
   .hero{padding-top:48px}.hero-sub{font-size:17px;margin-top:18px}.pp-more{display:none}
   .hero-stage{margin-top:40px;padding:0 16px}
   /* Phones: crop to the treemap so tiles and labels stay legible. */
-  .window{border-radius:10px;aspect-ratio:3/4;object-fit:cover;object-position:40% 50%}
+  .window{border-radius:10px}
+  .hero-stage .window{aspect-ratio:3/4;object-fit:cover;object-position:40% 50%}
   footer{margin-top:80px}
+}
+
+/* Sections */
+.section{padding:140px 0;overflow:hidden}
+.promises{overflow:hidden}
+.section-tight{padding:96px 0}
+.alt{background:var(--bg2)}
+.narrow{max-width:820px}
+.center{text-align:center}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-head{text-align:center;max-width:820px;margin:0 auto 64px}
+.section-title{font-size:48px;line-height:1.08;letter-spacing:-.025em;font-weight:700}
+.section-sub{margin-top:18px;font-size:21px;line-height:1.45;color:var(--ink2)}
+.more{display:inline-block;margin-top:22px;font-size:17px;font-weight:500;text-decoration:none}
+.more:hover{text-decoration:underline}
+.more.center{display:block;text-align:center}
+
+/* Promises */
+.promises{border-bottom:1px solid var(--line)}
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.promise-icon{display:inline-flex;width:44px;height:44px;border-radius:12px;align-items:center;justify-content:center;margin-bottom:18px}
+.promise-icon svg{width:22px;height:22px}
+.pi-1{background:#E7EEFB;color:#2F5FB3}.pi-2{background:#FBEAE6;color:#B5462F}.pi-3{background:#E5F3EC;color:#2B7A55}
+.promise-title{font-size:24px;letter-spacing:-.015em;margin-bottom:8px}
+.promise p{color:var(--ink2);font-size:17px;line-height:1.5}
+
+/* Feature rows */
+.feature{display:grid;grid-template-columns:1.45fr 1fr;gap:72px;align-items:center}
+.feature+.feature{margin-top:140px}
+.feature.flip{grid-template-columns:1fr 1.45fr}
+.feature.flip .feature-media{order:2}
+.feature-media{position:relative}
+.feature-media .window{border-radius:12px}
+.field.small{inset:-8%;filter:blur(60px);opacity:.45}
+.field.small .f1{left:0;top:10%}.field.small .f2{left:20%;top:30%}.field.small .f3{right:0;top:0}.field.small .f4{left:30%;top:0}
+.crop-age{aspect-ratio:4/3;object-fit:cover;object-position:20% 38%}
+.feature-copy h3{font-size:34px;line-height:1.12;letter-spacing:-.02em;margin-bottom:16px}
+.feature-copy p{color:var(--ink2);font-size:19px}
+
+/* Dark showcase */
+.dark{background:#0F1012;color:#F5F5F7}
+.dark .section-sub{color:#A1A1A6}
+.dark .eyebrow{color:#4FD1DB}
+.showcase-media{max-width:1040px;margin:0 auto}
+.dark .window{box-shadow:0 0 0 .5px rgba(255,255,255,.14),0 30px 80px -10px rgba(0,0,0,.7),0 80px 160px -30px rgba(0,0,0,.6)}
+
+/* Why a treemap */
+#why-different .wrap.narrow{max-width:980px}
+#why-different .section-title,#why-different .eyebrow,#why-different .section-sub{text-align:center}
+#why-different .section-sub{max-width:760px;margin-left:auto;margin-right:auto}
+.viz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.viz{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.viz h3{font-size:19px;margin-bottom:8px}
+.viz h3 span{font-weight:400;color:var(--ink2)}
+.viz p{font-size:16px;color:var(--ink2);line-height:1.5}
+.viz.muted{background:transparent}
+#why-different .more{display:block;text-align:center}
+
+/* Compare */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:18px;border:1px solid var(--line);background:#fff}
+.compare{width:100%;min-width:640px;border-collapse:collapse;font-size:16px}
+.compare th,.compare td{padding:14px 20px;text-align:center;border-bottom:1px solid var(--line)}
+.compare thead th{font-size:14px;font-weight:600;color:var(--ink2)}
+.compare tbody th{text-align:left;font-weight:500}
+.compare tr:last-child th,.compare tr:last-child td{border-bottom:0}
+.compare .k{background:rgba(14,124,134,.06);font-weight:600}
+.compare thead .k{color:var(--accent)}
+.compare .yes{color:#1F7A4D}.compare .no{color:#8A8A8E}
+.compare .note{display:block;font-size:13px;font-weight:400;color:var(--ink2)}
+.compare .price{color:var(--ink)}
+
+/* Reviews */
+.press-card{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:900px;margin:0 auto 32px;padding:32px 36px;background:#fff;border:1px solid var(--line);border-radius:20px}
+.press-mast{display:flex;flex-direction:column;gap:6px}
+.press-name{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.press-stars{color:#A8650F;letter-spacing:2px;font-size:18px}
+.press-card p{color:var(--ink2);font-size:17px}
+.press-links{margin-top:10px;display:flex;gap:20px;flex-wrap:wrap}
+.press-links a{font-weight:500;text-decoration:none}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px;margin:0 auto}
+.quote{background:var(--bg2);border-radius:18px;padding:26px}
+.q-stars{color:#A8650F;letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.quote blockquote{font-size:17px;line-height:1.5}
+.quote figcaption{margin-top:14px;font-size:14px;color:var(--ink2)}
+
+/* What's new */
+#whats-new .section-title{margin-bottom:28px}
+.news{list-style:none;display:grid;gap:14px}
+.news li{position:relative;padding-left:24px;color:var(--ink2);font-size:18px}
+.news li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+/* Blog row */
+.blog-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.blog-card{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:18px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
+.blog-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.bc-tag{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.bc-title{font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+
+/* Final call */
+.final{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);padding-bottom:120px}
+.final .hero-cta{margin-top:28px}
+
+/* Reveal (added by JS only; visible without JS or with reduced motion) */
+.reveal{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.pre{opacity:0;transform:translateY(24px)}
+
+@media (max-width:820px){
+  .section{padding:88px 0}
+  .section-tight{padding:64px 0}
+  .section-head{margin-bottom:40px}
+  .section-title{font-size:32px}
+  .section-sub{font-size:18px}
+  .promise-grid,.viz-grid,.quotes,.blog-row{grid-template-columns:1fr;gap:28px}
+  .feature,.feature.flip{grid-template-columns:1fr;gap:28px}
+  .feature.flip .feature-media{order:0}
+  .feature+.feature{margin-top:88px}
+  .feature-copy h3{font-size:26px}
+  .feature-copy p{font-size:17px}
+  .press-card{grid-template-columns:1fr;gap:16px;padding:24px}
+  .compare th,.compare td{padding:12px 14px}
 }
 </style>
 </head>
@@ -141,6 +262,205 @@ footer{background:var(--bg2);border-top:1px solid var(--line);margin-top:120px}
     <div class="field" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i></div>
     <img class="window" src="/img/1.3.1/hero.webp" width="2648" height="1952" fetchpriority="high"
          alt="Klarity 1.3.1 showing a Mac home folder as a treemap: Movies in red because it hasn’t changed in over three years, with the 40.8 GB Travel Film 2023 project selected in the inspector">
+  </div>
+</section>
+
+<section class="promises section-tight" aria-label="What Klarity promises">
+  <div class="wrap promise-grid">
+    <div class="promise reveal">
+      <span class="promise-icon pi-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="10" height="10" rx="2"/><rect x="15" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="11" width="6" height="10" rx="1.5"/><rect x="3" y="15" width="10" height="6" rx="1.5"/></svg></span>
+      <h2 class="promise-title">See it.</h2>
+      <p>Every folder drawn to scale and coloured by age, so you know what’s big and what’s forgotten at a glance.</p>
+    </div>
+    <div class="promise reveal">
+      <span class="promise-icon pi-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></span>
+      <h2 class="promise-title">Clear it safely.</h2>
+      <p>Klarity only ever moves things to the Trash. Folders of 1&nbsp;GB or more need a slide to confirm, and system folders stay off-limits.</p>
+    </div>
+    <div class="promise reveal">
+      <span class="promise-icon pi-3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+      <h2 class="promise-title">Keep it private.</h2>
+      <p>No network connections, no account, no analytics. What Klarity learns about your disk stays on your Mac.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Features</p>
+      <h2 class="section-title">Everything you need to understand your storage.</h2>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-media">
+        <div class="field small" aria-hidden="true"><i class="f1"></i><i class="f3"></i></div>
+        <img class="window" src="/img/1.3.1/age-closeup.webp" width="1440" height="1080" loading="lazy" decoding="async"
+             alt="Close-up of Klarity’s age-coloured treemap: the Movies folder in red, untouched for over three years">
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">Big and forgotten</p>
+        <h3>See what you haven’t touched in years.</h3>
+        <p>Colour by age turns the map into a to-do list: red for three years and more, blue for this month. Hover any tile for its size and age; the inspector shows when it last changed.</p>
+        <a class="more" href="/blog/how-to-clean-up-mac-storage">What’s safe to delete &rarr;</a>
+      </div>
+    </div>
+
+    <div class="feature flip reveal">
+      <div class="feature-media">
+        <div class="field small" aria-hidden="true"><i class="f2"></i><i class="f3"></i></div>
+        <img class="window" src="/img/1.3.1/library.webp" width="2648" height="1952" loading="lazy" decoding="async"
+             alt="Klarity showing the Library folder: Xcode and simulators under Developer, and an 11.8 GB iPhone backup in MobileSync">
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">New in 1.3.1</p>
+        <h3>Finally, see System Data.</h3>
+        <p>Klarity now opens hidden folders like Library, where caches, Xcode leftovers and old iPhone backups pile up: the space Storage settings files under a grey “System Data” bar.</p>
+        <a class="more" href="/blog/what-is-system-data-on-mac">What System Data is, and what’s safe to clear &rarr;</a>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-media">
+        <div class="field small" aria-hidden="true"><i class="f4"></i><i class="f1"></i></div>
+        <img class="window" src="/img/1.3.1/large-files.webp" width="2648" height="1952" loading="lazy" decoding="async"
+             alt="Klarity’s Large Files list sorted by size, each file showing how long since it changed, with a 5.46 GB video ticked for the Trash">
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">Large Files</p>
+        <h3>Find the big files you forgot.</h3>
+        <p>Switch to Large Files for a list sorted by size, with how long it’s been since each file changed. Tick a few and move them to the Trash together.</p>
+        <a class="more" href="/blog/how-to-find-large-files-on-mac">How to find large files on a Mac &rarr;</a>
+      </div>
+    </div>
+
+    <div class="feature flip reveal">
+      <div class="feature-media">
+        <div class="field small" aria-hidden="true"><i class="f1"></i><i class="f2"></i></div>
+        <img class="window" src="/img/1.3.1/trash.webp" width="2648" height="1952" loading="lazy" decoding="async"
+             alt="Klarity asking to move a 5.37 GB folder to the Trash, with a slide to unlock before it can be confirmed">
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">Safe by design</p>
+        <h3>Clear space without the risk.</h3>
+        <p>Everything goes to the Trash, never straight to deletion. A folder of 1&nbsp;GB or more needs a deliberate slide, and Klarity refuses to touch what your Mac depends on, like Library or Keychains.</p>
+        <a class="more" href="/blog/mac-storage-full-after-update">Mac storage full after an update? &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="showcase">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Light or dark</p>
+      <h2 class="section-title">Made for macOS.</h2>
+      <p class="section-sub">Native SwiftUI, light by default and dark in one click, with a menu-bar readout that keeps memory and disk use in sight.</p>
+    </div>
+    <div class="showcase-media reveal">
+      <img class="window" src="/img/1.3.1/dark.webp" width="2648" height="1952" loading="lazy" decoding="async"
+           alt="Klarity 1.3.1 in dark mode, showing the same age-coloured treemap of a home folder">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-different">
+  <div class="wrap narrow reveal">
+    <p class="eyebrow">Why it’s different</p>
+    <h2 class="section-title">Not all visualizations are created equal.</h2>
+    <p class="section-sub">Most disk analyzers use sunburst charts. Research shows rectangular layouts are measurably better at comparing file sizes, so Klarity gives you both a treemap and an icicle view.</p>
+    <div class="viz-grid">
+      <div class="viz"><h3>Treemap</h3><p>Rectangles sized by file size. Your eye compares areas instantly. No angle math, no distortion at different depths.</p></div>
+      <div class="viz"><h3>Icicle</h3><p>Horizontal bars aligned on the same baseline. Compare folders at the same level by looking at bar width. Hierarchy is depth, not angle.</p></div>
+      <div class="viz muted"><h3>Sunburst <span>(others)</span></h3><p>Encodes size as arc angle. Outer rings look visually larger even when they’re not. Brendan Gregg calls them “the new pie chart.”</p></div>
+    </div>
+    <a class="more" href="/blog/treemap-icicle-vs-sunburst">Read the deep dive: why treemap and icicle beat sunburst &rarr;</a>
+  </div>
+</section>
+
+<section class="section alt" id="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Compare</p>
+      <h2 class="section-title">Built different from the ground up.</h2>
+      <p class="section-sub">Two visualization modes, a built-in RAM monitor, delete safety guards, and zero data collection. No other disk analyzer offers this combination.</p>
+    </div>
+    <div class="table-scroll reveal">
+      <table class="compare">
+        <thead><tr><th scope="col">Feature</th><th scope="col" class="k">Klarity</th><th scope="col">Typical Disk Analyzer</th><th scope="col">Typical Cleanup Suite</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Treemap View</th><td class="k yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+          <tr><th scope="row">Icicle / Flame Graph</th><td class="k yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+          <tr><th scope="row">Sunburst View</th><td class="k">—</td><td class="yes">✓</td><td class="no">✗</td></tr>
+          <tr><th scope="row">Move to Trash</th><td class="k yes">✓</td><td class="no">✗</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">Delete Safety Guards</th><td class="k yes">✓ <span class="note">slide-to-confirm</span></td><td class="no">✗</td><td class="no">✗</td></tr>
+          <tr><th scope="row">RAM Monitor</th><td class="k yes">✓</td><td class="no">✗</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">Menu Bar Widget</th><td class="k yes">✓</td><td class="no">✗</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">Theme Customization</th><td class="k yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+          <tr><th scope="row">One-Time Purchase</th><td class="k yes">✓</td><td class="yes">✓</td><td class="no">✗ <span class="note">(subscription)</span></td></tr>
+          <tr><th scope="row">Price</th><td class="k price">$6.99</td><td>$9.99+</td><td>$30–50/year</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a class="more center" href="/daisydisk-alternative">Full comparison with DaisyDisk &rarr;</a>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Reviews</p>
+      <h2 class="section-title">What people say.</h2>
+    </div>
+    <div class="press-card reveal">
+      <div class="press-mast"><span class="press-name">Macworld</span><span class="press-stars" aria-label="Rated 4 out of 5">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div>
+      <div>
+        <p>Macworld reviewed Klarity Disk in April and rated it 4 out of 5, praising the settings, the RAM and CPU tools and the one-time price. It also found a real bug; Klarity 1.3 was rebuilt around fixing it.</p>
+        <p class="press-links"><a href="https://www.macworld.com/article/3112596/klarity-disk-review.html">Read the review &rarr;</a> <a href="/blog/klarity-disk-macworld-review">What the review changed &rarr;</a></p>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure class="quote reveal"><div class="q-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>“Finally a disk analyzer that actually looks good. The treemap view is so much more intuitive than DaisyDisk’s sunburst.”</blockquote><figcaption>Beta tester · iOS Developer</figcaption></figure>
+      <figure class="quote reveal"><div class="q-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>“Freed up 47GB in 10 minutes. The icicle view made it crystal clear where all my Xcode caches were hiding.”</blockquote><figcaption>Beta tester · Software Engineer</figcaption></figure>
+      <figure class="quote reveal"><div class="q-stars" aria-label="5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>“Love that it’s a one-time purchase. The RAM monitor in the menu bar is a bonus I didn’t expect. Replaced two apps with one.”</blockquote><figcaption>Beta tester · Photographer</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="whats-new">
+  <div class="wrap narrow reveal">
+    <p class="eyebrow">What’s new</p>
+    <h2 class="section-title">Klarity 1.3.1 — in App Review now.</h2>
+    <ul class="news">
+      <li>A redesigned Klarity: a new light look (dark is one click away in Settings), a Finder-style sidebar with your locations, and an inspector that shows what’s inside the folder you pick.</li>
+      <li>Klarity now scans hidden folders such as your Library, so the space macOS calls “System Data” finally shows up. A new Library shortcut takes you straight there.</li>
+      <li>Photos libraries, video projects and virtual machines now count toward their folder’s size everywhere, not just when you open them.</li>
+      <li>New option in Settings › Appearance: colour folders by the age of most of their space, so big folders full of old files stand out even if one file changed today.</li>
+      <li>Sizes now show the space files actually take on your disk, so iCloud files that aren’t downloaded no longer count.</li>
+      <li>Klarity won’t move folders your Mac depends on, such as Library or Keychains, to the Trash, and it asks twice before trashing app data, iCloud folders or files inside photo and video libraries.</li>
+      <li>Clearer permission prompts: each one explains what Klarity measures.</li>
+    </ul>
+    <a class="more" href="/changelog">Full changelog &rarr;</a>
+  </div>
+</section>
+
+<section class="section section-tight" aria-label="From the blog">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">From the blog</p></div>
+    <div class="blog-row">
+      <a class="blog-card reveal" href="/blog/klarity-disk-macworld-review"><span class="bc-tag">Story</span><span class="bc-title">Klarity Disk review: what Macworld found, and what I fixed</span></a>
+      <a class="blog-card reveal" href="/blog/what-is-system-data-on-mac"><span class="bc-tag">Guide</span><span class="bc-title">What is “System Data” on a Mac, and what’s safe to clear?</span></a>
+      <a class="blog-card reveal" href="/blog/how-to-clean-up-mac-storage"><span class="bc-tag">Guide</span><span class="bc-title">How to clean up Mac storage: what’s safe to delete</span></a>
+    </div>
+    <a class="more center" href="/blog/">All posts &rarr;</a>
+  </div>
+</section>
+
+<section class="section final" id="download">
+  <div class="wrap narrow center reveal">
+    <h2 class="section-title">Ready to see your disk clearly?</h2>
+    <div class="hero-cta"><a class="btn btn-primary" href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Download on the Mac App Store</a></div>
+    <p class="hero-meta">$6.99 once · macOS 14.6 or later · No subscription</p>
   </div>
 </section>
 
