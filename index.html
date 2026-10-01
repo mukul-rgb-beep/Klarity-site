@@ -1811,6 +1811,16 @@ body.has-launch-banner nav { top: 44px; }
     <a href="#features" class="btn-magnetic btn-secondary" data-magnetic>Learn More</a>
   </div>
   <p class="hero-price">No subscriptions. No telemetry. <strong>100% local.</strong></p>
+  <style>
+  .press-proof { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--glass-border, rgba(255,255,255,0.08)); background: var(--glass-bg, rgba(255,255,255,0.04)); color: var(--text-secondary); font-size: 0.9rem; text-decoration: none; transition: border-color 0.3s, color 0.3s; }
+  .press-proof:hover { border-color: var(--teal); color: var(--text-primary); }
+  .press-proof .pp-name { font-weight: 800; letter-spacing: -0.01em; color: var(--text-primary); }
+  .press-proof .pp-stars { color: #F5B942; letter-spacing: 1px; }
+  .press-proof .pp-more { color: var(--teal); }
+  .press-proof > span { white-space: nowrap; }
+  @media (max-width: 600px) { .press-proof { font-size: 0.85rem; gap: 8px; padding: 8px 14px; } .press-proof .pp-more { display: none; } }
+  </style>
+  <a class="press-proof" href="/blog/klarity-disk-macworld-review"><span>Reviewed by <span class="pp-name">Macworld</span></span> <span class="pp-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span>4 out of 5</span> <span class="pp-more">&middot; What changed since &rarr;</span></a>
 
   <!-- Interactive treemap hero -->
   <div class="hero-treemap reveal">
