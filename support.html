@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support &amp; FAQs — Klarity Mac Disk Analyzer</title>
-  <script>(function(){var t=localStorage.getItem('klarity-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="description" content="Get help with Klarity, the macOS disk analyzer. FAQs on Full Disk Access, treemap navigation, RAM monitoring, external drives, and contact info.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.klaritydisk.com/support">
@@ -18,243 +17,36 @@
   <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why can't Klarity see some folders?", "acceptedAnswer": {"@type": "Answer", "text": "Some system folders are protected by macOS. To scan everything, grant Klarity \"Full Disk Access\" in System Settings → Privacy & Security → Full Disk Access. Without it, Klarity can still scan your home folder and most user-accessible locations."}}, {"@type": "Question", "name": "Is my data sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity runs 100% locally on your Mac. No data is collected, transmitted, or stored remotely. There are no analytics, no accounts, and no cloud services. See our Privacy Policy for details."}}, {"@type": "Question", "name": "How do I drill down into a folder?", "acceptedAnswer": {"@type": "Answer", "text": "Double-click any folder in the treemap or icicle view to drill into it. Use the breadcrumb navigation at the top to go back up. You can also right-click any item for options like \"Reveal in Finder\" or \"Drill Into\"."}}, {"@type": "Question", "name": "Can I switch between visualization modes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Go to Settings → Appearance → Disk Visualization and choose between Treemap (rectangles sized by file/folder size) or Icicle (stacked bars by hierarchy depth). Your preference is saved automatically."}}, {"@type": "Question", "name": "Does Klarity delete files?", "acceptedAnswer": {"@type": "Answer", "text": "Not permanently. Klarity can move an item to the Trash, but only after you confirm — and anything over 1 GB asks for a deliberate slide to confirm. It never empties the Trash and never touches system folders on its own, so a mistake is recoverable until you empty the Trash yourself. You can also use \"Reveal in Finder\" to manage files by hand."}}, {"@type": "Question", "name": "Can I monitor RAM usage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Toggle \"Show RAM\" in Settings → Appearance → RAM Display Mode. Klarity will show real-time memory usage in the app. You can adjust the refresh interval in the same settings panel."}}, {"@type": "Question", "name": "Does Klarity work with external drives and HDDs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Klarity scans any mounted volume — internal SSDs, external SSDs, USB hard drives, and even network drives. Scan speed depends on the drive: internal SSDs are fastest (a full scan in seconds), external SSDs are nearly as quick, while traditional HDDs can take longer due to mechanical read speeds. For very large external drives (4 TB+), the initial scan may take a few minutes but you can browse results as they come in."}}, {"@type": "Question", "name": "Why doesn't a Home scan show my Library folder or System Data?", "acceptedAnswer": {"@type": "Answer", "text": "macOS marks ~/Library as hidden, and the current version skips hidden folders, so a Home scan leaves it out and the total looks small. Scan ~/Library as its own root instead: choose \"Choose Folder…\", press Cmd + Shift + G and type ~/Library. Scanning a folder as the root always works. Hidden-folder scanning with a Library shortcut is planned for 1.3.1. See what System Data on a Mac actually is."}}]}</script>
   <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #060810;
-      --bg-card: rgba(255,255,255,0.03);
-      --bg-glass: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.07);
-      --border-bright: rgba(255,255,255,0.12);
-      --text-primary: #E8EAED;
-      --text-secondary: #9BA1AB;
-      --text-tertiary: #5A5E6A;
-      --teal: #3ECFCF;
-      --teal-dim: rgba(62,207,207,0.15);
-      --blue: #5B8DEF;
-    }
-    [data-theme="light"] {
-      --bg: #f4f5f7;
-      --bg-card: rgba(0,0,0,0.03);
-      --bg-glass: rgba(255,255,255,0.75);
-      --border: rgba(0,0,0,0.1);
-      --border-bright: rgba(0,0,0,0.16);
-      --text-primary: #1a1c20;
-      --text-secondary: #555960;
-      --text-tertiary: #8a8f9a;
-      --teal: #147272;
-      --teal-dim: rgba(20,114,114,0.1);
-      --blue: #3a6ac9;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Outfit', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      -webkit-font-smoothing: antialiased;
-    }
-    nav {
-      padding: 16px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 7px; }
-    .nav-back {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--text-primary); }
-
-    .content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 24px 120px;
-    }
-    h1 {
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-    .sub {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin-bottom: 48px;
-    }
-
-    /* Contact card */
-    .contact-card {
-      padding: 32px;
-      border-radius: 16px;
-      background: var(--bg-glass);
-      border: 1px solid var(--border);
-      margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-    .contact-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      background: var(--teal-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-    .contact-info h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .contact-info p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-    .contact-info a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-    .contact-info a:hover { text-decoration: underline; }
-    [data-theme="light"] .contact-card { background: var(--bg-glass); border-color: var(--border); }
-    [data-theme="light"] .requirements { background: var(--bg-glass); border-color: var(--border); }
-
-    /* FAQ */
-    h2 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 24px;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-    }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .faq-q::after {
-      content: '+';
-      font-size: 20px;
-      color: var(--text-tertiary);
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-    .faq-item.open .faq-q::after {
-      content: '−';
-      color: var(--teal);
-    }
-    .faq-a {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-    .faq-item.open .faq-a {
-      max-height: 300px;
-      padding-top: 4px;
-    }
-
-    /* System requirements */
-    .requirements {
-      margin-top: 48px;
-      padding: 28px;
-      border-radius: 16px;
-      background: var(--bg-glass);
-      border: 1px solid var(--border);
-    }
-    .requirements h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    .req-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .req-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-    .req-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--teal);
-      flex-shrink: 0;
-    }
-
-    footer {
-      padding: 32px 40px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-tertiary);
-    }
-    footer a { color: var(--text-tertiary); }
-
-    @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .content { padding: 48px 20px 80px; }
-      h1 { font-size: 32px; }
-      .contact-card { flex-direction: column; text-align: center; }
-      .req-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/site.css?v=20261001">
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">
-    <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
-      <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
-      <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
-      <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
-      <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
-      <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
-      <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
-      <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
-    </svg>
-    Klarity
-  </a>
-  <div style="display:flex;gap:20px;align-items:center;">
-    <a href="/changelog" style="font-size:0.88rem;color:var(--text-secondary,#999);text-decoration:none;">Changelog</a>
-    <a href="/blog/" style="font-size:0.88rem;color:var(--text-secondary,#999);text-decoration:none;">Blog</a>
-    <a href="/" class="nav-back">← Back to home</a>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support" aria-current="page">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
   </div>
 </nav>
+
 
 <div class="content">
   <h1>Support</h1>
@@ -358,14 +150,39 @@
 </div>
 
 <footer>
-  © 2025–2026 Klarity. Built by Mukul Mehra. · <a href="/">Mac disk space analyzer</a> · <a href="/blog/">Blog</a> · <a href="/changelog">Changelog</a> · <a href="/daisydisk-alternative">DaisyDisk alternative</a> · <a href="/press">Press</a> · <a href="/age-suitability">Age Suitability</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Use</a>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
 </footer>
+
 
 <script>
 (function(){var u='mukulmehra',d='zohomail',t='com',s='mailto';
 document.querySelectorAll('a.eml').forEach(function(a){
 var e=u+String.fromCharCode(64)+d+'.'+t;
 a.href=s+':'+e;a.textContent=e;});})();
+</script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
 </script>
 </body>
 </html>

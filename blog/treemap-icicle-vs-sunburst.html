@@ -53,437 +53,37 @@
     }
     </script>
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
-            color: #e0e0e0;
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-        
-        /* Navigation */
-        nav.top-nav {
-            background: rgba(20, 20, 35, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav.top-nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-        }
-        
-        nav.top-nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        nav.top-nav a {
-            color: #b0b0b0;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        nav.top-nav a:hover, nav.top-nav a.active {
-            color: #fff;
-        }
-        
-        /* Article container */
-        article {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 2rem 4rem;
-        }
-        
-        /* Header */
-        header.article-header {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .article-meta {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            color: #888;
-        }
-        
-        .tag {
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.15), rgba(80, 200, 120, 0.15));
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            font-weight: 500;
-            color: #7eb9ff;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #b0b0b0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            color: #999;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        
-        /* Content */
-        .content h2 {
-            font-size: 2rem;
-            margin: 3rem 0 1.5rem;
-            color: #fff;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(74, 144, 226, 0.3);
-        }
-        
-        .content h2:first-of-type {
-            border-top: none;
-            padding-top: 0;
-        }
-        
-        .content h3 {
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem;
-            color: #e8e8e8;
-        }
-        
-        .content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #c0c0c0;
-        }
-        
-        .content strong {
-            color: #fff;
-            font-weight: 600;
-        }
-        
-        .content em {
-            color: #7eb9ff;
-            font-style: normal;
-        }
-        
-        /* Visual divider between parts */
-        .part-divider {
-            margin: 4rem 0;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.08), rgba(80, 200, 120, 0.08));
-            border-left: 4px solid #4A90E2;
-            border-radius: 8px;
-        }
-        
-        .part-divider h3 {
-            margin: 0 0 0.5rem 0;
-            color: #7eb9ff;
-        }
-        
-        .part-divider p {
-            margin: 0;
-            color: #999;
-        }
-        
-        /* Images and diagrams */
-        .diagram {
-            margin: 2.5rem 0;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        
-        .diagram img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        .diagram-caption {
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            color: #888;
-            text-align: center;
-            font-style: italic;
-        }
-        
-        /* Lists */
-        .content ul, .content ol {
-            margin: 1.5rem 0 1.5rem 2rem;
-            color: #c0c0c0;
-        }
-        
-        .content li {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-        
-        /* Blockquote for research citations */
-        blockquote {
-            margin: 2rem 0;
-            padding: 1.5rem 1.5rem 1.5rem 2rem;
-            background: rgba(74, 144, 226, 0.08);
-            border-left: 4px solid #4A90E2;
-            border-radius: 8px;
-            font-style: italic;
-            color: #a8c5e8;
-        }
-        
-        blockquote cite {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #7eb9ff;
-            font-style: normal;
-        }
-        
-        /* CTA Box */
-        .cta-box {
-            margin: 4rem 0 2rem;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.12), rgba(80, 200, 120, 0.12));
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        
-        .cta-box h3 {
-            margin: 0 0 1rem 0;
-            font-size: 1.6rem;
-            color: #fff;
-        }
-        
-        .cta-box p {
-            margin-bottom: 1.5rem;
-            color: #a0a0a0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            background: linear-gradient(135deg, #4A90E2, #50C878);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(20, 20, 35, 0.85);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            text-align: center;
-            color: #666;
-        }
-        
-        footer a {
-            color: #7eb9ff;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Lightbox for clickable images */
-        .diagram img {
-            cursor: zoom-in;
-            transition: transform 0.2s, opacity 0.2s;
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        
-        .diagram img:hover {
-            opacity: 0.85;
-            transform: scale(1.01);
-        }
-        
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            align-items: center;
-            justify-content: center;
-            cursor: zoom-out;
-            padding: 2rem;
-        }
-        
-        .lightbox.active {
-            display: flex;
-            animation: fadeIn 0.2s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .lightbox img {
-            max-width: 95%;
-            max-height: 95vh;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            transition: background 0.2s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Table of Contents */
-        .toc {
-            margin: 2rem 0 3rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 4px solid #4A90E2;
-            border-radius: 12px;
-        }
-        
-        .toc h3 {
-            margin: 0 0 1.5rem 0;
-            font-size: 1.3rem;
-            color: #fff;
-            font-weight: 600;
-        }
-        
-        .toc ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: block;
-        }
-        
-        .toc li {
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-        
-        .toc > ul > li {
-            margin-bottom: 1rem;
-        }
-        
-        .toc ul ul {
-            margin-left: 1.5rem;
-            margin-top: 0.8rem;
-            display: block;
-        }
-        
-        .toc ul ul li {
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-        
-        .toc a {
-            color: #c0c0c0;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-size: 1.05rem;
-            display: block;
-            line-height: 1.6;
-        }
-        
-        .toc a:hover {
-            color: #7eb9ff;
-        }
-        
-        .toc ul ul a {
-            font-size: 0.95rem;
-            color: #a0a0a0;
-            display: block;
-        }
-        
-        .toc ul ul a:hover {
-            color: #7eb9ff;
-        }
-    </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Treemap vs Sunburst: Which Disk Map Finds Big Files Faster?", "item": "https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Treemap vs Sunburst: Which Disk Map Finds Big Files Faster?", "item": "https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst"}]}</script>
+<link rel="stylesheet" href="/css/site.css?v=20261001">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="top-nav">
-        <div class="container">
-            <a href="/" class="logo">
-                <img src="klarity-logo.png" alt="Klarity Logo" style="width: 32px; height: 32px; border-radius: 8px;">
-                Klarity
-            </a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog/" class="active">Blog</a></li>
-                <li><a href="/support">Support</a></li>
-                <li><a href="/changelog">Changelog</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
 
     <!-- Article -->
     <article>
@@ -681,7 +281,7 @@
                 <a href="https://apps.apple.com/app/klarity-disk/id6758895498" class="cta-button">Download on the Mac App Store ($6.99)</a>
             </div>
 
-            <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.1);">
+            <hr>
 
             <p style="font-size: 0.95rem; color: #888;"><strong>References:</strong></p>
             <ul style="font-size: 0.95rem; color: #888;">
@@ -696,7 +296,7 @@
     </article>
 
     <!-- Related Posts -->
-    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; margin: 3rem auto; max-width: 720px;">
+    <div>
         <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #4A90E2;">More from the Klarity Blog</h3>
         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
             <li><a href="/blog/mac-storage-full-after-update" style="color: #7BA4F7; text-decoration: none;">Mac Storage Full After a macOS Update? Where the Space Went →</a></li>
@@ -707,8 +307,21 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Klarity. <a href="/privacy">Privacy</a> · <a href="/age-suitability">Age Suitability</a> · <a href="/terms">Terms</a> · <a href="/support">Support</a> · <a href="/press">Press</a> · <a href="/daisydisk-alternative">DaisyDisk alternative</a> · <a href="/changelog">Changelog</a></p>
-    </footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
     
     <!-- Lightbox for image enlargement -->
     <div class="lightbox" id="lightbox">
@@ -749,5 +362,17 @@
             }
         });
     </script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
 </body>
 </html>
