@@ -145,7 +145,7 @@
       <li><strong>Old <code>~/Library/Developer/Xcode/iOS DeviceSupport</code> folders.</strong> One per iOS version you have ever debugged against; the ancient ones are dead weight.</li>
       <li><strong>Old iOS device backups</strong> you no longer need &mdash; manage those in Finder&rsquo;s device backup manager, not by deleting folders.</li>
       <li><strong>Local Time Machine snapshots</strong>, with <code>tmutil deletelocalsnapshots</code>. macOS thins these automatically when space gets tight, so this is mostly for when you need space right now.</li>
-      <li><strong>The Trash.</strong> Obvious, but easy to forget &mdash; items sitting in it still occupy the disk.</li>
+      <li><strong>The Trash.</strong> Obvious, but easy to forget &mdash; items sitting in it still occupy the disk, and <a href="/blog/external-drive-full-mac">files trashed from an external drive</a> stay on that drive until you empty it.</li>
     </ul>
 
     <p>Worth saying plainly how Klarity behaves here, because deletion tools deserve scrutiny: Klarity only ever moves items to the Trash, and only after you confirm &mdash; anything over 1&nbsp;GB needs a deliberate slide to confirm. It never empties the Trash for you, and it never touches system folders on its own initiative. If you change your mind, the file is still there.</p>
