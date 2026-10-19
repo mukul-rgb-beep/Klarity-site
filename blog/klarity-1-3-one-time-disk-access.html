@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Move to Trash now works everywhere in 1.3. Why an App Store app cannot touch your files until you point at them, explained without the jargon.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed", "description": "Move to Trash now works everywhere in 1.3. Why an App Store app cannot touch your files until you point at them, explained without the jargon.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-10", "dateModified": "2026-09-10", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed", "description": "Move to Trash now works everywhere in 1.3. Why an App Store app cannot touch your files until you point at them, explained without the jargon.", "image": "https://www.klaritydisk.com/screenshot-treemap.png", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-09-10", "dateModified": ""2026-10-19", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed", "item": "https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access"}]}</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
@@ -132,11 +132,11 @@
       <p>Permission lets Klarity measure sizes and move things to the Trash. It never empties the Trash, never deletes outright, and never acts without a confirmation &mdash; for a folder of 1&nbsp;GB or more, a deliberate slide. It makes no network connections, so nothing it learns can leave your Mac.</p>
     </div>
 
-    <h2>What 1.3 still does not do</h2>
+    <h2>What 1.3 did not do, and 1.3.1 does</h2>
 
-    <p>One limitation, stated plainly, because you will hit it. Today&rsquo;s version skips folders that macOS marks as hidden, and your Library folder is one of them. So a scan of your Home folder leaves out Library &mdash; where caches, Xcode leftovers and app data pile up. The folder that explains most of that grey &ldquo;System Data&rdquo; bar is the one a Home scan silently omits. That is not macOS&rsquo;s fault; it is mine.</p>
+    <p>One limitation, stated plainly at the time. Klarity 1.3 skipped folders that macOS marks as hidden, and your Library folder is one of them. So a scan of your Home folder left out Library &mdash; where caches, Xcode leftovers and app data pile up, and the folder that explains most of that grey &ldquo;System Data&rdquo; bar. That was not macOS&rsquo;s fault; it was mine.</p>
 
-    <p>Hidden folders, plus a Library shortcut in the folder menu, is what 1.3.1 is for. Until it ships the workaround is one step: pick <strong>Choose Folder&hellip;</strong>, press Cmd&nbsp;+&nbsp;Shift&nbsp;+&nbsp;G in the panel, and type <code>~/Library</code>. What is safe to delete in there is in <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a>.</p>
+    <p><strong>Update, October 2026:</strong> Klarity 1.3.1 fixes it. It scans hidden folders, and Library has its own shortcut in the sidebar. What is safe to delete in there is in <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a>.</p>
 
     <h2>Why explain any of this</h2>
 
