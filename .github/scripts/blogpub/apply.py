@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 
+from blogpub.share import add_share_bar
 from blogpub import MARKER, SITE, url_for
 
 BLOGPOST_KEY = '"blogPost": ['
@@ -36,7 +37,7 @@ def apply_package(tree, pkg, meta, day: str) -> list[str]:
         raise ApplyError(f"blog/{slug}.html already exists")
 
     # 1. The page and its assets
-    tree.write(f"blog/{slug}.html", tree.read(f"{pkg.path}/post.html"))
+    tree.write(f"blog/{slug}.html", add_share_bar(tree.read(f"{pkg.path}/post.html"), pkg.url, meta.headline))
     for f in tree.files_under(f"{pkg.path}/assets"):
         target = "blog/" + f.rsplit("/", 1)[1]
         if tree.exists(target):

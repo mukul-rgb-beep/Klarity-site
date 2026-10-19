@@ -6,6 +6,7 @@ import re
 from blogpub import MARKER, SITE, TREEMAP
 from blogpub.apply import ApplyError, apply_package
 from blogpub.post import parse_post
+from blogpub.xpost import check_x_post
 
 ANALYZER = "mac disk space analyzer"
 GEO = re.compile(r"^https?://apps\.apple\.com/[a-z]{2}/")
@@ -99,6 +100,7 @@ def check_package(tree, pkg) -> list[str]:
         errs.append("card.html is missing")
     elif href not in tree.read(card_path):
         errs.append(f"card.html has no {href}")
+    errs += check_x_post(pkg.x_post)
     art = f"card-{pkg.slug}.svg"
     if tree.exists(card_path) and f'src="/blog/{art}"' not in tree.read(card_path):
         errs.append(f"card.html has no illustration (/blog/{art})")

@@ -74,7 +74,7 @@ def cmd_publish(args) -> int:
         meta = parse_post(tree.read(f"{pkg.path}/post.html"))
         inbound = apply_package(tree, pkg, meta, args.date)
         report["published"].append({"dirname": pkg.dirname, "slug": pkg.slug, "headline": meta.headline,
-                                    "url": pkg.url, "title_tag": meta.title_tag, "inbound_urls": inbound,
+                                    "url": pkg.url, "title_tag": meta.title_tag, "inbound_urls": inbound, "x_post": pkg.x_post,
                                     "requires": pkg.requires})
     if args.dry_run:
         print(tree.diff())

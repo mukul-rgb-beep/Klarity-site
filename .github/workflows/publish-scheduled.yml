@@ -116,8 +116,13 @@ jobs:
           git push || { git pull --rebase && git push; }
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Verify live, ping IndexNow, announce
+      - name: Verify live, ping IndexNow, post to X, announce
         if: inputs.dry_run != true && steps.push.outputs.sha != ''
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: |
           key=$(tr -d '[:space:]' < indexnow-key.txt)
           commit_url="${{ github.server_url }}/${{ github.repository }}/commit/${{ steps.push.outputs.sha }}"
@@ -134,11 +139,21 @@ jobs:
               '{host: "www.klaritydisk.com", key: $key, keyLocation: "https://www.klaritydisk.com/indexnow-key.txt", urlList: $urls}')
             inow=$(curl -s -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json; charset=utf-8' \
                    -d "$payload" https://api.indexnow.org/indexnow || echo "failed")
+            # X: a one-click share link (free; Mukul posts it himself) with the approved x_post text,
+            # or the headline when there is none. Only if the X_* secrets are ever set, also post via the API.
+            xt=$(jq -r '.x_post // .headline' <<<"$p")
+            xshare="https://x.com/intent/post?text=$(jq -rn --arg t "$xt" '$t|@uri')&url=$(jq -rn --arg u "$url" '$u|@uri')"
+            xres="[Share on X]($xshare)"
+            if [ -n "$X_API_KEY" ] && [ -n "$(jq -r '.x_post // empty' <<<"$p")" ]; then
+              if [ "$live" != yes ]; then xres="$xres (API post skipped: the page was not verified live)"
+              elif xout=$(python .github/scripts/post_to_x.py "$xt $url" 2>&1); then xres="posted via the API: $xout"
+              else xres="$xres (API post FAILED: $xout)"; fi
+            fi
             title="Published: $head"; [ "$live" = yes ] || title="Published but not verified: $head"
-            .github/scripts/issue.sh open "$title" "$(printf '%s\n\n- Live check (200 + matching title): **%s**\n- IndexNow (%s URLs): HTTP %s (200/202 = accepted)\n- Commit: %s\n- Run: %s\n\n- [ ] Request indexing in Search Console for %s\n\nClose this issue once indexing is requested.' \
-              "$url" "$live" "$(jq length <<<"$urls")" "$inow" "$commit_url" "$RUN_URL" "$url")"
+            .github/scripts/issue.sh open "$title" "$(printf '%s\n\n- Live check (200 + matching title): **%s**\n- IndexNow (%s URLs): HTTP %s (200/202 = accepted)\n- X: %s\n- Commit: %s\n- Run: %s\n\n- [ ] Request indexing in Search Console for %s\n\nClose this issue once indexing is requested.' \
+              "$url" "$live" "$(jq length <<<"$urls")" "$inow" "$xres" "$commit_url" "$RUN_URL" "$url")"
             .github/scripts/issue.sh close "Publish blocked: $dir" "Published: $url"
             req=$(jq -r '.requires // empty' <<<"$p")
             if [ -n "$req" ]; then .github/scripts/issue.sh close "Held until Klarity $req: $head" "Published: $url"; fi
-            echo "- [$head]($url): live=$live, IndexNow=$inow" >> "$GITHUB_STEP_SUMMARY"
+            echo "- [$head]($url): live=$live, IndexNow=$inow, X: $xres" >> "$GITHUB_STEP_SUMMARY"
           done

@@ -26,6 +26,7 @@ class Package:
     slug: str = ""
     publish_date: str = ""
     requires: str | None = None
+    x_post: str | None = None
     inbound_links: list[InboundLink] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
 
@@ -68,6 +69,7 @@ def load_package(tree, dirname: str) -> Package:
         pkg.errors.append(f"publish_date {pkg.publish_date!r} is not YYYY-MM-DD")
     if m and (m.group(1), m.group(2)) != (pkg.publish_date, pkg.slug):
         pkg.errors.append(f"folder name {dirname} does not match publish_date {pkg.publish_date!r} and slug {pkg.slug!r}")
+    pkg.x_post = data.get("x_post")
     for i, link in enumerate(data.get("inbound_links") or []):
         try:
             pkg.inbound_links.append(InboundLink(link["file"], link["find"], link["replace"]))

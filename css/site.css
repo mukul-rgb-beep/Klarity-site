@@ -266,3 +266,19 @@ article .content,.container .content{padding-top:0}
   .req-grid{grid-template-columns:1fr}
   .contact-card{padding:18px}
 }
+
+/* 8. Share bar at the end of each post (markup from .github/scripts/blogpub/share.py, behaviour in /js/share.js) */
+.share-bar{max-width:768px;margin:8px auto 40px;padding:0 24px}
+.share-inner{border-top:1px solid var(--line);padding-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.share-title{font-size:16px;font-weight:600;color:var(--ink);margin:0 auto 0 0}
+.share-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.share-btn{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:0 15px;border-radius:980px;border:1px solid rgba(0,0,0,.16);background:#fff;color:var(--ink);font:500 14px/1 var(--font);text-decoration:none;cursor:pointer;transition:border-color .2s,color .2s,background-color .2s}
+.share-btn svg{width:16px;height:16px;flex:none;fill:currentColor}
+.share-btn:hover{border-color:var(--accent);color:var(--accent)}
+.share-btn.share-native{background:var(--accent);border-color:var(--accent);color:#fff}
+.share-btn.share-native:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:#fff}
+.share-btn[hidden]{display:none}
+.share-copy{display:none}
+.js .share-copy{display:inline-flex}
+.article-page .share-bar{max-width:none;padding:0;margin:8px 0 40px}
+@media (max-width:700px){.share-bar{padding:0 20px}.article-page .share-bar{padding:0}.share-title{flex-basis:100%}}
