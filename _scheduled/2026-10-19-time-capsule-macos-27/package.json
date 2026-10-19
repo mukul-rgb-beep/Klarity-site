@@ -1,0 +1,27 @@
+{
+  "slug": "time-capsule-macos-27",
+  "publish_date": "2026-10-19",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "Screen real estate is finite, especially when you're working with dense file trees containing thousands of items.",
+      "replace": "Screen real estate is finite, especially when you're working with dense file trees containing thousands of items. The same goes for a drive you are about to hand to Time Machine: <a href=\"/blog/time-capsule-macos-27\">see what is on it before it is erased</a>, not one folder at a time."
+    },
+    {
+      "file": "blog/external-drive-full-mac.html",
+      "find": "If you want more history than fits, the answer is a larger backup disk.",
+      "replace": "If you want more history than fits, the answer is a larger backup disk. And if your backups still go to an AirPort Time Capsule, <a href=\"/blog/time-capsule-macos-27\">macOS 27 can no longer use it</a>."
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "APFS snapshots kept on your internal disk between backups.",
+      "replace": "APFS snapshots kept on your internal disk between backups. If those backups go to a Time Capsule, note that <a href=\"/blog/time-capsule-macos-27\">macOS 27 no longer supports it</a>."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "They are what lets Time Machine restore a file you deleted an hour ago.</li>",
+      "replace": "They are what lets Time Machine restore a file you deleted an hour ago. And if your backups still go to a Time Capsule, <a href=\"/blog/time-capsule-macos-27\">macOS 27 can no longer reach it</a>.</li>"
+    }
+  ]
+}

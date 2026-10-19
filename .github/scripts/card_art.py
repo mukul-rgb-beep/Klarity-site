@@ -214,6 +214,55 @@ ART["why-i-built-klarity"] = svg(
     + text(160, 128, "Klarity", 16, 600, INK, "middle") + text(160, 147, "$6.99 on the Mac App Store", 12, 500, INK2, "middle"),
     "The Klarity app icon")
 
+# 10 Nov — free space dropped after an update: the used-space spike that settles
+ART["free-space-dropped-after-macos-update"] = svg(
+    win(24, 22, 272, 136)
+    + text(42, 48, "Used space", 13, 600)
+    + f'<line x1="42" y1="122" x2="278" y2="122" stroke="{GREY}" stroke-width="1.5" stroke-dasharray="3 4"/>'
+    + f'<path d="M42 122 H96 C 112 122, 116 66, 134 66 C 152 66, 168 104, 200 108 S 250 110, 278 110 V122 H42Z" fill="{AGE[3]}" fill-opacity=".16"/>'
+    + f'<path d="M42 122 H96 C 112 122, 116 66, 134 66 C 152 66, 168 104, 200 108 S 250 110, 278 110" fill="none" stroke="{AGE[3]}" stroke-width="3" stroke-linecap="round"/>'
+    + f'<circle cx="134" cy="66" r="4.5" fill="{AGE[3]}"/>' + text(144, 61, "+150 GB", 13, 600)
+    + text(278, 102, "+30 GB", 12, 600, INK2, "end")
+    + text(96, 144, "Update", 11, 500, INK2, "middle") + text(278, 144, "Days later", 11, 500, INK2, "end"),
+    "Used space spikes the day after a macOS update, then settles a little above where it started")
+
+# 24 Nov — Time Capsule stopped working: hand-over to a new Time Machine drive
+ART["time-capsule-macos-27"] = svg(
+    # the old Time Capsule, faded, with a "no longer supported" badge
+    '<g opacity=".55">'
+    + f'<rect x="38" y="44" width="64" height="98" rx="16" fill="#F4F4F6" filter="url(#sh)"/>'
+    + f'<rect x="38" y="44" width="64" height="98" rx="16" fill="none" stroke="#000" stroke-opacity=".12" stroke-width=".75"/>'
+    + f'<circle cx="70" cy="128" r="2.6" fill="{AGE[3]}"/>' + text(70, 70, "Time", 11, 600, INK2, "middle")
+    + text(70, 84, "Capsule", 11, 600, INK2, "middle") + '</g>'
+    + f'<circle cx="100" cy="48" r="12" fill="{AGE[4]}"/>'
+    + '<path d="M95.5 43.5 l9 9 M104.5 43.5 l-9 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>'
+    # hand-over arrow
+    + f'<path d="M118 94 H148" stroke="{GREY}" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>'
+    + f'<path d="M144 88 l7 6 l-7 6" fill="none" stroke="{GREY}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+    # the new backup drive, with the Time Machine clock
+    + win(160, 40, 136, 104)
+    + f'<circle cx="190" cy="72" r="14" fill="none" stroke="{ACCENT}" stroke-width="3"/>'
+    + f'<path d="M190 64 V72 L196 76" fill="none" stroke="{ACCENT}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'
+    + text(178, 112, "Time Machine", 14, 600) + text(178, 130, "New backup drive", 12, 500, INK2),
+    "An old Time Capsule marked unsupported, handing over to a new Time Machine backup drive")
+
+# Intel-based Apps list (System Settings › General › About › Details), 320x180 scene for card_art.py.
+_rows = [("Label Printer", AGE[0]), ("Scanner Utility", AGE[2]), ("Photo Converter", AGE[4])]
+_lst = []
+for _i, (_n, _c) in enumerate(_rows):
+    _y = 66 + _i * 30
+    _lst.append(f'<rect x="44" y="{_y}" width="20" height="20" rx="5.5" fill="{_c}"/>'
+                + text(74, _y + 15, _n, 14, 500)
+                + f'<rect x="226" y="{_y+2}" width="50" height="17" rx="8.5" fill="{TRACK}"/>'
+                + text(251, _y + 15, "Intel", 11, 600, INK2, "middle"))
+    if _i < 2:
+        _lst.append(f'<line x1="74" y1="{_y+25}" x2="276" y2="{_y+25}" stroke="#000" stroke-opacity=".07"/>')
+ART["intel-apps-rosetta-macos-27"] = svg(
+    win(28, 22, 264, 140)
+    + text(44, 48, "Intel-based Apps", 15, 600)
+    + "".join(_lst),
+    "The Intel-based Apps list in System Settings")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"
