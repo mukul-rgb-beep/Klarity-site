@@ -1,0 +1,27 @@
+{
+  "slug": "intel-apps-rosetta-macos-27",
+  "publish_date": "2026-11-03",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "And they maximize information density without sacrificing clarity.",
+      "replace": "And they maximize information density without sacrificing clarity. Pointed at an Applications folder, that density shows at a glance which big apps have gone years without an update, useful now that <a href=\"/blog/intel-apps-rosetta-macos-27\">macOS 27 is the last release to run Intel apps</a>."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "sort by Date Last Opened, and look at the bottom.</li>",
+      "replace": "sort by Date Last Opened, and look at the bottom. Check for Intel apps while you are there: <a href=\"/blog/intel-apps-rosetta-macos-27\">macOS 27 is the last release that runs them</a>.</li>"
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": "and it will never be used again. The safest big win there is.</li>",
+      "replace": "and it will never be used again. The safest big win there is. While you are in Applications, <a href=\"/blog/intel-apps-rosetta-macos-27\">look for Intel apps that will not open after macOS 27</a>.</li>"
+    },
+    {
+      "file": "blog/find-old-files-on-mac.html",
+      "find": "and offers <strong>Reveal in Finder</strong> so you can finish with your password.</p>",
+      "replace": "and offers <strong>Reveal in Finder</strong> so you can finish with your password. Old apps deserve a look of their own this year: <a href=\"/blog/intel-apps-rosetta-macos-27\">clearing out Intel apps before Rosetta ends</a> covers which to keep.</p>"
+    }
+  ]
+}

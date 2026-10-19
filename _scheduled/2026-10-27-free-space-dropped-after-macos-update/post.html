@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Space Dropped After a macOS Update? Wait a Day | Klarity Blog</title>
+<meta name="description" content="Lost tens of gigabytes after a macOS update? Much of it comes back by itself. What macOS holds on to, why the free-space numbers disagree, and when to act.">
+<meta name="keywords" content="free space dropped after macos update, mac storage disappeared after update, macos update took up space, free space came back mac, purgeable space mac, time machine local snapshots, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/free-space-dropped-after-macos-update">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free Space Dropped After a macOS Update? Wait a Day">
+<meta property="og:description" content="Lost tens of gigabytes after a macOS update? Much of it comes back by itself. What macOS holds on to, why the free-space numbers disagree, and when to act.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/free-space-dropped-after-macos-update">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-10-27">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Space Dropped After a macOS Update? Wait a Day">
+<meta name="twitter:description" content="Lost tens of gigabytes after a macOS update? Much of it comes back by itself. What macOS holds on to, why the free-space numbers disagree, and when to act.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Free Space Dropped After a macOS Update? Wait a Day", "description": "Lost tens of gigabytes after a macOS update? Much of it comes back by itself. What macOS holds on to, why the free-space numbers disagree, and when to act.", "image": "https://www.klaritydisk.com/img/1.3.1/age-closeup.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-10-27", "dateModified": "2026-10-27", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/free-space-dropped-after-macos-update"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Free Space Dropped After a macOS Update? Wait a Day", "item": "https://www.klaritydisk.com/blog/free-space-dropped-after-macos-update"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why did my Mac lose free space after a macOS update?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly temporary material. With Time Machine on, your Mac keeps hourly snapshots of the startup disk for 24 hours and saves one more before an update installs, so the old system files keep their space for a while. The update's own download, rebuilding caches and, on macOS 27, Apple Intelligence's models add to it."}}, {"@type": "Question", "name": "How long until the free space comes back?", "acceptedAnswer": {"@type": "Answer", "text": "Usually a day or two. In Howard Oakley's measurements of the macOS 27 upgrade, used space peaked about 150 GB above normal a day after installing, then fell back and settled about 30 GB above where it started."}}, {"@type": "Question", "name": "Why does Finder show more free space than other apps?", "acceptedAnswer": {"@type": "Answer", "text": "Finder counts space that macOS can clear by itself, such as Time Machine snapshots, as available. Apps that show only the space free right now, Klarity included, report a lower figure. Both are correct: the difference is space macOS hands back when something needs it."}}, {"@type": "Question", "name": "Should I delete System Data after an update?", "acceptedAnswer": {"@type": "Answer", "text": "Not in the first day or two. Much of it is snapshots and other temporary material that macOS removes by itself. If it is still large after that, look at what is inside it before you delete anything."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=20261019">
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">October 27, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 5 min read</span>
+    </div>
+    <h1>Free Space Dropped After a macOS Update? Wait a Day</h1>
+    <p class="article-subtitle">An update can swallow a big slice of your disk overnight, and most of it is temporary. What macOS is holding on to, why Finder and other apps disagree about free space, and when it is worth deleting anything.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>The morning after an update</h2>
+
+    <p>You installed a macOS update last night. This morning the disk that had room to spare is nearly full, and the obvious move is to start deleting things. Don&rsquo;t, not yet. Most of what went missing overnight is coming back by itself.</p>
+
+    <p>Howard Oakley, who measures this kind of thing carefully at <a href="https://eclecticlight.co/2026/09/18/how-did-golden-gate-affect-free-disk-space/" rel="noopener" target="_blank">The Eclectic Light Company</a>, tracked his Mac mini through the upgrade to macOS 27. A day after installing, the used space on its internal drive was about 150&nbsp;GB above where it had been. Over the following days it fell back, and settled about 30&nbsp;GB higher than before. The part that stayed is largely Apple Intelligence, which macOS 27 downloads by itself; <a href="/blog/apple-intelligence-storage-mac">why Apple Intelligence takes 20 to 30&nbsp;GB</a> covers that part.</p>
+
+    <h2>What macOS holds on to for a day or two</h2>
+
+    <p>Apple&rsquo;s <a href="https://support.apple.com/en-us/102154" rel="noopener" target="_blank">own support page</a> explains a large share of it. With Time Machine on, your Mac saves a snapshot of the startup disk about every hour and keeps each one for 24 hours, and it saves an extra one before installing any macOS update. A snapshot holds on to files as they were. So when an update replaces thousands of system files, the old copies keep their space until the snapshots holding them age out.</p>
+
+    <p>You don&rsquo;t need to do anything about that. Apple says Time Machine deletes snapshots as they age or as the space is needed for something else. The update also downloads and unpacks itself before it installs, and caches and the search index rebuild afterwards, so the first day is the worst one.</p>
+
+    <h2>See what actually grew, once it settles</h2>
+
+    <p>After a day or two the question changes from &ldquo;what is macOS doing?&rdquo; to &ldquo;what is on my disk?&rdquo;. Klarity, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, answers that in one picture. It draws your disk as a treemap: every folder is a rectangle, its area is the space it holds, and its colour shows how long since it last changed, from blue for this month to red for three years or more.</p>
+
+    <p>After an update, that colour does real work. <strong>Big and blue</strong> changed in the last few days: something the update or your apps wrote recently, often something macOS is still using. <strong>Big and red</strong> is old material that has nothing to do with the update, and it is usually the easier space to win back.</p>
+
+    <figure>
+      <img src="/img/1.3.1/age-closeup.webp" alt="Close-up of Klarity&rsquo;s age-coloured treemap: the Movies folder in red, untouched for over three years" width="1440" height="1080" loading="lazy">
+      <figcaption>Age colouring: red for folders untouched in three years or more, blue for what changed this month.</figcaption>
+    </figure>
+
+    <p>Click <strong>Macintosh HD</strong> in the sidebar for the whole disk and give Klarity access once if it asks; the biggest rectangles are your answer. One honest limit: snapshots are not files in any folder, so no disk map can show them, Klarity included. If Storage settings and a scan disagree by tens of gigabytes on the first day, the gap is usually snapshots, and it closes on its own.</p>
+
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 once on the Mac App Store</a>, for macOS 14.6 or later. No subscription, no account, and no network access at all.</p>
+
+    <h2>Why Finder and other apps disagree about free space</h2>
+
+    <p>Apple puts it plainly: your Mac &ldquo;counts the space used by snapshots as available storage&rdquo;. Finder shows that available figure, which is the space free right now plus the space macOS can clear by itself when something needs the room. Some apps, Klarity among them, show only the space that is free right now.</p>
+
+    <p>On my own Mac, which runs the macOS 27.2 beta, the difference today is 74&nbsp;GB: Finder reports 418&nbsp;GB available, while 344&nbsp;GB is free right now. Neither number is wrong. The gap is space macOS will hand back when it needs to, and it is exactly the space that swells in the days after an update.</p>
+
+    <h2>When to wait, and when to act</h2>
+
+    <ul>
+      <li><strong>The first day: leave it.</strong> Don&rsquo;t delete anything to win back space the update is still using, and leave Time Machine switched on. Its snapshots are what let you get back a file you deleted an hour ago.</li>
+      <li><strong>After a day or two: check again,</strong> in Storage settings or in Klarity. Most of the temporary space should be back.</li>
+      <li><strong>Still short? Now look at your own files.</strong> Old iPhone backups, old installers, downloads and video are the usual winners. <a href="/blog/mac-storage-full-after-update">Mac storage full after an update</a> walks through what typically shows up large, and <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage</a> gives a safe order.</li>
+      <li><strong>Need space this minute?</strong> macOS removes snapshots by itself when space is needed, so room often appears as soon as something asks for it. If it doesn&rsquo;t, an old installer or a big download you no longer need is the quickest few gigabytes.</li>
+    </ul>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">Why did my Mac lose free space after a macOS update?</h3>
+    <p>Mostly temporary material. With Time Machine on, your Mac keeps hourly snapshots of the startup disk for 24 hours and saves one more before an update installs, so the old system files keep their space for a while. The update's own download, rebuilding caches and, on macOS 27, Apple Intelligence's models add to it.</p>
+
+    <h3 class="faq-q">How long until the free space comes back?</h3>
+    <p>Usually a day or two. In Howard Oakley's measurements of the macOS 27 upgrade, used space peaked about 150 GB above normal a day after installing, then fell back and settled about 30 GB above where it started.</p>
+
+    <h3 class="faq-q">Why does Finder show more free space than other apps?</h3>
+    <p>Finder counts space that macOS can clear by itself, such as Time Machine snapshots, as available. Apps that show only the space free right now, Klarity included, report a lower figure. Both are correct: the difference is space macOS hands back when something needs it.</p>
+
+    <h3 class="faq-q">Should I delete System Data after an update?</h3>
+    <p>Not in the first day or two. Much of it is snapshots and other temporary material that macOS removes by itself. If it is still large after that, look at what is inside it before you delete anything.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/apple-intelligence-storage-mac">Apple Intelligence Storage on Mac: Why It Takes 20–30 GB &rarr;</a></li>
+      <li><a href="/blog/mac-storage-full-after-update">Mac Storage Full After a macOS Update? Where the Space Went &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+      <li><a href="/blog/how-much-space-for-macos-27">How Much Space Does macOS 27 Golden Gate Need to Install? &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>

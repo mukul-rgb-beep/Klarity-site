@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosetta Ends After macOS 27: Clear Out Your Intel Apps | Klarity Blog</title>
+<meta name="description" content="macOS 27 is the last Mac release to run Intel-only apps. How to see which of yours need Rosetta, what to update or replace, and how to clear out the rest.">
+<meta name="keywords" content="intel apps macos 27, rosetta macos 27, rosetta end macos 28, intel-based apps mac, find intel apps mac, remove old apps mac, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/intel-apps-rosetta-macos-27">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rosetta Ends After macOS 27: Clear Out Your Intel Apps">
+<meta property="og:description" content="macOS 27 is the last Mac release to run Intel-only apps. How to see which of yours need Rosetta, what to update or replace, and how to clear out the rest.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/intel-apps-rosetta-macos-27">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-11-03">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rosetta Ends After macOS 27: Clear Out Your Intel Apps">
+<meta name="twitter:description" content="macOS 27 is the last Mac release to run Intel-only apps. How to see which of yours need Rosetta, what to update or replace, and how to clear out the rest.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Rosetta Ends After macOS 27: Clear Out Your Intel Apps", "description": "macOS 27 is the last Mac release to run Intel-only apps. How to see which of yours need Rosetta, what to update or replace, and how to clear out the rest.", "image": "https://www.klaritydisk.com/img/1.3.1/library.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-03", "dateModified": "2026-11-03", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/intel-apps-rosetta-macos-27"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Rosetta Ends After macOS 27: Clear Out Your Intel Apps", "item": "https://www.klaritydisk.com/blog/intel-apps-rosetta-macos-27"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will Intel apps stop working in macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "No. macOS 27 still runs them through Rosetta, although the upgrade removes Rosetta and macOS asks to install it again the first time you open an Intel app. Apple says macOS 27 is the final release to support Rosetta, so Intel-only apps will not open on Apple silicon Macs after it, apart from some older games."}}, {"@type": "Question", "name": "How do I see which apps on my Mac are Intel-based?", "acceptedAnswer": {"@type": "Answer", "text": "Open System Settings, then General, then About, and click Details next to Intel-based Apps. The list shows the apps that need Rosetta and when you last opened each one. For a single app, select it in Finder and choose File, then Get Info."}}, {"@type": "Question", "name": "Can Klarity tell which apps are Intel-based?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity shows how big each app is, how long since it last changed, and what it left behind in your Library folder. The Intel-based Apps list in System Settings is the place to check which apps need Rosetta."}}, {"@type": "Question", "name": "Is it safe to delete Intel apps I no longer use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Removing an app does not remove the documents you made with it. Move the app to the Trash, then look in your Library folder for the support files it left. Keep any app you still rely on until you have a replacement that runs natively."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=20261019">
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">November 3, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
+    </div>
+    <h1>Rosetta Ends After macOS 27: Clear Out Your Intel Apps</h1>
+    <p class="article-subtitle">Apple has confirmed that macOS 27 is the last version to run Intel-only apps on Apple silicon Macs. How to find yours, decide what to keep, and clear the rest out properly.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>macOS 27 is the last stop for Intel apps</h2>
+
+    <p>Apple moved the Mac to its own chips years ago, and Rosetta is what has kept older Intel apps running since. That ends soon. <a href="https://developer.apple.com/news/?id=w5ngl9k2" rel="noopener" target="_blank">Apple told developers</a> on 1 September that macOS 27 is the final release to support Rosetta: &ldquo;Intel-only apps will no longer run on Mac computers with Apple silicon after this update.&rdquo; The one exception Apple names is older, unmaintained games that rely on Intel-based frameworks.</p>
+
+    <p>You may have had a warning already. Since macOS 26.4, opening an app that relies on Rosetta can bring up a notice that it will not open in a future release of macOS. And when you upgrade to macOS 27, the upgrade removes Rosetta, <a href="https://sixcolors.com/post/2026/08/preparing-for-next-years-rosetta-2-demise/" rel="noopener" target="_blank">Six Colors reports</a>; the first time you open an Intel app afterwards, macOS asks to install it again. Not every app asks. In <a href="https://9to5mac.com/2026/10/17/how-im-preparing-my-fleet-for-rosettas-removal-in-macos-27/" rel="noopener" target="_blank">9to5Mac&rsquo;s testing</a>, some menu bar utilities simply stopped working, with no message at all.</p>
+
+    <p>So your Intel apps still work on macOS 27, but this is the year to sort them out: update the ones you use, replace the ones that will never be updated, and clear out the ones you forgot you had.</p>
+
+    <h2>Find out which of your apps are Intel</h2>
+
+    <p>macOS keeps the list for you. According to Six Colors:</p>
+
+    <ol>
+      <li>Open <strong>System Settings</strong> &rarr; <strong>General</strong> &rarr; <strong>About</strong>.</li>
+      <li>Click <strong>Details</strong> next to <strong>Intel-based Apps</strong>.</li>
+      <li>You get the apps that need Rosetta, and when you last opened each one in the past year.</li>
+    </ol>
+
+    <p>To check one app, select it in Finder and choose <strong>File</strong> &rarr; <strong>Get Info</strong>; an Intel app shows a warning next to Kind. The list covers apps, not every small background part an app installs, which is why a printer driver or a menu bar helper can still surprise you.</p>
+
+    <h2>See what they cost you, with Klarity</h2>
+
+    <p>Klarity, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, cannot tell you whether an app is Intel or Apple silicon. That is what the list in System Settings is for. What Klarity shows is the other half of the decision: how big each app is, how long since it last changed, and what it has left scattered around your Mac.</p>
+
+    <p>Click <strong>Applications</strong> in Klarity&rsquo;s sidebar, and give Klarity access once if it asks. Every app becomes a rectangle sized by the space it takes, coloured by how long since it last changed, which for an app usually means when it was last installed or updated: blue for this month, through green, gold and orange, to red for three years or more. A big red app has not been updated in years. That is not proof it is an Intel app, but it is a good place to start comparing with the list in System Settings.</p>
+
+    <p>Apps also leave things behind. Click <strong>Library</strong> in the sidebar and look inside <strong>Application Support</strong>, <strong>Caches</strong> and <strong>Containers</strong> for folders named after apps you no longer use. Klarity scans hidden folders like Library, so they are in the map.</p>
+
+    <figure>
+      <img src="/img/1.3.1/library.webp" alt="Klarity 1.3.1 scanning the Library folder: Developer, Application Support, Caches and Containers drawn as rectangles sized by the space they use" width="2648" height="1952" loading="lazy">
+      <figcaption>Klarity pointed at your Library folder: support files left by old apps show up as rectangles with names.</figcaption>
+    </figure>
+
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 once on the Mac App Store</a>, for macOS 14.6 or later. No subscription, no account, and no network access at all.</p>
+
+    <h2>Decide app by app</h2>
+
+    <ul>
+      <li><strong>Update it.</strong> Check the App Store or the developer&rsquo;s site for a newer version. Many apps were rebuilt for Apple silicon long ago, and the old copy on your Mac simply predates it.</li>
+      <li><strong>Replace it.</strong> If the developer has stopped updating it, look for an alternative now, while the old app still opens and you can move your work across.</li>
+      <li><strong>Remove it.</strong> If the list in System Settings shows you have not opened it this year, you probably will not miss it.</li>
+      <li><strong>Keep it, for now.</strong> An app you still need keeps working on macOS 27. Just know that it will not open after you move to the next major release.</li>
+      <li><strong>Games.</strong> Apple says older, unmaintained games that rely on Intel-based frameworks will keep working.</li>
+    </ul>
+
+    <h2>Clear them out properly</h2>
+
+    <p>Move the app to the Trash, from Finder or with a right-click and <strong>Move to Trash</strong> in Klarity. Apps installed from the App Store are protected by macOS; Klarity says so plainly, in words like &ldquo;Finder needs an admin password to delete&nbsp;&hellip;&rdquo;, and offers <strong>Reveal in Finder</strong> so you can finish with your password.</p>
+
+    <p>Then the leftovers. Support files in your Library folder are usually small, but some apps, creative suites and virtual machines especially, leave gigabytes behind; use the vendor&rsquo;s own uninstaller where there is one. Klarity asks twice before it moves app data to the Trash, so a wrong click is easy to back out of. <a href="/blog/how-to-clean-up-mac-storage">How to clean up Mac storage</a> covers uninstalling properly in more detail. Finally, empty the Trash: until you do, the space is not free.</p>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">Will Intel apps stop working in macOS 27?</h3>
+    <p>No. macOS 27 still runs them through Rosetta, although the upgrade removes Rosetta and macOS asks to install it again the first time you open an Intel app. Apple says macOS 27 is the final release to support Rosetta, so Intel-only apps will not open on Apple silicon Macs after it, apart from some older games.</p>
+
+    <h3 class="faq-q">How do I see which apps on my Mac are Intel-based?</h3>
+    <p>Open System Settings, then General, then About, and click Details next to Intel-based Apps. The list shows the apps that need Rosetta and when you last opened each one. For a single app, select it in Finder and choose File, then Get Info.</p>
+
+    <h3 class="faq-q">Can Klarity tell which apps are Intel-based?</h3>
+    <p>No. Klarity shows how big each app is, how long since it last changed, and what it left behind in your Library folder. The Intel-based Apps list in System Settings is the place to check which apps need Rosetta.</p>
+
+    <h3 class="faq-q">Is it safe to delete Intel apps I no longer use?</h3>
+    <p>Yes. Removing an app does not remove the documents you made with it. Move the app to the Trash, then look in your Library folder for the support files it left. Keep any app you still rely on until you have a replacement that runs natively.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/how-to-clean-up-mac-storage">How to Clean Up Mac Storage: What&rsquo;s Safe to Delete in 2026 &rarr;</a></li>
+      <li><a href="/blog/find-old-files-on-mac">How to Find Old Files on a Mac That Are Taking Up Space &rarr;</a></li>
+      <li><a href="/blog/how-much-space-for-macos-27">How Much Space Does macOS 27 Golden Gate Need to Install? &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>
