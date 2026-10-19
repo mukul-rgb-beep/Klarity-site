@@ -99,6 +99,11 @@ def check_package(tree, pkg) -> list[str]:
         errs.append("card.html is missing")
     elif href not in tree.read(card_path):
         errs.append(f"card.html has no {href}")
+    art = f"card-{pkg.slug}.svg"
+    if tree.exists(card_path) and f'src="/blog/{art}"' not in tree.read(card_path):
+        errs.append(f"card.html has no illustration (/blog/{art})")
+    if not tree.exists(f"{pkg.path}/assets/{art}"):
+        errs.append(f"assets/{art} is missing: add the post to .github/scripts/card_art.py and run it")
     if MARKER not in tree.read("blog/index.html"):
         errs.append("blog/index.html has no SCHEDULED-CARDS marker")
     for f in tree.files_under(f"{pkg.path}/assets"):

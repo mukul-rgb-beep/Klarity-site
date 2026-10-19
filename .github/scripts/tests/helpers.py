@@ -11,7 +11,8 @@ HEADLINE = "Find Old Files You Forgot About on Your Mac"
 DESC = ("It's a test description. " * 6).strip()          # 149 characters, has an apostrophe
 FAQ = (("Is it safe to delete old files?", "Only once you've checked them. Klarity asks first."),)
 CARD = ('        <!-- NEW POST: test post -->\n'
-        '        <article class="blog-card"><a href="/blog/test-post">Test</a></article>\n')
+        '        <article class="blog-card"><div class="card-art"><img src="/blog/card-test-post.svg" alt=""></div>'
+        '<a href="/blog/test-post">Test</a></article>\n')
 LINKED = ("treemap-icicle-vs-sunburst", "a", "b", "c")
 
 SITEMAP = """<?xml version="1.0" encoding="UTF-8"?>
@@ -101,7 +102,9 @@ def make_package(root, dirname=DIRNAME, post=None, card=None, package=None, asse
     (pkg / "card.html").write_text(card if card is not None else CARD.replace("test-post", slug))
     (pkg / "package.json").write_text(json.dumps(package if package is not None
                                                   else default_package(slug, date), indent=2))
-    for name, data in (assets or {}).items():
+    if assets is None:
+        assets = {f"card-{slug}.svg": b"<svg xmlns='http://www.w3.org/2000/svg'/>"}
+    for name, data in assets.items():
         (pkg / "assets").mkdir(exist_ok=True)
         (pkg / "assets" / name).write_bytes(data)
     return pkg

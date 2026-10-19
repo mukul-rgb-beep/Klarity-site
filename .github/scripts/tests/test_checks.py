@@ -82,6 +82,14 @@ class ChecksTest(unittest.TestCase):
         make_package(self.root, DIRNAME, card="<article>nothing</article>\n")
         self.assertError("card.html", self.errors())
 
+    def test_card_needs_illustration(self):
+        make_package(self.root, DIRNAME, card='<article><a href="/blog/test-post">T</a></article>\n')
+        self.assertError("card.html has no illustration", self.errors())
+
+    def test_illustration_asset_required(self):
+        (self.root / "_scheduled" / DIRNAME / "assets" / "card-test-post.svg").unlink()
+        self.assertError("assets/card-test-post.svg is missing", self.errors())
+
     def test_slug_already_live(self):
         (self.root / "blog" / "test-post.html").write_text("live")
         self.assertError("already exists", self.errors())

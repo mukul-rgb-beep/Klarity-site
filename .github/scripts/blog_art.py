@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Blog index art: treemap mosaics in Klarity's age colours, written into css/site.css.
+"""Blog index header art: a soft treemap mosaic in Klarity's age colours, written into css/site.css.
 
   blog_art.py           -> rewrites the rules between the BLOG-ART markers in css/site.css
   blog_art.py --check   -> exit 1 if css/site.css is not what this script would write
 
-The header gets one soft mosaic; each blog card gets one of 12 small ones, chosen by
-:nth-last-child so a card keeps its art when new posts are inserted above it.
+The header gets one soft mosaic. (Cards used to get 12 small ones; since 2026-10-19 each card
+shows its own illustration, drawn by card_art.py.)
 Seeds are fixed, so the output only changes when this file does. Bump the ?v= on every
 page's site.css link after regenerating.
 """
@@ -18,14 +18,6 @@ CSS = Path(__file__).resolve().parents[2] / "css" / "site.css"
 START, END = "/* BLOG-ART:START */", "/* BLOG-ART:END */"
 
 AGE = ["#5B8FD6", "#74AB84", "#B9A45E", "#D38A4E", "#C8644F"]  # AgeStep: month, year, 1-2, 2-3, 3+ years
-
-# Each card variant leans on one or two age steps so neighbouring cards differ.
-CARD_WEIGHTS = [
-    [8, 3, 1, 1, 1], [2, 8, 2, 1, 1], [1, 2, 8, 3, 1], [1, 1, 3, 8, 2],
-    [3, 1, 1, 2, 7], [3, 4, 3, 2, 2], [6, 6, 1, 1, 1], [1, 3, 6, 6, 1],
-    [5, 1, 1, 1, 5], [1, 6, 1, 1, 4], [4, 2, 5, 1, 1], [2, 2, 2, 5, 4],
-]
-
 
 def squarify(vals, x, y, w, h):
     """Squarified treemap of vals (sorted descending, summing to w*h) -> [(x, y, w, h)]."""
@@ -95,10 +87,6 @@ def mosaic(seed, W, H, n, weights, gap, rx, sheen, split=0, mix=0.0, bg=None):
 
 def rules():
     lines = [START, "body>header::before{background-image:%s}" % mosaic(7, 1600, 460, 26, [5, 4, 3, 3, 3], 10, 12, False, split=3)]
-    for i, w in enumerate(CARD_WEIGHTS):
-        nth = f"12n+{i + 1}" if i + 1 < 12 else "12n"
-        art = mosaic(100 + i, 400, 150, 13, w, 3, 3, True, split=3, mix=0.18, bg="#FFFFFF")
-        lines.append(f".blog-card:nth-last-child({nth})::before{{background-image:{art}}}")
     lines.append(END)
     return "\n".join(lines)
 
