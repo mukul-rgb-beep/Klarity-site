@@ -101,7 +101,7 @@
       <li><strong>App caches</strong> &mdash; mostly <code>~/Library/Caches</code>, where apps keep downloaded data they can regenerate.</li>
       <li><strong>Logs and app support data</strong> &mdash; diagnostic logs and the working files apps keep in Application Support.</li>
       <li><strong>Xcode</strong> &mdash; <code>~/Library/Developer</code>: DerivedData build output, iOS and watchOS simulator runtimes, and device support files. If you write software, this is usually the biggest single item.</li>
-      <li><strong>Time Machine local snapshots</strong> &mdash; APFS snapshots kept on your internal disk between backups. List them with <code>tmutil listlocalsnapshots /</code>.</li>
+      <li><strong>Time Machine local snapshots</strong> &mdash; APFS snapshots kept on your internal disk between backups. If those backups go to a Time Capsule, note that <a href="/blog/time-capsule-macos-27">macOS 27 no longer supports it</a>. List them with <code>tmutil listlocalsnapshots /</code>.</li>
       <li><strong>Swap and the sleep image</strong> &mdash; virtual memory files in <code>/private/var/vm</code>, sized by how much RAM pressure your Mac is under.</li>
       <li><strong>Spotlight indexes</strong>, mail attachments, browser profiles and disk images.</li>
       <li><strong>Container data for sandboxed apps</strong> &mdash; <code>~/Library/Containers</code> and <code>~/Library/Group Containers</code>, where App Store apps keep their real data.</li>
