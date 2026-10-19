@@ -23,5 +23,6 @@
       "find": "and offers <strong>Reveal in Finder</strong> so you can finish with your password.</p>",
       "replace": "and offers <strong>Reveal in Finder</strong> so you can finish with your password. Old apps deserve a look of their own this year: <a href=\"/blog/intel-apps-rosetta-macos-27\">clearing out Intel apps before Rosetta ends</a> covers which to keep.</p>"
     }
-  ]
+  ],
+  "x_post": "macOS 27 is the last Mac release that runs Intel-only apps. How to see which of yours need Rosetta, and how to clear out the ones you no longer use."
 }

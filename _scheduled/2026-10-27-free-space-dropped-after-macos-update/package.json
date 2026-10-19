@@ -23,5 +23,6 @@
       "find": "When they disagree by tens of gigabytes, local snapshots are usually the difference.",
       "replace": "When they disagree by tens of gigabytes, local snapshots are usually the difference, and <a href=\"/blog/free-space-dropped-after-macos-update\">after an update the gap can be larger still</a>."
     }
-  ]
+  ],
+  "x_post": "Lost tens of gigabytes after a macOS update? Don't start deleting yet. Most of it comes back by itself within a day or two. What macOS holds on to, and when to act."
 }
