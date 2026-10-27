@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 
+from blogpub.feed import FEED, build_feed
 from blogpub.share import add_share_bar
 from blogpub import MARKER, SITE, url_for
 
@@ -89,7 +90,10 @@ def apply_package(tree, pkg, meta, day: str) -> list[str]:
             raise ApplyError(f"inbound link target {link.file} does not exist")
         tree.write(link.file, _replace_once(tree.read(link.file), link.find, link.replace, link.file))
 
-    # 6. The package itself goes (git history keeps it)
+    # 6. RSS feed, rebuilt from the updated blog index
+    tree.write(FEED, build_feed(tree))
+
+    # 7. The package itself goes (git history keeps it)
     for f in tree.files_under(pkg.path):
         tree.delete(f)
     return inbound_urls

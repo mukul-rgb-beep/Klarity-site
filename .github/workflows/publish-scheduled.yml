@@ -35,6 +35,8 @@ jobs:
         run: python -m unittest discover -s .github/scripts/tests -t .github/scripts
       - name: Check the queue
         run: python .github/scripts/publish.py check
+      - name: RSS feed is current
+        run: python .github/scripts/feed.py --check
 
   publish:
     if: github.event_name != 'push'
@@ -150,8 +152,8 @@ jobs:
               else xres="$xres (API post FAILED: $xout)"; fi
             fi
             title="Published: $head"; [ "$live" = yes ] || title="Published but not verified: $head"
-            .github/scripts/issue.sh open "$title" "$(printf '%s\n\n- Live check (200 + matching title): **%s**\n- IndexNow (%s URLs): HTTP %s (200/202 = accepted)\n- X: %s\n- Commit: %s\n- Run: %s\n\n- [ ] Request indexing in Search Console for %s\n\nClose this issue once indexing is requested.' \
-              "$url" "$live" "$(jq length <<<"$urls")" "$inow" "$xres" "$commit_url" "$RUN_URL" "$url")"
+            .github/scripts/issue.sh open "$title" "$(printf '%s\n\n- Live check (200 + matching title): **%s**\n- IndexNow (%s URLs): HTTP %s (200/202 = accepted)\n- X: %s\n- Commit: %s\n- Run: %s\n\nNo action needed for Google: the sitemap, the RSS feed and the inbound links let it find the post on its own. The Monday SEO tracker reports any post still not indexed a week after it went live.\n\nClose this issue once you have shared the post.' \
+              "$url" "$live" "$(jq length <<<"$urls")" "$inow" "$xres" "$commit_url" "$RUN_URL")"
             .github/scripts/issue.sh close "Publish blocked: $dir" "Published: $url"
             req=$(jq -r '.requires // empty' <<<"$p")
             if [ -n "$req" ]; then .github/scripts/issue.sh close "Held until Klarity $req: $head" "Published: $url"; fi

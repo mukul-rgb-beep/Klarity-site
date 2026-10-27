@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Klarity Blog</title>
+    <link>https://www.klaritydisk.com/blog/</link>
+    <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Oct 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>Apple Intelligence Storage on Mac: Why It Takes 20–30 GB</title>
+      <link>https://www.klaritydisk.com/blog/apple-intelligence-storage-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/apple-intelligence-storage-mac</guid>
+      <pubDate>Thu, 22 Oct 2026 03:30:00 +0000</pubDate>
+      <description>macOS 27 downloads Apple Intelligence by itself, often 20 to 30 GB, not Apple's 14. How to check yours, what you can't change, and what to clear instead.</description>
+    </item>
+    <item>
+      <title>Managing Storage on a 256GB MacBook, Day to Day</title>
+      <link>https://www.klaritydisk.com/blog/living-with-256gb-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/living-with-256gb-mac</guid>
+      <pubDate>Tue, 20 Oct 2026 03:30:00 +0000</pubDate>
+      <description>Is 256GB enough for a Mac? It can be, if you can see what is growing. A monthly habit that keeps a base-model Mac from filling up, without a panic purge.</description>
+    </item>
+    <item>
+      <title>Time Capsule Not Working on macOS 27? What to Use Instead</title>
+      <link>https://www.klaritydisk.com/blog/time-capsule-macos-27</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/time-capsule-macos-27</guid>
+      <pubDate>Mon, 19 Oct 2026 03:30:00 +0000</pubDate>
+      <description>macOS 27 can't back up to a Time Capsule any more. What Apple says to use instead, how to set up a new Time Machine drive, and what to check first.</description>
+    </item>
+    <item>
+      <title>What's Taking Up Space on My External Drive on a Mac?</title>
+      <link>https://www.klaritydisk.com/blog/external-drive-full-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/external-drive-full-mac</guid>
+      <pubDate>Tue, 13 Oct 2026 03:30:00 +0000</pubDate>
+      <description>What's taking up space on your external drive? See all of it in one picture on your Mac, clear the big old folders safely, and get the space back.</description>
+    </item>
+    <item>
+      <title>How to Find Old Files on a Mac That Are Taking Up Space</title>
+      <link>https://www.klaritydisk.com/blog/find-old-files-on-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/find-old-files-on-mac</guid>
+      <pubDate>Tue, 06 Oct 2026 03:30:00 +0000</pubDate>
+      <description>Find the old files you forgot about on your Mac: what Finder can show, how to see what is both big and untouched for years, and how to clear it safely.</description>
+    </item>
+    <item>
+      <title>Klarity Disk Review: What Macworld Found, and What I Fixed</title>
+      <link>https://www.klaritydisk.com/blog/klarity-disk-macworld-review</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/klarity-disk-macworld-review</guid>
+      <pubDate>Thu, 01 Oct 2026 03:30:00 +0000</pubDate>
+      <description>Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what came next.</description>
+    </item>
+    <item>
+      <title>How Much Space Does macOS 27 Golden Gate Need to Install?</title>
+      <link>https://www.klaritydisk.com/blog/how-much-space-for-macos-27</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/how-much-space-for-macos-27</guid>
+      <pubDate>Tue, 29 Sep 2026 03:30:00 +0000</pubDate>
+      <description>macOS 27 Golden Gate won't install without room to spare. How much free space it really needs, why sites quote different numbers, and how to find it fast.</description>
+    </item>
+    <item>
+      <title>Mac Storage Full After a macOS Update? Where the Space Went</title>
+      <link>https://www.klaritydisk.com/blog/mac-storage-full-after-update</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/mac-storage-full-after-update</guid>
+      <pubDate>Thu, 10 Sep 2026 03:30:00 +0000</pubDate>
+      <description>Updated macOS and lost tens of gigabytes? The space is still there, in folders with names. Here is the fastest way to see which ones and clear them.</description>
+    </item>
+    <item>
+      <title>Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed</title>
+      <link>https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/klarity-1-3-one-time-disk-access</guid>
+      <pubDate>Thu, 10 Sep 2026 03:30:00 +0000</pubDate>
+      <description>Klarity 1.3 makes Move to Trash work everywhere. Why an App Store app cannot touch your files until you point at them, explained without jargon.</description>
+    </item>
+    <item>
+      <title>How to Clean Up Mac Storage: What's Safe to Delete in 2026</title>
+      <link>https://www.klaritydisk.com/blog/how-to-clean-up-mac-storage</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/how-to-clean-up-mac-storage</guid>
+      <pubDate>Mon, 07 Sep 2026 03:30:00 +0000</pubDate>
+      <description>A step-by-step guide to freeing up space on a Mac, ordered from safest to riskiest: Trash, Downloads, caches, System Data, old apps, device backups, and what to leave alone.</description>
+    </item>
+    <item>
+      <title>How to Find Large Files on a Mac (Without Terminal)</title>
+      <link>https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac</guid>
+      <pubDate>Mon, 07 Sep 2026 03:30:00 +0000</pubDate>
+      <description>Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.</description>
+    </item>
+    <item>
+      <title>What Is “System Data” on a Mac, and What’s Safe to Clear?</title>
+      <link>https://www.klaritydisk.com/blog/what-is-system-data-on-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/what-is-system-data-on-mac</guid>
+      <pubDate>Sun, 06 Sep 2026 03:30:00 +0000</pubDate>
+      <description>System Data is macOS's catch-all storage category: caches, logs, Xcode data, snapshots and more. Here's what's actually inside it, how to look, and what you can safely delete.</description>
+    </item>
+    <item>
+      <title>Treemap vs Sunburst: Which Disk Map Finds Big Files Faster?</title>
+      <link>https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst</guid>
+      <pubDate>Mon, 16 Feb 2026 03:30:00 +0000</pubDate>
+      <description>Sunburst charts look beautiful but hide small files. Here's why treemap and icicle views find space hogs faster on a Mac — with the perception research.</description>
+    </item>
+    <item>
+      <title>How I Built Glassmorphism on macOS 14 While Apple Requires macOS 26</title>
+      <link>https://www.klaritydisk.com/blog/building-liquid-glass-ui-macos</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/building-liquid-glass-ui-macos</guid>
+      <pubDate>Sun, 15 Feb 2026 03:30:00 +0000</pubDate>
+      <description>Apple's Liquid Glass looks great, but .glassEffect() needs macOS 26. Here's how I built a complete glass design system for a shipping Mac app using only SwiftUI primitives available on macOS 14+.</description>
+    </item>
+    <item>
+      <title>Why I Built Klarity — A DaisyDisk Alternative for $6.99</title>
+      <link>https://www.klaritydisk.com/blog/why-i-built-klarity</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/why-i-built-klarity</guid>
+      <pubDate>Sat, 14 Feb 2026 03:30:00 +0000</pubDate>
+      <description>I wanted a better way to see what's eating my Mac's storage. Existing tools didn't cut it. So I built Klarity — a $6.99 disk analyzer with treemap and icicle visualizations.</description>
+    </item>
+  </channel>
+</rss>
