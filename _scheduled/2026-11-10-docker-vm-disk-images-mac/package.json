@@ -10,8 +10,8 @@
     },
     {
       "file": "blog/how-to-clean-up-mac-storage.html",
-      "find": "Delete unused VMs from inside the app, and in Docker Desktop use Troubleshoot &rarr; Clean / Purge data.</li>",
-      "replace": "Delete unused VMs from inside the app, and in Docker Desktop use Troubleshoot &rarr; Clean / Purge data. These files often look far bigger than they are: <a href=\"/blog/docker-vm-disk-images-mac\">how to see what Docker and VM disk images really use</a>.</li>"
+      "find": "Delete unused VMs from inside the app, and in Docker Desktop use Troubleshoot &rarr; Clean up data.</li>",
+      "replace": "Delete unused VMs from inside the app, and in Docker Desktop use Troubleshoot &rarr; Clean up data. These files often look far bigger than they are: <a href=\"/blog/docker-vm-disk-images-mac\">how to see what Docker and VM disk images really use</a>.</li>"
     },
     {
       "file": "blog/how-much-space-for-macos-27.html",

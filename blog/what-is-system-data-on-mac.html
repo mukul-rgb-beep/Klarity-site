@@ -28,7 +28,7 @@
   "description": "macOS puts everything it can't categorise into System Data. Here's what's really in there and what you can safely delete.",
   "author": {"@type": "Person", "name": "Mukul Mehra"},
   "datePublished": "2026-09-06",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-27",
   "image": "https://www.klaritydisk.com/screenshot-treemap.png",
   "publisher": {"@type": "Organization", "name": "Klarity"},
   "mainEntityOfPage": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"
@@ -100,7 +100,7 @@
     <ul>
       <li><strong>App caches</strong> &mdash; mostly <code>~/Library/Caches</code>, where apps keep downloaded data they can regenerate.</li>
       <li><strong>Logs and app support data</strong> &mdash; diagnostic logs and the working files apps keep in Application Support.</li>
-      <li><strong>Xcode</strong> &mdash; <code>~/Library/Developer</code>: DerivedData build output, iOS and watchOS simulator runtimes, and device support files. If you write software, this is usually the biggest single item.</li>
+      <li><strong>Xcode</strong> &mdash; <code>~/Library/Developer</code>: DerivedData build output, simulators and device support files. If you write software, this is usually the biggest single item. The simulator runtimes themselves sit in a protected system location and are managed from Xcode.</li>
       <li><strong>Time Machine local snapshots</strong> &mdash; APFS snapshots kept on your internal disk between backups. If those backups go to a Time Capsule, note that <a href="/blog/time-capsule-macos-27">macOS 27 no longer supports it</a>. List them with <code>tmutil listlocalsnapshots /</code>.</li>
       <li><strong>Swap and the sleep image</strong> &mdash; virtual memory files in <code>/private/var/vm</code>, sized by how much RAM pressure your Mac is under.</li>
       <li><strong>Spotlight indexes</strong>, mail attachments, browser profiles and disk images.</li>
@@ -124,7 +124,7 @@
 
     <div class="callout">
       <div class="callout-title">A useful trick</div>
-      <p>Klarity&rsquo;s age heatmap colours everything by last-modified date. Point it at <code>~/Library</code> and the stale material stands out immediately &mdash; caches for apps you uninstalled two years ago, simulator runtimes for an iOS version nobody targets any more. Old and large is the combination worth acting on.</p>
+      <p>Klarity&rsquo;s age heatmap colours everything by last-modified date. Point it at <code>~/Library</code> and the stale material stands out immediately &mdash; caches for apps you uninstalled two years ago, device support files for an iOS version nobody targets any more. Old and large is the combination worth acting on.</p>
     </div>
 
     <div class="callout">
@@ -132,7 +132,7 @@
       <p>Folders are hidden for a reason: they belong to apps and to macOS, not to you, and the names inside them rarely say what they do. Before trashing anything in <code>~/Library</code>, quit the app that owns it, and if you cannot say which app that is, leave the folder alone. Klarity only moves items to the Trash, so a mistake is recoverable right up until someone empties it &mdash; but an app that suddenly cannot find its settings or its data will not tell you why. The safe targets are the ones named in the next section; everything else in there deserves the benefit of the doubt.</p>
     </div>
 
-    <p>To put a number on it: on my own Mac, <code>~/Library/Caches</code> was <strong>9.7&nbsp;GB</strong> and <code>~/Library/Developer</code> was <strong>91&nbsp;GB</strong> &mdash; almost all of it simulator runtimes and DerivedData. That is a hundred gigabytes of &ldquo;System Data&rdquo; explained by two folders.</p>
+    <p>To put a number on it: on my own Mac, <code>~/Library/Caches</code> was <strong>9.7&nbsp;GB</strong> and <code>~/Library/Developer</code> was <strong>91&nbsp;GB</strong> &mdash; almost all of it simulators, device support files and DerivedData. That is a hundred gigabytes of &ldquo;System Data&rdquo; explained by two folders.</p>
 
     <h2>What is safe to clear</h2>
 
@@ -141,7 +141,7 @@
     <ul>
       <li><strong>The contents of <code>~/Library/Caches</code></strong>. Apps rebuild caches on demand. Delete the contents of the subfolders, quit the apps first where you can, and expect the first launch afterwards to be a little slower.</li>
       <li><strong>Xcode DerivedData</strong> (<code>~/Library/Developer/Xcode/DerivedData</code>). It is build output. Your next build regenerates it.</li>
-      <li><strong>Unused simulator runtimes.</strong> Remove these properly through <strong>Xcode &rarr; Settings &rarr; Platforms</strong> rather than deleting files by hand, so Xcode&rsquo;s bookkeeping stays consistent.</li>
+      <li><strong>Unused simulator runtimes.</strong> Remove these properly through <strong>Xcode &rarr; Settings &rarr; Components</strong> rather than deleting files by hand, so Xcode&rsquo;s bookkeeping stays consistent.</li>
       <li><strong>Old <code>~/Library/Developer/Xcode/iOS DeviceSupport</code> folders.</strong> One per iOS version you have ever debugged against; the ancient ones are dead weight.</li>
       <li><strong>Old iOS device backups</strong> you no longer need &mdash; manage those in Finder&rsquo;s device backup manager, not by deleting folders.</li>
       <li><strong>Local Time Machine snapshots</strong>, with <code>tmutil deletelocalsnapshots</code>. macOS thins these automatically when space gets tight, so this is mostly for when you need space right now.</li>
