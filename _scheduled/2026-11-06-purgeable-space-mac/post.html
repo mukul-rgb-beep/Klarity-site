@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purgeable Space on a Mac, Explained | Klarity Blog</title>
+<meta name="description" content="Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.">
+<meta name="keywords" content="purgeable space mac, what is purgeable space, mac purgeable storage, clear purgeable space mac, not enough space to install macos, finder available space wrong, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/purgeable-space-mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Purgeable Space on a Mac, Explained">
+<meta property="og:description" content="Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/purgeable-space-mac">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-11-06">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Purgeable Space on a Mac, Explained">
+<meta name="twitter:description" content="Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Purgeable Space on a Mac, Explained", "description": "Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-06", "dateModified": "2026-11-06", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/purgeable-space-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Purgeable Space on a Mac, Explained", "item": "https://www.klaritydisk.com/blog/purgeable-space-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is purgeable space on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "It is space macOS says it can free by itself when something needs the room. It is mostly Time Machine’s local snapshots, copies of iCloud files that can be downloaded again, and caches. Finder counts it as available, but it is not free until macOS actually clears it."}}, {"@type": "Question", "name": "Why does the installer say there is not enough space when Finder shows plenty?", "acceptedAnswer": {"@type": "Answer", "text": "Finder’s Available includes purgeable space. An installer usually checks what is free right now and stops before macOS has cleared anything. Empty the Trash, restart, wait a few minutes and try again; if it still refuses, make room from your own files."}}, {"@type": "Question", "name": "How do I clear purgeable space without Terminal?", "acceptedAnswer": {"@type": "Answer", "text": "Restart and give it time: snapshots are kept for about a day and then removed. Remove downloads of large iCloud Drive files you do not need on the Mac, from Finder’s Control-click menu. Starting up once in Safe Mode clears certain system caches. Leave Time Machine switched on."}}, {"@type": "Question", "name": "Does Klarity count purgeable space as free?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity shows the space free right now, so its figure is lower than Finder’s Available. It cannot see inside or delete Time Machine’s local snapshots, but its map shows which folders, including your iCloud Drive and Caches, are really taking up the disk."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=202610192">
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">November 6, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 7 min read</span>
+    </div>
+    <h1>Purgeable Space on a Mac, Explained</h1>
+    <p class="article-subtitle">Finder says you have room, and the installer says you do not. What purgeable space is made of, why it does not clear when you need it, and how to make room that is really free.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>Two numbers, one disk</h2>
+
+    <p>You go to install something big, a macOS update or a game, and the installer stops: not enough free space. You check Finder, and Finder says you have plenty. Both are telling the truth. They are counting different things, and the difference has a name: purgeable space.</p>
+
+    <p>Purgeable space is room macOS has promised it can make, by clearing things it considers spare. Finder counts it as available. The installer only cares what is free right now. And nothing on your Mac shows you what the purgeable part is made of, or what the rest of your disk is full of. You get two numbers and no picture.</p>
+
+    <p>That missing picture is the real problem, and it is what this post is about: what purgeable space is, why it does not clear when you need it, and how to see where your space actually is.</p>
+
+    <h2>What &ldquo;purgeable&rdquo; is made of</h2>
+
+    <p>Purgeable is not a folder. It is a label macOS puts on space it believes it can win back by itself. In practice it comes from three places.</p>
+
+    <ul>
+      <li><strong>Time Machine&rsquo;s local snapshots.</strong> With Time Machine on, <a href="https://support.apple.com/en-us/102154" rel="noopener" target="_blank">Apple says</a> your Mac saves a snapshot of the startup disk about every hour and keeps it for 24 hours, plus an extra one before any macOS update. A snapshot holds on to files as they were, so space you freed by deleting something can stay taken until the snapshot ages out. Apple is plain about how it is counted: &ldquo;Your Mac counts the space used by snapshots as available storage.&rdquo;</li>
+      <li><strong>iCloud files that could be downloaded again.</strong> If Optimize Mac Storage is on for iCloud Drive or Photos, files you have not opened in a while can be kept only in iCloud when space runs short, and downloaded again when you open them. Until that happens, the copies on your Mac count towards purgeable. The same goes for watched Apple TV films and old Mail attachments if you turned on Optimize Storage in Storage settings.</li>
+      <li><strong>Caches and temporary files.</strong> Data apps and macOS keep to work faster, which they can rebuild if it goes.</li>
+    </ul>
+
+    <p>You can see the figure for yourself. Select <strong>Macintosh HD</strong> in Finder and choose <strong>File</strong> &rarr; <strong>Get Info</strong>: next to Available, Finder often adds how much of it is purgeable. What it will not tell you is which snapshot, which iCloud folder or which cache that number is.</p>
+
+    <h2>See the space that is really yours, with Klarity</h2>
+
+    <p>Klarity, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, takes the strict view. The free figure it shows in the bar under the map is the space free right now. It does not count purgeable space as free, so it is close to the number an installer will check, and lower than Finder&rsquo;s.</p>
+
+    <p>Then it shows you the rest. Click <strong>Macintosh HD</strong> in the sidebar, give Klarity access once if it asks, and your disk becomes a treemap: every folder is a rectangle, its area is the space it really takes on disk, and its colour says how long since it last changed, from blue for this month to red for three years or more. The biggest rectangles are where your space has gone.</p>
+
+    <figure>
+      <img src="/img/1.3.1/hero.webp" alt="Klarity 1.3.1&rsquo;s treemap of a Mac home folder coloured by age, with Movies, Pictures, Library, Parallels and Downloads as the biggest rectangles and the bar underneath reading Home 293.9 GB, 157 GB free" width="2648" height="1952" loading="lazy">
+      <figcaption>A real scan. The biggest rectangles are your own files, and the free figure underneath is what is free right now.</figcaption>
+    </figure>
+
+    <p>This is where purgeable gets easier to reason about. Klarity measures what is actually stored on the disk, so an iCloud file that lives only in iCloud counts as almost nothing, and a file you have downloaded counts in full. Your iCloud Drive files live inside the hidden Library folder, in one called <strong>Mobile Documents</strong>; Klarity scans hidden folders, so you can see how much of iCloud is sitting on your Mac today. The same goes for <strong>Caches</strong>, also in Library.</p>
+
+    <p>One honest limit. Time Machine&rsquo;s local snapshots are not files in any folder, so Klarity cannot see inside them, show them on the map, or delete them. No disk map can. If Finder&rsquo;s available figure and Klarity&rsquo;s free figure are tens of gigabytes apart, snapshots are usually much of the gap.</p>
+
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 once on the Mac App Store</a>, for macOS 14.6 or later. No subscription, no account, and no network access at all.</p>
+
+    <h2>Why it does not clear in time for an installer</h2>
+
+    <p>macOS clears purgeable space when something asks for it, gradually and in its own order. An installer tends to check the free space once, up front, and stop if it is short, before macOS has had a reason to start clearing. So the space you were promised is still there, still purgeable, and the install has already given up. <a href="/blog/how-much-space-for-macos-27">How much space macOS 27 needs</a> covers the numbers for this year&rsquo;s upgrade.</p>
+
+    <p>Snapshots add a delay of their own. Each one is kept for about a day, so space you freed this morning may not come back until tomorrow. Right after a macOS update the gap is at its largest, which is why <a href="/blog/mac-storage-full-after-update">a full disk after an update</a> often fixes itself in a day or two.</p>
+
+    <h2>What you can do, in plain steps</h2>
+
+    <p>In order, cheapest first. None of these needs Terminal.</p>
+
+    <ol>
+      <li><strong>Empty the Trash.</strong> Anything in it still takes up the disk until you do.</li>
+      <li><strong>Restart, wait a few minutes, and try again.</strong> A restart gives macOS a chance to clear temporary files, and the installer gets a fresh look at the disk. If you deleted things today, try again tomorrow, once the snapshots holding them have aged out.</li>
+      <li><strong>Leave Time Machine on.</strong> Turning it off to win back snapshot space trades a short wait for losing the copies that let you rescue a file you deleted an hour ago.</li>
+      <li><strong>Remove downloads of big iCloud files you do not need on this Mac.</strong> In Finder, find the file or folder in iCloud Drive, Control-click it and choose <strong>Remove Download</strong>. It stays in iCloud and the space is free at once. Klarity&rsquo;s map of Mobile Documents shows which iCloud folders are worth doing this to. Do not move iCloud files to the Trash to make room: that deletes them from iCloud and your other devices too, which is why Klarity warns you before it does.</li>
+      <li><strong>Start up in Safe Mode once.</strong> <a href="https://support.apple.com/en-us/102624" rel="noopener" target="_blank">Apple says</a> your Mac clears certain system caches when it starts in Safe Mode, and builds them again as needed. Restart normally afterwards.</li>
+      <li><strong>Review the recommendations.</strong> System Settings &rarr; General &rarr; Storage offers to remove watched Apple TV films and keep only recent Mail attachments. Read each one first: Store in iCloud, in particular, moves your Desktop and Documents into iCloud Drive.</li>
+      <li><strong>Make real room from your own files.</strong> If the installer still refuses, the space has to come from things macOS will never clear for you: old installers, downloads, video, virtual machines, device backups. Those are the biggest rectangles in Klarity. Right-click one and choose <strong>Move to Trash</strong>; Klarity asks first every time, a folder of 1&nbsp;GB or more needs a slide to confirm, and nothing is gone until you empty the Trash yourself.</li>
+    </ol>
+
+    <p>If the big thing on your map is Library, <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a> explains what lives in there and what is safe to clear.</p>
+
+    <h2>Which number to trust</h2>
+
+    <p>Both, for different questions. Finder&rsquo;s Available is what your disk could offer once macOS has tidied up. The strict figure, the one Klarity shows, is what you can count on this minute. When you are about to install something large or copy a big project across, plan with the strict one and treat purgeable as a bonus that may arrive later.</p>
+
+    <p>On a small disk the gap matters more, because purgeable can be a large share of what looks free. <a href="/blog/living-with-256gb-mac">Living with a 256&nbsp;GB Mac</a> covers keeping that under control month to month.</p>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">What is purgeable space on a Mac?</h3>
+    <p>It is space macOS says it can free by itself when something needs the room. It is mostly Time Machine&rsquo;s local snapshots, copies of iCloud files that can be downloaded again, and caches. Finder counts it as available, but it is not free until macOS actually clears it.</p>
+
+    <h3 class="faq-q">Why does the installer say there is not enough space when Finder shows plenty?</h3>
+    <p>Finder&rsquo;s Available includes purgeable space. An installer usually checks what is free right now and stops before macOS has cleared anything. Empty the Trash, restart, wait a few minutes and try again; if it still refuses, make room from your own files.</p>
+
+    <h3 class="faq-q">How do I clear purgeable space without Terminal?</h3>
+    <p>Restart and give it time: snapshots are kept for about a day and then removed. Remove downloads of large iCloud Drive files you do not need on the Mac, from Finder&rsquo;s Control-click menu. Starting up once in Safe Mode clears certain system caches. Leave Time Machine switched on.</p>
+
+    <h3 class="faq-q">Does Klarity count purgeable space as free?</h3>
+    <p>No. Klarity shows the space free right now, so its figure is lower than Finder&rsquo;s Available. It cannot see inside or delete Time Machine&rsquo;s local snapshots, but its map shows which folders, including your iCloud Drive and Caches, are really taking up the disk.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+<div class="share-bar" data-url="https://www.klaritydisk.com/blog/purgeable-space-mac" data-title="Purgeable Space on a Mac, Explained">
+  <div class="share-inner">
+    <p class="share-title" id="share-title">Found this useful? Share it.</p>
+    <div class="share-buttons" role="group" aria-labelledby="share-title">
+      <button type="button" class="share-btn share-native" data-share-native hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 11v8.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Share…</span></button>
+      <a class="share-btn" href="https://x.com/intent/post?text=Purgeable%20Space%20on%20a%20Mac%2C%20Explained&amp;url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fpurgeable-space-mac" target="_blank" rel="noopener" aria-label="Share on X (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg><span>X</span></a>
+      <a class="share-btn" href="https://wa.me/?text=Purgeable%20Space%20on%20a%20Mac%2C%20Explained%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fpurgeable-space-mac" target="_blank" rel="noopener" aria-label="Share on WhatsApp (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+      <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fpurgeable-space-mac&amp;title=Purgeable%20Space%20on%20a%20Mac%2C%20Explained" target="_blank" rel="noopener" aria-label="Share on Reddit (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>Reddit</span></a>
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fpurgeable-space-mac" target="_blank" rel="noopener" aria-label="Share on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span>Facebook</span></a>
+      <button type="button" class="share-btn share-copy" data-share-copy><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span aria-live="polite">Copy link</span></button>
+    </div>
+  </div>
+</div>
+<script src="/js/share.js?v=20261019" defer></script>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/how-much-space-for-macos-27">How Much Space Does macOS 27 Golden Gate Need to Install? &rarr;</a></li>
+      <li><a href="/blog/mac-storage-full-after-update">Mac Storage Full After a macOS Update? Where the Space Went &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+      <li><a href="/blog/how-to-clean-up-mac-storage">How to Clean Up Mac Storage: What&rsquo;s Safe to Delete in 2026 &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>

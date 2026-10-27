@@ -1,0 +1,33 @@
+{
+  "slug": "messages-taking-up-space-mac",
+  "publish_date": "2026-11-27",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "making folder names instantly scannable left-to-right.</p>",
+      "replace": "making folder names instantly scannable left-to-right. That matters most in folders with dull names hiding big numbers, such as the one where <a href=\"/blog/messages-taking-up-space-mac\">Messages keeps years of photos and videos</a>.</p>"
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "and for an old account that can be tens of gigabytes.</li>",
+      "replace": "and for an old account that can be tens of gigabytes. Messages does the same with photos and videos; <a href=\"/blog/messages-taking-up-space-mac\">clear Messages attachments from inside Messages</a>, not in Finder.</li>"
+    },
+    {
+      "file": "blog/how-to-find-large-files-on-mac.html",
+      "find": "including Mail attachments and Messages media.</li>",
+      "replace": "including Mail attachments and Messages media. If Messages is the big one, <a href=\"/blog/messages-taking-up-space-mac\">clear it with Messages&rsquo; own tools</a>.</li>"
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "mail attachments, browser profiles and disk images.</li>",
+      "replace": "mail attachments, browser profiles and disk images. Messages attachments have their own category in Storage settings; <a href=\"/blog/messages-taking-up-space-mac\">here is how to shrink Messages safely</a>.</li>"
+    },
+    {
+      "file": "blog/living-with-256gb-mac.html",
+      "find": "a film downloaded for a flight long ago.",
+      "replace": "a film downloaded for a flight long ago. On a small disk, check Messages too: <a href=\"/blog/messages-taking-up-space-mac\">years of chat photos and videos</a> can quietly reach tens of gigabytes."
+    }
+  ],
+  "x_post": "Messages can quietly keep years of photos and videos on your Mac, often tens of gigabytes. How to see how big it really is, and how to clear it with Messages' own tools without breaking your chats."
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "how-much-storage-mac-buy",
+  "publish_date": "2026-11-24",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "Some sessions are quick scans, others are deeper explorations.",
+      "replace": "Some sessions are quick scans, others are deeper explorations, like reading the map by age to <a href=\"/blog/how-much-storage-mac-buy\">decide how much storage the next Mac needs</a>."
+    },
+    {
+      "file": "blog/living-with-256gb-mac.html",
+      "find": "It means you need to see where your space is: which folders are big, and which of those are still growing.</p>",
+      "replace": "It means you need to see where your space is: which folders are big, and which of those are still growing. The same picture tells you <a href=\"/blog/how-much-storage-mac-buy\">how much storage to buy</a> when it is time for a new Mac.</p>"
+    },
+    {
+      "file": "blog/apple-intelligence-storage-mac.html",
+      "find": "On a 256&nbsp;GB MacBook Air it is about a tenth of the disk, gone overnight.",
+      "replace": "On a 256&nbsp;GB MacBook Air it is about a tenth of the disk, gone overnight, which is worth counting in when you <a href=\"/blog/how-much-storage-mac-buy\">choose the storage for your next Mac</a>."
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": "The minimum you will see quoted is around 35&nbsp;GB, which leaves no margin at all. On a 256&nbsp;GB Mac, 40&nbsp;GB is about a sixth of the whole disk.</p>",
+      "replace": "The minimum you will see quoted is around 35&nbsp;GB, which leaves no margin at all. On a 256&nbsp;GB Mac, 40&nbsp;GB is about a sixth of the whole disk, so leave room for upgrades like this one when you <a href=\"/blog/how-much-storage-mac-buy\">decide how much storage to buy</a>.</p>"
+    }
+  ],
+  "x_post": "256 GB, 512 GB or 1 TB? Before you buy a Mac this Black Friday, measure the one you have: what is still growing, what has sat untouched for years and could live on an external drive, and what macOS takes for itself."
+}

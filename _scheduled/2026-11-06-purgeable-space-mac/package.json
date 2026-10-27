@@ -1,0 +1,33 @@
+{
+  "slug": "purgeable-space-mac",
+  "publish_date": "2026-11-06",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "When you zoom into a folder, the entire viewport fills with useful information.",
+      "replace": "When you zoom into a folder, the entire viewport fills with useful information. The one thing no map can draw is space that sits in no folder at all, which is most of what <a href=\"/blog/purgeable-space-mac\">purgeable space on a Mac</a> is."
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "and it counts APFS snapshots, which are not files you can walk to.",
+      "replace": "and it counts APFS snapshots, which are not files you can walk to. (<a href=\"/blog/purgeable-space-mac\">Purgeable space, explained</a> covers what that evictable material is made of.)"
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": "but not always in time for an installer that checks before it begins.",
+      "replace": "but not always in time for an installer that checks before it begins. <a href=\"/blog/purgeable-space-mac\">What purgeable space is made of</a> explains why, and what you can clear without Terminal."
+    },
+    {
+      "file": "blog/mac-storage-full-after-update.html",
+      "find": "so the Storage settings numbers are not fully trustworthy until it finishes.",
+      "replace": "so the Storage settings numbers are not fully trustworthy until it finishes. Finder&rsquo;s figure also counts space macOS has only promised to clear, which <a href=\"/blog/purgeable-space-mac\">purgeable space on a Mac</a> explains."
+    },
+    {
+      "file": "blog/living-with-256gb-mac.html",
+      "find": "You need enough iCloud storage for everything in iCloud Drive.</li>",
+      "replace": "You need enough iCloud storage for everything in iCloud Drive. Files kept this way count as <a href=\"/blog/purgeable-space-mac\">purgeable space</a> until macOS clears them.</li>"
+    }
+  ],
+  "x_post": "Finder says you have 60 GB available. The installer says there isn't enough space. Both are right: Finder counts purgeable space as free. What purgeable is made of, and how to make real room without Terminal."
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "old-iphone-backups-mac",
+  "publish_date": "2026-11-13",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "The nesting makes containment obvious.</p>",
+      "replace": "The nesting makes containment obvious. It is how a forgotten phone backup gives itself away: a big box inside Application Support, inside Library, as in <a href=\"/blog/old-iphone-backups-mac\">finding old iPhone backups on a Mac</a>.</p>"
+    },
+    {
+      "file": "blog/living-with-256gb-mac.html",
+      "find": "Klarity scans hidden folders, so they are in the map, and Library has its own shortcut in the sidebar.",
+      "replace": "Klarity scans hidden folders, so they are in the map, and Library has its own shortcut in the sidebar. Backups of phones you no longer own are often the biggest thing in there; <a href=\"/blog/old-iphone-backups-mac\">here is how to clear old iPhone backups safely</a>."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "Delete them here, not by hunting for the folder.</li>",
+      "replace": "Delete them here, not by hunting for the folder. <a href=\"/blog/old-iphone-backups-mac\">Old iPhone backups on a Mac</a> covers what to keep first.</li>"
+    },
+    {
+      "file": "blog/mac-storage-full-after-update.html",
+      "find": "Delete them the supported way rather than by hand: Finder &rarr; your device in the sidebar &rarr; Manage Backups.</li>",
+      "replace": "Delete them the supported way rather than by hand: Finder &rarr; your device in the sidebar &rarr; Manage Backups. <a href=\"/blog/old-iphone-backups-mac\">Clearing old iPhone backups</a> walks through it step by step.</li>"
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "manage those in Finder&rsquo;s device backup manager, not by deleting folders.</li>",
+      "replace": "manage those in Finder&rsquo;s device backup manager, not by deleting folders. <a href=\"/blog/old-iphone-backups-mac\">How to find and clear old iPhone backups</a> shows which ones are safe to remove.</li>"
+    }
+  ],
+  "x_post": "Every iPhone you have backed up to your Mac may still have a full-size backup in a hidden folder, phones you sold years ago included. Where they live, which to keep, and how to delete the rest safely."
+}

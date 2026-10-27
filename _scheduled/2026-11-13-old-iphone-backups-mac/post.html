@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Old iPhone Backups Filling Your Mac? Find and Clear Them | Klarity Blog</title>
+<meta name="description" content="Old iPhone and iPad backups can quietly fill tens of gigabytes on a Mac. Where Finder keeps them, how to spot stale ones, and how to delete them safely.">
+<meta name="keywords" content="old iphone backups mac, delete iphone backup mac, where are iphone backups stored on mac, mobilesync backup folder, manage backups finder, ipad backup taking space mac, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/old-iphone-backups-mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Old iPhone Backups Filling Your Mac? Find and Clear Them">
+<meta property="og:description" content="Old iPhone and iPad backups can quietly fill tens of gigabytes on a Mac. Where Finder keeps them, how to spot stale ones, and how to delete them safely.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/old-iphone-backups-mac">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-11-13">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Old iPhone Backups Filling Your Mac? Find and Clear Them">
+<meta name="twitter:description" content="Old iPhone and iPad backups can quietly fill tens of gigabytes on a Mac. Where Finder keeps them, how to spot stale ones, and how to delete them safely.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Old iPhone Backups Filling Your Mac? Find and Clear Them", "description": "Old iPhone and iPad backups can quietly fill tens of gigabytes on a Mac. Where Finder keeps them, how to spot stale ones, and how to delete them safely.", "image": "https://www.klaritydisk.com/img/1.3.1/library.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-13", "dateModified": "2026-11-13", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/old-iphone-backups-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Old iPhone Backups Filling Your Mac? Find and Clear Them", "item": "https://www.klaritydisk.com/blog/old-iphone-backups-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where are iPhone backups stored on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "In a hidden folder in your Library: Library, then Application Support, then MobileSync, then Backup. Each phone or iPad gets its own folder, named with a long code rather than the device name. To open it, choose Go to Folder in the Finder Go menu and type ~/Library/Application Support/MobileSync/Backup/."}}, {"@type": "Question", "name": "Is it safe to delete old iPhone backups from a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for devices you no longer own or have already set up again, as long as you keep at least one recent backup of the phone you use now, or iCloud Backup is on. A deleted backup cannot be recovered, and an encrypted one can hold your saved passwords and Health data, so never delete the only copy."}}, {"@type": "Question", "name": "What is the best way to delete an iPhone backup on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Use Finder. Connect an iPhone or iPad, select it in the Finder sidebar, click Manage Backups on the General tab, then right-click the old backup and choose Delete. The list shows the device name and the date of each backup, which the folder names do not."}}, {"@type": "Question", "name": "Can Klarity delete iPhone backups?", "acceptedAnswer": {"@type": "Answer", "text": "Klarity shows how big each backup is and how long since it last changed, and it can move one to the Trash. Because backups sit inside your Library, it asks you to confirm an extra warning first. For deleting, Finder is the better tool, because it shows which device each backup belongs to."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=202610192">
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">November 13, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 7 min read</span>
+    </div>
+    <h1>Old iPhone Backups Filling Your Mac? Find and Clear Them</h1>
+    <p class="article-subtitle">Every iPhone and iPad you have backed up to this Mac may still have a full copy sitting in a hidden folder, including phones you sold years ago. How to see them, what to keep, and how to delete the rest the right way.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>The biggest folder you have never seen</h2>
+
+    <p>If you have ever plugged an iPhone or iPad into your Mac and backed it up, there is a copy of that device on your disk. Not a few settings: a backup holds most of the data and settings that were on the device when it was made. A well-used phone can leave a backup of tens of gigabytes.</p>
+
+    <p>Finder keeps <strong>one backup per device</strong>, and replaces it with a fresh one each time that device backs up again. That part is tidy. The trouble is what happens when you stop using a device. You trade the phone in, the new one restores from iCloud, and the old phone&rsquo;s backup simply stays on the Mac. Nothing ever replaces it, and nothing ever asks you about it. An iPad you gave to a relative, a phone from two upgrades ago, a work phone from a previous job: each can still be there, at full size.</p>
+
+    <p>You will not stumble on them. They live inside your Library folder, which Finder hides, and Storage settings shows a coloured bar of broad categories, where a forgotten backup is easy to miss. So the space goes missing and you cannot see where. That is the real problem here: not that backups are big, but that they are <strong>out of sight</strong>.</p>
+
+    <h2>Where Finder keeps iPhone and iPad backups</h2>
+
+    <p><a href="https://support.apple.com/en-us/108809" rel="noopener" target="_blank">Apple&rsquo;s support page</a> gives the location. In your home folder, inside the hidden Library folder:</p>
+
+    <p><strong>Library &rarr; Application Support &rarr; MobileSync &rarr; Backup</strong></p>
+
+    <p>To open it in Finder, choose <strong>Go</strong> &rarr; <strong>Go to Folder</strong> and type <code>~/Library/Application Support/MobileSync/Backup/</code>. Inside, each device has its own folder. Do not expect to recognise them: the folders are named with long codes of letters and numbers, not &ldquo;Anna&rsquo;s iPhone&rdquo;. And Finder will not tell you how much space each one takes until you select a folder and wait for Get Info to add it up, one at a time.</p>
+
+    <p>So Apple tells you where they are. It does not show you which ones are big, or which ones are years old. That is the gap a picture of your disk fills.</p>
+
+    <h2>See every backup at a glance with Klarity</h2>
+
+    <p>Klarity, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, draws a folder as a treemap: every folder inside it is a rectangle, and its area is the space it takes. Since version 1.3.1 it scans hidden folders too, Library included, so phone backups are in the picture instead of left out of it.</p>
+
+    <ol>
+      <li>Click <strong>Library</strong> in Klarity&rsquo;s sidebar.</li>
+      <li>Look for <strong>Application Support</strong>. If you have phone backups on this Mac, a large rectangle called <strong>MobileSync</strong> usually takes up most of it.</li>
+      <li>Double-click MobileSync, then <strong>Backup</strong>. Each rectangle is now one device&rsquo;s backup, sized by the space it uses.</li>
+    </ol>
+
+    <figure>
+      <img src="/img/1.3.1/library.webp" alt="Klarity 1.3.1 scanning the Library folder: the MobileSync folder inside Application Support is selected, and the inspector shows 11.81 GB, 100% of Application Support, last changed last year" width="2648" height="1952" loading="lazy">
+      <figcaption>Klarity pointed at Library. Phone backups live in MobileSync; here it is 11.81&nbsp;GB, all of Application Support, last changed last year.</figcaption>
+    </figure>
+
+    <p>The colour tells you the rest. By default Klarity colours each rectangle by how long since it last changed: blue for this month, through green, gold and orange, to red for three years or more. A backup changes every time its device backs up, so <strong>the phone you use now is usually blue or green</strong>, and a phone you stopped using shows the age of its last backup. A big gold, orange or red rectangle in that folder is almost always a device you no longer carry.</p>
+
+    <p>Click any rectangle and the inspector on the right shows its size, its share of the folder, how many items it holds and exactly when it last changed. That is usually enough to match each code-named folder to a device: the one that last changed three years ago is probably the phone you traded in back then.</p>
+
+    <p>Two honest notes. Klarity measures the space a backup really takes on disk, which is the same figure Finder shows as &ldquo;on disk&rdquo;. And Klarity does not open backups or read what is inside them; it cannot tell you which phone a folder came from, only how big and how old it is. Finder fills in the names, as below.</p>
+
+    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 once on the Mac App Store</a>, for macOS 14.6 or later. No subscription, no account, and no network access at all.</p>
+
+    <h2>Before you delete anything</h2>
+
+    <p>A deleted backup is gone for good; Apple says plainly that you cannot recover it. So, before you remove one, check three things:</p>
+
+    <ul>
+      <li><strong>Keep the backup of the phone you use now</strong>, unless you are sure it is backed up elsewhere. On the iPhone, open <strong>Settings</strong>, tap your name, then <strong>iCloud</strong> &rarr; <strong>iCloud Backup</strong>, and look for a recent date. If iCloud Backup is off, the copy on your Mac may be the only one.</li>
+      <li><strong>Encrypted backups hold more.</strong> If you ticked &ldquo;Encrypt local backup&rdquo;, <a href="https://support.apple.com/en-us/108353" rel="noopener" target="_blank">Apple notes</a> the backup can include your saved passwords, Wi-Fi settings, website history, Health data and call history. Years of Health data in particular may exist nowhere else. Never delete the only copy.</li>
+      <li><strong>Old phones can still matter.</strong> If an old phone held photos or messages that never made it to iCloud or the new phone, its backup is the last place they exist. If in doubt, keep that one and clear the rest.</li>
+    </ul>
+
+    <h2>Delete old backups the right way: Finder</h2>
+
+    <p>Finder is the right tool for the delete, because it shows what Klarity cannot: the device name and the date of each backup. Following Apple&rsquo;s steps:</p>
+
+    <ol>
+      <li>Connect an iPhone or iPad to the Mac with a cable. It can be your current one; the list shows every backup on this Mac, not just that device&rsquo;s.</li>
+      <li>Select the device in the Finder sidebar.</li>
+      <li>On the <strong>General</strong> tab, click <strong>Manage Backups</strong>.</li>
+      <li>Right-click a backup you no longer need and choose <strong>Delete</strong>, then confirm.</li>
+    </ol>
+
+    <p>The space comes back straight away: a backup deleted this way does not go to the Trash first. If you prefer not to plug anything in, recent versions of macOS also list backups in Storage settings: open <strong>System Settings</strong> &rarr; <strong>General</strong> &rarr; <strong>Storage</strong> and click the info button next to <strong>iOS Files</strong>, where you can select an old backup and delete it.</p>
+
+    <p>Then rescan Library in Klarity. The rectangle should be gone, and the free space shown at the bottom of the window should have grown by about the same amount.</p>
+
+    <h2>Why not just delete it from Klarity?</h2>
+
+    <p>You can. Right-click the backup&rsquo;s rectangle and choose <strong>Move to Trash</strong>. But Klarity treats your Library folder with care, because apps keep their data there. Before it moves anything from Application Support, it shows an extra warning that you have to get past, with Cancel as the default. A backup is also usually over 1&nbsp;GB, and for folders that large Klarity asks you to slide to confirm. Only then does the backup go to the Trash, and the space comes back when you empty it.</p>
+
+    <p>That is two deliberate steps on purpose, and it is still the long way round. Klarity cannot tell you whose backup you are holding; Finder can. So my advice is simple: use Klarity to <strong>find</strong> the backups and see what they cost you, and Finder&rsquo;s Manage Backups to <strong>delete</strong> them.</p>
+
+    <p>Backups are rarely the only thing hiding in Library. Caches, app data and developer tools pile up there too; <a href="/blog/what-is-system-data-on-mac">what System Data on a Mac actually is</a> walks through those, and <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage</a> puts it all in a safe order. If you are on a small disk, <a href="/blog/living-with-256gb-mac">managing storage on a 256&nbsp;GB MacBook</a> shows the monthly look that catches a new backup before it becomes a problem.</p>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">Where are iPhone backups stored on a Mac?</h3>
+    <p>In a hidden folder in your Library: Library, then Application Support, then MobileSync, then Backup. Each phone or iPad gets its own folder, named with a long code rather than the device name. To open it, choose Go to Folder in the Finder Go menu and type ~/Library/Application Support/MobileSync/Backup/.</p>
+
+    <h3 class="faq-q">Is it safe to delete old iPhone backups from a Mac?</h3>
+    <p>Yes, for devices you no longer own or have already set up again, as long as you keep at least one recent backup of the phone you use now, or iCloud Backup is on. A deleted backup cannot be recovered, and an encrypted one can hold your saved passwords and Health data, so never delete the only copy.</p>
+
+    <h3 class="faq-q">What is the best way to delete an iPhone backup on a Mac?</h3>
+    <p>Use Finder. Connect an iPhone or iPad, select it in the Finder sidebar, click Manage Backups on the General tab, then right-click the old backup and choose Delete. The list shows the device name and the date of each backup, which the folder names do not.</p>
+
+    <h3 class="faq-q">Can Klarity delete iPhone backups?</h3>
+    <p>Klarity shows how big each backup is and how long since it last changed, and it can move one to the Trash. Because backups sit inside your Library, it asks you to confirm an extra warning first. For deleting, Finder is the better tool, because it shows which device each backup belongs to.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+<div class="share-bar" data-url="https://www.klaritydisk.com/blog/old-iphone-backups-mac" data-title="Old iPhone Backups Filling Your Mac? Find and Clear Them">
+  <div class="share-inner">
+    <p class="share-title" id="share-title">Found this useful? Share it.</p>
+    <div class="share-buttons" role="group" aria-labelledby="share-title">
+      <button type="button" class="share-btn share-native" data-share-native hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 11v8.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Share…</span></button>
+      <a class="share-btn" href="https://x.com/intent/post?text=Old%20iPhone%20Backups%20Filling%20Your%20Mac%3F%20Find%20and%20Clear%20Them&amp;url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fold-iphone-backups-mac" target="_blank" rel="noopener" aria-label="Share on X (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg><span>X</span></a>
+      <a class="share-btn" href="https://wa.me/?text=Old%20iPhone%20Backups%20Filling%20Your%20Mac%3F%20Find%20and%20Clear%20Them%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fold-iphone-backups-mac" target="_blank" rel="noopener" aria-label="Share on WhatsApp (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+      <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fold-iphone-backups-mac&amp;title=Old%20iPhone%20Backups%20Filling%20Your%20Mac%3F%20Find%20and%20Clear%20Them" target="_blank" rel="noopener" aria-label="Share on Reddit (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>Reddit</span></a>
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fold-iphone-backups-mac" target="_blank" rel="noopener" aria-label="Share on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span>Facebook</span></a>
+      <button type="button" class="share-btn share-copy" data-share-copy><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span aria-live="polite">Copy link</span></button>
+    </div>
+  </div>
+</div>
+<script src="/js/share.js?v=20261019" defer></script>
+
+  <div class="article-cta">
+    <div class="article-cta-inner">
+      <h3>See your disk. Clearly.</h3>
+      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/how-to-clean-up-mac-storage">How to Clean Up Mac Storage: What&rsquo;s Safe to Delete in 2026 &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac">What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear? &rarr;</a></li>
+      <li><a href="/blog/find-old-files-on-mac">How to Find Old Files on a Mac That Are Taking Up Space &rarr;</a></li>
+      <li><a href="/blog/living-with-256gb-mac">Managing Storage on a 256GB MacBook, Day to Day &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "slug": "xcode-taking-up-space-mac",
+  "publish_date": "2026-11-17",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "which is critical when analyzing hierarchical data like disk folders.",
+      "replace": "which is critical when analyzing hierarchical data like disk folders. A developer&rsquo;s Library folder is a good test: Xcode nests build output, simulators and device files several levels deep, and <a href=\"/blog/xcode-taking-up-space-mac\">much of what Xcode keeps can be cleared</a>."
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "One per iOS version you have ever debugged against; the ancient ones are dead weight.",
+      "replace": "One per iOS version you have ever debugged against; the ancient ones are dead weight. <a href=\"/blog/xcode-taking-up-space-mac\">What each Xcode folder holds, and which ones rebuild themselves</a> goes through them one by one."
+    },
+    {
+      "file": "blog/how-to-find-large-files-on-mac.html",
+      "find": "Often the largest single folder on a developer&rsquo;s Mac.</li>",
+      "replace": "Often the largest single folder on a developer&rsquo;s Mac. <a href=\"/blog/xcode-taking-up-space-mac\">Which Xcode files are safe to clear</a> covers it folder by folder.</li>"
+    },
+    {
+      "file": "blog/mac-storage-full-after-update.html",
+      "find": "and <code>DerivedData</code> is build output that regenerates itself. Both can go.",
+      "replace": "and <code>DerivedData</code> is build output that regenerates itself. Both can go; <a href=\"/blog/xcode-taking-up-space-mac\">clearing Xcode&rsquo;s leftovers</a> shows how to do it without Terminal."
+    },
+    {
+      "file": "blog/apple-intelligence-storage-mac.html",
+      "find": "more than Apple Intelligence on most Macs.",
+      "replace": "more than Apple Intelligence on most Macs, and <a href=\"/blog/xcode-taking-up-space-mac\">Xcode keeps plenty more besides</a>."
+    }
+  ],
+  "x_post": "Xcode is under 4 GB in Applications. On my Mac, the files it makes as you work took over 150 GB. What DerivedData, device support files, simulators, runtimes and archives are, which rebuild themselves, and which to keep."
+}

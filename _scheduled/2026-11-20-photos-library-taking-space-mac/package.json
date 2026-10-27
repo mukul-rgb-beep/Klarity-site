@@ -1,0 +1,33 @@
+{
+  "slug": "photos-library-taking-space-mac",
+  "publish_date": "2026-11-20",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "both of which are perceived as <em>length</em>.</p>",
+      "replace": "both of which are perceived as <em>length</em>. It is why a Photos library reads at a glance as one big block inside Pictures, and how <a href=\"/blog/photos-library-taking-space-mac\">a forgotten second library</a> gives itself away.</p>"
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": "in Photos settings instead, if you use iCloud Photos) and anything inside the System folder.",
+      "replace": "in Photos settings instead, if you use iCloud Photos) and anything inside the System folder. <a href=\"/blog/photos-library-taking-space-mac\">Why the Photos library takes so much space</a> covers what you can safely do instead."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "If you do not use iCloud, the library is what it is; moving it to an external drive is the honest answer.</li>",
+      "replace": "If you do not use iCloud, the library is what it is; moving it to an external drive is the honest answer. <a href=\"/blog/photos-library-taking-space-mac\">Why your Photos library takes so much space</a> has Apple&rsquo;s steps for that, and how to find old libraries.</li>"
+    },
+    {
+      "file": "blog/living-with-256gb-mac.html",
+      "find": "Full-size originals stay in iCloud and the Mac keeps smaller versions.</li>",
+      "replace": "Full-size originals stay in iCloud and the Mac keeps smaller versions. It only shrinks the library as the disk fills, though; <a href=\"/blog/photos-library-taking-space-mac\">why your Photos library takes so much space</a> explains.</li>"
+    },
+    {
+      "file": "blog/external-drive-full-mac.html",
+      "find": "<strong>Photo libraries and exports</strong> moved off the Mac to save room, then forgotten.</li>",
+      "replace": "<strong>Photo libraries and exports</strong> moved off the Mac to save room, then forgotten. Before removing an old one, <a href=\"/blog/photos-library-taking-space-mac\">check it is not your System Photo Library</a>.</li>"
+    }
+  ],
+  "x_post": "The Photos library is often the biggest thing on a Mac, hidden behind one icon in Pictures. Why it grows, what Optimize Mac Storage really does, and how to find the old libraries you forgot."
+}

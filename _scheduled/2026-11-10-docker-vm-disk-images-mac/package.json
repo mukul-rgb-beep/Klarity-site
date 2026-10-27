@@ -1,0 +1,28 @@
+{
+  "slug": "docker-vm-disk-images-mac",
+  "publish_date": "2026-11-10",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "often check disk space weekly or more.",
+      "replace": "often check disk space weekly or more. For developers the biggest rectangle is often a single file, such as <a href=\"/blog/docker-vm-disk-images-mac\">a Docker or virtual machine disk image</a>, and a map that counts real space on disk shows how big it truly is."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "Delete unused VMs from inside the app, and in Docker Desktop use Troubleshoot &rarr; Clean / Purge data.</li>",
+      "replace": "Delete unused VMs from inside the app, and in Docker Desktop use Troubleshoot &rarr; Clean / Purge data. These files often look far bigger than they are: <a href=\"/blog/docker-vm-disk-images-mac\">how to see what Docker and VM disk images really use</a>.</li>"
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": "If you no longer start it up, it is often the single biggest win on this list.</li>",
+      "replace": "If you no longer start it up, it is often the single biggest win on this list. If you still use it, <a href=\"/blog/docker-vm-disk-images-mac\">reclaim its unused space from inside Parallels</a> instead.</li>"
+    },
+    {
+      "file": "blog/how-to-find-large-files-on-mac.html",
+      "find": "wherever Parallels, UTM or Docker Desktop keep them, and they only ever grow.</li>",
+      "replace": "wherever Parallels, UTM or Docker Desktop keep them, and they only ever grow. They can also look bigger than they are; <a href=\"/blog/docker-vm-disk-images-mac\">here is how to see their real size and shrink them</a>.</li>"
+    }
+  ],
+  "x_post": "Docker.raw says 64 GB in Finder but often uses a fraction of that. Why Docker and virtual machine disks look bigger than they are, and how to shrink them from inside Docker, Parallels, UTM and Fusion."
+}

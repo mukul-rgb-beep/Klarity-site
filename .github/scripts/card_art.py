@@ -263,6 +263,143 @@ ART["intel-apps-rosetta-macos-27"] = svg(
     + "".join(_lst),
     "The Intel-based Apps list in System Settings")
 
+
+# 2026-11-06-purgeable-space-mac
+# 6 Nov — purgeable space: Finder's "Available" counts space that is not free yet
+_pg_hatch = (f'<pattern id="pghatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+             f'<rect width="6" height="6" fill="#F1E7C8"/><rect width="3" height="6" fill="{AGE[2]}"/></pattern>')
+ART["purgeable-space-mac"] = svg(
+    _pg_hatch
+    + win(24, 22, 272, 136)
+    + text(42, 48, "Macintosh HD", 15, 600)
+    # Finder's figure: purgeable + free
+    + f'<path d="M176 76 V70 H276 V76" fill="none" stroke="{INK2}" stroke-width="1.5"/>'
+    + text(276, 63, "Available 62 GB", 12, 600, INK, "end")
+    + bar(42, 82, 234, 14, [(132, GREY), (72, "url(#pghatch)")])
+    # what is really free right now
+    + f'<path d="M249 102 V108 H276 V102" fill="none" stroke="{ACCENT}" stroke-width="1.5"/>'
+    + text(276, 124, "Free now 18 GB", 12, 600, ACCENT, "end")
+    + f'<rect x="42" y="114" width="14" height="14" rx="3.5" fill="url(#pghatch)"/>'
+    + text(63, 125, "Purgeable", 12, 500, INK2),
+    "A disk bar where Finder's 62 GB available is mostly purgeable space, with only 18 GB free right now")
+
+# 2026-11-10-docker-vm-disk-images-mac
+# 10 Nov — Docker and VM disk images: a 64 GB reserved file that only uses 9 GB on disk
+_dvm_icon = (f'<rect x="44" y="40" width="30" height="38" rx="5" fill="{TRACK}" stroke="#000" stroke-opacity=".12" stroke-width=".75"/>'
+             f'<rect x="50" y="62" width="18" height="9" rx="2" fill="{AGE[0]}"/>')
+_dvm_pages = "".join(f'<rect x="{44 + i * 15.5:.1f}" y="128" width="12" height="16" rx="2.5" fill="{AGE[0] if i < 2 else "none"}" '
+                     f'stroke="{AGE[0] if i < 2 else GREY}" stroke-width="1.2"{"" if i < 2 else " stroke-dasharray=\"2.5 2.5\""}/>'
+                     for i in range(15))
+ART["docker-vm-disk-images-mac"] = svg(
+    win(24, 22, 272, 136)
+    + _dvm_icon + text(86, 55, "Docker.raw", 15, 600) + text(86, 73, "Disk image", 12, 500, INK2)
+    + text(44, 102, "Size", 13, 500, INK2) + text(276, 102, "64 GB", 13, 600, INK2, "end")
+    + text(44, 120, "On disk", 13, 600) + text(276, 120, "9 GB", 15, 700, AGE[0], "end")
+    + _dvm_pages,
+    "Docker.raw reserves 64 GB but uses only 9 GB on disk: two pages filled, the rest only reserved")
+
+# 2026-11-13-old-iphone-backups-mac
+# 13 Nov — old iPhone backups: the MobileSync Backup folder as a treemap, one tile per device,
+# the old phone's backup big and red, the current phone's small and blue.
+def _oib_device(x, y, s, ink, w=11, h=19):
+    return (f'<rect x="{x}" y="{y}" width="{w*s}" height="{h*s}" rx="{2.6*s}" fill="none" stroke="{ink}" stroke-width="{1.6*s}" stroke-opacity=".8"/>'
+            f'<rect x="{x+(w/2-1.9)*s}" y="{y+2*s}" width="{3.8*s}" height="{1.3*s}" rx="{.65*s}" fill="{ink}" fill-opacity=".8"/>')
+ART["old-iphone-backups-mac"] = svg(
+    win(24, 18, 272, 144)
+    + text(42, 40, "MobileSync", 12, 500, INK2) + text(108, 40, "›", 12, 500, INK3) + text(118, 40, "Backup", 12, 600)
+    + treemap(34, 50, 252, 102, [(0, 0, .62, 1, AGE[4]), (.62, 0, .38, .62, AGE[2]), (.62, .62, .38, .38, AGE[0])], 4, 6)
+    + _oib_device(48, 64, 1.5, "#1F0806")
+    + text(48, 120, "iPhone 11", 14, 600, "#1F0806") + text(48, 138, "64 GB · 4 yrs", 12, 500, "#1F0806", extra='opacity=".85"')
+    + _oib_device(198, 60, .85, INK, 15, 19)
+    + text(198, 92, "iPad", 12, 600, INK) + text(198, 106, "22 GB · 2 yrs", 11, 500, INK, extra='opacity=".85"')
+    + text(198, 130, "iPhone 17", 11, 600, "#0B1D3A") + text(198, 144, "8 GB · today", 10, 500, "#0B1D3A", extra='opacity=".85"'),
+    "Phone backups on a Mac: an old iPhone's 64 GB backup, four years untouched, dwarfs the current phone's")
+
+# 2026-11-17-xcode-taking-up-space-mac
+# 17 Nov — Xcode taking up space: the Developer folder as a treemap, old device support in red
+_xc_tiles = [
+    (0, 0, .5, 1, AGE[4]),        # iOS DeviceSupport 63 GB, old builds
+    (.5, 0, .5, .62, AGE[0]),     # Simulators 49 GB
+    (.5, .62, .3, .38, AGE[3]),   # DerivedData
+    (.8, .62, .2, .38, AGE[1]),   # Archives
+]
+ART["xcode-taking-up-space-mac"] = svg(
+    win(24, 16, 272, 148)
+    + text(40, 39, "Developer", 14, 600) + text(280, 39, "in your Library", 12, 500, INK2, "end")
+    + treemap(34, 48, 252, 108, _xc_tiles)
+    + text(46, 70, "iOS DeviceSupport", 12, 600, "#1F0806") + text(46, 86, "63 GB", 12, 500, "#1F0806", extra='opacity=".8"')
+    + text(172, 70, "Simulators", 12, 600, "#0B1D3A") + text(172, 86, "49 GB", 12, 500, "#0B1D3A", extra='opacity=".8"')
+    + text(169, 133, "DerivedData", 10.5, 600, INK),
+    "Xcode's Developer folder as a treemap: old iOS device support files in red, then simulators and DerivedData")
+
+# 2026-11-20-photos-library-taking-space-mac
+# 20 Nov — Photos library taking up space: Pictures holds the live library and a forgotten one
+def _phl_flower(cx, cy, r, cols):
+    out = [f'<rect x="{cx-r-5}" y="{cy-r-5}" width="{2*r+10}" height="{2*r+10}" rx="{(2*r+10)*.24:.1f}" fill="#fff" stroke="#000" stroke-opacity=".1" stroke-width=".75"/>']
+    for _k in range(8):
+        out.append(f'<ellipse cx="{cx}" cy="{cy - r*.48:.1f}" rx="{r*.26:.1f}" ry="{r*.5:.1f}" fill="{cols[_k % len(cols)]}" fill-opacity=".85" transform="rotate({_k*45} {cx} {cy})"/>')
+    return "".join(out)
+_phl_rows = [("Photos Library", "55.8 GB", "This month", AGE[0], [AGE[0], AGE[1], AGE[2], AGE[3]], 106),
+             ("iPhoto Library", "31.2 GB", "4 years", AGE[4], [AGE[4], AGE[3]], 60)]
+_phl = []
+for _i, (_n, _gb, _age, _c, _cols, _w) in enumerate(_phl_rows):
+    _y = 58 + _i * 50
+    if _i == 1:
+        _phl.append(f'<rect x="34" y="{_y-6}" width="252" height="46" rx="8" fill="{_c}" fill-opacity=".12"/>')
+    _phl.append(_phl_flower(62, _y + 17, 12, _cols) + text(92, _y + 13, _n, 14, 600)
+                + bar(92, _y + 22, 106, 7, [(_w, _c)])
+                + text(274, _y + 13, _gb, 13, 600, INK, "end")
+                + dot(212, _y + 26, _c, 3.5) + text(274, _y + 30, _age, 11, 500, INK2, "end"))
+ART["photos-library-taking-space-mac"] = svg(
+    win(26, 18, 268, 144)
+    + folder(42, 28, .32) + text(66, 41, "Pictures", 13, 600)
+    + f'<line x1="26" y1="50" x2="294" y2="50" stroke="#000" stroke-opacity=".07"/>'
+    + "".join(_phl),
+    "The Pictures folder holding a 55.8 GB Photos library used this month and a forgotten 31.2 GB iPhoto library untouched for four years")
+
+# 2026-11-24-how-much-storage-mac-buy
+# 24 Nov — how much storage to buy: today's usage, split active vs dormant, picks a size
+_hmsb_opts = []
+for _i, (_lab, _sel) in enumerate([("256 GB", False), ("512 GB", True), ("1 TB", False)]):
+    _x = 42 + _i * 82
+    if _sel:
+        _hmsb_opts.append(f'<rect x="{_x}" y="112" width="72" height="30" rx="8" fill="{ACCENT}"/>'
+                          + text(_x + 36, 132, _lab, 13, 600, "#fff", "middle"))
+    else:
+        _hmsb_opts.append(f'<rect x="{_x+.5}" y="112.5" width="71" height="29" rx="8" fill="#fff" stroke="{GREY}" stroke-width="1.2"/>'
+                          + text(_x + 36, 132, _lab, 13, 500, INK2, "middle"))
+ART["how-much-storage-mac-buy"] = svg(
+    win(24, 22, 272, 136)
+    + text(42, 48, "Your Mac today", 14, 600) + text(278, 48, "294 GB", 14, 600, INK, "end")
+    + bar(42, 60, 236, 12, [(70, AGE[0]), (40, AGE[1]), (24, AGE[2]), (34, AGE[3]), (62, AGE[4])])
+    + text(42, 92, "Growing", 11, 600, AGE[0]) + text(278, 92, "Untouched for years", 11, 600, AGE[4], "end")
+    + "".join(_hmsb_opts),
+    "A Mac's used space split into what is still growing and what is untouched for years, with 512 GB picked from 256 GB, 512 GB and 1 TB")
+
+# 2026-11-27-messages-taking-up-space-mac
+# 27 Nov — Messages taking up space: the Messages total over a grid of old attachments, mostly red
+_msg_cols = [AGE[4], AGE[4], AGE[3], AGE[4], AGE[0], AGE[4],
+             AGE[3], AGE[4], AGE[4], AGE[2], AGE[4], AGE[3]]
+_msg_video = {1, 5, 8}
+_msg_tiles = []
+for _msg_i, _msg_c in enumerate(_msg_cols):
+    _msg_x = 44 + (_msg_i % 6) * 39.6
+    _msg_y = 72 + (_msg_i // 6) * 40
+    _msg_tiles.append(f'<rect x="{_msg_x:.1f}" y="{_msg_y}" width="34" height="34" rx="6" fill="{_msg_c}"/>')
+    if _msg_i in _msg_video:
+        _msg_tiles.append(f'<path d="M{_msg_x+13:.1f} {_msg_y+10} l10 7 l-10 7Z" fill="#fff" fill-opacity=".92"/>')
+    else:
+        _msg_tiles.append(f'<path d="M{_msg_x+6:.1f} {_msg_y+27} l8 -9 l6 6 l4 -4 l10 7Z" fill="#fff" fill-opacity=".55"/>'
+                          f'<circle cx="{_msg_x+24:.1f}" cy="{_msg_y+10}" r="3" fill="#fff" fill-opacity=".7"/>')
+ART["messages-taking-up-space-mac"] = svg(
+    win(24, 20, 272, 140)
+    + f'<rect x="44" y="36" width="26" height="20" rx="10" fill="{AGE[1]}"/>'
+    + f'<path d="M48 52 l-4 8 l9 -5Z" fill="{AGE[1]}"/>'
+    + text(80, 52, "Messages", 15, 600)
+    + text(276, 52, "38.2 GB", 15, 600, INK, "end")
+    + "".join(_msg_tiles),
+    "Messages holding 38.2 GB of photo and video attachments, most of them years old")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"
