@@ -6,7 +6,14 @@
     <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2026 03:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>Rosetta Ends After macOS 27: Clear Out Your Intel Apps</title>
+      <link>https://www.klaritydisk.com/blog/intel-apps-rosetta-macos-27</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/intel-apps-rosetta-macos-27</guid>
+      <pubDate>Tue, 03 Nov 2026 03:30:00 +0000</pubDate>
+      <description>macOS 27 is the last Mac release to run Intel-only apps. How to see which of yours need Rosetta, what to update or replace, and how to clear out the rest.</description>
+    </item>
     <item>
       <title>Free Space Dropped After a macOS Update? Wait a Day</title>
       <link>https://www.klaritydisk.com/blog/free-space-dropped-after-macos-update</link>
