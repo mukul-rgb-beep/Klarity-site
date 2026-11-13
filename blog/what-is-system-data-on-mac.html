@@ -143,7 +143,7 @@
       <li><strong>Xcode DerivedData</strong> (<code>~/Library/Developer/Xcode/DerivedData</code>). It is build output. Your next build regenerates it.</li>
       <li><strong>Unused simulator runtimes.</strong> Remove these properly through <strong>Xcode &rarr; Settings &rarr; Components</strong> rather than deleting files by hand, so Xcode&rsquo;s bookkeeping stays consistent.</li>
       <li><strong>Old <code>~/Library/Developer/Xcode/iOS DeviceSupport</code> folders.</strong> One per iOS version you have ever debugged against; the ancient ones are dead weight.</li>
-      <li><strong>Old iOS device backups</strong> you no longer need &mdash; manage those in Finder&rsquo;s device backup manager, not by deleting folders.</li>
+      <li><strong>Old iOS device backups</strong> you no longer need &mdash; manage those in Finder&rsquo;s device backup manager, not by deleting folders. <a href="/blog/old-iphone-backups-mac">How to find and clear old iPhone backups</a> shows which ones are safe to remove.</li>
       <li><strong>Local Time Machine snapshots</strong>, with <code>tmutil deletelocalsnapshots</code>. macOS thins these automatically when space gets tight, so this is mostly for when you need space right now.</li>
       <li><strong>The Trash.</strong> Obvious, but easy to forget &mdash; items sitting in it still occupy the disk, and <a href="/blog/external-drive-full-mac">files trashed from an external drive</a> stay on that drive until you empty it.</li>
     </ul>
