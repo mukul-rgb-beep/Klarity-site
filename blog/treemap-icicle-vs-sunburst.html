@@ -219,7 +219,7 @@
 
             <p>Ben Shneiderman, who invented the treemap algorithm in the 1990s while working on visualizing directory structures, explicitly designed it to maximize hierarchical clarity. His original paper, <em>"Tree Visualization with Tree-Maps: A 2D Space-Filling Approach"</em> (1992), emphasizes nesting as a natural metaphor for containment.</p>
 
-            <p>Icicle charts build on the flame graph concept, originally developed for profiling software performance. The horizontal layout allows for easy comparison of items at the same depth, which is critical when analyzing hierarchical data like disk folders.</p>
+            <p>Icicle charts build on the flame graph concept, originally developed for profiling software performance. The horizontal layout allows for easy comparison of items at the same depth, which is critical when analyzing hierarchical data like disk folders. A developer&rsquo;s Library folder is a good test: Xcode nests build output, simulators and device files several levels deep, and <a href="/blog/xcode-taking-up-space-mac">much of what Xcode keeps can be cleared</a>.</p>
 
             <p>Both approaches leverage <strong>spatial encoding of hierarchy</strong> in ways that align with how we mentally model trees: parents contain or precede children, and siblings sit beside each other.</p>
 
