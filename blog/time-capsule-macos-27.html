@@ -29,7 +29,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
 
-<link rel="stylesheet" href="/css/site.css?v=202610192">
+<link rel="stylesheet" href="/css/site.css?v=202611211">
 </head>
 <body>
 
@@ -97,18 +97,18 @@
 
     <p>Setting up a backup drive can mean erasing it, and <a href="https://support.apple.com/guide/mac-help/mh11421/mac" rel="noopener" target="_blank">Apple&rsquo;s guide</a> is blunt about what that does: erasing permanently removes all the files on the disk. A brand-new drive has nothing to lose. An old one from a drawer often does: a photo export, a &ldquo;MacBook backup&rdquo; folder copied over by hand before a trade-in, the only copy of something.</p>
 
-    <p>Klarity, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, shows you what is on a drive in one picture. Plug the drive in, then open Klarity, click the drive under <strong>Devices</strong> in the sidebar, and give Klarity access once if it asks. Every folder becomes a rectangle sized by the space it takes, coloured by how long since it last changed, from blue for this month to red for three years or more. Click a rectangle and the inspector shows its size and when it last changed; <strong>Large files</strong> in the toolbar lists the biggest single files. Copy off what you want to keep, then hand the drive to Time Machine.</p>
+    <p><a href="https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&amp;ct=blog&amp;mt=8">Klarity</a>, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, shows you what is on a drive in one picture. Plug the drive in, then open Klarity, click the drive under <strong>Devices</strong> in the sidebar, and give Klarity access once if it asks. Every folder becomes a rectangle sized by the space it takes, coloured by how long since it last changed, from blue for this month to red for three years or more. Click a rectangle and the inspector shows its size and when it last changed; <strong>Large files</strong> in the toolbar lists the biggest single files. Copy off what you want to keep, then hand the drive to Time Machine.</p>
 
     <p>Klarity answers the other half of the question too: how big the new drive needs to be. Click <strong>Macintosh HD</strong> in the sidebar, and the total under the map shows how much your Mac holds today.</p>
 
     <figure>
-      <img src="/img/1.3.1/hero.webp" alt="Klarity 1.3.1&rsquo;s treemap of a Mac home folder coloured by age: the biggest rectangles show where the space has gone, red for folders untouched in over three years" width="2648" height="1952" loading="lazy">
+      <a class="shot-link" href="https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&amp;ct=blog&amp;mt=8"><img src="/img/1.3.1/hero.webp" alt="Klarity 1.3.1&rsquo;s treemap of a Mac home folder coloured by age: the biggest rectangles show where the space has gone, red for folders untouched in over three years" width="2648" height="1952" loading="lazy"><span class="visually-hidden">View Klarity Disk on the Mac App Store</span></a>
       <figcaption>Every folder sized by the space it takes and coloured by age, so you know what is on a drive before you erase it.</figcaption>
     </figure>
 
     <p>One thing Klarity is not: a backup browser. It cannot look inside Time Machine backups, or inside the local snapshots macOS keeps on your Mac between backups. To browse or restore a backup, use Time Machine itself.</p>
 
-    <p><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity is $6.99 once on the Mac App Store</a>, for macOS 14.6 or later. No subscription, no account, and no network access at all.</p>
+    <p><a href="https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&amp;ct=blog&amp;mt=8">Klarity is $6.99 once on the Mac App Store</a>, for macOS 14.6 or later. No subscription, no account, and no network access at all.</p>
 
     <h2>Setting up the new drive</h2>
 
@@ -125,6 +125,19 @@
 
     <p>Apple&rsquo;s page does not give a size. Time Machine keeps older versions of your files as well as the latest, so a drive only as big as your Mac fills up fast; comfortably bigger is better. The backup also grows when macOS does: <a href="https://eclecticlight.co/2026/09/18/how-did-golden-gate-affect-free-disk-space/" rel="noopener" target="_blank">Oakley found</a> that upgrading to macOS 27 added about 10&nbsp;GB to his backups, and that space did not come back. If you want more history than fits, the answer is a bigger drive, not deleting folders from the backup.</p>
 
+    <aside class="app-card" aria-label="Klarity Disk on the Mac App Store">
+      <img class="app-card-icon" src="/icon-180.png" width="56" height="56" alt="" loading="lazy">
+      <div class="app-card-text">
+        <p class="app-card-name">Klarity Disk</p>
+        <p class="app-card-line">See how much your Mac holds before you buy the drive.</p>
+        <p class="app-card-fine">$6.99 once &middot; no subscription &middot; macOS 14.6 or later</p>
+      </div>
+      <div class="app-card-actions">
+        <a class="cta-button" href="https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&amp;ct=blog&amp;mt=8">View on the Mac App Store</a>
+        <a class="app-card-send" href="mailto:?subject=Klarity%20Disk%20for%20my%20Mac&amp;body=Open%20this%20on%20the%20Mac%3A%0Ahttps%3A%2F%2Fapps.apple.com%2Fapp%2Fapple-store%2Fid6758895498%3Fpt%3D128521164%26ct%3Dblog%26mt%3D8%0A%0AFrom%3A%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Ftime-capsule-macos-27" data-send-mac data-url="https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&amp;ct=blog&amp;mt=8" data-title="Klarity Disk for Mac">Send this to my Mac</a>
+      </div>
+    </aside>
+
     <h2>What to do with the old backups</h2>
 
     <ul>
@@ -133,6 +146,14 @@
       <li><strong>Encrypted drives in the older format.</strong> Apple has repeated that encrypted Mac OS Extended, the format older backup drives used, is deprecated and will not be supported in a future version of macOS. If your current backup drive is one, a fresh start on the new drive avoids the question.</li>
       <li><strong>AirPort Utility</strong> is no longer included in new clean installations of macOS, Oakley notes. If you still need to change a Time Capsule&rsquo;s settings, do it from a Mac that has it.</li>
     </ul>
+
+    <div class="article-cta article-cta-mid">
+      <div class="article-cta-inner">
+        <h3>See your disk. Clearly.</h3>
+        <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+        <a href="https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&amp;ct=blog&amp;mt=8" class="cta-button">Download on Mac App Store</a>
+      </div>
+    </div>
 
     <h2>Questions people ask</h2>
 
@@ -165,17 +186,9 @@
     </div>
   </div>
 </div>
-<script src="/js/share.js?v=20261019" defer></script>
+<script src="/js/share.js?v=20261121" defer></script>
 
-  <div class="article-cta">
-    <div class="article-cta-inner">
-      <h3>See your disk. Clearly.</h3>
-      <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
-      <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="cta-button">Download on Mac App Store</a>
-    </div>
-  </div>
-
-  <div class="article-cta">
+  <div class="related-posts">
     <h3>More from the Klarity Blog</h3>
     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
       <li><a href="/blog/external-drive-full-mac">What&rsquo;s Taking Up Space on My External Drive on a Mac? &rarr;</a></li>

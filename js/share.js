@@ -30,3 +30,16 @@
     } else { fallback(); }
   });
 })();
+
+/* "Send this to my Mac" on a product card: the share sheet where the browser has one.
+   Without it, or without this script, the link's own mailto: opens instead. Nothing is collected. */
+(function () {
+  var links = document.querySelectorAll('[data-send-mac]');
+  if (!links.length || !navigator.share) return;
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      navigator.share({ title: a.getAttribute('data-title'), url: a.getAttribute('data-url') }).catch(function () {});
+    });
+  });
+})();

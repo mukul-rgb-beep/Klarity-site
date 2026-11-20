@@ -282,3 +282,26 @@ article .content,.container .content{padding-top:0}
 .js .share-copy{display:inline-flex}
 .article-page .share-bar{max-width:none;padding:0;margin:8px 0 40px}
 @media (max-width:700px){.share-bar{padding:0 20px}.article-page .share-bar{padding:0}.share-title{flex-basis:100%}}
+
+/* Product card inside a post, screenshots that link to the store, and the end card when it sits above the FAQ */
+.app-card{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:32px 0}
+.app-card-icon{flex:none;width:56px;height:56px;border-radius:13px}
+.app-card-text{flex:1;min-width:0}
+.article-body .app-card p{margin:0;line-height:1.4;font-size:17px;color:var(--ink)}
+.article-body .app-card .app-card-name{font-weight:600}
+.article-body .app-card .app-card-fine{margin-top:4px;font-size:14px;color:var(--ink2)}
+.app-card-actions{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px}
+.app-card .cta-button{min-height:42px;padding:0 20px;font-size:16px;white-space:nowrap}
+.app-card-send{display:none;font-size:15px;font-weight:500}
+.article-body figure a.shot-link{display:block;position:relative;border-radius:12px}
+.article-body .article-cta-mid{margin:48px 0 0}
+.article-body .article-cta-inner h3{margin-top:0;line-height:1.2;font-size:28px}
+.article-body .article-cta-inner p{line-height:1.6}
+.article-page .related-posts{max-width:none;margin:0}
+@media (max-width:700px){
+  .app-card{flex-wrap:wrap;padding:18px}
+  .app-card-actions{flex-basis:100%;align-items:stretch}
+  .app-card-send{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+  .article-page .related-posts{padding:24px 20px}
+}
+@media print{.app-card-send{display:none}}
