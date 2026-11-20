@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- User guide for Klarity Disk. Written against 1.3.1 (build 1310); every claim was checked against that build's source on 2026-11-21. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klarity Disk User Guide: How to Use the Mac Disk Analyzer</title>
+  <meta name="description" content="A plain-English guide to Klarity Disk for Mac: your first scan, reading the treemap, what the colours mean, finding large files and clearing space safely.">
+  <meta name="author" content="Mukul Mehra">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.klaritydisk.com/guide">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Klarity Disk User Guide">
+  <meta property="og:description" content="Your first scan, reading the treemap, what the colours mean, finding large files and clearing space safely.">
+  <meta property="og:url" content="https://www.klaritydisk.com/guide">
+  <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+  <meta property="og:site_name" content="Klarity">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Klarity Disk User Guide">
+  <meta name="twitter:description" content="Your first scan, reading the treemap, what the colours mean, finding large files and clearing space safely.">
+  <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Klarity Disk User Guide", "description": "A plain-English guide to Klarity Disk for Mac: your first scan, reading the treemap, what the colours mean, finding large files and clearing space safely.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-21", "dateModified": "2026-11-21", "inLanguage": "en", "proficiencyLevel": "Beginner", "about": {"@type": "SoftwareApplication", "name": "Klarity Disk", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 14.6 or later", "softwareVersion": "1.3.1"}, "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/guide"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://www.klaritydisk.com/guide"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "An external drive scans as empty", "acceptedAnswer": {"@type": "Answer", "text": "In version 1.3.1, if Klarity was already open when you plugged in a drive you have scanned before, the map can come up empty. Quit Klarity from its menu bar panel, then open it again with the drive connected. If Klarity asks for access to the drive, select the drive itself in the macOS window, not a folder somewhere else. More on drives in what to do when an external drive is full."}}, {"@type": "Question", "name": "I cannot find System Data", "acceptedAnswer": {"@type": "Answer", "text": "System Data is a label in macOS Storage settings, not a folder, so there is no block with that name. Most of it lives in your Library folder: click Library in the sidebar and look at the biggest blocks, usually Caches, Developer, Application Support and Containers. Some of what Storage settings counts is not made of files an app can list, so Klarity’s total can come out lower. What System Data on a Mac actually is explains what is in there and what is safe to clear."}}, {"@type": "Question", "name": "Klarity’s sizes differ from Finder’s", "acceptedAnswer": {"@type": "Answer", "text": "Klarity shows the space a file really takes on your disk. Finder’s Get Info window shows two figures, and Klarity matches the one marked “on disk”. Two cases where the difference is large: iCloud files that are not downloaded to this Mac take almost no space, so Klarity counts them as almost nothing. Virtual machine and disk image files often claim more than they use. Klarity shows what they use. Free space can differ too. Finder counts space that macOS can clear on demand as available, while Klarity shows what is free right now. See purgeable space, explained."}}, {"@type": "Question", "name": "A folder shows as one block", "acceptedAnswer": {"@type": "Answer", "text": "It is below the scan depth: measured, but not opened. Double-click it to scan inside, or raise Scan Depth in Settings › General."}}, {"@type": "Question", "name": "A big old folder looks new", "acceptedAnswer": {"@type": "Answer", "text": "One recently changed file inside it is enough to colour the whole folder as new. Turn on Colour folders by the age of most of their space in Settings › Appearance, or double-click into the folder to see each item’s own colour."}}, {"@type": "Question", "name": "Klarity will not move something to the Trash", "acceptedAnswer": {"@type": "Answer", "text": "If the message says the item is part of macOS or your account, Klarity is protecting it on purpose. If it mentions an admin password, use Reveal in Finder and delete it there. On a drive formatted for Windows (NTFS), a Mac can read files but not change them, so nothing on it can be trashed by Klarity or by Finder."}}, {"@type": "Question", "name": "I trashed files but the free space did not change", "acceptedAnswer": {"@type": "Answer", "text": "Files in the Trash still take up space. Empty the Trash in Finder and the space comes back."}}, {"@type": "Question", "name": "The disk figure in the menu bar looks out of date", "acceptedAnswer": {"@type": "Answer", "text": "Quit Klarity from its menu bar panel and open it again. The map is not affected: it always measures at the moment you scan."}}, {"@type": "Question", "name": "I cannot find Klarity’s window", "acceptedAnswer": {"@type": "Answer", "text": "Click the Klarity icon in the menu bar and choose Open Klarity. Klarity runs from the menu bar, so it may not show in the Dock."}}]}</script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+  <link rel="stylesheet" href="/css/site.css?v=202610192">
+  <style>
+  /* Guide page only. Tokens, nav and footer come from /css/site.css. */
+  .guide{--age1:#5B8FD6;--age2:#74AB84;--age3:#B9A45E;--age4:#D38A4E;--age5:#C8644F;--body:#3A3A3F;
+    max-width:var(--wrap);margin:0 auto;padding:72px 24px 104px}
+
+  /* Header */
+  .guide-head{max-width:780px}
+  .guide-head h1{font-size:clamp(38px,5.4vw,60px);line-height:1.04;letter-spacing:-.034em;font-weight:700}
+  .guide-lede{margin-top:20px;font-size:22px;line-height:1.45;color:var(--ink2);text-wrap:pretty}
+  .guide-meta{margin-top:20px;font-size:14px;color:var(--ink2)}
+
+  /* The window at a glance: the real screenshot with numbered pins */
+  .anatomy{margin-top:56px}
+  .anatomy-shot{position:relative}
+  .anatomy-shot img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
+  .pin,.anatomy-key li::before{width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font:600 14px/28px var(--font);text-align:center}
+  .pin{position:absolute;transform:translate(-50%,-50%);box-shadow:0 0 0 2.5px #fff,0 2px 8px rgba(0,0,0,.32)}
+  .anatomy-key{list-style:none;counter-reset:pin;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px 28px;margin-top:56px}
+  .anatomy-key li{counter-increment:pin;font-size:15px;line-height:1.5;color:var(--ink2)}
+  .anatomy-key li::before{content:counter(pin);display:block}
+  .anatomy-key a{display:block;margin:12px 0 4px;font-size:17px;font-weight:600;color:var(--ink);text-decoration:none}
+  .anatomy-key a:hover{color:var(--accent)}
+
+  /* Contents beside the text */
+  .guide-grid{display:grid;grid-template-columns:200px minmax(0,720px);column-gap:80px;align-items:start;margin-top:96px}
+  .guide-toc{position:sticky;top:84px}
+  .guide-toc p{font-size:13px;font-weight:600;color:var(--ink2);margin-bottom:12px}
+  .guide-toc ol{list-style:none;border-left:1px solid var(--line)}
+  .guide-toc a{display:block;margin-left:-1px;padding:6px 0 6px 16px;border-left:2px solid transparent;font-size:15px;line-height:1.35;color:var(--ink2);text-decoration:none;transition:color .15s,border-color .15s}
+  .guide-toc a:hover{color:var(--ink)}
+  .guide-toc a[aria-current]{color:var(--ink);font-weight:600;border-left-color:var(--accent)}
+
+  /* Sections and type */
+  .guide-body{overflow-wrap:break-word}
+  .guide-body section{margin-top:80px;padding-top:72px;border-top:1px solid var(--line)}
+  .guide-body section:first-child{margin-top:0;padding-top:0;border-top:0}
+  .guide-body h2{font-size:36px;line-height:1.1;letter-spacing:-.026em;margin-bottom:18px}
+  .guide-body h3{font-size:23px;line-height:1.25;letter-spacing:-.014em;margin:48px 0 10px}
+  .guide-body p,.guide-body li,.guide-body dd{font-size:18px;line-height:1.65;color:var(--body)}
+  .guide-body p{max-width:680px;margin-bottom:18px}
+  .guide-body p.lead{font-size:21px;line-height:1.5;color:var(--ink)}
+  .guide-body strong{color:var(--ink)}
+  .guide-body a{text-decoration-thickness:1px;text-underline-offset:3px}
+  .guide-body ul{max-width:680px;padding-left:22px;margin:0 0 20px}
+  .guide-body ul li{margin-bottom:8px}
+  .guide-body ul li::marker{color:var(--ink2)}
+  kbd{display:inline-block;padding:3px 7px;border:1px solid rgba(0,0,0,.16);border-radius:6px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.12);font:500 .8em/1.25 var(--font);color:var(--ink);white-space:nowrap}
+
+  /* Numbered steps (a real sequence) */
+  .steps{list-style:none;counter-reset:step;max-width:680px;margin:32px 0 8px}
+  .steps li{counter-increment:step;position:relative;padding:2px 0 26px 54px}
+  .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:32px;height:32px;border:1.5px solid var(--accent);border-radius:50%;font:600 15px/29px var(--font);text-align:center;color:var(--accent)}
+  .steps li:not(:last-child)::after{content:"";position:absolute;left:16px;top:40px;bottom:6px;width:1px;background:var(--line)}
+  .steps b{display:block;font-weight:600;color:var(--ink)}
+
+  /* Term and explanation rows */
+  .rows{display:grid;grid-template-columns:minmax(170px,220px) minmax(0,1fr);margin:28px 0;border-top:1px solid var(--line)}
+  .rows dt,.rows dd{padding:14px 0;border-bottom:1px solid var(--line)}
+  .rows dt{padding-right:24px;font-size:16px;line-height:1.5;font-weight:600;color:var(--ink)}
+  .rows dd{font-size:17px;line-height:1.55}
+
+  /* The age key, in the app's own five colours */
+  .age-key{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin:32px 0}
+  .age-key li{font-size:14px;line-height:1.4;color:var(--ink2);padding-right:10px}
+  .age-key li::before{content:"";display:block;height:48px;margin:0 -10px 12px 0;background:var(--c)}
+  .age-key li:first-child::before{border-radius:10px 0 0 10px}
+  .age-key li:last-child::before{border-radius:0 10px 10px 0}
+  .age-key li:last-child{padding-right:0}
+  .age-key li:last-child::before{margin-right:0}
+  .age-key b{display:block;font-size:16px;font-weight:600;color:var(--ink)}
+
+  /* Can and cannot, side by side */
+  .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 48px;margin:20px 0 8px}
+  .pair h4{font-size:16px;font-weight:600;color:var(--ink);padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+  .pair li{font-size:17px}
+
+  .note{margin:28px 0;padding:18px 22px;background:var(--tint);border:1px solid rgba(14,124,134,.18);border-radius:14px}
+  .guide-body .note p{margin:0;font-size:17px;line-height:1.6}
+
+  /* Screenshots: whole windows float on a shadow, cropped details sit in a hairline frame */
+  .shot{margin:40px 0}
+  .shot a{display:block;border-radius:12px}
+  .shot img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 0 0 .5px rgba(0,0,0,.16),0 2px 6px rgba(0,0,0,.06),0 20px 44px -14px rgba(28,32,48,.24)}
+  .shot figcaption{max-width:680px;margin-top:16px;font-size:15px;line-height:1.5;color:var(--ink2)}
+  .shot-wide{margin-right:-72px}
+  .detail img{border-radius:10px;box-shadow:none;border:1px solid rgba(0,0,0,.12)}
+  .strip .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(0,0,0,.12);border-radius:10px;background:#fff}
+  .strip img{min-width:600px;border:0;border-radius:0}
+  .with-aside{display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:16px 48px;align-items:start;margin:0 -72px 28px 0}
+  .with-aside .shot{margin:6px 0 0}
+  .with-aside .rows{margin-bottom:0}
+
+  .guide-end{margin-top:80px;padding-top:40px;border-top:1px solid var(--line)}
+  .guide-end h2{font-size:28px}
+
+  @media (max-width:1100px){
+    .shot-wide,.with-aside{margin-right:0}
+  }
+  @media (max-width:1000px){
+    .guide-grid{display:block;margin-top:64px}
+    .guide-toc{position:static;margin-bottom:64px;padding:20px 22px;background:#fff;border:1px solid var(--line);border-radius:14px}
+    .guide-toc ol{border-left:0;columns:2;column-gap:32px}
+    .guide-toc a{margin-left:0;padding:7px 0;border-left:0;break-inside:avoid}
+    .guide-toc a[aria-current]{color:var(--accent)}
+    .anatomy-key{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:44px}
+  }
+  @media (max-width:820px){
+    .guide{padding:48px 20px 80px}
+    .guide-lede{font-size:19px}
+    .anatomy{margin-top:40px}
+    .guide-body section{margin-top:56px;padding-top:52px}
+    .guide-body h2{font-size:28px}
+    .guide-body h3{font-size:21px;margin-top:40px}
+    .guide-body p,.guide-body li,.guide-body dd{font-size:17px}
+    .guide-body p.lead{font-size:19px}
+    .with-aside{display:block}
+    .with-aside .shot{max-width:260px;margin:28px 0 0}
+    .pair{grid-template-columns:1fr;gap:28px}
+  }
+  @media (max-width:560px){
+    .pin{width:20px;height:20px;font-size:11px;line-height:20px;box-shadow:0 0 0 1.5px #fff,0 1px 4px rgba(0,0,0,.32)}
+    .anatomy-key{grid-template-columns:1fr;gap:0;margin-top:36px}
+    .anatomy-key li{position:relative;padding:14px 0 14px 44px;border-top:1px solid var(--line)}
+    .anatomy-key li::before{position:absolute;left:0;top:14px}
+    .anatomy-key a{margin:0 0 2px}
+    .guide-toc ol{columns:1}
+    .rows{grid-template-columns:1fr}
+    .rows dt{padding:14px 0 0;border-bottom:0}
+    .rows dd{padding-top:4px}
+    .age-key{grid-template-columns:1fr;gap:14px}
+    .age-key li{display:grid;grid-template-columns:48px 1fr;column-gap:14px;align-items:center;padding:0}
+    .age-key li::before{grid-row:1/3;width:48px;height:48px;margin:0;border-radius:10px!important}
+    .age-key li b{align-self:end}
+  }
+  </style>
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="guide">
+
+  <header class="guide-head">
+    <h1>Klarity Disk user guide</h1>
+    <p class="guide-lede">From your first scan to a tidier disk: how to read the map, what the colours mean, and how to clear space without breaking anything.</p>
+    <p class="guide-meta">Written for Klarity Disk 1.3.1 on macOS 14.6 or later. Updated <time datetime="2026-11-21">21 November 2026</time>.</p>
+  </header>
+
+  <figure class="anatomy">
+    <div class="anatomy-shot">
+      <img src="/img/1.3.1/hero.webp" width="2648" height="1952" fetchpriority="high"
+           alt="Klarity Disk after scanning a Home folder: a sidebar on the left, a map of coloured blocks in the middle with Movies, Pictures, Library, Parallels and Downloads as the largest, and an inspector on the right showing a 40.8 GB folder last changed 3 years ago">
+      <span class="pin" style="left:11.5%;top:17.3%" aria-hidden="true">1</span>
+      <span class="pin" style="left:35.3%;top:2.7%" aria-hidden="true">2</span>
+      <span class="pin" style="left:48.7%;top:74%" aria-hidden="true">3</span>
+      <span class="pin" style="left:89.5%;top:46%" aria-hidden="true">4</span>
+      <span class="pin" style="left:16.6%;top:98.1%" aria-hidden="true">5</span>
+    </div>
+    <ol class="anatomy-key" id="anatomy-key" aria-label="The parts of the Klarity window">
+      <li><a href="#sidebar">Sidebar</a> Choose what to scan: your whole disk, a folder, or an external drive.</li>
+      <li><a href="#reading-the-map">Toolbar</a> Go back, change the chart and its colours, open Large files, rescan.</li>
+      <li><a href="#reading-the-map">The map</a> Every block is a folder or a file. The bigger the block, the more space it takes.</li>
+      <li><a href="#inspector">Inspector</a> Details of whatever you click, with Show in Finder and Move to Trash.</li>
+      <li><a href="#colours">Status bar</a> The total size, the free space, and the key to the colours.</li>
+    </ol>
+  </figure>
+
+  <div class="guide-grid">
+
+    <nav class="guide-toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#first-scan">Your first scan</a></li>
+        <li><a href="#reading-the-map">Reading the map</a></li>
+        <li><a href="#colours">What the colours mean</a></li>
+        <li><a href="#sidebar">The sidebar</a></li>
+        <li><a href="#large-files">Finding big files</a></li>
+        <li><a href="#trash">Clearing space safely</a></li>
+        <li><a href="#menu-bar">Menu bar and Memory</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+      </ol>
+    </nav>
+
+    <main class="guide-body">
+
+      <section id="first-scan">
+        <h2>Your first scan</h2>
+        <p class="lead">Klarity lives in your Mac&rsquo;s menu bar, at the top right of the screen. If its window is not already open, click the Klarity icon there and choose <strong>Open Klarity</strong>.</p>
+
+        <ol class="steps">
+          <li><b>Open the Disk Analyzer.</b> Click <strong>Disk Analyzer</strong> in the sidebar.</li>
+          <li><b>Choose what to scan.</b> Click <strong>Scan Home</strong> to map your own files. For the whole disk, click <strong>Macintosh HD</strong> in the sidebar instead.</li>
+          <li><b>Give access, once.</b> The first time, Klarity asks to access your disk. Click <strong>Grant Access&hellip;</strong> and a macOS window opens, already pointing at the disk. Select the disk and click <strong>Grant Access</strong>.</li>
+          <li><b>Wait for the map.</b> The title counts items as it goes. A Home folder is usually quick. A whole disk takes longer, sometimes a few minutes, and you can press <strong>Cancel</strong> at any point.</li>
+        </ol>
+
+        <h3>Why macOS asks</h3>
+        <p>Apps from the Mac App Store cannot read your files until you point them at a place yourself. The window where you choose the disk is drawn by macOS, not by Klarity, and Klarity only learns what you picked.</p>
+        <p>You are asked once per disk: once for your Mac&rsquo;s own disk, and once for each external drive you scan. Klarity remembers after that. If you click <strong>Not Now</strong>, nothing is scanned and you can try again whenever you like. If you pick the wrong folder by mistake, Klarity says which one it needs and lets you choose again. The longer story is in <a href="/blog/klarity-1-3-one-time-disk-access">why Klarity asks once per disk</a>.</p>
+
+        <h3>What Klarity can and cannot see</h3>
+        <div class="pair">
+          <div>
+            <h4>With your permission, Klarity can</h4>
+            <ul>
+              <li>Read the names, sizes and dates of the files and folders on that disk, so it can measure them.</li>
+              <li>Move an item to the Trash, but only when you ask and then confirm.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Klarity cannot</h4>
+            <ul>
+              <li>Send anything anywhere. It has no network access at all.</li>
+              <li>See a disk you have not given it.</li>
+              <li>Delete anything for good, or empty the Trash.</li>
+              <li>Look inside a few places macOS keeps private from apps. Those are simply missing from the map.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="reading-the-map">
+        <h2>Reading the map</h2>
+        <p class="lead">The map draws the folder you scanned as blocks. A block&rsquo;s area is its share of the space, so the biggest blocks are where your space went.</p>
+
+        <figure class="shot detail strip">
+          <div class="scroll" tabindex="0" role="group" aria-label="Toolbar screenshot, scrolls sideways on small screens">
+            <img src="/img/guide/toolbar.webp" width="1520" height="106" loading="lazy" decoding="async"
+                 alt="The right-hand side of Klarity&rsquo;s toolbar: the title Library with the path Home, Library under it, a Treemap and Icicle switch, an Age and Type switch, a Large files button, a Choose Folder button, Rescan and a More menu">
+          </div>
+          <figcaption>The toolbar, left to right: the folder you are in with its path, the chart style, the colours, Large files, Choose Folder, Rescan and More. Back sits at the far left of the window.</figcaption>
+        </figure>
+
+        <h3>Treemap and Icicle</h3>
+        <p>There are two ways to draw the same scan, and the switch for them is in the toolbar.</p>
+        <p><strong>Treemap</strong> packs everything into rectangles. A large folder becomes a frame with its name and size along the top and its own contents drawn inside, so you see two levels at once. It is the best view for spotting what is big.</p>
+        <p><strong>Icicle</strong> stacks the same folders in rows. The top row is the folder you opened, and each row beneath holds the contents of the row above. A bar&rsquo;s width is its size. It is the better view for comparing things that sit at the same level.</p>
+
+        <h3>Getting around</h3>
+        <dl class="rows">
+          <dt>Click a block</dt>
+          <dd>Selects it and shows its details in the inspector.</dd>
+          <dt>Double-click a folder</dt>
+          <dd>Opens it, so its contents fill the map.</dd>
+          <dt>Back, or <kbd>Esc</kbd></dt>
+          <dd>Goes up one level.</dd>
+          <dt>The path under the title</dt>
+          <dd>Click any part of it to jump straight there.</dd>
+          <dt><kbd>⌘<span class="visually-hidden"> Command</span></kbd> <kbd>Delete</kbd></dt>
+          <dd>Returns to the folder where the scan began.</dd>
+          <dt>Rescan, or <kbd>⌘<span class="visually-hidden"> Command</span></kbd> <kbd>R</kbd></dt>
+          <dd>Measures the folder again.</dd>
+          <dt>Pinch on a trackpad</dt>
+          <dd>Zooms into a crowded corner. With a mouse, hold <kbd>⌘<span class="visually-hidden"> Command</span></kbd> and scroll. Once zoomed in, scroll to move around.</dd>
+          <dt>Right-click a block</dt>
+          <dd>Offers Reveal in Finder, Drill Into, Copy Path and Move to Trash.</dd>
+        </dl>
+
+        <h3 id="inspector">The inspector</h3>
+        <div class="with-aside">
+          <div>
+            <p>The panel on the right describes the block you clicked. With nothing selected, it describes the folder you are in.</p>
+            <dl class="rows">
+              <dt>Size</dt>
+              <dd>The space it takes on your disk, with its share of the folder around it and how many items it holds.</dd>
+              <dt>Last changed</dt>
+              <dd>When it was last modified, with a dot in its age colour.</dd>
+              <dt>Largest inside</dt>
+              <dd>The three biggest things in a folder. Click one to open or select it.</dd>
+              <dt>Show in Finder</dt>
+              <dd>Shows the item in Finder.</dd>
+              <dt>Move to Trash&hellip;</dt>
+              <dd>Starts the <a href="#trash">confirmation</a>. Nothing moves until you confirm.</dd>
+            </dl>
+          </div>
+          <figure class="shot detail">
+            <img src="/img/guide/inspector.webp" width="551" height="854" loading="lazy" decoding="async"
+                 alt="Klarity&rsquo;s inspector for a Movies folder: 81.16 GB, 85 items, last changed 3 years ago, and under Largest inside, Travel Film 2023 at 40.8 GB, Wedding Edit at 22.55 GB and Exports at 12.98 GB">
+          </figure>
+        </div>
+
+        <h3 id="scan-depth">How deep a scan goes</h3>
+        <p>To stay fast, Klarity opens two levels of folders on a first scan. Folders below that are still measured in full, so their sizes are right, but each is drawn as a single block. Double-click one and Klarity scans inside it.</p>
+        <p>To see more levels in one pass, raise <strong>Scan Depth</strong> in Settings &rsaquo; General. Deeper scans take longer.</p>
+      </section>
+
+      <section id="colours">
+        <h2>What the colours mean</h2>
+        <p class="lead">Klarity starts in <strong>Age</strong> colours. A block&rsquo;s colour tells you how long it is since that file or folder last changed.</p>
+
+        <ol class="age-key" aria-label="Age colours">
+          <li style="--c:var(--age1)"><b>This month</b> Changed in the last 30 days</li>
+          <li style="--c:var(--age2)"><b>This year</b> 30 days to a year ago</li>
+          <li style="--c:var(--age3)"><b>1&ndash;2 yrs</b> One to two years ago</li>
+          <li style="--c:var(--age4)"><b>2&ndash;3 yrs</b> Two to three years ago</li>
+          <li style="--c:var(--age5)"><b>3+ yrs</b> Untouched for three years or more</li>
+        </ol>
+
+        <p>Large and red is the combination worth a look: a lot of space that nothing has touched in years. The same key sits under the map, next to a bar that shows how the whole folder divides by age. Point at a block and its colour lights up in the key.</p>
+
+        <figure class="shot detail strip">
+          <div class="scroll" tabindex="0" role="group" aria-label="Status bar screenshot, scrolls sideways on small screens">
+            <img src="/img/guide/statusbar.webp" width="1650" height="66" loading="lazy" decoding="async"
+                 alt="The bar under Klarity&rsquo;s map: a strip divided by age, the text Home 293.9 GB, 157 GB free, and the key This month, This year, 1 to 2 yrs, 2 to 3 yrs and 3+ yrs">
+          </div>
+        </figure>
+
+        <div class="note">
+          <p><strong>Changed, not opened.</strong> The colour comes from the date something last changed, the Date Modified you see in Finder. A photo you look at often but never edit will still read as old. Old does not mean unneeded, so look before you remove anything.</p>
+        </div>
+
+        <h3>How a folder gets its colour</h3>
+        <p>A folder takes the colour of the newest thing inside it. That keeps folders you are working in looking fresh, but it also means one file saved today can turn a huge folder of old material blue.</p>
+        <p>If you would rather see where the old bulk is, turn on <strong>Colour folders by the age of most of their space</strong> in Settings &rsaquo; Appearance. A folder then takes the age of most of its contents by size. The trade-off: busy folders such as Documents can look older than they feel.</p>
+        <p>Folders below the <a href="#scan-depth">scan depth</a> have not been opened yet, so treat their colour as a rough guide until you double-click into them.</p>
+
+        <figure class="shot shot-wide">
+          <a href="/img/1.3.1/age-closeup.webp">
+          <img src="/img/1.3.1/age-closeup.webp" width="1440" height="1080" loading="lazy" decoding="async"
+               alt="A close view of Klarity&rsquo;s treemap in Age colours: a red Movies frame holding two video projects last changed over three years ago, next to a blue Pictures frame holding a Photos library changed this month">
+          </a>
+          <figcaption>Movies is red because nothing in it has changed in over three years. Pictures is blue because the Photos library inside it changed this month.</figcaption>
+        </figure>
+
+        <h3>Type colours</h3>
+        <p>Switch <strong>Age</strong> to <strong>Type</strong> in the toolbar and the map colours files by kind instead: images, video, audio, documents, code, archives, apps and so on. The key under the map changes to match. Folders get colours of their own, which are only there to tell neighbours apart.</p>
+      </section>
+
+      <section id="sidebar">
+        <h2>The sidebar</h2>
+        <p class="lead">The sidebar is where you choose what to look at. Click a location or a drive and Klarity switches to the Disk Analyzer and scans it.</p>
+
+        <div class="with-aside">
+          <dl class="rows">
+            <dt>Overview</dt>
+            <dd>Your Mac at a glance: memory, disk space, and the apps using the most memory.</dd>
+            <dt>Macintosh HD</dt>
+            <dd>Your whole startup disk. The figure and the thin bar show how full it is.</dd>
+            <dt>Home</dt>
+            <dd>Your own files: Documents, Pictures, Movies, Downloads and the rest.</dd>
+            <dt>Library</dt>
+            <dd>The folder macOS hides, where apps keep their data and caches. Most of what Storage settings calls System Data lives here.</dd>
+            <dt>Downloads, Applications</dt>
+            <dd>Two places that tend to collect forgotten things.</dd>
+            <dt>Devices</dt>
+            <dd>External drives that are plugged in. Each one asks for access the first time you scan it.</dd>
+          </dl>
+          <figure class="shot detail">
+            <img src="/img/guide/sidebar.webp" width="432" height="706" loading="lazy" decoding="async"
+                 alt="Klarity&rsquo;s sidebar: Overview, Disk Analyzer and Memory at the top, then Locations with Macintosh HD at 71 percent, Home, Library, Downloads and Applications">
+          </figure>
+        </div>
+
+        <p>A scan of Macintosh HD covers your Mac&rsquo;s own disk and leaves external drives out. Scan each drive from Devices.</p>
+        <p>For any other folder, click <strong>Choose Folder&hellip;</strong> in the toolbar and pick it. Settings sits at the bottom of the sidebar.</p>
+      </section>
+
+      <section id="large-files">
+        <h2>Finding big files</h2>
+        <p class="lead">The map shows which folders are big. <strong>Large files</strong> in the toolbar shows which individual files are, as a plain list.</p>
+
+        <figure class="shot shot-wide">
+          <a href="/img/1.3.1/large-files.webp">
+          <img src="/img/1.3.1/large-files.webp" width="2648" height="1952" loading="lazy" decoding="async"
+               alt="Klarity&rsquo;s Large Files list for a Movies folder, sorted Largest first: 85 files, each with its folder, how long since it changed and its size, with a 5.46 GB video selected">
+          </a>
+          <figcaption>Large Files for a Movies folder. The list covers the folder you have open.</figcaption>
+        </figure>
+
+        <ul>
+          <li><strong>Sort</strong> with the menu at the top right: largest, smallest, name, oldest or newest first.</li>
+          <li><strong>Filter</strong> by kind, such as Video, and by age: older than 30 days, 90 days, 6 months or a year.</li>
+          <li><strong>Click</strong> a file to select it. <strong>Right-click</strong> it for Show in Finder or Move to Trash.</li>
+          <li><strong>Close</strong> the list with the &times; to return to the map.</li>
+        </ul>
+
+        <div class="note">
+          <p><strong>Open the folder first.</strong> Large Files only lists files in folders the scan has opened, and on a very big scan it is a shortlist that can miss some. For a thorough look, double-click into the folder you care about, then click Large files.</p>
+        </div>
+      </section>
+
+      <section id="trash">
+        <h2>Clearing space safely</h2>
+        <p class="lead">Klarity only ever moves things to the Trash. It never deletes anything outright and it never empties the Trash, so you can change your mind until you empty it yourself.</p>
+
+        <p>To remove something, right-click it and choose <strong>Move to Trash</strong>, or select it and use <strong>Move to Trash&hellip;</strong> in the inspector. Klarity asks you to confirm every time.</p>
+
+        <figure class="shot shot-wide">
+          <a href="/img/1.3.1/trash.webp">
+          <img src="/img/1.3.1/trash.webp" width="2648" height="1952" loading="lazy" decoding="async"
+               alt="Klarity asking Move Large Folder to Trash? for a 5.37 GB folder called Old Installers, with a Slide to unlock control and a Cancel button">
+          </a>
+          <figcaption>A folder of 1 GB or more needs a deliberate slide before the confirm button appears.</figcaption>
+        </figure>
+
+        <h3>What Klarity will not let you do</h3>
+        <p>Before it asks you anything, Klarity checks where the item lives.</p>
+        <dl class="rows">
+          <dt>It refuses</dt>
+          <dd>Folders your Mac or your account depends on: your Home folder itself, Library and its main folders, your keychains, iCloud Drive as a whole, the Applications folder and the macOS system folders.</dd>
+          <dt>It asks twice</dt>
+          <dd>App data and settings inside Library, files in iCloud Drive or another cloud folder (trashing them removes them from your other devices too), pieces from inside a Photos, Music or video library, and files that belong to another account. A warning explains the risk first, with Cancel as the default.</dd>
+          <dt>It asks once</dt>
+          <dd>Everything else, including everyday clean-up spots such as the contents of Library &rsaquo; Caches.</dd>
+        </dl>
+        <p>These checks catch the well-known dangers. They cannot know which of your own files matter to you. If you cannot say what something is, leave it where it is.</p>
+
+        <h3>After you confirm</h3>
+        <ul>
+          <li>The map rescans so the block disappears. After a whole-disk scan, where a rescan takes a while, Klarity tells you to press <kbd>⌘<span class="visually-hidden"> Command</span></kbd> <kbd>R</kbd> when you are ready. If a block is ever still showing, <kbd>⌘<span class="visually-hidden"> Command</span></kbd> <kbd>R</kbd> clears it.</li>
+          <li>The space comes back only when you empty the Trash in Finder. Things trashed from an external drive stay on that drive until then.</li>
+          <li>To undo, open the Trash in Finder, select the item and choose File &rsaquo; Put Back.</li>
+          <li>A few things, such as apps installed from the App Store, are protected by macOS. Klarity says &ldquo;Finder needs an admin password&rdquo; and offers <strong>Reveal in Finder</strong>, so you can remove the item there with your password.</li>
+        </ul>
+      </section>
+
+      <section id="menu-bar">
+        <h2>Menu bar and Memory</h2>
+        <p class="lead">Klarity keeps a small icon in the menu bar, with or without figures beside it: <strong>R</strong> is the share of memory in use, <strong>D</strong> is how full your startup disk is.</p>
+
+        <p>Click the icon for a quick panel: memory in use, disk space used and free, and the apps using the most memory. <strong>Open Klarity</strong> brings up the main window. <strong>Quit</strong> closes Klarity completely, menu bar icon included.</p>
+
+        <h3>The Memory screen</h3>
+        <p>Memory in the sidebar shows the same picture in more detail, as a line chart or a gauge.</p>
+        <dl class="rows">
+          <dt>Active</dt>
+          <dd>Memory your apps are using right now.</dd>
+          <dt>Wired</dt>
+          <dd>Memory macOS itself needs and cannot give up.</dd>
+          <dt>Compressed</dt>
+          <dd>Memory macOS has squeezed down to make room.</dd>
+          <dt>Free</dt>
+          <dd>Memory nothing is using.</dd>
+          <dt>Swap Used</dt>
+          <dd>Disk space macOS is borrowing because memory ran short. A large figure means memory is tight.</dd>
+        </dl>
+        <p>Below that is a list of running apps with the memory each one uses. Type in the filter box to find one, and turn on <strong>System</strong> to include Apple&rsquo;s own apps.</p>
+        <p>Klarity shows you memory; it does not quit apps or &ldquo;clean&rdquo; memory for you. The list covers apps rather than every background process, and its figures can differ a little from Activity Monitor, which groups memory differently.</p>
+      </section>
+
+      <section id="settings">
+        <h2>Settings</h2>
+        <p class="lead">Settings is at the bottom of the sidebar. These are the options worth knowing.</p>
+
+        <h3>General</h3>
+        <dl class="rows">
+          <dt>Launch at Login</dt>
+          <dd>Starts Klarity when you log in, so the menu bar icon is always there.</dd>
+          <dt>Refresh Interval</dt>
+          <dd>How often the memory figures update: every 1, 2, 5 or 10 seconds.</dd>
+          <dt>Scan Depth</dt>
+          <dd>How many folder levels a scan opens: 1 to 5, or Full. The default is 2. Full opens everything and is slow on a big disk.</dd>
+          <dt>Benchmark Mode</dt>
+          <dd>A testing tool for the developer. Leave it off.</dd>
+        </dl>
+
+        <h3>Menu Bar</h3>
+        <dl class="rows">
+          <dt>Show Usage Text</dt>
+          <dd>Shows or hides the figures beside the menu bar icon.</dd>
+          <dt>Display Mode</dt>
+          <dd>Which figures appear: RAM Only, Disk Only, RAM &amp; Disk, or Icon Only.</dd>
+        </dl>
+
+        <h3>Appearance</h3>
+        <dl class="rows">
+          <dt>Mode</dt>
+          <dd>Light, Dark or Match System. Klarity starts in Light.</dd>
+          <dt>Theme Pack</dt>
+          <dd>Six accent colours: Klarity, Arctic, Ember, Verdant, Blush and Ocean. A pack changes buttons, highlights and icons. The map&rsquo;s colours stay the same in every pack.</dd>
+          <dt>Disk Visualization</dt>
+          <dd>Whether the map opens as a Treemap or an Icicle, and the folder-colour option described under <a href="#colours">colours</a>.</dd>
+          <dt>RAM Monitor Display</dt>
+          <dd>Whether the Memory screen opens on the line chart or the gauge.</dd>
+        </dl>
+
+        <figure class="shot shot-wide">
+          <a href="/img/1.3.1/dark.webp">
+          <img src="/img/1.3.1/dark.webp" width="2648" height="1952" loading="lazy" decoding="async"
+               alt="Klarity in its Dark appearance, showing the same Home folder treemap with the same age colours on a dark window">
+          </a>
+          <figcaption>The Dark appearance. The age colours are the same in Light and Dark.</figcaption>
+        </figure>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+
+        <h3>An external drive scans as empty</h3>
+        <p>In version 1.3.1, if Klarity was already open when you plugged in a drive you have scanned before, the map can come up empty. Quit Klarity from its menu bar panel, then open it again with the drive connected.</p>
+        <p>If Klarity asks for access to the drive, select the drive itself in the macOS window, not a folder somewhere else. More on drives in <a href="/blog/external-drive-full-mac">what to do when an external drive is full</a>.</p>
+
+        <h3>I cannot find System Data</h3>
+        <p>System Data is a label in macOS Storage settings, not a folder, so there is no block with that name. Most of it lives in your Library folder: click <strong>Library</strong> in the sidebar and look at the biggest blocks, usually Caches, Developer, Application Support and Containers.</p>
+        <p>Some of what Storage settings counts is not made of files an app can list, so Klarity&rsquo;s total can come out lower. <a href="/blog/what-is-system-data-on-mac">What System Data on a Mac actually is</a> explains what is in there and what is safe to clear.</p>
+
+        <h3>Klarity&rsquo;s sizes differ from Finder&rsquo;s</h3>
+        <p>Klarity shows the space a file really takes on your disk. Finder&rsquo;s Get Info window shows two figures, and Klarity matches the one marked &ldquo;on disk&rdquo;. Two cases where the difference is large:</p>
+        <ul>
+          <li>iCloud files that are not downloaded to this Mac take almost no space, so Klarity counts them as almost nothing.</li>
+          <li>Virtual machine and disk image files often claim more than they use. Klarity shows what they use.</li>
+        </ul>
+        <p>Free space can differ too. Finder counts space that macOS can clear on demand as available, while Klarity shows what is free right now. See <a href="/blog/purgeable-space-mac">purgeable space, explained</a>.</p>
+
+        <h3>A folder shows as one block</h3>
+        <p>It is below the <a href="#scan-depth">scan depth</a>: measured, but not opened. Double-click it to scan inside, or raise Scan Depth in Settings &rsaquo; General.</p>
+
+        <h3>A big old folder looks new</h3>
+        <p>One recently changed file inside it is enough to colour the whole folder as new. Turn on <strong>Colour folders by the age of most of their space</strong> in Settings &rsaquo; Appearance, or double-click into the folder to see each item&rsquo;s own colour.</p>
+
+        <h3>Klarity will not move something to the Trash</h3>
+        <p>If the message says the item is part of macOS or your account, Klarity is protecting it on purpose. If it mentions an admin password, use Reveal in Finder and delete it there. On a drive formatted for Windows (NTFS), a Mac can read files but not change them, so nothing on it can be trashed by Klarity or by Finder.</p>
+
+        <h3>I trashed files but the free space did not change</h3>
+        <p>Files in the Trash still take up space. Empty the Trash in Finder and the space comes back.</p>
+
+        <h3>The disk figure in the menu bar looks out of date</h3>
+        <p>Quit Klarity from its menu bar panel and open it again. The map is not affected: it always measures at the moment you scan.</p>
+
+        <h3>I cannot find Klarity&rsquo;s window</h3>
+        <p>Click the Klarity icon in the menu bar and choose <strong>Open Klarity</strong>. Klarity runs from the menu bar, so it may not show in the Dock.</p>
+      </section>
+
+      <div class="guide-end">
+        <h2>Still stuck?</h2>
+        <p>Write to me from the <a href="/support">support page</a>. I answer my own support mail, usually within a day. If something in this guide does not match what you see in the app, I would like to know that too.</p>
+        <p>New versions are listed in the <a href="/changelog">changelog</a>. For step-by-step clean-ups, start with <a href="/blog/how-to-find-large-files-on-mac">how to find large files on a Mac</a> and <a href="/blog/find-old-files-on-mac">how to find old files that are taking up space</a>.</p>
+        <p>Do not have Klarity yet? <a href="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12">Klarity Disk is on the Mac App Store</a>.</p>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/guide">User Guide</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+/* Contents: mark the section being read */
+(function(){
+  var links=document.querySelectorAll('.guide-toc a');
+  if(!links.length||!('IntersectionObserver' in window))return;
+  var byId={},cur=null;
+  links.forEach(function(a){byId[a.getAttribute('href').slice(1)]=a});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      if(cur)cur.removeAttribute('aria-current');
+      cur=byId[e.target.id];
+      if(cur)cur.setAttribute('aria-current','true');
+    });
+  },{rootMargin:'-18% 0px -72% 0px'});
+  document.querySelectorAll('.guide-body section[id]').forEach(function(s){io.observe(s)});
+})();
+</script>
+</body>
+</html>
