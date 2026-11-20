@@ -6,7 +6,14 @@
     <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>Why Your Photos Library Takes So Much Space on a Mac</title>
+      <link>https://www.klaritydisk.com/blog/photos-library-taking-space-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/photos-library-taking-space-mac</guid>
+      <pubDate>Fri, 20 Nov 2026 03:30:00 +0000</pubDate>
+      <description>Why the Photos library grows so large on a Mac, what Optimize Mac Storage really does, how to find old forgotten libraries, and how to move one safely.</description>
+    </item>
     <item>
       <title>Xcode Taking Up Space on Your Mac? What Is Safe to Clear</title>
       <link>https://www.klaritydisk.com/blog/xcode-taking-up-space-mac</link>
