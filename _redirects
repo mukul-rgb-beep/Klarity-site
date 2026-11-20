@@ -1,3 +1,7 @@
+# Store links that can be counted. 302 (temporary) so browsers do not remember them and skip the count.
+/go/site https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=site&mt=8 302
+/go/blog https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=blog&mt=8 302
+
 # Strip .html extensions with 301 (permanent) redirects
 /index.html / 301
 /support.html /support 301
