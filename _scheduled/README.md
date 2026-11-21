@@ -7,6 +7,9 @@ Each folder here is one approved post waiting for its date: `YYYY-MM-DD-<slug>/`
 The "Publish scheduled posts" workflow runs daily at 09:00 IST and publishes anything due.
 Validate locally before pushing: `python3 .github/scripts/publish.py check`.
 Preview a publish: `python3 .github/scripts/publish.py publish --date YYYY-MM-DD --dry-run`.
+Store links in a post go through the counted forwarding links in `_redirects` (`/go/nav` in the nav,
+`/go/post` in the article, `/go/blog` in a post that has the product card), each with `rel="nofollow"`;
+`publish.py check` refuses a direct App Store link.
 Publishing also rewrites the homepage's "Latest from the blog" row (the three newest posts, between the
 LATEST-POSTS markers in `index.html`); do not edit those lines by hand or aim an inbound link at them.
 After an edit to the blog index, run `python3 .github/scripts/latest.py`.

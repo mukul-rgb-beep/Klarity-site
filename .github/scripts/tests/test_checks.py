@@ -60,6 +60,15 @@ class ChecksTest(unittest.TestCase):
     def test_geo_app_store_link(self):
         self.assertError("geo-neutral", self.errors(app_store="https://apps.apple.com/in/app/klarity-disk/id6758895498"))
 
+    def test_direct_app_store_link_is_not_counted(self):
+        for link in ("https://apps.apple.com/app/klarity-disk/id6758895498?mt=12", "https://apps.apple.com/app/id6758895498"):
+            self.assertError("not counted", self.errors(app_store=link))
+
+    def test_counted_and_review_links_pass(self):
+        for link in ("/go/post", "/go/blog", "https://apps.apple.com/app/id6758895498?action=write-review",
+                     "https://apps.apple.com/app/some-other-app/id123456789"):
+            self.assertEqual(self.errors(app_store=link), [], link)
+
     def test_too_few_links_and_no_treemap(self):
         data = default_package()
         data["inbound_links"] = data["inbound_links"][1:]

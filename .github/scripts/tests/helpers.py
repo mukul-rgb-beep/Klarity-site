@@ -60,7 +60,7 @@ def _e(s):
 def make_post(slug=SLUG, date=DATE, headline=HEADLINE, desc=DESC, descs=None, canonical=None,
               og_url=None, schema_url=None, published_time=None, schema_date=None, faq=FAQ,
               schema_faq=None, body="", breadcrumb=True, analyzer_links=1,
-              app_store="https://apps.apple.com/app/klarity-disk/id6758895498?mt=12"):
+              app_store="/go/post"):
     url = f"{SITE}/blog/{slug}"
     d = {"meta": desc, "og": desc, "twitter": desc, "schema": desc} | (descs or {})
     blog = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": headline,

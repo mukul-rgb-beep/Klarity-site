@@ -1,6 +1,13 @@
 # Store links that can be counted. 302 (temporary) so browsers do not remember them and skip the count.
 /go/site https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=site&mt=8 302
 /go/blog https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=blog&mt=8 302
+# The rest of the site's store links, counted by where they sit: the Download button in the nav, the
+# homepage buttons, links inside posts, and the DaisyDisk comparison page. All four report to Apple as
+# one campaign (web), because Apple shows a campaign only once it has enough installs.
+/go/nav https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
+/go/home https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
+/go/post https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
+/go/alt https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
 
 # Strip .html extensions with 301 (permanent) redirects
 /index.html / 301

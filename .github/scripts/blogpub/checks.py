@@ -11,6 +11,7 @@ from blogpub.xpost import check_x_post
 
 ANALYZER = "mac disk space analyzer"
 GEO = re.compile(r"^https?://apps\.apple\.com/[a-z]{2}/")
+STORE = re.compile(r"^https?://apps\.apple\.com/.*\bid6758895498\b")
 
 
 def check_package(tree, pkg) -> list[str]:
@@ -81,6 +82,9 @@ def check_package(tree, pkg) -> list[str]:
     for h, _ in meta.links:
         if GEO.match(h):
             errs.append(f"App Store link is not geo-neutral: {h}")
+        if STORE.match(h) and "action=write-review" not in h:
+            errs.append(f"App Store link is not counted: {h} (use /go/nav in the nav and /go/post or /go/blog "
+                        f"in the article, with rel=\"nofollow\"; see _redirects)")
 
     links = pkg.inbound_links
     if len(links) < 4:
