@@ -5,6 +5,7 @@ import json
 import re
 
 from blogpub.feed import FEED, build_feed
+from blogpub.home import HOME, latest_row, with_latest_row
 from blogpub.share import add_share_bar
 from blogpub import MARKER, SITE, url_for
 
@@ -61,13 +62,23 @@ def apply_package(tree, pkg, meta, day: str) -> list[str]:
     sep = "" if index[at] == "]" else ", "
     tree.write("blog/index.html", index[:at] + entry + sep + index[at:])
 
-    # 3. Sitemap: new line after /blog/, lastmod bumps
+    # 3. Homepage: the "Latest from the blog" row, rebuilt from the updated blog index
+    home = tree.read(HOME) if tree.exists(HOME) else ""
+    new_home = with_latest_row(home, latest_row(tree))
+    if new_home is None:
+        raise ApplyError(f"{HOME} must contain the LATEST-POSTS start and end markers exactly once")
+    home_changed = new_home != home
+    tree.write(HOME, new_home)
+
+    # 4. Sitemap: new line after /blog/, lastmod bumps
     sm = _bump_lastmod(tree.read("sitemap.xml"), SITE + "/blog/", day)
+    if home_changed:
+        sm = _bump_lastmod(sm, SITE + "/", day)
     blog_loc = f"<loc>{SITE}/blog/</loc>"
     line_end = sm.index("\n", sm.index(blog_loc)) + 1
     sm = (sm[:line_end] + f"  <url><loc>{url}</loc><lastmod>{day}</lastmod>"
           f"<changefreq>yearly</changefreq><priority>0.6</priority></url>\n" + sm[line_end:])
-    inbound_urls: list[str] = []
+    inbound_urls: list[str] = [SITE + "/"] if home_changed else []
     for link in pkg.inbound_links:
         u = url_for(link.file)
         if u not in inbound_urls:
@@ -75,7 +86,7 @@ def apply_package(tree, pkg, meta, day: str) -> list[str]:
             inbound_urls.append(u)
     tree.write("sitemap.xml", sm)
 
-    # 4. _redirects: .html -> clean URL, after the last /blog/ line
+    # 5. _redirects: .html -> clean URL, after the last /blog/ line
     lines = tree.read("_redirects").splitlines(keepends=True)
     if lines and not lines[-1].endswith("\n"):
         lines[-1] += "\n"
@@ -84,16 +95,16 @@ def apply_package(tree, pkg, meta, day: str) -> list[str]:
     lines.insert(at_line, f"/blog/{slug}.html /blog/{slug} 301\n")
     tree.write("_redirects", "".join(lines))
 
-    # 5. Inbound links
+    # 6. Inbound links
     for link in pkg.inbound_links:
         if not tree.exists(link.file):
             raise ApplyError(f"inbound link target {link.file} does not exist")
         tree.write(link.file, _replace_once(tree.read(link.file), link.find, link.replace, link.file))
 
-    # 6. RSS feed, rebuilt from the updated blog index
+    # 7. RSS feed, rebuilt from the updated blog index
     tree.write(FEED, build_feed(tree))
 
-    # 7. The package itself goes (git history keeps it)
+    # 8. The package itself goes (git history keeps it)
     for f in tree.files_under(pkg.path):
         tree.delete(f)
     return inbound_urls

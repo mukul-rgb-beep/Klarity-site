@@ -5,6 +5,7 @@ import re
 
 from blogpub import MARKER, SITE, TREEMAP
 from blogpub.apply import ApplyError, apply_package
+from blogpub.home import HOME, with_latest_row
 from blogpub.post import parse_post
 from blogpub.xpost import check_x_post
 
@@ -108,6 +109,8 @@ def check_package(tree, pkg) -> list[str]:
         errs.append(f"assets/{art} is missing: add the post to .github/scripts/card_art.py and run it")
     if MARKER not in tree.read("blog/index.html"):
         errs.append("blog/index.html has no SCHEDULED-CARDS marker")
+    if not tree.exists(HOME) or with_latest_row(tree.read(HOME), "") is None:
+        errs.append(f"{HOME} has no LATEST-POSTS markers (start and end, each exactly once)")
     for f in tree.files_under(f"{pkg.path}/assets"):
         name = f.rsplit("/", 1)[1]
         if tree.exists(f"blog/{name}"):

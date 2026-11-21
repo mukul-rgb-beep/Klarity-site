@@ -7,6 +7,9 @@ Each folder here is one approved post waiting for its date: `YYYY-MM-DD-<slug>/`
 The "Publish scheduled posts" workflow runs daily at 09:00 IST and publishes anything due.
 Validate locally before pushing: `python3 .github/scripts/publish.py check`.
 Preview a publish: `python3 .github/scripts/publish.py publish --date YYYY-MM-DD --dry-run`.
+Publishing also rewrites the homepage's "Latest from the blog" row (the three newest posts, between the
+LATEST-POSTS markers in `index.html`); do not edit those lines by hand or aim an inbound link at them.
+After an edit to the blog index, run `python3 .github/scripts/latest.py`.
 Design: Klarity repo, docs/superpowers/specs/2026-09-29-scheduled-blog-publishing-design.md.
 
 Optional in package.json: `"x_post": "text"`, the post for X, approved with the article. The link is

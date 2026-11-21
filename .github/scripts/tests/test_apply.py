@@ -52,8 +52,8 @@ class ApplyTest(unittest.TestCase):
         self.assertEqual(red[red.index("/blog/treemap-icicle-vs-sunburst.html /blog/treemap-icicle-vs-sunburst 301") + 1],
                          "/blog/test-post.html /blog/test-post 301")
         self.assertEqual(tree.files_under(f"_scheduled/{DIRNAME}"), [])
-        self.assertEqual(sorted(urls), sorted(f"https://www.klaritydisk.com/blog/{n}"
-                                              for n in ("a", "b", "c", "treemap-icicle-vs-sunburst")))
+        self.assertEqual(sorted(urls), sorted(["https://www.klaritydisk.com/"] + [
+            f"https://www.klaritydisk.com/blog/{n}" for n in ("a", "b", "c", "treemap-icicle-vs-sunburst")]))
 
     def test_late_publish_uses_run_date_for_lastmod(self):
         tree, _ = self.run_apply(day="2026-10-09")

@@ -43,6 +43,15 @@ BLOG_INDEX = """<html><head>
 </body></html>
 """
 
+HOME = """<html><body>
+    <div class="blog-row">
+      <!-- LATEST-POSTS: publish.py rewrites the cards between these two markers -->
+      <a class="blog-card reveal" href="/blog/a"><span class="bc-tag">Guide</span><span class="bc-title">A</span></a>
+      <!-- /LATEST-POSTS -->
+    </div>
+</body></html>
+"""
+
 
 def _e(s):
     return html.escape(s, quote=True)
@@ -116,6 +125,7 @@ def make_site(root, with_package=True):
     (root / "sitemap.xml").write_text(SITEMAP)
     (root / "_redirects").write_text(REDIRECTS)
     (root / "blog" / "index.html").write_text(BLOG_INDEX)
+    (root / "index.html").write_text(HOME)
     (root / "press.html").write_text("<html><body><p>Sentence in press.</p></body></html>\n")
     for name in LINKED:
         (root / "blog" / f"{name}.html").write_text(f"<html><body><p>Sentence in {name}.</p></body></html>\n")

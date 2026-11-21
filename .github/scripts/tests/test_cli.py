@@ -53,7 +53,7 @@ class CliTest(unittest.TestCase):
         self.assertTrue((self.root / "_scheduled" / "README.md").exists())
         p = rep["published"][0]
         self.assertEqual(p["title_tag"], "<title>Find Old Files You Forgot About on Your Mac | Klarity Blog</title>")
-        self.assertEqual(len(p["inbound_urls"]), 4)
+        self.assertEqual(len(p["inbound_urls"]), 5)     # the homepage row and the four linking posts
         self.assertIsNone(p["requires"])
 
     def gated(self, requires):
