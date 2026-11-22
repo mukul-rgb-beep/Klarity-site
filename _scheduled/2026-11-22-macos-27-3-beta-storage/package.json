@@ -1,0 +1,28 @@
+{
+  "slug": "macos-27-3-beta-storage",
+  "publish_date": "2026-11-22",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "an honest review of Klarity</a> showed me.",
+      "replace": "an honest review of Klarity</a> showed me. Some of it lives in permissions: <a href=\"/blog/macos-27-3-beta-storage\">the macOS 27.3 beta nudges you to give an app that asks for Full Disk Access only the folders it needs</a>, which is how Klarity has always asked."
+    },
+    {
+      "file": "blog/how-much-space-for-macos-27.html",
+      "find": ">in beta</a>. I will add its figures here when Apple releases it.</p>",
+      "replace": ">in beta</a>; <a href=\"/blog/macos-27-3-beta-storage\">what the beta changes for storage</a> is in its own post. I will add its figures here when Apple releases it.</p>"
+    },
+    {
+      "file": "blog/intel-apps-rosetta-macos-27.html",
+      "find": "and clear out the ones you forgot you had.",
+      "replace": "and clear out the ones you forgot you had. The macOS 27.3 beta also <a href=\"/blog/macos-27-3-beta-storage\">adds notices for audio plug-ins, print dialog extensions and printer drivers that need Rosetta</a>."
+    },
+    {
+      "file": "blog/klarity-1-3-one-time-disk-access.html",
+      "find": "An actual choice, made in a window I have no control over.",
+      "replace": "An actual choice, made in a window I have no control over. Apple&rsquo;s notes for the macOS 27.3 beta <a href=\"/blog/macos-27-3-beta-storage\">encourage the same for Full Disk Access</a>: folders, not the whole disk."
+    }
+  ],
+  "x_post": "Apple's notes for the macOS 27.3 beta say nothing about disk space. The change that touches your files is to Full Disk Access. What it means, as the beta stands."
+}

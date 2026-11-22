@@ -459,6 +459,23 @@ ART["your-disk-is-almost-full-mac"] = svg(
     + bar(46, 134, 228, 9, [(70, AGE[4]), (52, AGE[3]), (40, AGE[2]), (34, AGE[1]), (22, AGE[0])]),
     "The Your disk is almost full notification above a storage bar with 4.1 GB free")
 
+# 22 Nov — macOS 27.3 beta: access to two folders, not the whole disk
+_b3_rows = [("Documents", True), ("Downloads", True), ("Entire disk", False)]
+_b3 = []
+for _b3_i, (_b3_n, _b3_on) in enumerate(_b3_rows):
+    _b3_y = 82 + _b3_i * 25
+    _b3.append(f'<line x1="44" y1="{_b3_y - 17}" x2="276" y2="{_b3_y - 17}" stroke="#000" stroke-opacity=".08"/>'
+               + folder(44, _b3_y - 13, .3, "#6AA6E8" if _b3_on else GREY) + text(70, _b3_y, _b3_n, 13, 500, INK if _b3_on else INK2)
+               + (f'<rect x="256" y="{_b3_y - 13}" width="17" height="17" rx="5" fill="{ACCENT}"/>'
+                  f'<path d="M260 {_b3_y - 4} l3.3 3.3 l6.5 -7" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>'
+                  if _b3_on else f'<rect x="256.5" y="{_b3_y - 12.5}" width="16" height="16" rx="4.5" fill="#fff" stroke="{GREY}"/>'))
+ART["macos-27-3-beta-storage"] = svg(
+    win(24, 18, 272, 144)
+    + text(44, 44, "Allow access to", 14, 600) + text(276, 44, "27.3", 12, 600, ACCENT, "end")
+    + "".join(_b3)
+    + text(44, 150, "Only the folders it needs", 11, 500, INK2),
+    "An access sheet with Documents and Downloads ticked and Entire disk left unticked")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"
