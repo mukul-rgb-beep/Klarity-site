@@ -161,6 +161,20 @@
     .age-key li::before{grid-row:1/3;width:48px;height:48px;margin:0;border-radius:10px!important}
     .age-key li b{align-self:end}
   }
+  /* t17-video css: video guides, linked out to YouTube (no embed: the site loads no third-party code) */
+  .vid{margin:28px 0 36px;max-width:440px}
+  .vid a{display:grid;grid-template-columns:168px 1fr;gap:16px;align-items:center;text-decoration:none;color:inherit;border-radius:14px;padding:8px;margin:-8px}
+  .vid a:hover{background:rgba(0,0,0,.04)}
+  .vid a:focus-visible{outline:2px solid var(--accent,#0A84FF);outline-offset:2px}
+  .vid .vid-thumb{position:relative;display:block;border-radius:10px;overflow:hidden;box-shadow:0 0 0 .5px rgba(0,0,0,.16),0 8px 20px -10px rgba(28,32,48,.3)}
+  .vid img{display:block;width:100%;height:auto}
+  .vid .vid-play{position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(29,29,31,.8)}
+  .vid .vid-play::after{content:"";position:absolute;left:12px;top:9px;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+  .vid .vid-text{display:flex;flex-direction:column;gap:4px;font-size:15px;line-height:1.4}
+  .vid .vid-text b{font-weight:600;color:var(--ink,#1d1d1f)}
+  .vid .vid-text span{color:var(--ink2,#6e6e73)}
+  @media (max-width:520px){.vid a{grid-template-columns:120px 1fr}}
+  /* t17-video css end */
   </style>
 </head>
 <body>
@@ -287,6 +301,15 @@
         <h2>Reading the map</h2>
         <p class="lead">The map draws the folder you scanned as blocks. A block&rsquo;s area is its share of the space, so the biggest blocks are where your space went.</p>
 
+        <!-- t17-video what-is-taking-up-space -->
+        <p class="vid"><a href="https://www.youtube.com/watch?v=980mtWJ2Fko">
+          <span class="vid-thumb"><img src="/img/videos/what-is-taking-up-space.webp" width="640" height="360" loading="lazy" decoding="async" alt="Video thumbnail: What&rsquo;s taking up space on your Mac, over Klarity&rsquo;s map of a home folder with Movies outlined"><span class="vid-play" aria-hidden="true"></span></span>
+          <span class="vid-text"><b>Watch: What&rsquo;s taking up space on my Mac?</b><span>0:42 video on YouTube</span></span>
+        </a></p>
+        <!-- t17-video end -->
+
+
+
         <figure class="shot detail strip">
           <div class="scroll" tabindex="0" role="group" aria-label="Toolbar screenshot, scrolls sideways on small screens">
             <img src="/img/guide/toolbar.webp" width="1520" height="106" loading="lazy" decoding="async"
@@ -359,6 +382,15 @@
       <section id="colours">
         <h2>What the colours mean</h2>
         <p class="lead">Klarity starts in <strong>Age</strong> colours. A block&rsquo;s colour tells you how long it is since that file or folder last changed.</p>
+
+        <!-- t17-video find-old-files -->
+        <p class="vid"><a href="https://www.youtube.com/watch?v=UDviz7L5uHk">
+          <span class="vid-thumb"><img src="/img/videos/find-old-files.webp" width="640" height="360" loading="lazy" decoding="async" alt="Video thumbnail: Find old files you forgot about, over Klarity&rsquo;s Large Files list sorted Oldest first"><span class="vid-play" aria-hidden="true"></span></span>
+          <span class="vid-text"><b>Watch: Find old files on Mac and clean up disk space</b><span>0:38 video on YouTube</span></span>
+        </a></p>
+        <!-- t17-video end -->
+
+
 
         <ol class="age-key" aria-label="Age colours">
           <li style="--c:var(--age1)"><b>This month</b> Changed in the last 30 days</li>
@@ -440,6 +472,15 @@
         <h2>Finding big files</h2>
         <p class="lead">The map shows which folders are big. <strong>Large files</strong> in the toolbar shows which individual files are, as a plain list.</p>
 
+        <!-- t17-video find-large-files -->
+        <p class="vid"><a href="https://www.youtube.com/watch?v=8mofRkyQsfs">
+          <span class="vid-thumb"><img src="/img/videos/find-large-files.webp" width="640" height="360" loading="lazy" decoding="async" alt="Video thumbnail: Find large files on your Mac, over Klarity&rsquo;s Large Files list with an 8.05 GB file at the top"><span class="vid-play" aria-hidden="true"></span></span>
+          <span class="vid-text"><b>Watch: How to find large files on Mac and free up disk space</b><span>0:51 video on YouTube</span></span>
+        </a></p>
+        <!-- t17-video end -->
+
+
+
         <figure class="shot shot-wide">
           <a href="/img/1.3.1/large-files.webp">
           <img src="/img/1.3.1/large-files.webp" width="2648" height="1952" loading="lazy" decoding="async"
@@ -463,6 +504,15 @@
       <section id="trash">
         <h2>Clearing space safely</h2>
         <p class="lead">Klarity only ever moves things to the Trash. It never deletes anything outright and it never empties the Trash, so you can change your mind until you empty it yourself.</p>
+
+        <!-- t17-video clear-space-safely -->
+        <p class="vid"><a href="https://www.youtube.com/watch?v=-IofBgRaODM">
+          <span class="vid-thumb"><img src="/img/videos/clear-space-safely.webp" width="640" height="360" loading="lazy" decoding="async" alt="Video thumbnail: Clear space safely on your Mac, over Klarity&rsquo;s Move Large Folder to Trash? sheet with its slide to unlock control"><span class="vid-play" aria-hidden="true"></span></span>
+          <span class="vid-text"><b>Watch: How to clean up disk space on Mac safely</b><span>0:42 video on YouTube</span></span>
+        </a></p>
+        <!-- t17-video end -->
+
+
 
         <p>To remove something, right-click it and choose <strong>Move to Trash</strong>, or select it and use <strong>Move to Trash&hellip;</strong> in the inspector. Klarity asks you to confirm every time.</p>
 
