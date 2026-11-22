@@ -99,11 +99,11 @@
       <description>Macworld rated Klarity Disk 4 out of 5 and found a real bug. What the review got right, what Klarity 1.3 changed because of it, and what came next.</description>
     </item>
     <item>
-      <title>How Much Space Does macOS 27 Golden Gate Need to Install?</title>
+      <title>How Much Space Do macOS 27 Golden Gate and 27.2 Need?</title>
       <link>https://www.klaritydisk.com/blog/how-much-space-for-macos-27</link>
       <guid isPermaLink="true">https://www.klaritydisk.com/blog/how-much-space-for-macos-27</guid>
       <pubDate>Tue, 29 Sep 2026 03:30:00 +0000</pubDate>
-      <description>macOS 27 Golden Gate won't install without room to spare. How much free space it really needs, why sites quote different numbers, and how to find it fast.</description>
+      <description>How much free space macOS 27 Golden Gate and the 27.2 update need, what the 27.2 download weighs, why sites quote different numbers, and how to find the room fast.</description>
     </item>
     <item>
       <title>Mac Storage Full After a macOS Update? Where the Space Went</title>
@@ -134,11 +134,11 @@
       <description>Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.</description>
     </item>
     <item>
-      <title>What Is “System Data” on a Mac, and What’s Safe to Clear?</title>
+      <title>What Is “System Data” on a Mac, and How to Clear It Safely</title>
       <link>https://www.klaritydisk.com/blog/what-is-system-data-on-mac</link>
       <guid isPermaLink="true">https://www.klaritydisk.com/blog/what-is-system-data-on-mac</guid>
       <pubDate>Sun, 06 Sep 2026 03:30:00 +0000</pubDate>
-      <description>System Data is macOS's catch-all storage category: caches, logs, Xcode data, snapshots and more. Here's what's actually inside it, how to look, and what you can safely delete.</description>
+      <description>System Data is macOS's catch-all storage category. What is inside it, why it grew on macOS 27, how to look, and how to clear the parts that are safe to delete.</description>
     </item>
     <item>
       <title>Treemap vs Sunburst: Which Disk Map Finds Big Files Faster?</title>

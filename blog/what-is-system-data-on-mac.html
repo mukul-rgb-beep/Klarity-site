@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Is "System Data" on a Mac, and What's Safe to Clear? | Klarity Blog</title>
-<meta name="description" content="System Data is macOS's catch-all storage category: caches, logs, Xcode data, snapshots and more. Here's what's actually inside it, how to look, and what you can safely delete.">
-<meta name="keywords" content="system data mac, macos system data large, what is system data, clear system data mac, mac storage full, ~/Library/Caches, xcode derived data, local snapshots, klarity disk">
+<title>What Is "System Data" on a Mac, and How to Clear It Safely | Klarity Blog</title>
+<meta name="description" content="System Data is macOS's catch-all storage category. What is inside it, why it grew on macOS 27, how to look, and how to clear the parts that are safe to delete.">
+<meta name="keywords" content="what is system data on mac, how to clear system data on mac, system data macos 27, system data mac, macos system data large, what is system data, clear system data mac, mac storage full, ~/Library/Caches, xcode derived data, local snapshots, klarity disk">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.klaritydisk.com/blog/what-is-system-data-on-mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What Is &quot;System Data&quot; on a Mac, and What's Safe to Clear?">
-<meta property="og:description" content="macOS puts everything it can't categorise into System Data. Here's what's really in there and what you can safely delete.">
+<meta property="og:title" content="What Is &quot;System Data&quot; on a Mac, and How to Clear It Safely">
+<meta property="og:description" content="System Data is macOS's catch-all storage category. What is inside it, why it grew on macOS 27, how to look, and how to clear the parts that are safe to delete.">
 <meta property="og:url" content="https://www.klaritydisk.com/blog/what-is-system-data-on-mac">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
 <meta property="article:published_time" content="2026-09-06">
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What Is &quot;System Data&quot; on a Mac, and What's Safe to Clear?">
+<meta name="twitter:title" content="What Is &quot;System Data&quot; on a Mac, and How to Clear It Safely">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "What Is \u201cSystem Data\u201d on a Mac, and What\u2019s Safe to Clear?",
-  "description": "macOS puts everything it can't categorise into System Data. Here's what's really in there and what you can safely delete.",
+  "headline": "What Is \u201cSystem Data\u201d on a Mac, and How to Clear It Safely",
+  "description": "System Data is macOS's catch-all storage category. What is inside it, why it grew on macOS 27, how to look, and how to clear the parts that are safe to delete.",
   "author": {"@type": "Person", "name": "Mukul Mehra"},
   "datePublished": "2026-09-06",
-  "dateModified": "2026-10-27",
+  "dateModified": "2026-11-22",
   "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp",
   "publisher": {"@type": "Organization", "name": "Klarity"},
   "mainEntityOfPage": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"
@@ -37,8 +37,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "What Is “System Data” on a Mac, and What’s Safe to Clear?", "item": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I delete System Data on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Parts of it. The safe targets are app caches in ~/Library/Caches, Xcode DerivedData and old simulator runtimes, local Time Machine snapshots, and the Trash. Preferences, Keychains, Application Support for apps you use, and app Containers are real data, not cache, and should stay."}}, {"@type": "Question", "name": "Why is my System Data 100 GB or more?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always one of three things: Xcode simulator runtimes and DerivedData if you write software, local Time Machine snapshots waiting to be thinned, or a single app's cache that has grown unchecked. Scan ~/Library sorted by size and the answer is usually the top two folders."}}, {"@type": "Question", "name": "Why does System Data not match what a folder scan shows?", "acceptedAnswer": {"@type": "Answer", "text": "Storage settings counts purgeable space and APFS snapshots, which are not files a scanner can walk to. A folder scan adds up what is really on disk. Treat Storage settings as the headline and the scan as the explanation; local snapshots are usually the gap."}}, {"@type": "Question", "name": "Will System Data come back after I clear it?", "acceptedAnswer": {"@type": "Answer", "text": "Some of it, yes. Caches are rebuilt as you use apps, and snapshots are created every hour while Time Machine is on. That is normal. What should not come back is the stale material: old simulator runtimes, caches for apps you removed, and backups of devices you no longer own."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "What Is “System Data” on a Mac, and How to Clear It Safely", "item": "https://www.klaritydisk.com/blog/what-is-system-data-on-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I delete System Data on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Parts of it. The safe targets are app caches in ~/Library/Caches, Xcode DerivedData and old simulator runtimes, local Time Machine snapshots, and the Trash. Preferences, Keychains, Application Support for apps you use, and app Containers are real data, not cache, and should stay."}}, {"@type": "Question", "name": "Why did System Data grow after I updated to macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly snapshots and indexing. If you use Time Machine, a fresh snapshot of about 30 GB may appear after 27.2; it should go by itself within about 24 hours. Spotlight also rebuilds its index after the upgrade, which takes extra space while it runs. Wait a day or two before deleting anything: if System Data shrinks on its own, it was never your files."}}, {"@type": "Question", "name": "Why is my System Data 100 GB or more?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always one of three things: Xcode simulator runtimes and DerivedData if you write software, local Time Machine snapshots waiting to be thinned, or a single app's cache that has grown unchecked. Scan ~/Library sorted by size and the answer is usually the top two folders."}}, {"@type": "Question", "name": "Why does System Data not match what a folder scan shows?", "acceptedAnswer": {"@type": "Answer", "text": "Storage settings counts purgeable space and APFS snapshots, which are not files a scanner can walk to. A folder scan adds up what is really on disk. Treat Storage settings as the headline and the scan as the explanation; local snapshots are usually the gap."}}, {"@type": "Question", "name": "Will System Data come back after I clear it?", "acceptedAnswer": {"@type": "Answer", "text": "Some of it, yes. Caches are rebuilt as you use apps, and snapshots are created every hour while Time Machine is on. That is normal. What should not come back is the stale material: old simulator runtimes, caches for apps you removed, and backups of devices you no longer own."}}]}</script>
 <link rel="stylesheet" href="/css/site.css?v=202611211">
 </head>
 <body>
@@ -80,15 +80,26 @@
     <div class="article-meta">
       <span class="article-tag">macOS</span>
       <span class="article-date">September 6, 2026</span>
-      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
+      <span class="article-date">Mukul Mehra &middot; 8 min read</span>
     </div>
-    <h1>What Is &ldquo;System Data&rdquo; on a Mac, and What&rsquo;s Safe to Clear?</h1>
+    <h1>What Is &ldquo;System Data&rdquo; on a Mac, and How to Clear It Safely</h1>
     <p class="article-subtitle">It is the biggest, vaguest bar in your storage settings, and macOS tells you almost nothing about it. Here is what is actually inside, how to look at it yourself, and which parts you can delete without regret.</p>
   </div>
 
   <div class="article-divider"><hr></div>
 
   <div class="article-body">
+    <div class="callout">
+      <div class="callout-title">The short answer</div>
+      <p>System Data is everything macOS cannot put in a named category: caches, logs, app data, snapshots and indexes. To clear it safely:</p>
+      <ol>
+        <li><strong>Wait a day</strong> if it jumped after an update or a big clear-out. Snapshots and update files go by themselves.</li>
+        <li><strong>Look before you delete.</strong> The hidden Library folder in your home folder holds most of it, and two or three folders inside usually explain the size.</li>
+        <li><strong>Clear what rebuilds itself:</strong> the contents of Caches, Xcode&rsquo;s build files, and old device backups (through the Finder).</li>
+        <li><strong>Remove old snapshots in Disk Utility</strong> if you need the room now.</li>
+        <li><strong>Leave the rest:</strong> Preferences, Keychains, and the data of apps you still use.</li>
+      </ol>
+    </div>
 
     <h2>The number nobody can explain</h2>
 
@@ -104,7 +115,7 @@
       <li><strong>App caches</strong> &mdash; mostly <code>~/Library/Caches</code>, where apps keep downloaded data they can regenerate.</li>
       <li><strong>Logs and app support data</strong> &mdash; diagnostic logs and the working files apps keep in Application Support.</li>
       <li><strong>Xcode</strong> &mdash; <code>~/Library/Developer</code>: DerivedData build output, simulators and device support files. If you write software, this is usually the biggest single item. The simulator runtimes themselves sit in a protected system location and are managed from Xcode.</li>
-      <li><strong>Time Machine local snapshots</strong> &mdash; APFS snapshots kept on your internal disk between backups. If those backups go to a Time Capsule, note that <a href="/blog/time-capsule-macos-27">macOS 27 no longer supports it</a>. List them with <code>tmutil listlocalsnapshots /</code>.</li>
+      <li><strong>Time Machine local snapshots</strong> &mdash; APFS snapshots kept on your internal disk between backups. If those backups go to a Time Capsule, note that <a href="/blog/time-capsule-macos-27">macOS 27 no longer supports it</a>. Disk Utility lists them: choose View &rarr; Show APFS Snapshots.</li>
       <li><strong>Swap and the sleep image</strong> &mdash; virtual memory files in <code>/private/var/vm</code>, sized by how much RAM pressure your Mac is under.</li>
       <li><strong>Spotlight indexes</strong>, mail attachments, browser profiles and disk images.</li>
       <li><strong>Container data for sandboxed apps</strong> &mdash; <code>~/Library/Containers</code> and <code>~/Library/Group Containers</code>, where App Store apps keep their real data.</li>
@@ -112,6 +123,14 @@
 
     <p>Notice how much of that lives in one place: <code>~/Library</code>, the Library folder inside your home folder. That is where you should look first.</p>
 
+    <h2 id="macos-27">Why System Data grew on macOS 27</h2>
+    <p>If System Data jumped after you moved to macOS 27 Golden Gate or its 27.2 update, most of the new space is not your files. <a href="https://support.apple.com/102624" rel="noopener" target="_blank">Apple describes</a> System Data as &ldquo;a general category that measures the storage space used by all Apple and third-party files that don&rsquo;t belong to any more specific category.&rdquo; Two things land in it after an upgrade:</p>
+    <ul>
+      <li><strong>Update snapshots.</strong> Apple says <a href="https://support.apple.com/en-us/102154" rel="noopener" target="_blank">a snapshot is saved before installing any macOS update</a>, and Time Machine deletes snapshots &ldquo;as they age or as space is needed for other things&rdquo;. After 27.2, Howard Oakley noted that Time Machine users &ldquo;may notice a fresh 30&nbsp;GB snapshot on the Data volume&rdquo;, which <a href="https://eclecticlight.co/2026/10/26/apple-has-just-released-updates-to-golden-gate-27-2-26-7-2-and-15-8-2/" rel="noopener" target="_blank">&ldquo;should be deleted automatically in 24 hours&rdquo;</a>. Saving snapshots is not new in macOS 27; a snapshot that large is.</li>
+      <li><strong>A new Spotlight index.</strong> Apple&rsquo;s notes for macOS Tahoe 26.6 say it &ldquo;<a href="https://support.apple.com/en-us/122868" rel="noopener" target="_blank">optimizes the Spotlight index in preparation for macOS 27</a>&rdquo;. Apple does not say how much room the index takes. One owner on the MacRumors forums watched it rebuild after the upgrade and <a href="https://forums.macrumors.com/threads/give-me-my-mac-back.2490661/" rel="noopener" target="_blank">measured about 40&nbsp;GB in use on top of an 8&nbsp;GB index while it ran</a>, and 8.7&nbsp;GB for the index once it had finished. That is one Mac, not Apple&rsquo;s figure, but it shows the size of the swing.</li>
+    </ul>
+    <p>Owners in <a href="https://forums.macrumors.com/threads/system-data-is-over-now-205gb.2489464/" rel="noopener" target="_blank">one long MacRumors thread</a> saw System Data swing by tens of gigabytes in the first days after the upgrade, then settle. On one Mac mini it went from about 39&nbsp;GB just after the upgrade to 58&nbsp;GB a day later, then down to 32&nbsp;GB less than a day after that. So give it a day or two before you delete anything. If it shrinks by itself, it was never your files.</p>
+    <p>A scan cannot show you snapshots: they are not files you can walk to. Most of the Spotlight index sits in protected system folders, although part of it may show up inside the Library folder, under Metadata. Leave it alone either way; macOS manages it. What a scan does show is everything else, and that is the part you can clear yourself.</p>
     <h2>How to actually see inside it</h2>
 
     <p>macOS marks <code>~/Library</code> as hidden, which is why Finder never shows it to you. Klarity scans hidden folders (since version 1.3.1), so a plain Home scan includes <code>~/Library</code>, and it has its own shortcut in the sidebar.</p>
@@ -147,11 +166,11 @@
       <li><strong>Unused simulator runtimes.</strong> Remove these properly through <strong>Xcode &rarr; Settings &rarr; Components</strong> rather than deleting files by hand, so Xcode&rsquo;s bookkeeping stays consistent.</li>
       <li><strong>Old <code>~/Library/Developer/Xcode/iOS DeviceSupport</code> folders.</strong> One per iOS version you have ever debugged against; the ancient ones are dead weight. <a href="/blog/xcode-taking-up-space-mac">What each Xcode folder holds, and which ones rebuild themselves</a> goes through them one by one.</li>
       <li><strong>Old iOS device backups</strong> you no longer need &mdash; manage those in Finder&rsquo;s device backup manager, not by deleting folders. <a href="/blog/old-iphone-backups-mac">How to find and clear old iPhone backups</a> shows which ones are safe to remove.</li>
-      <li><strong>Local Time Machine snapshots</strong>, with <code>tmutil deletelocalsnapshots</code>. macOS thins these automatically when space gets tight, so this is mostly for when you need space right now.</li>
+      <li><strong>Local Time Machine snapshots</strong>, if you need the room right now. In Disk Utility, choose View &rarr; Show APFS Snapshots, select your Mac&rsquo;s data volume, select the old snapshots and click Delete Snapshot. Leave the newest one, and check first that your last backup finished. Time Machine also deletes them by itself as they age or as space is needed.</li>
       <li><strong>The Trash.</strong> Obvious, but easy to forget &mdash; items sitting in it still occupy the disk, and <a href="/blog/external-drive-full-mac">files trashed from an external drive</a> stay on that drive until you empty it.</li>
     </ul>
 
-    <p>Worth saying plainly how Klarity behaves here, because deletion tools deserve scrutiny: Klarity only ever moves items to the Trash, and only after you confirm &mdash; anything over 1&nbsp;GB needs a deliberate slide to confirm. It never empties the Trash for you, and it never touches system folders on its own initiative. If you change your mind, the file is still there.</p>
+    <p>Worth saying plainly how Klarity behaves here, because deletion tools deserve scrutiny: Klarity only ever moves items to the Trash, and only after you confirm &mdash; a folder of 1&nbsp;GB or more needs a deliberate slide to confirm. It never empties the Trash for you, and it never touches system folders on its own initiative. If you change your mind, the file is still there.</p>
 
     <h2>What to leave alone</h2>
 
@@ -183,6 +202,8 @@
     <h2>Questions people ask</h2>
     <h3 class="faq-q">Can I delete System Data on a Mac?</h3>
     <p>Parts of it. The safe targets are app caches in <code>~/Library/Caches</code>, Xcode DerivedData and old simulator runtimes, local Time Machine snapshots, and the Trash. Preferences, Keychains, Application Support for apps you use, and app Containers are real data, not cache, and should stay.</p>
+    <h3 class="faq-q">Why did System Data grow after I updated to macOS 27?</h3>
+    <p>Mostly snapshots and indexing. If you use Time Machine, a fresh snapshot of about 30 GB may appear after 27.2; it should go by itself within about 24 hours. Spotlight also rebuilds its index after the upgrade, which takes extra space while it runs. Wait a day or two before deleting anything: if System Data shrinks on its own, it was never your files.</p>
     <h3 class="faq-q">Why is my System Data 100 GB or more?</h3>
     <p>Almost always one of three things: Xcode simulator runtimes and DerivedData if you write software, local Time Machine snapshots waiting to be thinned, or a single app&#x27;s cache that has grown unchecked. Scan ~/Library sorted by size and the answer is usually the top two folders.</p>
     <h3 class="faq-q">Why does System Data not match what a folder scan shows?</h3>
@@ -192,18 +213,19 @@
 
     <p>For the wider job of freeing up space, see <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage safely</a> and <a href="/blog/how-to-find-large-files-on-mac">how to find large files on a Mac</a>.</p>
 
+    <p><em>Updated on 22 November 2026: what changed on macOS 27, and how to remove snapshots in Disk Utility.</em></p>
     <p>&mdash; Mukul</p>
 
   </div>
 
-<div class="share-bar" data-url="https://www.klaritydisk.com/blog/what-is-system-data-on-mac" data-title="What Is &quot;System Data&quot; on a Mac, and What&#x27;s Safe to Clear?">
+<div class="share-bar" data-url="https://www.klaritydisk.com/blog/what-is-system-data-on-mac" data-title="What Is &quot;System Data&quot; on a Mac, and How to Clear It Safely">
   <div class="share-inner">
     <p class="share-title" id="share-title">Found this useful? Share it.</p>
     <div class="share-buttons" role="group" aria-labelledby="share-title">
       <button type="button" class="share-btn share-native" data-share-native hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 11v8.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Share…</span></button>
-      <a class="share-btn" href="https://x.com/intent/post?text=What%20Is%20%22System%20Data%22%20on%20a%20Mac%2C%20and%20What%27s%20Safe%20to%20Clear%3F&amp;url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac" target="_blank" rel="noopener" aria-label="Share on X (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg><span>X</span></a>
-      <a class="share-btn" href="https://wa.me/?text=What%20Is%20%22System%20Data%22%20on%20a%20Mac%2C%20and%20What%27s%20Safe%20to%20Clear%3F%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac" target="_blank" rel="noopener" aria-label="Share on WhatsApp (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
-      <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac&amp;title=What%20Is%20%22System%20Data%22%20on%20a%20Mac%2C%20and%20What%27s%20Safe%20to%20Clear%3F" target="_blank" rel="noopener" aria-label="Share on Reddit (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>Reddit</span></a>
+      <a class="share-btn" href="https://x.com/intent/post?text=What%20Is%20%22System%20Data%22%20on%20a%20Mac%2C%20and%20How%20to%20Clear%20It%20Safely&amp;url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac" target="_blank" rel="noopener" aria-label="Share on X (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg><span>X</span></a>
+      <a class="share-btn" href="https://wa.me/?text=What%20Is%20%22System%20Data%22%20on%20a%20Mac%2C%20and%20How%20to%20Clear%20It%20Safely%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac" target="_blank" rel="noopener" aria-label="Share on WhatsApp (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+      <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac&amp;title=What%20Is%20%22System%20Data%22%20on%20a%20Mac%2C%20and%20How%20to%20Clear%20It%20Safely" target="_blank" rel="noopener" aria-label="Share on Reddit (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>Reddit</span></a>
       <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fwhat-is-system-data-on-mac" target="_blank" rel="noopener" aria-label="Share on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span>Facebook</span></a>
       <button type="button" class="share-btn share-copy" data-share-copy><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span aria-live="polite">Copy link</span></button>
     </div>
