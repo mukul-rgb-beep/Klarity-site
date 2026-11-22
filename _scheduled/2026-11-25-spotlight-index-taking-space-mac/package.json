@@ -1,0 +1,28 @@
+{
+  "slug": "spotlight-index-taking-space-mac",
+  "publish_date": "2026-11-25",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "but not where the rest of the space went.",
+      "replace": "but not where the rest of the space went. The same is true of <a href=\"/blog/spotlight-index-taking-space-mac\">the Spotlight index, which Spotlight rebuilds after a macOS update</a>."
+    },
+    {
+      "file": "blog/free-space-dropped-after-macos-update.html",
+      "find": "so the first day is the worst one.",
+      "replace": "so the first day is the worst one. Apple says <a href=\"/blog/spotlight-index-taking-space-mac\">Spotlight indexing can take hours or even days</a>."
+    },
+    {
+      "file": "blog/mac-storage-full-after-update.html",
+      "find": "Browsers, Mail and the search index all rebuild after an update, so it climbs for a day or two and then levels off.",
+      "replace": "Browsers, Mail and the search index all rebuild after an update, so it climbs for a day or two and then levels off. <a href=\"/blog/spotlight-index-taking-space-mac\">How the Spotlight index uses space</a> has what Apple says about how long that takes."
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "but it shows the size of the swing.",
+      "replace": "but it shows the size of the swing. <a href=\"/blog/spotlight-index-taking-space-mac\">What to do about the Spotlight index</a> covers waiting, Search Privacy and what not to delete."
+    }
+  ],
+  "x_post": "Free space dropped after the macOS update? Part of it can be Spotlight rebuilding its index, which Apple says can take hours or even days. What to leave alone, and what you can do."
+}

@@ -476,6 +476,18 @@ ART["macos-27-3-beta-storage"] = svg(
     + text(44, 150, "Only the folders it needs", 11, 500, INK2),
     "An access sheet with Documents and Downloads ticked and Entire disk left unticked")
 
+# 25 Nov — Spotlight index: a search field over a storage bar whose grey part grows while indexing runs
+ART["spotlight-index-taking-space-mac"] = svg(
+    win(30, 22, 260, 46, 23)
+    + f'<circle cx="57" cy="44" r="7.5" fill="none" stroke="{INK2}" stroke-width="2.4"/>'
+    + f'<line x1="62.5" y1="49.5" x2="68" y2="55" stroke="{INK2}" stroke-width="2.6" stroke-linecap="round"/>'
+    + text(80, 50, "Indexing…", 15, 500, INK2)
+    + win(30, 86, 260, 72)
+    + text(46, 110, "Macintosh HD", 12.5, 600) + text(274, 110, "System Data growing", 11.5, 500, INK2, "end")
+    + bar(46, 122, 228, 12, [(54, AGE[0]), (30, AGE[1]), (22, AGE[3]), (70, GREY), (52, TRACK)])
+    + f'<path d="M160 146 h48" stroke="{GREY}" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 5"/>',
+    "A search field reading Indexing above a storage bar whose grey System Data part is growing")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"

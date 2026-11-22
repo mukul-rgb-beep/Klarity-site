@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotlight Index Taking Up Space on a Mac? What to Do | Klarity Blog</title>
+<meta name="description" content="After a macOS update, Spotlight rebuilds its index and free space can drop for days. What Apple says, what to leave alone, keeping folders out of search.">
+<meta name="keywords" content="spotlight index taking up space mac, spotlight indexing after update, spotlight index size mac, rebuild spotlight index mac, spotlight privacy exclude folder, system data spotlight, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spotlight Index Taking Up Space on a Mac? What to Do">
+<meta property="og:description" content="After a macOS update, Spotlight rebuilds its index and free space can drop for days. What Apple says, what to leave alone, keeping folders out of search.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-11-25">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spotlight Index Taking Up Space on a Mac? What to Do">
+<meta name="twitter:description" content="After a macOS update, Spotlight rebuilds its index and free space can drop for days. What Apple says, what to leave alone, keeping folders out of search.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Spotlight Index Taking Up Space on a Mac? What to Do", "description": "After a macOS update, Spotlight rebuilds its index and free space can drop for days. What Apple says, what to leave alone, keeping folders out of search.", "image": "https://www.klaritydisk.com/img/1.3.1/library.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-25", "dateModified": "2026-11-25", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Spotlight Index Taking Up Space on a Mac? What to Do", "item": "https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the Spotlight index take up space on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Apple gives no size, but the index is stored on your Mac, and one forum owner measured it using much more room while it reindexed. On the author’s Mac the part in the home folder is 5.2 GB; one forum owner measured 8.7 GB in the same folder once indexing had finished."}}, {"@type": "Question", "name": "How long does Spotlight indexing take after a macOS update?", "acceptedAnswer": {"@type": "Answer", "text": "Apple says: “Depending on the amount of data on your device, Spotlight indexing can take hours or even days.” Later updates to the index are much faster."}}, {"@type": "Question", "name": "Can I delete the Spotlight index to free space?", "acceptedAnswer": {"@type": "Answer", "text": "Do not delete it by hand. To make Spotlight index a disk or folder again, add it to Search Privacy in Spotlight settings, wait a few seconds, then remove it. That fixes search; it does not save space while the new index is built."}}, {"@type": "Question", "name": "How do I stop Spotlight indexing a folder?", "acceptedAnswer": {"@type": "Answer", "text": "In System Settings, open Spotlight (or Siri & Spotlight), click Search Privacy (or Spotlight Privacy) and add the folder or disk. Spotlight will no longer search it."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=202611211">
+</head>
+<body>
+<!-- BF26-STRIP start: Black Friday strip, shown only from 27 Nov 2026 12:00 UTC to 1 Dec 2026 10:00 UTC. Remove this block after 1 Dec 2026. -->
+<script>(function(){var n=Date.now(),s=document.currentScript;if(!s||n<Date.UTC(2026,10,27,12)||n>=Date.UTC(2026,11,1,10))return;var c=document.createElement('style');c.textContent='.bf26{background:#1D1D1F;color:#F5F5F7;font-size:15px;line-height:1.4}.bf26-in{max-width:1120px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;text-align:center}.bf26 p{margin:0;color:inherit;font-size:inherit}.bf26 strong{font-weight:600}.bf26 a{flex:none;background:#fff;color:#1D1D1F;padding:5px 14px;border-radius:980px;font-size:14px;font-weight:500;line-height:1.4;text-decoration:none;white-space:nowrap}.bf26 a:hover{background:#E8E8ED}.bf26 a:focus-visible{outline:2px solid #fff;outline-offset:2px}@media print{.bf26{display:none}}';document.head.appendChild(c);s.insertAdjacentHTML('afterend','<aside class="bf26" aria-label="Black Friday offer"><div class="bf26-in"><p><strong>Black Friday:<\/strong> Klarity Disk is $2.99 in most countries until 1 December (usually $6.99).<\/p><a href="/go/site" rel="nofollow">View on the Mac App Store<\/a><\/div><\/aside>')})()</script>
+<!-- BF26-STRIP end -->
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/go/nav" rel="nofollow" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">November 25, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 6 min read</span>
+    </div>
+    <h1>Spotlight Index Taking Up Space on a Mac? What to Do</h1>
+    <p class="article-subtitle">Free space dropped after the update? Part of it can be Spotlight building its index again. What Apple says about it, how long to wait, and what you can safely do.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>Why the space went after the update</h2>
+
+    <p><strong>After a macOS update, Spotlight indexes your Mac again, and on at least one Mac that work took a lot of room while it ran.</strong> Apple&rsquo;s <a href="https://support.apple.com/en-us/102321" rel="noopener" target="_blank">page on Spotlight indexing</a> says indexing happens &ldquo;when you first set up your device, after you install a software update or upgrade, and as data changes on your device.&rdquo; It also says: &ldquo;Depending on the amount of data on your device, Spotlight indexing can take hours or even days.&rdquo;</p>
+
+    <p>The index is what lets Spotlight find &ldquo;files, folders, and apps&rdquo;, along with &ldquo;documents, email, text messages, contacts, photos&rdquo; and more. It is &ldquo;a local, private index that stays on your device and isn&rsquo;t shared with Apple or your other devices.&rdquo; Apple does not say which Storage category the index counts in; System Data, Apple&rsquo;s catch-all for files that fit no other category, is the likely place. <a href="/blog/what-is-system-data-on-mac">What System Data is</a> explains that grey bar.</p>
+
+    <h2>How big it gets</h2>
+
+    <p>Apple gives no size for the index, so all I can give you is measurements:</p>
+
+    <ul>
+      <li><strong>On my own Mac</strong>, running the macOS 27.3 beta, the part of the index kept in my home folder (Library &rarr; Metadata &rarr; CoreSpotlight) is 5.2&nbsp;GB. macOS may keep more of it outside the home folder, which I did not measure.</li>
+      <li><strong>One owner on the MacRumors forums</strong> watched Spotlight reindex on macOS 27 and <a href="https://forums.macrumors.com/threads/give-me-my-mac-back.2490661/" rel="noopener" target="_blank">measured about 40&nbsp;GB in use next to an 8&nbsp;GB index while it ran</a>, and 8.7&nbsp;GB in that same Library folder once it had finished. That is one Mac and one person&rsquo;s figures, not Apple&rsquo;s.</li>
+    </ul>
+
+    <p>On these two Macs, a few gigabytes stayed, and much more came and went while indexing ran. Apple&rsquo;s notes for macOS Tahoe 26.6 said that update &ldquo;<a href="https://support.apple.com/en-us/122868" rel="noopener" target="_blank">optimizes the Spotlight index in preparation for macOS 27</a>&rdquo;, and Apple lists &ldquo;<a href="https://support.apple.com/en-us/127257" rel="noopener" target="_blank">Better search in Spotlight and Mail</a>&rdquo; among the macOS 27 changes, which suggests this year&rsquo;s upgrade gave Spotlight more to do than usual.</p>
+
+    <h2>First, wait. Then look at what is really yours</h2>
+
+    <p>If free space dropped in the day or two after an update, give Spotlight time to finish, as Apple says, &ldquo;hours or even days&rdquo;. Restart once. Then check Storage settings again. Apple adds that &ldquo;Incremental updates after that are much faster.&rdquo;</p>
+
+    <p>If the space has not come back after that, the index is probably not your problem, and the space is likely in your own files. <a href="/go/blog" rel="nofollow">Klarity</a>, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, shows them as a map: every folder is a rectangle, its size on screen is the space it takes, and its colour says how long since it last changed. It scans hidden folders such as Library too, so caches and app data are in the picture.</p>
+
+    <figure>
+      <a class="shot-link" href="/go/blog" rel="nofollow"><img src="/img/1.3.1/library.webp" alt="Klarity 1.3.1 scanning the Library folder: Developer, Application Support, Caches and Containers drawn as rectangles sized by the space they use" width="2648" height="1952" loading="lazy"><span class="visually-hidden">View Klarity Disk on the Mac App Store</span></a>
+      <figcaption>A real scan of a Library folder. The biggest rectangles are where the space is.</figcaption>
+    </figure>
+
+    <aside class="app-card" aria-label="Klarity Disk on the Mac App Store">
+      <img class="app-card-icon" src="/icon-180.png" width="56" height="56" alt="" loading="lazy">
+      <div class="app-card-text">
+        <p class="app-card-name">Klarity Disk</p>
+        <p class="app-card-line">See which files are yours before you blame Spotlight.</p>
+        <p class="app-card-fine">$6.99 once &middot; no subscription &middot; macOS 14.6 or later</p>
+      </div>
+      <div class="app-card-actions">
+        <a class="cta-button" href="/go/blog" rel="nofollow">View on the Mac App Store</a>
+        <a class="app-card-send" href="mailto:?subject=Klarity%20Disk%20for%20my%20Mac&amp;body=Open%20this%20on%20the%20Mac%3A%0Ahttps%3A%2F%2Fwww.klaritydisk.com%2Fgo%2Fblog%0A%0AFrom%3A%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fspotlight-index-taking-space-mac" data-send-mac data-url="https://www.klaritydisk.com/go/blog" data-title="Klarity Disk for Mac">Send this to my Mac</a>
+      </div>
+    </aside>
+
+    <p>One honest limit: Klarity does not manage the Spotlight index, and it is not a way to clear it. It shows the files and folders you give it access to, and only ever moves things to the Trash, asking first every time. Leave anything named Metadata or CoreSpotlight where it is.</p>
+
+    <h2>Keep big folders out of the index</h2>
+
+    <p>If you have large folders you never search, such as an archive drive, virtual machines or old project folders, you can tell Spotlight to skip them. Apple calls this the list of &ldquo;locations that Spotlight is prevented from searching&rdquo;:</p>
+
+    <ol>
+      <li>Choose Apple menu &rarr; <strong>System Settings</strong>, then click <strong>Spotlight</strong> (or <strong>Siri &amp; Spotlight</strong>) in the sidebar.</li>
+      <li>Scroll down and click <strong>Search Privacy</strong> (or <strong>Spotlight Privacy</strong>) at the bottom of the window.</li>
+      <li>Drag the folder or disk into the list, or click the add button (+) and choose it.</li>
+      <li>Click <strong>Done</strong>.</li>
+    </ol>
+
+    <p>The trade-off: Spotlight will no longer find anything in that folder. Apple does not say how much space this saves, so do it for folders you never search, not as a clean-up trick.</p>
+
+    <h2>If search is broken: index a folder again</h2>
+
+    <p>Apple&rsquo;s page also describes &ldquo;rebuilding part of the Spotlight index&rdquo; when search keeps missing files in one disk or folder. It uses the same list:</p>
+
+    <ol>
+      <li>Open <strong>Search Privacy</strong> as above and add the disk (such as Macintosh HD) or folder to the list.</li>
+      <li>&ldquo;Wait a few seconds.&rdquo; Then select it in the list and click the remove button (&ndash;).</li>
+      <li>Click <strong>Done</strong> and quit System Settings. Apple: &ldquo;Spotlight now reindexes the contents of the disk or folder.&rdquo;</li>
+    </ol>
+
+    <p>Only do this to fix search, not to save space. Reindexing a whole disk can take hours, and it may need extra room while it runs, as after an update.</p>
+
+    <h2>What not to do</h2>
+
+    <ul>
+      <li><strong>Do not delete index folders by hand.</strong> The index belongs to macOS, including the part in your Library folder. Apple&rsquo;s way to rebuild is the one above.</li>
+      <li><strong>Do not clear things while the space is still moving.</strong> Caches and the index both rebuild after an update; <a href="/blog/free-space-dropped-after-macos-update">why free space drops after an update</a> covers what comes back by itself.</li>
+    </ul>
+
+    <div class="article-cta article-cta-mid">
+      <div class="article-cta-inner">
+        <h3>See your disk. Clearly.</h3>
+        <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+        <a href="/go/blog" rel="nofollow" class="cta-button">Download on Mac App Store</a>
+      </div>
+    </div>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">Does the Spotlight index take up space on a Mac?</h3>
+    <p>Yes. Apple gives no size, but the index is stored on your Mac, and one forum owner measured it using much more room while it reindexed. On the author&rsquo;s Mac the part in the home folder is 5.2 GB; one forum owner measured 8.7 GB in the same folder once indexing had finished.</p>
+
+    <h3 class="faq-q">How long does Spotlight indexing take after a macOS update?</h3>
+    <p>Apple says: &ldquo;Depending on the amount of data on your device, Spotlight indexing can take hours or even days.&rdquo; Later updates to the index are much faster.</p>
+
+    <h3 class="faq-q">Can I delete the Spotlight index to free space?</h3>
+    <p>Do not delete it by hand. To make Spotlight index a disk or folder again, add it to Search Privacy in Spotlight settings, wait a few seconds, then remove it. That fixes search; it does not save space while the new index is built.</p>
+
+    <h3 class="faq-q">How do I stop Spotlight indexing a folder?</h3>
+    <p>In System Settings, open Spotlight (or Siri &amp; Spotlight), click Search Privacy (or Spotlight Privacy) and add the folder or disk. Spotlight will no longer search it.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="related-posts">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/what-is-system-data-on-mac">What Is “System Data” on a Mac, and How to Clear It Safely &rarr;</a></li>
+      <li><a href="/blog/free-space-dropped-after-macos-update">Free Space Dropped After a macOS Update? Wait a Day &rarr;</a></li>
+      <li><a href="/blog/mac-storage-full-after-update">Mac Storage Full After a macOS Update? Where the Space Went &rarr;</a></li>
+      <li><a href="/blog/how-much-space-for-macos-27">How Much Space Do macOS 27 Golden Gate and 27.2 Need? &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/guide">User Guide</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>
