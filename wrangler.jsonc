@@ -1,0 +1,11 @@
+// Cloudflare Workers Builds deploy settings for the Worker "klarity-disk" (static assets only, no script).
+// not_found_handling "404-page": a missing address is answered with /404.html and status 404
+// (without it the answer is an empty 404). Undo: revert the commit that added this file.
+{
+  "name": "klarity-disk",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}
