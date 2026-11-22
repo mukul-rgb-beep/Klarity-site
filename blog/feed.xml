@@ -6,7 +6,14 @@
     <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>macOS 27.3 Beta: What Changes for Storage</title>
+      <link>https://www.klaritydisk.com/blog/macos-27-3-beta-storage</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/macos-27-3-beta-storage</guid>
+      <pubDate>Sun, 22 Nov 2026 03:30:00 +0000</pubDate>
+      <description>What the macOS 27.3 Golden Gate beta changes for your Mac's storage: nothing in Apple's notes so far, except how apps get access to your files.</description>
+    </item>
     <item>
       <title>Why Your Photos Library Takes So Much Space on a Mac</title>
       <link>https://www.klaritydisk.com/blog/photos-library-taking-space-mac</link>
