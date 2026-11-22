@@ -488,6 +488,18 @@ ART["spotlight-index-taking-space-mac"] = svg(
     + f'<path d="M160 146 h48" stroke="{GREY}" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 5"/>',
     "A search field reading Indexing above a storage bar whose grey System Data part is growing")
 
+# 23 Nov — Black Friday 2026: a small age-coloured map beside the price, with the dates
+ART["klarity-disk-black-friday"] = svg(
+    win(24, 22, 150, 136)
+    + treemap(34, 32, 130, 116, [(0, 0, .58, .62, AGE[4]), (.58, 0, .42, .62, AGE[0]),
+                                 (0, .62, .36, .38, AGE[3]), (.36, .62, .34, .38, AGE[1]), (.7, .62, .3, .38, AGE[2])])
+    + win(186, 40, 110, 100, 14)
+    + text(241, 72, "$6.99", 13, 500, INK3, "middle")
+    + f'<line x1="223" y1="67.5" x2="259" y2="67.5" stroke="{INK3}" stroke-width="1.4"/>'
+    + text(241, 104, "$2.99", 28, 700, INK, "middle")
+    + text(241, 126, "27 Nov – 1 Dec", 11, 500, ACCENT, "middle"),
+    "A disk map coloured by age beside a price card: 6.99 dollars struck through, 2.99 dollars, 27 November to 1 December")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"

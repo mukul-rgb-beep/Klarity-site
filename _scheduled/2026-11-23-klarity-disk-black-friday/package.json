@@ -1,0 +1,28 @@
+{
+  "slug": "klarity-disk-black-friday",
+  "publish_date": "2026-11-23",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "daisydisk-alternative.html",
+      "find": "<p>$6.99 once, on the Mac App Store. No account, no subscription, no network access.",
+      "replace": "<p>$6.99 once, on the Mac App Store, and <a href=\"/blog/klarity-disk-black-friday\">$2.99 in most countries from 27 November to 1 December</a>. No account, no subscription, no network access."
+    },
+    {
+      "file": "blog/how-to-find-large-files-on-mac.html",
+      "find": "the scan-look-act loop above is about thirty seconds on most Macs.",
+      "replace": "the scan-look-act loop above is about thirty seconds on most Macs. From 27 November to 1 December, Klarity is <a href=\"/blog/klarity-disk-black-friday\">$2.99 in most countries</a>."
+    },
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "deliberately avoiding the sunburst approach used by DaisyDisk and other popular Mac disk analyzers.",
+      "replace": "deliberately avoiding the sunburst approach used by DaisyDisk and other popular Mac disk analyzers (and from 27 November to 1 December it is <a href=\"/blog/klarity-disk-black-friday\">$2.99 in most countries</a>)."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "$6.99, one payment, on the Mac App Store</a>.",
+      "replace": "$6.99, one payment, on the Mac App Store</a>, and <a href=\"/blog/klarity-disk-black-friday\">$2.99 in most countries from 27 November to 1 December</a>."
+    }
+  ],
+  "x_post": "Klarity Disk, my Mac disk space analyzer, is $2.99 in most countries from 27 November to 1 December (usually $6.99). One payment, no subscription, no network access."
+}

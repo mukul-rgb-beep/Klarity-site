@@ -8,6 +8,8 @@
 /go/home https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
 /go/post https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
 /go/alt https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=web&mt=8 302
+# The Black Friday 2026 post (/blog/klarity-disk-black-friday) on its own, so it can be judged alone.
+/go/bf https://apps.apple.com/app/apple-store/id6758895498?pt=128521164&ct=bfpost&mt=8 302
 
 # Strip .html extensions with 301 (permanent) redirects
 /index.html / 301
