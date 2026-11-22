@@ -1,0 +1,33 @@
+{
+  "slug": "how-to-see-folder-sizes-on-mac",
+  "publish_date": "2026-12-15",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "every second of cognitive overhead compounds frustration.",
+      "replace": "every second of cognitive overhead compounds frustration. (For the plain numbers, there are <a href=\"/blog/how-to-see-folder-sizes-on-mac\">four ways to see folder sizes on a Mac</a>.)"
+    },
+    {
+      "file": "blog/external-drive-full-mac.html",
+      "find": "but you still see one level of one folder.",
+      "replace": "but you still see one level of one folder (<a href=\"/blog/how-to-see-folder-sizes-on-mac\">all four ways to see folder sizes on a Mac</a> are compared here)."
+    },
+    {
+      "file": "blog/old-iphone-backups-mac.html",
+      "find": "wait for Get Info to add it up, one at a time.",
+      "replace": "wait for Get Info to add it up, one at a time. (There are quicker ways to <a href=\"/blog/how-to-see-folder-sizes-on-mac\">see folder sizes on a Mac</a>.)"
+    },
+    {
+      "file": "blog/find-old-files-on-mac.html",
+      "find": "and it never shows age and size together.",
+      "replace": "and it never shows age and size together. (<a href=\"/blog/how-to-see-folder-sizes-on-mac\">How to see folder sizes on a Mac</a> covers the size half.)"
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "select a folder and press Cmd + I to see its size.",
+      "replace": "select a folder and press Cmd + I to see its size. <a href=\"/blog/how-to-see-folder-sizes-on-mac\">How to see folder sizes on a Mac</a> has three more ways."
+    }
+  ],
+  "x_post": "Finder shows two dashes where a folder's size should be. One setting fixes that for one folder at a time. Four ways to see folder sizes on a Mac, and why the numbers differ."
+}

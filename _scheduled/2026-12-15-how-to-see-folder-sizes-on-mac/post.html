@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to See Folder Sizes on a Mac: 4 Ways That Work | Klarity Blog</title>
+<meta name="description" content="Finder hides folder sizes until you ask. Four ways to see them on a Mac, from one Finder setting to a map of the whole disk, and why the numbers differ.">
+<meta name="keywords" content="how to see folder sizes on mac, show folder size mac, finder folder size, calculate all sizes, mac folder size on disk, get info folder size, which folders take the most space mac, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/how-to-see-folder-sizes-on-mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to See Folder Sizes on a Mac: 4 Ways That Work">
+<meta property="og:description" content="Finder hides folder sizes until you ask. Four ways to see them on a Mac, from one Finder setting to a map of the whole disk, and why the numbers differ.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/how-to-see-folder-sizes-on-mac">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-12-15">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to See Folder Sizes on a Mac: 4 Ways That Work">
+<meta name="twitter:description" content="Finder hides folder sizes until you ask. Four ways to see them on a Mac, from one Finder setting to a map of the whole disk, and why the numbers differ.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to See Folder Sizes on a Mac: 4 Ways That Work", "description": "Finder hides folder sizes until you ask. Four ways to see them on a Mac, from one Finder setting to a map of the whole disk, and why the numbers differ.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-12-15", "dateModified": "2026-12-15", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/how-to-see-folder-sizes-on-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to See Folder Sizes on a Mac: 4 Ways That Work", "item": "https://www.klaritydisk.com/blog/how-to-see-folder-sizes-on-mac"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I show folder sizes in Finder on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Open the folder in list view, choose View, then Show View Options (or press Cmd + J), and tick Calculate all sizes. The Size column then shows a number for each folder. Click Use as Defaults to apply it to other folders that have no view settings of their own."}}, {"@type": "Question", "name": "Why does Finder show two dashes where a folder’s size should be?", "acceptedAnswer": {"@type": "Answer", "text": "A folder’s size is not stored; the Finder has to add up everything inside it, which takes time. So it shows dashes until you turn on Calculate all sizes, or open Get Info for that folder."}}, {"@type": "Question", "name": "What is the shortcut for a folder’s size on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Select the folder and press Cmd + I for Get Info. Press Option + Cmd + I for the inspector, a single window that updates as you select other folders."}}, {"@type": "Question", "name": "Why is size on disk different from size?", "acceptedAnswer": {"@type": "Answer", "text": "Size is how much data the files hold. Size on disk is the space they take up on the drive. They differ for files that report more than they take up, such as virtual machine disks, and for files whose contents are kept in iCloud."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=202611211">
+</head>
+<body>
+<!-- BF26-STRIP start: Black Friday strip, shown only from 27 Nov 2026 12:00 UTC to 1 Dec 2026 10:00 UTC. Remove this block after 1 Dec 2026. -->
+<script>(function(){var n=Date.now(),s=document.currentScript;if(!s||n<Date.UTC(2026,10,27,12)||n>=Date.UTC(2026,11,1,10))return;var c=document.createElement('style');c.textContent='.bf26{background:#1D1D1F;color:#F5F5F7;font-size:15px;line-height:1.4}.bf26-in{max-width:1120px;margin:0 auto;padding:9px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;text-align:center}.bf26 p{margin:0;color:inherit;font-size:inherit}.bf26 strong{font-weight:600}.bf26 a{flex:none;background:#fff;color:#1D1D1F;padding:5px 14px;border-radius:980px;font-size:14px;font-weight:500;line-height:1.4;text-decoration:none;white-space:nowrap}.bf26 a:hover{background:#E8E8ED}.bf26 a:focus-visible{outline:2px solid #fff;outline-offset:2px}@media print{.bf26{display:none}}';document.head.appendChild(c);s.insertAdjacentHTML('afterend','<aside class="bf26" aria-label="Black Friday offer"><div class="bf26-in"><p><strong>Black Friday:<\/strong> Klarity Disk is $2.99 in most countries until 1 December (usually $6.99).<\/p><a href="/go/site" rel="nofollow">View on the Mac App Store<\/a><\/div><\/aside>')})()</script>
+<!-- BF26-STRIP end -->
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/go/nav" rel="nofollow" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">December 15, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 5 min read</span>
+    </div>
+    <h1>How to See Folder Sizes on a Mac: 4 Ways That Work</h1>
+    <p class="article-subtitle">The Finder shows two dashes where a folder&rsquo;s size should be. Here is how to turn the numbers on, how to see a whole folder at once, and why two tools can give two answers.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>Why the Finder shows two dashes</h2>
+
+    <p>Open any Finder window in list view and look at the Size column. Files have a size. Folders have two dashes.</p>
+
+    <p>The Finder is not hiding anything. A folder&rsquo;s size is not stored anywhere; it has to be added up from everything inside, and for a big folder that takes time. So the Finder waits until you ask. There are three ways to ask with what is already on your Mac, and one that draws a whole folder as a picture.</p>
+
+    <h2>1. In a Finder window: Calculate all sizes</h2>
+
+    <ol>
+      <li>Open the folder and switch to list view (<strong>View</strong> &rarr; <strong>as List</strong>).</li>
+      <li>Choose <strong>View</strong> &rarr; <strong>Show View Options</strong>, or press Cmd&nbsp;+&nbsp;J.</li>
+      <li>Tick <strong>Calculate all sizes</strong>.</li>
+      <li>Click the <strong>Size</strong> column heading to put the largest at the top.</li>
+    </ol>
+
+    <p>The dashes turn into numbers, one folder at a time. Two things to know. The setting belongs to the folder you are in: open another folder and you get dashes again, unless you click <strong>Use as Defaults</strong> at the bottom of the options window. And each level is added up separately. To learn what is inside the biggest folder, you open it and wait again.</p>
+
+    <h2>2. A whole folder at once: a map of the disk</h2>
+
+    <p>That waiting is the reason I built <a href="/go/blog" rel="nofollow">Klarity</a>, a <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a>. It scans a folder, a drive or the whole disk once, then draws it as a map. Every folder is a rectangle, and its size on screen is the space it takes on disk. You do not sort or wait: the biggest thing is the biggest shape, the larger shapes carry their name and size, and you click into one to go deeper.</p>
+
+    <figure>
+      <a class="shot-link" href="/go/blog" rel="nofollow"><img src="/img/1.3.1/hero.webp" alt="Klarity 1.3.1&rsquo;s treemap of a home folder: Pictures is 62.28 GB, and almost all of it is one blue block, Photos Library.photoslibrary at 55.83 GB" width="2648" height="1952" loading="lazy"><span class="visually-hidden">View Klarity Disk on the Mac App Store</span></a>
+      <figcaption>A home folder as a map. Each rectangle is a folder, drawn at the size it takes on disk.</figcaption>
+    </figure>
+
+    <aside class="app-card" aria-label="Klarity Disk on the Mac App Store">
+      <img class="app-card-icon" src="/icon-180.png" width="56" height="56" alt="" loading="lazy">
+      <div class="app-card-text">
+        <p class="app-card-name">Klarity Disk</p>
+        <p class="app-card-line">Folder sizes, drawn as a map of your disk.</p>
+        <p class="app-card-fine">$6.99 once &middot; no subscription &middot; macOS 14.6 or later</p>
+      </div>
+      <div class="app-card-actions">
+        <a class="cta-button" href="/go/blog" rel="nofollow">View on the Mac App Store</a>
+        <a class="app-card-send" href="mailto:?subject=Klarity%20Disk%20for%20my%20Mac&amp;body=Open%20this%20on%20the%20Mac%3A%0Ahttps%3A%2F%2Fwww.klaritydisk.com%2Fgo%2Fblog%0A%0AFrom%3A%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fhow-to-see-folder-sizes-on-mac" data-send-mac data-url="https://www.klaritydisk.com/go/blog" data-title="Klarity Disk for Mac">Send this to my Mac</a>
+      </div>
+    </aside>
+
+    <p>Three things the map shows at a glance that the Finder&rsquo;s list makes slow:</p>
+
+    <ul>
+      <li><strong>Folders inside folders.</strong> Large folders show their own contents inside them, so you can see that Pictures is big and, in the same glance, that one library inside it is the reason.</li>
+      <li><strong>Hidden folders.</strong> Since version 1.3.1 the scan includes the folders macOS hides, such as your Library, which can be larger than Documents.</li>
+      <li><strong>Age.</strong> Each rectangle is coloured by how long since it last changed, from blue for this month to red for three years or more. A large red folder is usually the first thing worth a look.</li>
+    </ul>
+
+    <p>The honest part: Klarity is not free. It is <a href="/go/blog" rel="nofollow">$6.99 once on the Mac App Store</a>, for macOS 14.6 or later, with no subscription and no network access. If you need one folder&rsquo;s size once a year, the Finder is enough, and the next two ways cost nothing.</p>
+
+    <h2>3. One folder: Get Info</h2>
+
+    <p>Select a folder and choose <strong>File</strong> &rarr; <strong>Get Info</strong>, or press Cmd&nbsp;+&nbsp;I. The window adds the folder up and shows its size, with the space it takes on disk in brackets beside it.</p>
+
+    <p>Two variations save time:</p>
+
+    <ul>
+      <li><strong>One window that follows you.</strong> Press Option&nbsp;+&nbsp;Cmd&nbsp;+&nbsp;I to open the inspector. It looks like Get Info, but it changes as you click from folder to folder, so you are not left with ten open windows.</li>
+      <li><strong>Several folders added together.</strong> Select them, hold the Control key, and choose <strong>File</strong> &rarr; <strong>Get Summary Info</strong>. You get one total for the selection.</li>
+    </ul>
+
+    <h2>4. Storage settings: the File Browser</h2>
+
+    <p>Apple has a folder-size view of its own, and it is easy to miss.</p>
+
+    <ol>
+      <li>Open <strong>System Settings</strong> &rarr; <strong>General</strong> &rarr; <strong>Storage</strong>.</li>
+      <li>Find <strong>Documents</strong> in the list and click the Info button beside it.</li>
+      <li>Click <strong>File Browser</strong>.</li>
+    </ol>
+
+    <p>You get your folders in columns with the storage each one uses, and you can sort by size. Apple notes one limit: folders that already have their own category in Storage settings, other than Documents, are dimmed here. So it is a good view of your documents and a partial view of everything else.</p>
+
+    <h2>Why two tools give two numbers</h2>
+
+    <p>Sooner or later you will see one folder with two different sizes. Usually nothing is wrong. The tools are counting different things.</p>
+
+    <ul>
+      <li><strong>Size and size on disk.</strong> Get Info shows both. The first is how much data the files hold; the second is the space they take up on the drive. Some files, such as virtual machine disks, report a size far larger than the space they actually take. Klarity shows the on-disk figure, the same one the Finder puts in brackets, because that is usually the space you get back.</li>
+      <li><strong>Protected app folders.</strong> macOS can stop one app reading another app&rsquo;s data, so Klarity can show such a folder as smaller than the Finder does.</li>
+      <li><strong>Files kept in iCloud.</strong> With Optimize Mac Storage on, a file can be listed on your Mac while its contents are only in iCloud. It has a size, and takes almost no space on disk.</li>
+      <li><strong>Available is not the same as free.</strong> Apple says disk space &ldquo;might be both available and used at the same time&rdquo;. That is <a href="/blog/purgeable-space-mac">purgeable space</a>: space in use now that macOS will clear when it is needed.</li>
+    </ul>
+
+    <h2>Which one to use</h2>
+
+    <ul>
+      <li><strong>One folder, right now:</strong> Get Info.</li>
+      <li><strong>A handful of folders in one place:</strong> Calculate all sizes.</li>
+      <li><strong>Your documents, by size:</strong> the File Browser in Storage settings.</li>
+      <li><strong>&ldquo;Where did my disk go?&rdquo;:</strong> a map of the whole disk.</li>
+    </ul>
+
+    <p>If the question behind the question is which files to remove, <a href="/blog/how-to-find-large-files-on-mac">how to find large files on a Mac</a> starts from files, not folders, and <a href="/blog/how-to-clean-up-mac-storage">how to clean up Mac storage</a> says what is safe to delete once you have found them.</p>
+
+    <div class="article-cta article-cta-mid">
+      <div class="article-cta-inner">
+        <h3>See your disk. Clearly.</h3>
+        <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+        <a href="/go/blog" rel="nofollow" class="cta-button">Download on Mac App Store</a>
+      </div>
+    </div>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">How do I show folder sizes in Finder on a Mac?</h3>
+    <p>Open the folder in list view, choose View, then Show View Options (or press Cmd + J), and tick Calculate all sizes. The Size column then shows a number for each folder. Click Use as Defaults to apply it to other folders that have no view settings of their own.</p>
+
+    <h3 class="faq-q">Why does Finder show two dashes where a folder&rsquo;s size should be?</h3>
+    <p>A folder&rsquo;s size is not stored; the Finder has to add up everything inside it, which takes time. So it shows dashes until you turn on Calculate all sizes, or open Get Info for that folder.</p>
+
+    <h3 class="faq-q">What is the shortcut for a folder&rsquo;s size on a Mac?</h3>
+    <p>Select the folder and press Cmd + I for Get Info. Press Option + Cmd + I for the inspector, a single window that updates as you select other folders.</p>
+
+    <h3 class="faq-q">Why is size on disk different from size?</h3>
+    <p>Size is how much data the files hold. Size on disk is the space they take up on the drive. They differ for files that report more than they take up, such as virtual machine disks, and for files whose contents are kept in iCloud.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="related-posts">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/how-to-find-large-files-on-mac">How to Find Large Files on a Mac (Without Terminal) &rarr;</a></li>
+      <li><a href="/blog/find-old-files-on-mac">How to Find Old Files on a Mac That Are Taking Up Space &rarr;</a></li>
+      <li><a href="/blog/purgeable-space-mac">Purgeable Space on a Mac, Explained &rarr;</a></li>
+      <li><a href="/blog/treemap-icicle-vs-sunburst">Treemap vs Sunburst: Which Disk Map Finds Big Files Faster? &rarr;</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternatives for Mac: an honest list &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/guide">User Guide</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>

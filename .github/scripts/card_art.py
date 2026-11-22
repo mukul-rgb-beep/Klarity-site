@@ -400,6 +400,65 @@ ART["messages-taking-up-space-mac"] = svg(
     + "".join(_msg_tiles),
     "Messages holding 38.2 GB of photo and video attachments, most of them years old")
 
+# 1 Dec — deleting Time Machine backups: a backup disk nearly full, the two oldest backups on their way out
+_tm_cols = [AGE[4], AGE[4], AGE[3], AGE[2], AGE[1], AGE[0], AGE[0]]
+_tm_tiles = []
+for _tm_i, _tm_c in enumerate(_tm_cols):
+    _tm_x = 44 + _tm_i * 34
+    if _tm_i < 2:
+        _tm_tiles.append(f'<rect x="{_tm_x + .75}" y="88.75" width="24.5" height="28.5" rx="6" fill="none" stroke="{_tm_c}" stroke-width="1.5" stroke-dasharray="3.5 3"/>')
+    else:
+        _tm_tiles.append(f'<rect x="{_tm_x}" y="88" width="26" height="30" rx="6" fill="{_tm_c}"/>')
+ART["delete-time-machine-backups-mac"] = svg(
+    win(24, 22, 272, 136)
+    + text(44, 50, "Backups", 15, 600) + text(276, 50, "1.9 TB of 2 TB", 12.5, 500, INK2, "end")
+    + bar(44, 62, 232, 10, [(52, AGE[4]), (48, AGE[3]), (44, AGE[2]), (40, AGE[1]), (34, AGE[0])])
+    + "".join(_tm_tiles)
+    + text(44, 141, "Oldest removed first", 12, 500, INK2),
+    "A Time Machine backup disk nearly full: the oldest backups are removed first to make room")
+
+# 8 Dec — Group Containers: three oddly named folders, one of them red (left by an app removed years ago)
+_gc_rows = [("UBF8T346G9.Office", "28.4 GB", AGE[0], 96), ("group.com.oldapp.shared", "9.7 GB", AGE[4], 34),
+            ("group.com.apple.notes", "2.1 GB", AGE[0], 9)]
+_gc = []
+for _gc_i, (_gc_n, _gc_gb, _gc_c, _gc_w) in enumerate(_gc_rows):
+    _gc_y = 84 + _gc_i * 27
+    _gc.append(f'<line x1="44" y1="{_gc_y - 17}" x2="276" y2="{_gc_y - 17}" stroke="#000" stroke-opacity=".08"/>'
+               + dot(50, _gc_y - 4, _gc_c, 4) + text(62, _gc_y, _gc_n, 12, 500)
+               + text(276, _gc_y, _gc_gb, 12, 600, INK, "end"))
+ART["group-containers-mac"] = svg(
+    win(24, 20, 272, 140)
+    + folder(44, 33, .32) + text(70, 47, "Group Containers", 14, 600) + text(276, 47, "41.6 GB", 14, 600, INK, "end")
+    + "".join(_gc),
+    "The Group Containers folder: one large folder in use, and a red one left by an app removed years ago")
+
+# 15 Dec — folder sizes: a Finder list with three sizes filled in and two dashes still waiting
+_fs_rows = [("Movies", "84.2 GB", INK), ("Pictures", "62.3 GB", INK), ("Documents", "18.7 GB", INK), ("Downloads", "--", INK3)]
+_fs = []
+for _fs_i, (_fs_n, _fs_gb, _fs_ink) in enumerate(_fs_rows):
+    _fs_y = 75 + _fs_i * 24
+    _fs.append(folder(44, _fs_y - 13, .3) + text(70, _fs_y, _fs_n, 13, 500)
+               + text(276, _fs_y, _fs_gb, 13, 600, _fs_ink, "end"))
+ART["how-to-see-folder-sizes-on-mac"] = svg(
+    win(24, 20, 272, 140)
+    + text(44, 44, "Name", 11.5, 500, INK2) + text(276, 44, "Size", 11.5, 500, INK2, "end")
+    + '<line x1="44" y1="53" x2="276" y2="53" stroke="#000" stroke-opacity=".1"/>'
+    + "".join(_fs),
+    "A Finder list with sizes filled in for three folders and two dashes for the fourth")
+
+# 22 Dec — "Your disk is almost full": the notification over a storage bar with almost nothing left
+ART["your-disk-is-almost-full-mac"] = svg(
+    win(30, 24, 260, 64, 16)
+    + '<rect x="44" y="39" width="34" height="34" rx="9" fill="#3A3A3C"/>'
+    + '<rect x="51" y="59" width="20" height="2.5" rx="1.25" fill="#fff" fill-opacity=".35"/>'
+    + f'<circle cx="69" cy="48" r="2.4" fill="{AGE[3]}"/>'
+    + text(90, 53, "Your disk is almost full", 13.5, 600)
+    + text(90, 71, "Save space by optimizing storage.", 11, 400, INK2)
+    + win(30, 102, 260, 54)
+    + text(46, 124, "Macintosh HD", 12.5, 600) + text(274, 124, "4.1 GB free", 12.5, 600, AGE[4], "end")
+    + bar(46, 134, 228, 9, [(70, AGE[4]), (52, AGE[3]), (40, AGE[2]), (34, AGE[1]), (22, AGE[0])]),
+    "The Your disk is almost full notification above a storage bar with 4.1 GB free")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"

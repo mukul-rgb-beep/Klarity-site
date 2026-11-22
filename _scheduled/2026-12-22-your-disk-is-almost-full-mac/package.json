@@ -1,0 +1,33 @@
+{
+  "slug": "your-disk-is-almost-full-mac",
+  "publish_date": "2026-12-22",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "This is where visualization choice makes or breaks the experience.",
+      "replace": "This is where visualization choice makes or breaks the experience, most of all on the day <a href=\"/blog/your-disk-is-almost-full-mac\">your Mac says the disk is almost full</a>."
+    },
+    {
+      "file": "blog/living-with-256gb-mac.html",
+      "find": "Then a message says your disk is almost full, and it is hard to say what happened.",
+      "replace": "Then a message says your disk is almost full, and it is hard to say what happened. (<a href=\"/blog/your-disk-is-almost-full-mac\">What to do first when that message appears</a>.)"
+    },
+    {
+      "file": "blog/mac-storage-full-after-update.html",
+      "find": "that is the shortest distance between here and knowing why.",
+      "replace": "that is the shortest distance between here and knowing why. If the warning itself is on your screen, start with <a href=\"/blog/your-disk-is-almost-full-mac\">what to do first when your disk is almost full</a>."
+    },
+    {
+      "file": "blog/xcode-taking-up-space-mac.html",
+      "find": "until the disk is full and you cannot see why.",
+      "replace": "until the disk is full and you cannot see why. (If the warning is already on screen, here is <a href=\"/blog/your-disk-is-almost-full-mac\">what to do first when your disk is almost full</a>.)"
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "because a folder name looks unimportant.",
+      "replace": "because a folder name looks unimportant. (If a warning sent you here, start with <a href=\"/blog/your-disk-is-almost-full-mac\">what to do first when your disk is almost full</a>.)"
+    }
+  ],
+  "x_post": "\"Your disk is almost full.\" The message does not say what filled it. What to do in the first ten minutes, what to leave alone, and how to find where the space went."
+}

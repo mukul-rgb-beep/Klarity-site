@@ -1,0 +1,33 @@
+{
+  "slug": "group-containers-mac",
+  "publish_date": "2026-12-08",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "stacked vertically with perfectly aligned edges.",
+      "replace": "stacked vertically with perfectly aligned edges. That helps most with folders whose names mean nothing by themselves, such as the ones in <a href=\"/blog/group-containers-mac\">Group Containers on a Mac</a>."
+    },
+    {
+      "file": "blog/what-is-system-data-on-mac.html",
+      "find": "where App Store apps keep their real data.",
+      "replace": "where App Store apps keep their real data. <a href=\"/blog/group-containers-mac\">What Group Containers is, and what is safe to delete</a>, has its own guide."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "<code>Containers</code> or <code>Group Containers</code> for any app you still use.",
+      "replace": "<code>Containers</code> or <code>Group Containers</code> for any app you still use. <a href=\"/blog/group-containers-mac\">Group Containers: what is safe to delete</a> goes through it folder by folder."
+    },
+    {
+      "file": "blog/how-to-find-large-files-on-mac.html",
+      "find": "data for sandboxed apps, including Mail attachments",
+      "replace": "data for sandboxed apps (the shared kind sit next door in <a href=\"/blog/group-containers-mac\">Group Containers</a>), including Mail attachments"
+    },
+    {
+      "file": "blog/docker-vm-disk-images-mac.html",
+      "find": "The App Store edition keeps them under Library &rarr; Group Containers instead.",
+      "replace": "The App Store edition keeps them under Library &rarr; Group Containers instead (<a href=\"/blog/group-containers-mac\">what Group Containers is</a>)."
+    }
+  ],
+  "x_post": "Group Containers on a Mac is not junk: it holds Outlook mail, Notes and chat app data. But macOS never removes the folders of apps you have deleted. How to tell which is which."
+}

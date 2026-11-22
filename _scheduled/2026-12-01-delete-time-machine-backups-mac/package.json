@@ -1,0 +1,33 @@
+{
+  "slug": "delete-time-machine-backups-mac",
+  "publish_date": "2026-12-01",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "see what is on it before it is erased</a>, not one folder at a time.",
+      "replace": "see what is on it before it is erased</a>, not one folder at a time. Once it is a backup disk, leave it to Time Machine: <a href=\"/blog/delete-time-machine-backups-mac\">deleting Time Machine backups</a> is not a job for the Trash."
+    },
+    {
+      "file": "blog/external-drive-full-mac.html",
+      "find": "when it fills up, it deletes the oldest backups to make room.",
+      "replace": "when it fills up, it deletes the oldest backups to make room. If one has ended up in the Trash, <a href=\"/blog/delete-time-machine-backups-mac\">here is how to delete Time Machine backups safely</a>."
+    },
+    {
+      "file": "blog/time-capsule-macos-27.html",
+      "find": "or inside the local snapshots macOS keeps on your Mac between backups.",
+      "replace": "or inside the local snapshots macOS keeps on your Mac between backups. Removing either has its own rules: see <a href=\"/blog/delete-time-machine-backups-mac\">how to delete Time Machine backups</a>."
+    },
+    {
+      "file": "blog/purgeable-space-mac.html",
+      "find": "so space you freed by deleting something can stay taken until the snapshot ages out.",
+      "replace": "so space you freed by deleting something can stay taken until the snapshot ages out. If you cannot wait, <a href=\"/blog/delete-time-machine-backups-mac\">this guide shows how to see and delete snapshots</a> without Terminal."
+    },
+    {
+      "file": "blog/how-to-clean-up-mac-storage.html",
+      "find": "thins them when space gets tight.",
+      "replace": "thins them when space gets tight. <a href=\"/blog/delete-time-machine-backups-mac\">How to delete Time Machine backups and snapshots</a> covers the ways that need no Terminal."
+    }
+  ],
+  "x_post": "Dragged a Time Machine backup to the Trash and now it will not empty? Backups are not ordinary folders. What Time Machine clears by itself, and the safe way to remove the rest."
+}
