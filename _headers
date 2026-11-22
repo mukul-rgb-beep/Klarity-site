@@ -1,0 +1,24 @@
+# Security headers for every address on the site (t22, 22 Nov 2026).
+# Read by Cloudflare Workers static assets like _redirects; it is never served as a file itself.
+# Limits: 100 rules, 2,000 characters a line. A header named in two matching rules is joined with a comma.
+#
+# Strict-Transport-Security is deliberately NOT here: it is set in the Cloudflare dashboard
+# (SSL/TLS > Edge Certificates > HSTS). Sending a second one from this file could disagree with it.
+#
+# Content-Security-Policy, in plain words:
+#   script-src  : this site, inline <script> blocks and onclick handlers (the menu, the Black Friday
+#                 strip, the support FAQ), and Cloudflare Web Analytics' beacon. 'unsafe-inline' is
+#                 needed because the publisher rewrites pages, so per-script hashes would go stale.
+#                 Cloudflare's own bot check is inline and loads from /cdn-cgi/ on this site.
+#   connect-src : this site (/cdn-cgi/rum and the bot check) and Cloudflare Web Analytics.
+#   img-src     : this site and data: (the hero tiles in site.css are a data: SVG).
+#   style-src   : this site and inline <style> / style="".
+#   everything else: this site only; no plugins, no <base> rewrite, forms post only here,
+#   and no other site may put these pages in a frame.
+# Before adding a third-party script, embed, font or image host to any page, add it here first.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
