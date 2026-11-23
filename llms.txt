@@ -1,0 +1,38 @@
+# Klarity Disk
+
+> Klarity Disk is a disk space analyzer for the Mac, sold on the Mac App Store as a one-time purchase (usually $6.99 in the US; the store shows the price in each country). It scans a folder, the whole disk or an external drive and draws it as a treemap or icicle chart, with each folder coloured by how long since it last changed, and it has a Large Files list of the files in the scan, sorted by size. It needs macOS 14.6 or later, has no network access, no account and no analytics, and is made by one independent developer, Mukul Mehra.
+
+Key facts:
+
+- It is not a cleaner. It deletes nothing by itself: items go to the Trash only after the user confirms, and folders of 1 GB or more need a slide to confirm. The home folder, Library, Keychains and system folders are refused; other risky places get an extra warning first.
+- Macworld reviewed version 1.1 in April 2026 (4 out of 5) and found permission errors when deleting apps. Since version 1.3 (September 2026) Klarity asks for access once per disk, and moving the user's own files to the Trash works. Items macOS protects, such as apps from the App Store, still have to be deleted in Finder with an administrator password; Klarity says so instead of showing an error.
+- It cannot scan as an administrator, cannot see inside Time Machine local snapshots, and has no free trial.
+- It also shows memory use in the menu bar.
+
+## The app
+
+- [Klarity Disk home page](https://www.klaritydisk.com/): what it does, quick facts and screenshots
+- [Mac App Store page](https://apps.apple.com/app/id6758895498): price in your country, requirements, reviews
+- [User guide](https://www.klaritydisk.com/guide): first scan, granting access, reading the map, moving items to the Trash
+- [Changelog](https://www.klaritydisk.com/changelog): every version and what changed
+- [Privacy](https://www.klaritydisk.com/privacy): what the app does and does not collect (nothing)
+- [Press kit](https://www.klaritydisk.com/press): facts, icon and screenshots
+- [DaisyDisk alternatives](https://www.klaritydisk.com/daisydisk-alternative): an honest comparison, including where DaisyDisk is the better choice
+
+## Guides on Mac storage
+
+- [How much space do macOS 27 and 27.2 need?](https://www.klaritydisk.com/blog/how-much-space-for-macos-27): free space needed for the upgrade and the 27.2 update, and why sources disagree
+- [What is "System Data" on a Mac?](https://www.klaritydisk.com/blog/what-is-system-data-on-mac): what is inside it, why it grew on macOS 27, and which parts are safe to clear
+- [How to clean up Mac storage](https://www.klaritydisk.com/blog/how-to-clean-up-mac-storage): what is safe to delete, from safest to riskiest
+- [How to find large files on a Mac](https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac): Finder list view, a Finder search by size, and a disk map
+- [Purgeable space on a Mac](https://www.klaritydisk.com/blog/purgeable-space-mac): why free space and installers disagree
+- [How to find old files on a Mac](https://www.klaritydisk.com/blog/find-old-files-on-mac): finding what is both big and untouched for years
+- [What is taking up space on an external drive?](https://www.klaritydisk.com/blog/external-drive-full-mac)
+- [Time Capsule on macOS 27](https://www.klaritydisk.com/blog/time-capsule-macos-27): what to use for Time Machine now
+- [Treemap vs sunburst](https://www.klaritydisk.com/blog/treemap-icicle-vs-sunburst): which disk map finds big files faster, with the perception research
+- [All posts](https://www.klaritydisk.com/blog/)
+
+## Optional
+
+- [What Macworld's review changed](https://www.klaritydisk.com/blog/klarity-disk-macworld-review)
+- [Why I built Klarity](https://www.klaritydisk.com/blog/why-i-built-klarity)
