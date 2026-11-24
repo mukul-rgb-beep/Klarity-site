@@ -1,6 +1,6 @@
 # Klarity Disk
 
-> Klarity Disk is a disk space analyzer for the Mac, sold on the Mac App Store as a one-time purchase (usually $6.99 in the US; the store shows the price in each country). It scans a folder, the whole disk or an external drive and draws it as a treemap or icicle chart, with each folder coloured by how long since it last changed, and it has a Large Files list that ranks every file in the scan by size, largest first. It needs macOS 14.6 or later, has no network access, no account and no analytics, and is made by one independent developer, Mukul Mehra.
+> Klarity Disk is a disk space analyzer for the Mac, sold on the Mac App Store as a one-time purchase (usually $6.99 in the US; the store shows the price in each country). It scans a folder, the whole disk or an external drive and draws it as a treemap or icicle chart, with each folder coloured by how long since it last changed, and it has a Large Files list that ranks every file the scan lists by size, largest first. It needs macOS 14.6 or later, has no network access, no account and no analytics, and is made by one independent developer, Mukul Mehra.
 
 Key facts:
 
