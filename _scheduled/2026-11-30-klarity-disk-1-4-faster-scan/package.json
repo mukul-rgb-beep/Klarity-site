@@ -1,0 +1,28 @@
+{
+  "slug": "klarity-disk-1-4-faster-scan",
+  "publish_date": "2026-11-30",
+  "requires": null,
+  "inbound_links": [
+    {
+      "file": "blog/treemap-icicle-vs-sunburst.html",
+      "find": "That's why Klarity gives you both treemap and icicle options.",
+      "replace": "That's why Klarity gives you both treemap and icicle options. (In our tests, the scanner planned for version 1.4 gets you to that map <a href=\"/blog/klarity-disk-1-4-faster-scan\">about four times faster</a>.)"
+    },
+    {
+      "file": "blog/how-to-find-large-files-on-mac.html",
+      "find": "A home folder with a few hundred thousand files takes seconds on an SSD.</li>",
+      "replace": "A home folder with a few hundred thousand files takes seconds on an SSD. <a href=\"/blog/klarity-disk-1-4-faster-scan\">Coming in 1.4: a scan about four times faster</a>, in our tests.</li>"
+    },
+    {
+      "file": "blog/why-i-built-klarity.html",
+      "find": "The workflow is simple: scan a folder, see what's taking space, and deal with it.",
+      "replace": "The workflow is simple: scan a folder, see what's taking space, and deal with it. (The scan is planned to get <a href=\"/blog/klarity-disk-1-4-faster-scan\">about four times faster in version 1.4</a>, in our tests.)"
+    },
+    {
+      "file": "blog/klarity-disk-black-friday.html",
+      "find": "Klarity shows you which folders hold the space.</p>",
+      "replace": "Klarity shows you which folders hold the space. Version 1.4 is planned with a new scanner that was <a href=\"/blog/klarity-disk-1-4-faster-scan\">about four times faster in our tests</a>, and it will be a free update for everyone who owns Klarity Disk.</p>"
+    }
+  ],
+  "x_post": "Coming in Klarity Disk 1.4: in our tests the default scan of a folder with half a million files takes 0.66 s instead of 2.74 s, about 4× faster; a full-depth scan uses under half the memory. Not out yet, and a free update for owners."
+}

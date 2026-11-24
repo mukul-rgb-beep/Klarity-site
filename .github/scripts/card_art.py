@@ -500,6 +500,17 @@ ART["klarity-disk-black-friday"] = svg(
     + text(241, 126, "27 Nov – 1 Dec", 11, 500, ACCENT, "middle"),
     "A disk map coloured by age beside a price card: 6.99 dollars struck through, 2.99 dollars, 27 November to 1 December")
 
+# 30 Nov — Coming in 1.4: the default scan, 2.74 s today against 0.66 s with the new scanner (t28 test figures)
+ART["klarity-disk-1-4-faster-scan"] = svg(
+    win(24, 22, 272, 136)
+    + text(44, 50, "Default scan", 14, 600) + text(276, 50, "about 4× faster", 12, 600, ACCENT, "end")
+    + text(44, 82, "1.3.2", 12, 500, INK2)
+    + f'<rect x="86" y="72" width="140" height="13" rx="6.5" fill="{GREY}"/>' + text(276, 83, "2.74 s", 12.5, 500, INK2, "end")
+    + text(44, 116, "1.4", 12, 600, ACCENT) + text(44, 129, "in testing", 9.5, 500, ACCENT)
+    + f'<rect x="86" y="106" width="34" height="13" rx="6.5" fill="{ACCENT}"/>' + text(130, 117, "0.66 s", 12.5, 700, ACCENT)
+    + text(44, 149, "In our tests · coming in 1.4", 11, 500, INK2),
+    "Two bars: the default scan takes 2.74 seconds in Klarity Disk 1.3.2 and 0.66 seconds in internal testing with the new scanner, in development for 1.4")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"
