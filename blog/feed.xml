@@ -6,7 +6,14 @@
     <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>Spotlight Index Taking Up Space on a Mac? What to Do</title>
+      <link>https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac</guid>
+      <pubDate>Wed, 25 Nov 2026 03:30:00 +0000</pubDate>
+      <description>After a macOS update, Spotlight rebuilds its index and free space can drop for days. What Apple says, what to leave alone, keeping folders out of search.</description>
+    </item>
     <item>
       <title>How Much Mac Storage Do You Need? Measure Before You Buy</title>
       <link>https://www.klaritydisk.com/blog/how-much-storage-mac-buy</link>
