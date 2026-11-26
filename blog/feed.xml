@@ -6,7 +6,14 @@
     <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>Vibe Coding Is Filling Your Mac: Where the Space Goes</title>
+      <link>https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage</guid>
+      <pubDate>Thu, 26 Nov 2026 03:30:00 +0000</pubDate>
+      <description>AI coding tools leave extra project copies, packages, builds and session records on your Mac. Where they sit, how to see them, and what comes back.</description>
+    </item>
     <item>
       <title>Spotlight Index Taking Up Space on a Mac? What to Do</title>
       <link>https://www.klaritydisk.com/blog/spotlight-index-taking-space-mac</link>
