@@ -511,6 +511,24 @@ ART["klarity-disk-1-4-faster-scan"] = svg(
     + text(44, 149, "In our tests · coming in 1.4", 11, 500, INK2),
     "Two bars: the default scan takes 2.74 seconds in Klarity Disk 1.3.2 and 0.66 seconds in internal testing with the new scanner, in development for 1.4")
 
+# AI coding tools: one prompt each, many folders; a few in use (blue), most left behind (older colours)
+def _aic_folder(x, y, c, s=.42):
+    return (f'<g transform="translate({x} {y}) scale({s})"><path d="M0 6a6 6 0 0 1 6-6h16l6 6h24a6 6 0 0 1 6 6v30a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6Z" fill="{c}"/>'
+            f'<path d="M0 6a6 6 0 0 1 6-6h16l6 6h24a6 6 0 0 1 6 6v30a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6Z" fill="#000" fill-opacity=".2"/>'
+            f'<path d="M0 14a6 6 0 0 1 6-6h46a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6Z" fill="{c}"/></g>')
+_aic_ages = [0, 0, 1, 1, 1, 2, 1,
+             1, 2, 1, 2, 2, 1, 3,
+             2, 1, 2, 3, 2, 2, 3]
+_aic = "".join(_aic_folder(42 + (i % 7) * 34, 58 + (i // 7) * 29, AGE[a]) for i, a in enumerate(_aic_ages))
+ART["ai-coding-tools-mac-storage"] = svg(
+    win(24, 16, 272, 148)
+    + sparkle(46, 37, 7.5) + text(60, 42, "Made by your AI tools", 14, 600)
+    + _aic
+    + dot(46, 150, AGE[0], 4) + text(56, 154, "in use", 11, 500, INK2)
+    + dot(104, 150, AGE[2], 4) + text(114, 154, "left behind", 11, 500, INK2)
+    + text(278, 154, "21 folders", 11, 600, INK, "end"),
+    "A window of 21 project folders made with AI coding tools: two in use this month, the rest left behind")
+
 def target(slug):
     queued = sorted(ROOT.glob(f"_scheduled/*-{slug}"))
     return (queued[0] / "assets" if queued else ROOT / "blog") / f"card-{slug}.svg"

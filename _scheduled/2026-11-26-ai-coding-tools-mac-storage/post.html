@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding Is Filling Your Mac: Where the Space Goes | Klarity Blog</title>
+<meta name="description" content="AI coding tools leave extra project copies, packages, builds and session records on your Mac. Where they sit, how to see them, and what comes back.">
+<meta name="keywords" content="vibe coding disk space, ai coding tools mac storage, claude code disk space, .claude folder size, codex disk space, codex worktrees disk space, node_modules taking up space mac, deriveddata worktrees, git worktree disk space, mac disk space analyzer, klarity disk">
+<meta name="author" content="Mukul Mehra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vibe Coding Is Filling Your Mac: Where the Space Goes">
+<meta property="og:description" content="AI coding tools leave extra project copies, packages, builds and session records on your Mac. Where they sit, how to see them, and what comes back.">
+<meta property="og:url" content="https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage">
+<meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+<meta property="og:site_name" content="Klarity">
+<meta property="article:published_time" content="2026-11-26">
+<meta property="article:author" content="Mukul Mehra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vibe Coding Is Filling Your Mac: Where the Space Goes">
+<meta name="twitter:description" content="AI coding tools leave extra project copies, packages, builds and session records on your Mac. Where they sit, how to see them, and what comes back.">
+<meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Vibe Coding Is Filling Your Mac: Where the Space Goes", "description": "AI coding tools leave extra project copies, packages, builds and session records on your Mac. Where they sit, how to see them, and what comes back.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-26", "dateModified": "2026-11-26", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Vibe Coding Is Filling Your Mac: Where the Space Goes", "item": "https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I delete the .claude or .codex folder to free space?", "acceptedAnswer": {"@type": "Answer", "text": "Not the whole folder. Besides session records it holds your settings, and Codex can keep your sign-in there. Look inside it on a map first, and use the tool’s own settings where it has them: Claude Code can limit how long session records are kept, and Codex can cap the size of its history file."}}, {"@type": "Question", "name": "Is it safe to delete node_modules?", "acceptedAnswer": {"@type": "Answer", "text": "In a project that still has its list of packages, the folder can be installed again, so you lose time, not work. Move it to the Trash, and keep the project itself."}}, {"@type": "Question", "name": "Why does one Xcode project have so many DerivedData folders?", "acceptedAnswer": {"@type": "Answer", "text": "A copy of a project in a different place gets a build folder of its own, so each copy an assistant builds leaves one behind, and it stays after the copy is removed. Apple says derived data can be re-created at any time from your source files, so the old ones can be cleared."}}, {"@type": "Question", "name": "What is a worktree, and can I delete one?", "acceptedAnswer": {"@type": "Answer", "text": "A worktree is a second working copy of a project that shares its history with the original. Remove one only after its changes are merged or pushed, and let the tool that made it do the removing where you can."}}]}</script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+
+<link rel="stylesheet" href="/css/site.css?v=202611211">
+</head>
+<body>
+<!-- BF26-STRIP start: Black Friday strip: announces the sale until 27 Nov 2026 12:00 UTC, shows the sale with a store button until 1 Dec 2026 10:00 UTC, then nothing. Remove this block after 1 Dec 2026. -->
+<script>(function(){var n=Date.now(),s=document.currentScript;if(!s||n>=Date.UTC(2026,11,1,10))return;var pre=n<Date.UTC(2026,10,27,12);var c=document.createElement('style');c.textContent='.bf26{background:#1D1D1F;color:#F5F5F7;font-size:16px;line-height:1.4}.bf26-in{max-width:1120px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;text-align:center}.bf26 p{margin:0;color:inherit;font-size:inherit;text-wrap:balance}.bf26 strong{font-weight:600}.bf26 .bf26-p{font-weight:700;color:#fff}.bf26 .bf26-u{color:#C7C7CC}.bf26 a{flex:none;background:#fff;color:#1D1D1F;padding:7px 16px;border-radius:980px;font-size:15px;font-weight:600;line-height:1.4;text-decoration:none;white-space:nowrap}.bf26 a:hover{background:#E8E8ED}.bf26 a:focus-visible{outline:2px solid #fff;outline-offset:2px}@media (max-width:600px){.bf26{font-size:15px}.bf26-in{padding:10px 16px}.bf26 a{padding:12px 18px}}@media print{.bf26{display:none}}';document.head.appendChild(c);s.insertAdjacentHTML('afterend',pre?'<aside class="bf26" aria-label="Black Friday offer"><div class="bf26-in"><p><strong>Black Friday:<\/strong> Klarity Disk drops to <strong class="bf26-p">$2.99<\/strong> in most countries from 27 November to 1 December <span class="bf26-u">(usually $6.99)<\/span>.<\/p><\/div><\/aside>':'<aside class="bf26" aria-label="Black Friday offer"><div class="bf26-in"><p><strong>Black Friday:<\/strong> Klarity Disk is <strong class="bf26-p">$2.99<\/strong> in most countries until 1 December <span class="bf26-u">(usually $6.99)<\/span>.<\/p><a href="/go/site" rel="nofollow">View on the Mac App Store<\/a><\/div><\/aside>')})()</script>
+<!-- BF26-STRIP end -->
+
+<script>document.documentElement.classList.add('js')</script>
+<nav class="nav" id="mainNav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="24" height="24" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="50" height="48" rx="5" fill="#3ECFCF"/>
+        <rect x="62" y="8" width="50" height="26" rx="5" fill="#5B8DEF"/>
+        <rect x="62" y="38" width="50" height="18" rx="5" fill="#47E0B0"/>
+        <rect x="8" y="60" width="30" height="52" rx="5" fill="#5B8DEF"/>
+        <rect x="42" y="60" width="24" height="52" rx="5" fill="#3ECFCF"/>
+        <rect x="70" y="60" width="42" height="28" rx="5" fill="#7BA4F7"/>
+        <rect x="70" y="92" width="42" height="20" rx="5" fill="#3ECFCF"/>
+      </svg>
+      Klarity
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#compare">Compare</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/go/nav" rel="nofollow" class="nav-cta">Download</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="article-page">
+  <div class="article-header">
+    <a href="/blog/" class="article-back"><span>&larr;</span> Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Guide</span>
+      <span class="article-date">November 26, 2026</span>
+      <span class="article-date">Mukul Mehra &middot; 8 min read</span>
+    </div>
+    <h1>Vibe Coding Is Filling Your Mac: Where the Space Goes</h1>
+    <p class="article-subtitle">AI coding tools make it cheap to start a project, try a second copy and build it to see. Each of those leaves folders behind. Where they are, how to see them, and what is rebuilt by itself.</p>
+  </div>
+
+  <div class="article-divider"><hr></div>
+
+  <div class="article-body">
+
+    <h2>The folders you did not make</h2>
+
+    <p>With an AI coding tool, a new project costs one sentence. So does a second copy of it to try another idea, a build to see whether it works, and a fresh set of packages to run it. People call it vibe coding.</p>
+
+    <p>What is easy to miss is that every one of those steps writes folders to your disk, and many of them stay there. The tool moves on to the next task. You never opened those folders, so you do not think of them as yours.</p>
+
+    <p>Storage settings will not help much. It mostly shows categories, not folders, and a lot of this sits in hidden folders it does not name.</p>
+
+    <h2>Where the space goes</h2>
+
+    <p>Six kinds of thing. The folder names are the ones you will see on your own disk. These tools change quickly, so the details are as their makers documented them in November 2026.</p>
+
+    <figure>
+      <img src="/blog/ai-coding-copies.svg" alt="One project and three extra copies made by an AI coding tool. Each copy has its own files, packages and build output" width="720" height="372" loading="lazy">
+      <figcaption>A second copy is not a shortcut to the first. It is the project again.</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>Extra copies of the project.</strong> To work on two things at once, an assistant makes a second working copy of your project, called a worktree. Each copy has its own files, and usually its own installed packages and build output. OpenAI&rsquo;s documentation says it plainly: &ldquo;Worktrees can take up a lot of disk space.&rdquo;</li>
+      <li><strong>Installed packages.</strong> A web project keeps its packages in a folder called <code>node_modules</code>; a Python project keeps them in a virtual environment, often called <code>.venv</code>. Every project and every copy gets its own. The package managers also keep what they downloaded, mostly in hidden folders in your home folder.</li>
+      <li><strong>Build output.</strong> Each time an assistant builds an Xcode project to check its work, Xcode writes build output to a folder called DerivedData. A copy of the project in a different place gets a build folder of its own, and that folder stays when the copy is gone. <a href="/blog/xcode-taking-up-space-mac">Xcode taking up space on your Mac</a> covers DerivedData and simulators in full.</li>
+      <li><strong>The record of every session.</strong> Claude Code and Codex each keep a record of what you asked and what they did, in a hidden folder in your home folder. Long sessions make large files. Ordinary ChatGPT chats are different: OpenAI says they stay in your account, so they are unlikely to be what fills a disk.</li>
+      <li><strong>The tools themselves.</strong> The desktop apps keep data of their own in your Library too, and it may be large; a map will show you. Xcode downloads each coding agent you turn on, and Apple points to Settings &rarr; Components for managing its downloads.</li>
+      <li><strong>Projects you abandoned.</strong> The experiment from March that never worked. It still has its packages, its builds and its copies.</li>
+    </ul>
+
+    <p>Where Claude Code and Codex put the first and the fourth of these:</p>
+
+    <table>
+      <thead><tr><th>Tool</th><th>Extra project copies</th><th>Session records</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Claude Code</strong></td><td>Inside the project: a hidden <code>.claude</code> folder, then <code>worktrees</code>. It removes a copy that holds no changes when an ordinary session ends.</td><td>In <code>.claude</code> in your home folder. Deleted after 30 days by default; sessions started in the Claude desktop app are kept until you set a limit.</td></tr>
+        <tr><td><strong>Codex</strong>, now part of the ChatGPT desktop app</td><td>In your home folder: <code>.codex</code>, then <code>worktrees</code>. It keeps the 15 most recent by default.</td><td>In <code>.codex</code> in your home folder. No age limit found in its documentation.</td></tr>
+      </tbody>
+    </table>
+
+    <p>If your tools run code in Docker, that is one more large file of its own: see <a href="/blog/docker-vm-disk-images-mac">Docker and VM disk images on a Mac</a>.</p>
+
+    <h2>See it first, with Klarity</h2>
+
+    <p><a href="/go/blog" rel="nofollow">Klarity</a>, the <a href="https://www.klaritydisk.com/">Mac disk space analyzer</a> I build, draws a folder as a map. Every folder is a rectangle, and its size on screen is the space it takes on disk, so the biggest thing is the biggest shape.</p>
+
+    <figure>
+      <a class="shot-link" href="/go/blog" rel="nofollow"><img src="/img/1.3.1/hero.webp" alt="Klarity 1.3.1&rsquo;s treemap of a home folder: Pictures is 62.28 GB, and almost all of it is one blue block, Photos Library.photoslibrary at 55.83 GB" width="2648" height="1952" loading="lazy"><span class="visually-hidden">View Klarity Disk on the Mac App Store</span></a>
+      <figcaption>Klarity&rsquo;s map of a home folder. The large rectangles are where the space is.</figcaption>
+    </figure>
+
+    <aside class="app-card" aria-label="Klarity Disk on the Mac App Store">
+      <img class="app-card-icon" src="/icon-180.png" width="56" height="56" alt="" loading="lazy">
+      <div class="app-card-text">
+        <p class="app-card-name">Klarity Disk</p>
+        <p class="app-card-line">See how much space your AI tools&rsquo; folders take.</p>
+        <p class="app-card-fine">$6.99 once &middot; no subscription &middot; macOS 14.6 or later</p>
+      </div>
+      <div class="app-card-actions">
+        <a class="cta-button" href="/go/blog" rel="nofollow">View on the Mac App Store</a>
+        <a class="app-card-send" href="mailto:?subject=Klarity%20Disk%20for%20my%20Mac&amp;body=Open%20this%20on%20the%20Mac%3A%0Ahttps%3A%2F%2Fwww.klaritydisk.com%2Fgo%2Fblog%0A%0AFrom%3A%20https%3A%2F%2Fwww.klaritydisk.com%2Fblog%2Fai-coding-tools-mac-storage" data-send-mac data-url="https://www.klaritydisk.com/go/blog" data-title="Klarity Disk for Mac">Send this to my Mac</a>
+      </div>
+    </aside>
+
+    <p>Click <strong>Home</strong> in the sidebar. Klarity scans hidden folders too, so <code>.claude</code>, <code>.codex</code> and package downloads such as <code>.npm</code> appear as rectangles beside Desktop and Documents, with their sizes. Double-click any rectangle to go inside it.</p>
+
+    <figure>
+      <img src="/blog/ai-coding-home-map.svg" alt="An illustration of a home folder drawn as a map: node_modules in projects left alone, an abandoned project, project copies in .claude/worktrees and .codex/worktrees, DerivedData build output, package downloads and session records, each coloured by how long since it changed" width="720" height="430" loading="lazy">
+      <figcaption>An illustration, not a real scan: the kinds of folder this post is about, as they would look on a map coloured by age.</figcaption>
+    </figure>
+
+    <p>Then look at the colours. Klarity colours each rectangle by how long since it last changed: blue for this month, through green, gold and orange, to red for three years or more. In a folder of projects, that is the question you need answered. Blue is what you are working on. A large gold or orange rectangle is probably a project nobody has touched in a year or more, still carrying its packages and its builds. Double-click it and the colours inside confirm it.</p>
+
+    <p>Select a rectangle and the inspector on the right shows its size, its share of the folder above, how many items it holds, when it last changed and the largest things inside. <strong>Large files</strong> in the toolbar lists the biggest single files in the folders the scan has opened. To find one very long session record, double-click into <code>.claude</code> and then <code>projects</code> first.</p>
+
+    <p>One honest limit. Klarity shows you size and age. It cannot tell you whether a folder holds the only copy of your work, and it does not clean anything by itself. That decision stays with you, and the next section is about making it.</p>
+
+    <p><a href="/go/blog" rel="nofollow">Klarity is on the Mac App Store</a>. It is $6.99 once, for macOS 14.6 or later, with no subscription, no account and no network access.</p>
+
+    <h2>What comes back by itself, and what does not</h2>
+
+    <p>This is the part worth reading slowly.</p>
+
+    <figure>
+      <img src="/blog/ai-coding-comes-back.svg" alt="Two lists. Rebuilt when you need it: build folders in DerivedData, node_modules, Python virtual environments, package downloads. Not rebuilt, check first: copies with unfinished work, projects never pushed anywhere, session records, the tools&rsquo; own folders as a whole" width="720" height="300" loading="lazy">
+      <figcaption>The short version of the two lists below.</figcaption>
+    </figure>
+
+
+    <p><strong>Rebuilt when you next need it:</strong></p>
+
+    <ul>
+      <li><strong>Build folders in DerivedData.</strong> Apple says the folder &ldquo;is often large and can be re-created at any time from your source files&rdquo;. The next build is slower, once.</li>
+      <li><strong><code>node_modules</code>.</strong> The project keeps a list of the packages it needs, and installing from that list fills the folder again.</li>
+      <li><strong>Python virtual environments.</strong> Python&rsquo;s own documentation calls one disposable: &ldquo;it should be simple to delete and recreate it from scratch.&rdquo; That holds as long as the project lists what it needs.</li>
+      <li><strong>Package downloads.</strong> Downloaded again when needed, which costs time and data, not work.</li>
+    </ul>
+
+    <p><strong>Not rebuilt. Check before you touch these:</strong></p>
+
+    <ul>
+      <li><strong>Extra copies with unfinished work.</strong> If an assistant changed files in a copy and those changes were never merged or pushed, that copy may be the only place they exist.</li>
+      <li><strong>Projects that were never pushed anywhere.</strong> A scratch project that lives only on this Mac is gone when its folder is.</li>
+      <li><strong>Session records.</strong> Anthropic says what you lose with Claude Code&rsquo;s: you can no longer resume or rewind those past sessions, and the notes the tool saved about each project go with them.</li>
+      <li><strong>The tools&rsquo; own folders as a whole.</strong> <code>.claude</code> and <code>.codex</code> also hold your settings, and Codex can keep your sign-in there. Never move the whole folder to the Trash to save space.</li>
+    </ul>
+
+    <h2>How to get it back, lowest risk first</h2>
+
+    <ol>
+      <li><strong>Old build folders.</strong> Start here, because Xcode makes them again. Follow <a href="/blog/xcode-taking-up-space-mac">the Xcode guide</a> for DerivedData.</li>
+      <li><strong>Packages in projects you are not working on.</strong> Find a gold or orange project on the map, open it, and move its <code>node_modules</code> or <code>.venv</code> to the Trash. Keep the project. If it still has its list of packages, they install again when you come back.</li>
+      <li><strong>Finished copies.</strong> First make sure the work in them was merged or pushed. Then let the tool that made the copy remove it. In the ChatGPT desktop app, archiving a chat deletes its copy, and Codex saves a snapshot of the work first. Claude Code asks whether to keep or remove a copy that has work in it when you leave an ordinary session; choosing remove deletes that work, so check first. Either is better than the Trash, because the project keeps a record of its copies. Git itself will not remove a copy with uncommitted changes unless it is forced to, which is the protection you want.</li>
+      <li><strong>Old session records.</strong> Use the tool&rsquo;s own settings. Claude Code deletes transcripts after 30 days unless that was changed; the setting is called <code>cleanupPeriodDays</code>. Sessions started from the Claude desktop app are kept with no age limit unless you set one. Codex has settings that cap its history file or turn it off; none was found in its documentation for older session records. Delete records by hand only if you are sure you will not need to go back.</li>
+      <li><strong>Abandoned projects.</strong> Open the folder and look. If it exists nowhere else and you might want it, copy it to another drive first. Then move it to the Trash.</li>
+    </ol>
+
+    <p>In Klarity, right-click a rectangle or use the <strong>Move to Trash&hellip;</strong> button in the inspector. Klarity only ever moves things to the Trash. A folder of 1 GB or more needs a slide to confirm, and anything inside your Library, outside its Caches, Developer and Logs folders, gets an extra warning first, because apps keep their data there. A few folders your account depends on are refused outright. Until you empty the Trash, the space is not free, and a mistake can still be put back.</p>
+
+    <h2>Keep it from coming back</h2>
+
+    <ul>
+      <li>When a task is finished and its work is merged or pushed, archive the chat or let the assistant remove the copy it made. Both tools already clear some copies by themselves: Codex keeps the 15 most recent by default, and Claude Code removes a copy that holds no changes when an ordinary session ends.</li>
+      <li>Keep experiments in one folder, so they are easy to find later.</li>
+      <li>Look at your home folder on the map once a month. Old and big is the combination worth acting on; <a href="/blog/find-old-files-on-mac">finding old files on a Mac</a> uses the same approach for everything else.</li>
+    </ul>
+
+    <div class="article-cta article-cta-mid">
+      <div class="article-cta-inner">
+        <h3>See your disk. Clearly.</h3>
+        <p>$6.99 one-time &middot; macOS 14.6+ &middot; Apple Silicon &amp; Intel</p>
+        <a href="/go/blog" rel="nofollow" class="cta-button">Download on Mac App Store</a>
+      </div>
+    </div>
+
+    <h2>Questions people ask</h2>
+
+    <h3 class="faq-q">Can I delete the .claude or .codex folder to free space?</h3>
+    <p>Not the whole folder. Besides session records it holds your settings, and Codex can keep your sign-in there. Look inside it on a map first, and use the tool&rsquo;s own settings where it has them: Claude Code can limit how long session records are kept, and Codex can cap the size of its history file.</p>
+
+    <h3 class="faq-q">Is it safe to delete node_modules?</h3>
+    <p>In a project that still has its list of packages, the folder can be installed again, so you lose time, not work. Move it to the Trash, and keep the project itself.</p>
+
+    <h3 class="faq-q">Why does one Xcode project have so many DerivedData folders?</h3>
+    <p>A copy of a project in a different place gets a build folder of its own, so each copy an assistant builds leaves one behind, and it stays after the copy is removed. Apple says derived data can be re-created at any time from your source files, so the old ones can be cleared.</p>
+
+    <h3 class="faq-q">What is a worktree, and can I delete one?</h3>
+    <p>A worktree is a second working copy of a project that shares its history with the original. Remove one only after its changes are merged or pushed, and let the tool that made it do the removing where you can.</p>
+
+    <p>&mdash; Mukul</p>
+
+  </div>
+
+  <div class="related-posts">
+    <h3>More from the Klarity Blog</h3>
+    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+      <li><a href="/blog/xcode-taking-up-space-mac">Xcode Taking Up Space on Your Mac? What Is Safe to Clear &rarr;</a></li>
+      <li><a href="/blog/docker-vm-disk-images-mac">Docker and VM Disk Images on a Mac: What They Really Use &rarr;</a></li>
+      <li><a href="/blog/find-old-files-on-mac">How to Find Old Files on a Mac That Are Taking Up Space &rarr;</a></li>
+      <li><a href="/blog/how-to-find-large-files-on-mac">How to Find Large Files on a Mac (Without Terminal) &rarr;</a></li>
+      <li><a href="/blog/what-is-system-data-on-mac">What Is “System Data” on a Mac, and How to Clear It Safely &rarr;</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025–2026 Mukul Mehra. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="/guide">User Guide</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daisydisk-alternative">DaisyDisk alternative</a></li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/age-suitability">Age Suitability</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Use</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+  if(!b||!l)return;
+  function close(){l.classList.remove('open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();b.focus()}});
+})();
+
+</script>
+</body>
+</html>
