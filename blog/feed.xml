@@ -6,7 +6,14 @@
     <atom:link href="https://www.klaritydisk.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-language guides to Mac storage: what is filling your disk and how to get space back.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 03:30:00 +0000</lastBuildDate>
+    <item>
+      <title>Messages Taking Up Space on Your Mac? Clear It Safely</title>
+      <link>https://www.klaritydisk.com/blog/messages-taking-up-space-mac</link>
+      <guid isPermaLink="true">https://www.klaritydisk.com/blog/messages-taking-up-space-mac</guid>
+      <pubDate>Fri, 27 Nov 2026 03:30:00 +0000</pubDate>
+      <description>Messages keeps years of photos and videos on your Mac. See how much space it really takes, then clear it with Messages’ own tools, not by hand in Finder.</description>
+    </item>
     <item>
       <title>Vibe Coding Is Filling Your Mac: Where the Space Goes</title>
       <link>https://www.klaritydisk.com/blog/ai-coding-tools-mac-storage</link>
@@ -145,7 +152,7 @@
       <link>https://www.klaritydisk.com/blog/mac-storage-full-after-update</link>
       <guid isPermaLink="true">https://www.klaritydisk.com/blog/mac-storage-full-after-update</guid>
       <pubDate>Thu, 10 Sep 2026 03:30:00 +0000</pubDate>
-      <description>Updated macOS and lost tens of gigabytes? The space is still there, in folders with names. Here is the fastest way to see which ones and clear them.</description>
+      <description>Do macOS updates take up storage? Yes: snapshots, the installer and rebuilding caches can take 30 GB overnight. What comes back by itself, and what to clear.</description>
     </item>
     <item>
       <title>Klarity 1.3: Why Move to Trash Used to Fail, and What I Changed</title>
@@ -166,7 +173,7 @@
       <link>https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac</link>
       <guid isPermaLink="true">https://www.klaritydisk.com/blog/how-to-find-large-files-on-mac</guid>
       <pubDate>Mon, 07 Sep 2026 03:30:00 +0000</pubDate>
-      <description>Three ways to find the biggest files and folders on a Mac: Finder list view, a Finder search by size, and a treemap disk analyzer. Plus the seven folders where the space usually goes.</description>
+      <description>How to find large files on a Mac: a Finder search by size, Finder list view, a treemap disk analyzer, or one Terminal command. And where the space usually goes.</description>
     </item>
     <item>
       <title>What Is “System Data” on a Mac, and How to Clear It Safely</title>
