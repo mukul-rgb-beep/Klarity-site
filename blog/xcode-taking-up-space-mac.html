@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xcode Taking Up Space on Your Mac? What Is Safe to Clear | Klarity Blog</title>
-<meta name="description" content="Xcode can fill tens of gigabytes. What DerivedData, archives, device support and simulators are, which ones rebuild themselves, and how to clear them.">
+<title>How Big Is Xcode? 4 GB App, 150+ GB of Files You Can Clear</title>
+<meta name="description" content="How big is Xcode? The app is under 4 GB, but simulators, runtimes, device support and build files can pass 150 GB. Which are safe to clear, and how.">
 <meta name="keywords" content="xcode taking up space mac, xcode deriveddata, ios devicesupport, delete simulators xcode, xcode archives, simulator runtimes, mac disk space analyzer, klarity disk">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.klaritydisk.com/blog/xcode-taking-up-space-mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode Taking Up Space on Your Mac? What Is Safe to Clear">
-<meta property="og:description" content="Xcode can fill tens of gigabytes. What DerivedData, archives, device support and simulators are, which ones rebuild themselves, and how to clear them.">
+<meta property="og:description" content="How big is Xcode? The app is under 4 GB, but simulators, runtimes, device support and build files can pass 150 GB. Which are safe to clear, and how.">
 <meta property="og:url" content="https://www.klaritydisk.com/blog/xcode-taking-up-space-mac">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
@@ -19,12 +19,12 @@
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Xcode Taking Up Space on Your Mac? What Is Safe to Clear">
-<meta name="twitter:description" content="Xcode can fill tens of gigabytes. What DerivedData, archives, device support and simulators are, which ones rebuild themselves, and how to clear them.">
+<meta name="twitter:description" content="How big is Xcode? The app is under 4 GB, but simulators, runtimes, device support and build files can pass 150 GB. Which are safe to clear, and how.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Xcode Taking Up Space on Your Mac? What Is Safe to Clear", "description": "Xcode can fill tens of gigabytes. What DerivedData, archives, device support and simulators are, which ones rebuild themselves, and how to clear them.", "image": "https://www.klaritydisk.com/img/1.3.1/library.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-17", "dateModified": "2026-11-17", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/xcode-taking-up-space-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Xcode Taking Up Space on Your Mac? What Is Safe to Clear", "description": "How big is Xcode? The app is under 4 GB, but simulators, runtimes, device support and build files can pass 150 GB. Which are safe to clear, and how.", "image": "https://www.klaritydisk.com/img/1.3.1/library.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-17", "dateModified": "2026-11-28", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/xcode-taking-up-space-mac"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Xcode Taking Up Space on Your Mac? What Is Safe to Clear", "item": "https://www.klaritydisk.com/blog/xcode-taking-up-space-mac"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete Xcode DerivedData?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. DerivedData is build output and indexes, and Xcode rebuilds it the next time you build each project. Quit Xcode first, and expect the first build afterwards to be slower while Xcode re-indexes."}}, {"@type": "Question", "name": "Can I delete the iOS DeviceSupport folders?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for iOS versions your devices no longer run. Each folder holds debugging files Xcode copied from a device. If you connect a device on that version again, Xcode copies them again. Keep the folder for the version your phone runs now to avoid the wait."}}, {"@type": "Question", "name": "Where are Xcode simulator runtimes stored?", "acceptedAnswer": {"@type": "Answer", "text": "On current versions of Xcode and macOS, runtimes are kept in a protected system location, not in the Developer folder in your Library, and one copy is shared by every installed Xcode. Remove them in Xcode, Settings, Components, not by deleting files."}}, {"@type": "Question", "name": "Should I delete old Xcode archives?", "acceptedAnswer": {"@type": "Answer", "text": "Only for versions nobody uses any more. An archive holds the debug symbols that make crash reports readable, so keep the archive for every version of your app still in people’s hands. Test builds and abandoned experiments can go."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How big is Xcode?", "acceptedAnswer": {"@type": "Answer", "text": "The Xcode app is under 4 GB (Xcode 27.1 on the author’s Mac), but the files it creates while you work are far larger. Device support files, simulators, simulator runtimes and build output took more than 150 GB on the Mac measured for this post, and most of that can be cleared safely."}}, {"@type": "Question", "name": "Is it safe to delete Xcode DerivedData?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. DerivedData is build output and indexes, and Xcode rebuilds it the next time you build each project. Quit Xcode first, and expect the first build afterwards to be slower while Xcode re-indexes."}}, {"@type": "Question", "name": "Can I delete the iOS DeviceSupport folders?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for iOS versions your devices no longer run. Each folder holds debugging files Xcode copied from a device. If you connect a device on that version again, Xcode copies them again. Keep the folder for the version your phone runs now to avoid the wait."}}, {"@type": "Question", "name": "Where are Xcode simulator runtimes stored?", "acceptedAnswer": {"@type": "Answer", "text": "On current versions of Xcode and macOS, runtimes are kept in a protected system location, not in the Developer folder in your Library, and one copy is shared by every installed Xcode. Remove them in Xcode, Settings, Components, not by deleting files."}}, {"@type": "Question", "name": "Should I delete old Xcode archives?", "acceptedAnswer": {"@type": "Answer", "text": "Only for versions nobody uses any more. An archive holds the debug symbols that make crash reports readable, so keep the archive for every version of your app still in people’s hands. Test builds and abandoned experiments can go."}}, {"@type": "Question", "name": "Why is Xcode taking up so much space on my Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Most of the space is not the app. Xcode keeps build output (DerivedData), debugging files copied from each iOS version you connect (iOS DeviceSupport), one folder per simulated device, simulator runtimes and archives of the builds you shipped. They grow project by project and iOS version by iOS version, and Storage settings folds them into one number with no breakdown."}}, {"@type": "Question", "name": "Where does Xcode store its files on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "In the Developer folder inside the Library folder in your home folder, which Finder hides: ~/Library/Developer/Xcode holds DerivedData, iOS DeviceSupport and Archives, and ~/Library/Developer/CoreSimulator/Devices holds the simulators. Simulator runtimes are the exception: current versions of macOS keep them in a protected system location outside your home folder."}}, {"@type": "Question", "name": "How do I delete Xcode simulators?", "acceptedAnswer": {"@type": "Answer", "text": "In Xcode, choose Window, Devices and Simulators, then the Simulators tab, Control-click a simulator you do not use and choose Delete. Doing it from Xcode keeps its list of simulators right. To remove a whole runtime, use Xcode, Settings, Components instead."}}, {"@type": "Question", "name": "Does deleting Xcode remove all its files?", "acceptedAnswer": {"@type": "Answer", "text": "No. Moving Xcode to the Trash removes only the app. DerivedData, device support files, simulators and archives stay in your Library, and simulator runtimes stay in their system location, shared by every Xcode. Remove runtimes in Xcode, Settings, Components before deleting the last copy of Xcode, and clear the Developer folder by hand if you are done with Xcode."}}, {"@type": "Question", "name": "Will clearing Xcode files break my projects?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your source code lives in your project folders, not in these. DerivedData, device support files and simulators are rebuilt or copied again when needed; the cost is a slower first build and a wait when you next connect a device. Archives are the exception: they do not come back, so keep those for versions still in use."}}, {"@type": "Question", "name": "How often should I clean up Xcode files?", "acceptedAnswer": {"@type": "Answer", "text": "Every few months is enough for most developers, and after each major iOS release, when a new set of device support files and runtimes arrives. The leftovers come back as you work, so a quick look at the Developer folder, sorted by size and age, keeps it from growing back to a hundred gigabytes."}}]}</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
@@ -79,6 +79,16 @@
   <div class="article-divider"><hr></div>
 
   <div class="article-body">
+    <div class="callout">
+      <div class="callout-title">The short answer</div>
+      <p>The Xcode app itself is under 4&nbsp;GB (Xcode 27.1 on my Mac). What it makes while you work is far bigger: on the Mac measured for this post, device support files, simulators, simulator runtimes and build output came to more than 150&nbsp;GB. Most of it is safe to clear:</p>
+      <ol>
+        <li><strong>DerivedData</strong> (build output): safe; Xcode rebuilds it.</li>
+        <li><strong>iOS DeviceSupport</strong>: safe for iOS versions your devices no longer run.</li>
+        <li><strong>Simulators and runtimes</strong>: remove the ones you do not use, from Xcode&rsquo;s own settings.</li>
+        <li><strong>Archives</strong>: keep those for versions people still use.</li>
+      </ol>
+    </div>
 
     <h2>Xcode&rsquo;s real size is not in Applications</h2>
 
@@ -162,6 +172,9 @@
 
     <h2>Questions people ask</h2>
 
+    <h3 class="faq-q">How big is Xcode?</h3>
+    <p>The Xcode app is under 4 GB (Xcode 27.1 on the author&rsquo;s Mac), but the files it creates while you work are far larger. Device support files, simulators, simulator runtimes and build output took more than 150 GB on the Mac measured for this post, and most of that can be cleared safely.</p>
+
     <h3 class="faq-q">Is it safe to delete Xcode DerivedData?</h3>
     <p>Yes. DerivedData is build output and indexes, and Xcode rebuilds it the next time you build each project. Quit Xcode first, and expect the first build afterwards to be slower while Xcode re-indexes.</p>
 
@@ -174,6 +187,25 @@
     <h3 class="faq-q">Should I delete old Xcode archives?</h3>
     <p>Only for versions nobody uses any more. An archive holds the debug symbols that make crash reports readable, so keep the archive for every version of your app still in people&rsquo;s hands. Test builds and abandoned experiments can go.</p>
 
+    <h3 class="faq-q">Why is Xcode taking up so much space on my Mac?</h3>
+    <p>Most of the space is not the app. Xcode keeps build output (DerivedData), debugging files copied from each iOS version you connect (iOS DeviceSupport), one folder per simulated device, simulator runtimes and archives of the builds you shipped. They grow project by project and iOS version by iOS version, and Storage settings folds them into one number with no breakdown.</p>
+
+    <h3 class="faq-q">Where does Xcode store its files on a Mac?</h3>
+    <p>In the Developer folder inside the Library folder in your home folder, which Finder hides: ~/Library/Developer/Xcode holds DerivedData, iOS DeviceSupport and Archives, and ~/Library/Developer/CoreSimulator/Devices holds the simulators. Simulator runtimes are the exception: current versions of macOS keep them in a protected system location outside your home folder.</p>
+
+    <h3 class="faq-q">How do I delete Xcode simulators?</h3>
+    <p>In Xcode, choose Window, Devices and Simulators, then the Simulators tab, Control-click a simulator you do not use and choose Delete. Doing it from Xcode keeps its list of simulators right. To remove a whole runtime, use Xcode, Settings, Components instead.</p>
+
+    <h3 class="faq-q">Does deleting Xcode remove all its files?</h3>
+    <p>No. Moving Xcode to the Trash removes only the app. DerivedData, device support files, simulators and archives stay in your Library, and simulator runtimes stay in their system location, shared by every Xcode. Remove runtimes in Xcode, Settings, Components before deleting the last copy of Xcode, and clear the Developer folder by hand if you are done with Xcode.</p>
+
+    <h3 class="faq-q">Will clearing Xcode files break my projects?</h3>
+    <p>No. Your source code lives in your project folders, not in these. DerivedData, device support files and simulators are rebuilt or copied again when needed; the cost is a slower first build and a wait when you next connect a device. Archives are the exception: they do not come back, so keep those for versions still in use.</p>
+
+    <h3 class="faq-q">How often should I clean up Xcode files?</h3>
+    <p>Every few months is enough for most developers, and after each major iOS release, when a new set of device support files and runtimes arrives. The leftovers come back as you work, so a quick look at the Developer folder, sorted by size and age, keeps it from growing back to a hundred gigabytes.</p>
+
+    <p><em>Updated on 28 November 2026: a short answer at the top, and more questions answered.</em></p>
     <p>&mdash; Mukul</p>
 
   </div>
