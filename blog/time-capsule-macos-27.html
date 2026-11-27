@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Time Capsule Not Working on macOS 27? What to Use Instead | Klarity Blog</title>
-<meta name="description" content="macOS 27 can&#x27;t back up to a Time Capsule any more. What Apple says to use instead, how to set up a new Time Machine drive, and what to check first.">
+<title>Does Time Capsule Work With macOS 27? What to Use Instead</title>
+<meta name="description" content="No: macOS 27 dropped AFP, the protocol Time Machine uses to reach an AirPort Time Capsule. What Apple says to use instead, and how to set up a new backup drive.">
 <meta name="keywords" content="time capsule macos 27, time capsule not working macos 27, time machine time capsule afp, time capsule replacement, new time machine drive, time machine backup drive size, mac disk space analyzer, klarity disk">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.klaritydisk.com/blog/time-capsule-macos-27">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Time Capsule Not Working on macOS 27? What to Use Instead">
-<meta property="og:description" content="macOS 27 can&#x27;t back up to a Time Capsule any more. What Apple says to use instead, how to set up a new Time Machine drive, and what to check first.">
+<meta property="og:description" content="No: macOS 27 dropped AFP, the protocol Time Machine uses to reach an AirPort Time Capsule. What Apple says to use instead, and how to set up a new backup drive.">
 <meta property="og:url" content="https://www.klaritydisk.com/blog/time-capsule-macos-27">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
@@ -19,12 +19,12 @@
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Time Capsule Not Working on macOS 27? What to Use Instead">
-<meta name="twitter:description" content="macOS 27 can&#x27;t back up to a Time Capsule any more. What Apple says to use instead, how to set up a new Time Machine drive, and what to check first.">
+<meta name="twitter:description" content="No: macOS 27 dropped AFP, the protocol Time Machine uses to reach an AirPort Time Capsule. What Apple says to use instead, and how to set up a new backup drive.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Time Capsule Not Working on macOS 27? What to Use Instead", "description": "macOS 27 can't back up to a Time Capsule any more. What Apple says to use instead, how to set up a new Time Machine drive, and what to check first.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-10-19", "dateModified": "2026-10-19", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/time-capsule-macos-27"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Time Capsule Not Working on macOS 27? What to Use Instead", "description": "No: macOS 27 dropped AFP, the protocol Time Machine uses to reach an AirPort Time Capsule. What Apple says to use instead, and how to set up a new backup drive.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-10-19", "dateModified": "2026-11-30", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/time-capsule-macos-27"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Time Capsule Not Working on macOS 27? What to Use Instead", "item": "https://www.klaritydisk.com/blog/time-capsule-macos-27"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Time Capsule work with macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "No. Time Machine backs up to an AirPort Time Capsule over a file-sharing protocol called AFP, and Apple says AFP isn't supported in macOS 27 or later. Apple no longer recommends Time Capsule or AirPort Extreme for backups."}}, {"@type": "Question", "name": "What should I use instead of a Time Capsule?", "acceptedAnswer": {"@type": "Answer", "text": "Apple lists three options: an external drive connected over USB or Thunderbolt, which is the most common setup; a network drive that supports Time Machine over SMB; or another Mac on your network sharing a folder, with both Macs on macOS 11 or later."}}, {"@type": "Question", "name": "Can I still get files back from my old Time Capsule backups?", "acceptedAnswer": {"@type": "Answer", "text": "Not from a Mac running macOS 27, which no longer supports the protocol the Time Capsule uses. Apple's note covers macOS 27 and later, so a Mac still on an older version of macOS can reach it. Keep the Time Capsule until your new backups have a few weeks of history."}}, {"@type": "Question", "name": "Can Klarity show what is inside my Time Machine backup?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity does not look inside Time Machine backups or the local snapshots on your Mac; use Time Machine itself to browse and restore. What Klarity shows is what is on a drive before Time Machine erases it, and how much your Mac holds, so you can choose the right size of drive."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Time Capsule work with macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "No. Time Machine backs up to an AirPort Time Capsule over a file-sharing protocol called AFP, and Apple says AFP isn't supported in macOS 27 or later. Apple no longer recommends Time Capsule or AirPort Extreme for backups."}}, {"@type": "Question", "name": "What should I use instead of a Time Capsule?", "acceptedAnswer": {"@type": "Answer", "text": "Apple lists three options: an external drive connected over USB or Thunderbolt, which is the most common setup; a network drive that supports Time Machine over SMB; or another Mac on your network sharing a folder, with both Macs on macOS 11 or later."}}, {"@type": "Question", "name": "Can I still get files back from my old Time Capsule backups?", "acceptedAnswer": {"@type": "Answer", "text": "Not from a Mac running macOS 27, which no longer supports the protocol the Time Capsule uses. Apple's note covers macOS 27 and later, so a Mac still on an older version of macOS can reach it. Keep the Time Capsule until your new backups have a few weeks of history."}}, {"@type": "Question", "name": "Can Klarity show what is inside my Time Machine backup?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity does not look inside Time Machine backups or the local snapshots on your Mac; use Time Machine itself to browse and restore. What Klarity shows is what is on a drive before Time Machine erases it, and how much your Mac holds, so you can choose the right size of drive."}}, {"@type": "Question", "name": "Why did my Time Capsule stop backing up after the macOS 27 update?", "acceptedAnswer": {"@type": "Answer", "text": "Because macOS 27 no longer supports AFP, the file-sharing protocol Time Machine uses to reach an AirPort Time Capsule. Nothing is wrong with the Time Capsule itself. macOS 26 had already started warning Time Capsule owners; for many people the first sign was a backup that quietly stopped."}}, {"@type": "Question", "name": "Is there a way to keep using a Time Capsule with macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "Not one Apple supports. Some enthusiasts load their own server software onto a Time Capsule so it accepts newer connections, but it is unsupported and not something to trust with the only backup of your Mac. A Mac still on a version of macOS before 27 can keep backing up to it."}}, {"@type": "Question", "name": "Does Time Machine still work on macOS 27?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Only the Time Capsule route has gone. Time Machine backs up to an external drive over USB or Thunderbolt, to a network drive that supports Time Machine over SMB, or to another Mac on your network sharing a folder, with both Macs on macOS 11 or later."}}, {"@type": "Question", "name": "How big should my new Time Machine drive be?", "acceptedAnswer": {"@type": "Answer", "text": "Apple does not give a size. Time Machine keeps older versions of your files as well as the latest, so pick a drive comfortably bigger than the data on your Mac. Backups also grow with macOS: Howard Oakley found upgrading to macOS 27 added about 10 GB to his."}}, {"@type": "Question", "name": "Will setting up a Time Machine drive erase it?", "acceptedAnswer": {"@type": "Answer", "text": "It can. Setting up a backup disk may erase it, and erasing permanently removes everything on it. A new drive has nothing to lose; an old one from a drawer may hold the only copy of something, so look at what is on it and copy off what you want first."}}, {"@type": "Question", "name": "Should I encrypt my Time Machine backup?", "acceptedAnswer": {"@type": "Answer", "text": "It is a good idea: a backup drive holds a copy of everything on your Mac. Turn on encryption when you set up the disk, and keep the password somewhere safe, because the backup cannot be read without it."}}, {"@type": "Question", "name": "How do I change my Time Capsule’s settings now?", "acceptedAnswer": {"@type": "Answer", "text": "Use AirPort Utility from a Mac that still has it. It is no longer included in new clean installations of macOS, so a freshly set-up Mac may not have it."}}]}</script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
@@ -79,6 +79,17 @@
   <div class="article-divider"><hr></div>
 
   <div class="article-body">
+
+    <div class="callout">
+      <div class="callout-title">The short answer</div>
+      <p>No. Time Machine reaches an AirPort Time Capsule over an old file-sharing protocol, AFP, and Apple says AFP is not supported in macOS 27 or later. Your Time Capsule did not break, and an update will not bring it back. What to do:</p>
+      <ol>
+        <li><strong>Back up to an external drive</strong> over USB or Thunderbolt, Apple&rsquo;s most common setup, or to a network drive that supports Time Machine over SMB.</li>
+        <li><strong>Check what is on the drive first:</strong> setting it up can erase it.</li>
+        <li><strong>Choose a drive comfortably bigger than your Mac&rsquo;s data,</strong> so Time Machine can keep older versions.</li>
+        <li><strong>Keep the Time Capsule</strong> until the new drive has a few weeks of history.</li>
+      </ol>
+    </div>
 
     <h2>Your Time Capsule did not break. macOS 27 stopped talking to it</h2>
 
@@ -172,6 +183,28 @@
     <h3 class="faq-q">Can Klarity show what is inside my Time Machine backup?</h3>
     <p>No. Klarity does not look inside Time Machine backups or the local snapshots on your Mac; use Time Machine itself to browse and restore. What Klarity shows is what is on a drive before Time Machine erases it, and how much your Mac holds, so you can choose the right size of drive.</p>
 
+    <h3 class="faq-q">Why did my Time Capsule stop backing up after the macOS 27 update?</h3>
+    <p>Because macOS 27 no longer supports AFP, the file-sharing protocol Time Machine uses to reach an AirPort Time Capsule. Nothing is wrong with the Time Capsule itself. macOS 26 had already started warning Time Capsule owners; for many people the first sign was a backup that quietly stopped.</p>
+
+    <h3 class="faq-q">Is there a way to keep using a Time Capsule with macOS 27?</h3>
+    <p>Not one Apple supports. Some enthusiasts load their own server software onto a Time Capsule so it accepts newer connections, but it is unsupported and not something to trust with the only backup of your Mac. A Mac still on a version of macOS before 27 can keep backing up to it.</p>
+
+    <h3 class="faq-q">Does Time Machine still work on macOS 27?</h3>
+    <p>Yes. Only the Time Capsule route has gone. Time Machine backs up to an external drive over USB or Thunderbolt, to a network drive that supports Time Machine over SMB, or to another Mac on your network sharing a folder, with both Macs on macOS 11 or later.</p>
+
+    <h3 class="faq-q">How big should my new Time Machine drive be?</h3>
+    <p>Apple does not give a size. Time Machine keeps older versions of your files as well as the latest, so pick a drive comfortably bigger than the data on your Mac. Backups also grow with macOS: Howard Oakley found upgrading to macOS 27 added about 10 GB to his.</p>
+
+    <h3 class="faq-q">Will setting up a Time Machine drive erase it?</h3>
+    <p>It can. Setting up a backup disk may erase it, and erasing permanently removes everything on it. A new drive has nothing to lose; an old one from a drawer may hold the only copy of something, so look at what is on it and copy off what you want first.</p>
+
+    <h3 class="faq-q">Should I encrypt my Time Machine backup?</h3>
+    <p>It is a good idea: a backup drive holds a copy of everything on your Mac. Turn on encryption when you set up the disk, and keep the password somewhere safe, because the backup cannot be read without it.</p>
+
+    <h3 class="faq-q">How do I change my Time Capsule&rsquo;s settings now?</h3>
+    <p>Use AirPort Utility from a Mac that still has it. It is no longer included in new clean installations of macOS, so a freshly set-up Mac may not have it.</p>
+
+    <p><em>Updated on 30 November 2026: a short answer at the top, and more questions answered.</em></p>
     <p>&mdash; Mukul</p>
 
   </div>
