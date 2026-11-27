@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Purgeable Space on a Mac, Explained | Klarity Blog</title>
-<meta name="description" content="Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.">
+<title>What Is Purgeable Space on Mac? How to Clear It | Klarity</title>
+<meta name="description" content="Purgeable space is room macOS says it can free by itself: Time Machine snapshots, iCloud copies and caches. Why it will not clear in time, and how to clear it.">
 <meta name="keywords" content="purgeable space mac, what is purgeable space, mac purgeable storage, clear purgeable space mac, not enough space to install macos, finder available space wrong, mac disk space analyzer, klarity disk">
 <meta name="author" content="Mukul Mehra">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.klaritydisk.com/blog/purgeable-space-mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Purgeable Space on a Mac, Explained">
-<meta property="og:description" content="Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.">
+<meta property="og:description" content="Purgeable space is room macOS says it can free by itself: Time Machine snapshots, iCloud copies and caches. Why it will not clear in time, and how to clear it.">
 <meta property="og:url" content="https://www.klaritydisk.com/blog/purgeable-space-mac">
 <meta property="og:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 <meta property="og:site_name" content="Klarity">
@@ -19,10 +19,10 @@
 <meta property="article:author" content="Mukul Mehra">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Purgeable Space on a Mac, Explained">
-<meta name="twitter:description" content="Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.">
+<meta name="twitter:description" content="Purgeable space is room macOS says it can free by itself: Time Machine snapshots, iCloud copies and caches. Why it will not clear in time, and how to clear it.">
 <meta name="twitter:image" content="https://www.klaritydisk.com/og-image.png?v=20260906">
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Purgeable Space on a Mac, Explained", "description": "Finder says there is room, the installer disagrees. What purgeable space on a Mac is made of, why it will not clear in time, and how to make real room.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-06", "dateModified": "2026-11-06", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/purgeable-space-mac"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Purgeable Space on a Mac, Explained", "description": "Purgeable space is room macOS says it can free by itself: Time Machine snapshots, iCloud copies and caches. Why it will not clear in time, and how to clear it.", "image": "https://www.klaritydisk.com/img/1.3.1/hero.webp", "author": {"@type": "Person", "name": "Mukul Mehra"}, "datePublished": "2026-11-06", "dateModified": "2026-11-27", "publisher": {"@type": "Organization", "name": "Klarity", "logo": {"@type": "ImageObject", "url": "https://www.klaritydisk.com/icon-180.png"}}, "mainEntityOfPage": "https://www.klaritydisk.com/blog/purgeable-space-mac"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Klarity", "item": "https://www.klaritydisk.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.klaritydisk.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Purgeable Space on a Mac, Explained", "item": "https://www.klaritydisk.com/blog/purgeable-space-mac"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is purgeable space on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "It is space macOS says it can free by itself when something needs the room. It is mostly Time Machine’s local snapshots, copies of iCloud files that can be downloaded again, and caches. Finder counts it as available, but it is not free until macOS actually clears it."}}, {"@type": "Question", "name": "Why does the installer say there is not enough space when Finder shows plenty?", "acceptedAnswer": {"@type": "Answer", "text": "Finder’s Available includes purgeable space. An installer usually checks what is free right now and stops before macOS has cleared anything. Empty the Trash, restart, wait a few minutes and try again; if it still refuses, make room from your own files."}}, {"@type": "Question", "name": "How do I clear purgeable space without Terminal?", "acceptedAnswer": {"@type": "Answer", "text": "Restart and give it time: snapshots are kept for about a day and then removed. Remove downloads of large iCloud Drive files you do not need on the Mac, from Finder’s Control-click menu. Starting up once in Safe Mode clears certain system caches. Leave Time Machine switched on."}}, {"@type": "Question", "name": "Does Klarity count purgeable space as free?", "acceptedAnswer": {"@type": "Answer", "text": "No. Klarity shows the space free right now, so its figure is lower than Finder’s Available. It cannot see inside or delete Time Machine’s local snapshots, but its map shows which folders, including your iCloud Drive and Caches, are really taking up the disk."}}]}</script>
 
@@ -79,6 +79,16 @@
   <div class="article-divider"><hr></div>
 
   <div class="article-body">
+    <div class="callout">
+      <div class="callout-title">The short answer</div>
+      <p>Purgeable space is space macOS says it can free by itself when something needs the room: mostly Time Machine&rsquo;s local snapshots, copies of iCloud files that can be downloaded again, and caches. Finder counts it as available, but it is not free until macOS actually clears it. To clear it without Terminal:</p>
+      <ol>
+        <li><strong>Empty the Trash, restart and wait a few minutes.</strong> Snapshots are kept for about a day and then removed.</li>
+        <li><strong>Remove downloads of large iCloud Drive files</strong> you do not need on the Mac, from Finder&rsquo;s Control-click menu.</li>
+        <li><strong>Start up once in Safe Mode</strong> to clear certain system caches.</li>
+        <li><strong>Leave Time Machine switched on.</strong> If an installer still refuses, make room from your own files.</li>
+      </ol>
+    </div>
 
     <h2>Two numbers, one disk</h2>
 
@@ -159,6 +169,7 @@
     <h3 class="faq-q">Does Klarity count purgeable space as free?</h3>
     <p>No. Klarity shows the space free right now, so its figure is lower than Finder&rsquo;s Available. It cannot see inside or delete Time Machine&rsquo;s local snapshots, but its map shows which folders, including your iCloud Drive and Caches, are really taking up the disk.</p>
 
+    <p><em>Updated on 27 November 2026: a short answer at the top.</em></p>
     <p>&mdash; Mukul</p>
 
   </div>
